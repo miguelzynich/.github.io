@@ -1,15 +1,19 @@
+/* =============================================== */
+/* --- DECLARAÇÃO DE FONTES --- */
+/* =============================================== */
+
 @font-face {
     font-family: 'Touche';
     src: url('fonts/ToucheW03-Regular.woff2') format('woff2');
-    font-weight: 400;
+    font-weight: 400; /* 400 ou 'normal' para o peso regular */
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Touche';
     src: url('fonts/ToucheW03-Bold.woff2') format('woff2');
-    font-weight: 700; 
-    font-style: normal; 
+    font-weight: 700; /* 700 ou 'bold' para o peso negrito */
+    font-style: normal;
 }
 
 @font-face {
@@ -26,6 +30,9 @@
     font-style: normal;
 }
 
+/* =============================================== */
+/* --- ESTILOS GLOBAIS E VARIÁVEIS --- */
+/* =============================================== */
 
 :root {
     --primary-color: #222;
@@ -42,7 +49,7 @@
 }
 
 html, body {
-    overflow-x: hidden;
+    overflow-x: hidden; /* Evita rolagem horizontal acidental */
 }
 
 body {
@@ -50,6 +57,7 @@ body {
     color: var(--primary-color);
     background-color: var(--background-color);
     line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s; /* Adiciona uma transição suave */
 }
 
 section {
@@ -66,16 +74,20 @@ section {
     text-align: center;
 }
 
+/* =============================================== */
+/* --- TIPOGRAFIA --- */
+/* =============================================== */
+
 h1 {
     font-family: 'Touche', sans-serif;
-    font-weight: 700; 
+    font-weight: 700;
     font-size: 3.5rem;
     margin-bottom: 0.5rem;
 }
 
 h2 {
     font-family: 'Touche', sans-serif;
-    font-weight: 700; 
+    font-weight: 700;
     font-size: 2rem;
     margin-bottom: 2rem;
     text-align: center;
@@ -86,6 +98,9 @@ h2 {
     margin-bottom: 2rem;
 }
 
+/* =============================================== */
+/* --- COMPONENTES (BOTÕES, ETC.) --- */
+/* =============================================== */
 
 .btn {
     display: inline-block;
@@ -105,8 +120,8 @@ h2 {
 
 .btn:hover {
     background-color: var(--primary-color);
-    color: white;
-    -webkit-text-stroke: 0.4px white;
+    color: var(--background-color);
+    -webkit-text-stroke: 0.4px var(--background-color);
 }
 
 .button-group {
@@ -137,7 +152,9 @@ h2 {
     border-color: var(--primary-color);
 }
 
-
+/* =============================================== */
+/* --- SEÇÕES ESPECÍFICAS --- */
+/* =============================================== */
 
 .main-header {
     background-color: var(--primary-color);
@@ -209,7 +226,7 @@ h2 {
     grid-template-columns: 1fr 2fr 2fr;
     padding: 1.5rem 0;
     font-family: 'Touche', sans-serif;
-    font-weight: 400; 
+    font-weight: 400;
     border-bottom: 1px solid var(--border-color);
     align-items: center;
 }
@@ -265,9 +282,78 @@ h2 {
     font-size: 0.9rem;
 }
 
+/* =============================================== */
+/* --- DARK MODE STYLES --- */
+/* =============================================== */
+
+body.dark-mode {
+    --primary-color: #f1f1f1;
+    --secondary-color: #a0a0a0;
+    --background-color: #1a1a1a;
+    --light-gray-bg: #2c2c2c;
+    --border-color: #444;
+}
+
+body.dark-mode .main-header {
+    background-color: #2c2c2c;
+}
+
+body.dark-mode .btn {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    -webkit-text-stroke: 0.4px var(--primary-color);
+}
+
+body.dark-mode .btn:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    -webkit-text-stroke: 0.4px var(--background-color);
+}
+
+body.dark-mode .plus-btn {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+body.dark-mode .plus-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border-color: var(--primary-color);
+}
+
+body.dark-mode .contact-section h2 {
+    color: var(--primary-color);
+}
+
+body.dark-mode .projects-section {
+    background-color: #222222;
+}
+
+.dark-mode-button {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: #fff;
+    color: #222;
+    border: 1px solid #222;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+}
+
+body.dark-mode .dark-mode-button {
+    background: #222;
+    color: #fff;
+    border-color: #fff;
+}
+
+/* =============================================== */
+/* --- ESTILOS RESPONSIVOS --- */
+/* =============================================== */
 
 @media (max-width: 768px) {
-
     section {
         padding: 40px 20px;
     }
