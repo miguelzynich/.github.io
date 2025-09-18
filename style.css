@@ -1,0 +1,337 @@
+@font-face {
+    font-family: 'Touche';
+    src: url('fonts/ToucheW03-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Touche';
+    src: url('fonts/ToucheW03-Bold.woff2') format('woff2');
+    font-weight: 700; 
+    font-style: normal; 
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('fonts/Gilroy-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('fonts/Gilroy-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+:root {
+    --primary-color: #222;
+    --secondary-color: #3d3d3d;
+    --background-color: #fff;
+    --light-gray-bg: #f8f8f8;
+    --border-color: #ddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+}
+
+section {
+    padding: 60px 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Touche', sans-serif;
+    font-weight: 700; 
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-family: 'Touche', sans-serif;
+    font-weight: 700; 
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.section-title {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+
+.btn {
+    display: inline-block;
+    color: var(--primary-color);
+    background-color: transparent;
+    text-decoration: none;
+    padding: 12px 24px;
+    border: 5px solid var(--primary-color);
+    font-size: 0.9rem;
+    letter-spacing: 0.3rem;
+    font-family: 'Touche', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    -webkit-text-stroke: 0.4px var(--primary-color);
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    -webkit-text-stroke: 0.4px white;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.plus-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 2.8rem;
+    border-radius: 0;
+    border: 5px solid var(--primary-color);
+    font-size: 2.3rem;
+    font-family: 'Touche', sans-serif;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.plus-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+
+
+.main-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 0;
+    font-weight: bold;
+}
+
+.logo {
+    text-align: center;
+}
+
+.hero-section {
+    padding: 80px 0;
+}
+
+.profile-picture {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+}
+
+.subtitle {
+    font-family: 'Gilroy', sans-serif;
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+}
+
+.projects-section {
+    background-color: #F6F6F7;
+}
+
+.project-grid,
+.project-grid-small {
+    display: grid;
+    gap: 2rem;
+}
+
+.project-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.project-grid-small {
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 2rem;
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.load-more {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.experience-list {
+    margin-bottom: 2.5rem;
+}
+
+.experience-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    padding: 1.5rem 0;
+    font-family: 'Touche', sans-serif;
+    font-weight: 400; 
+    border-bottom: 1px solid var(--border-color);
+    align-items: center;
+}
+
+.experience-item:first-child {
+    border-top: 1px solid var(--border-color);
+}
+
+.experience-item .date {
+    color: var(--secondary-color);
+}
+
+.experience-item .role {
+    font-weight: 700;
+}
+
+.experience-item .company {
+    justify-self: end;
+    color: var(--secondary-color);
+}
+
+.contact-section {
+    background-color: var(--background-color);
+    padding: 4rem 2rem;
+}
+
+.contact-section .container {
+    background-color: var(--light-gray-bg);
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    max-width: 950px;
+}
+
+.contact-section h2 {
+    font-family: 'Touche', sans-serif;
+    font-weight: 700;
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    color: #000;
+}
+
+.contact-section p {
+    font-family: 'Gilroy', sans-serif;
+    font-size: 1rem;
+    color: var(--primary-color);
+    max-width: 450px;
+    margin: 0.5rem auto 2.5rem auto;
+}
+
+.main-footer {
+    padding: 2rem 0;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+
+@media (max-width: 768px) {
+
+    section {
+        padding: 40px 20px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .section-title {
+        text-align: center;
+    }
+
+    .hero-section .profile-picture {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .hero-section .container {
+        width: 100%;
+    }
+
+    .button-group {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .button-group .btn {
+        width: 60%;
+        text-align: center;
+    }
+    
+    .project-grid,
+    .project-grid-small {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .experience-item .company {
+        justify-self: center;
+    }
+    
+    .contact-section {
+        padding: 40px 15px;
+    }
+
+    .contact-section .container {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .contact-section h2 {
+        font-size: 2.2rem;
+        line-height: 1.3;
+    }
+}
