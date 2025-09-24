@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Yuca - Miguel Zynich</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
     <link rel="manifest" href="favicon/site.webmanifest">
     <meta name="theme-color" content="#ffffff">
 
@@ -19,7 +20,7 @@
 
     <style>
         /* =============================================== */
-        /* --- FONTES E VARIÁVEIS --- */
+        /* --- FONTES E VARIÁVEIS GLOBAIS --- */
         /* =============================================== */
         @font-face {
             font-family: 'Touche';
@@ -27,29 +28,39 @@
             font-weight: 700;
             font-style: normal;
         }
+
         @font-face {
             font-family: 'Gilroy';
             src: url('fonts/Gilroy-Regular.woff') format('woff');
             font-weight: 400;
             font-style: normal;
         }
+
         :root {
             --primary-color: #222;
             --background-color: #fff;
             --text-color-light: #3d3d3d;
             --border-color: #ddd;
             --light-gray-bg: #f8f8f8;
-            --swiper-navigation-color: var(--primary-color);
-            --swiper-pagination-color: var(--primary-color);
+            --accent-color: #FF8C00;
+            --swiper-navigation-color: var(--accent-color);
+            --swiper-pagination-color: var(--accent-color);
         }
+
+        /* =============================================== */
+        /* --- RESET E ESTILOS GLOBAIS --- */
+        /* =============================================== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        html, body {
+
+        html,
+        body {
             overflow-x: hidden;
         }
+
         body {
             font-family: 'Inter', sans-serif;
             color: var(--primary-color);
@@ -58,22 +69,65 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .container-wide {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        section+section {
+            padding-top: 0;
+        }
+
+        h2 {
+            font-family: 'Touche', sans-serif;
+            font-weight: 700;
+            font-size: 32px;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        p {
+            font-family: 'Gilroy', sans-serif;
+            font-size: 18px;
+            margin-bottom: 1.5rem;
+            color: var(--text-color-light);
+            text-align: left;
+        }
+
+        strong {
+            font-family: 'Touche', sans-serif;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
         /* =============================================== */
-        /* --- ESTRUTURA E LAYOUT --- */
+        /* --- COMPONENTES E SEÇÕES --- */
         /* =============================================== */
         .main-header {
             background-color: var(--primary-color);
             color: white;
             padding: 1rem 0;
             font-weight: bold;
-            border: none;
             position: relative;
         }
+
         .logo {
             text-align: center;
             font-family: 'Touche', sans-serif;
             font-size: 1.5rem;
         }
+
         .back-button {
             position: absolute;
             top: 50%;
@@ -85,142 +139,235 @@
             font-weight: bold;
             transition: transform 0.2s ease;
         }
+
         .back-button:hover {
             transform: scale(1.1);
         }
+
         .banner-section {
             width: 100%;
-            height: 80vh;
+            height: 55vh;
             padding: 0;
             background-image: url('images/yuca-banner-desktop.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            border: none;
         }
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-        section {
-             padding: 60px 0;
-        }
-        h2 {
-            font-family: 'Touche', sans-serif;
-            font-weight: 700;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-        p {
-            font-family: 'Gilroy', sans-serif;
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-color-light);
-        }
-        strong {
-            font-family: 'Touche', sans-serif;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
+
         .two-column-layout {
             display: flex;
-            gap: 50px;
+            gap: 100px;
             align-items: flex-start;
+            margin-top: 1.8rem;
         }
+
         .two-column-layout .column {
             flex: 1;
         }
-        .two-column-layout h2,
-        .two-column-layout p,
-        .problem-section h2,
-        .problem-section p,
-        .research-section h2,
-        .tools-section h2,
-        .quant-research-section h2,
-        .carousel-section h2 {
-            text-align: left;
+
+        .problem-section h2 {
+            text-align: center;
         }
+
+        .problem-section p {
+            font-size: 1.5rem;
+            font-weight: bold;
+            font-style: italic;
+            text-align: center;
+            color: var(--primary-color);
+        }
+
+        .tools-section h2 {
+            text-align: center;
+        }
+
         .tools-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px 40px;
             list-style: none;
-            padding: 30px;
+            padding: 50px;
             border: 1px solid var(--border-color);
-            border-radius: 8px;
+            border-radius: 12px;
+            max-width: 900px;
+            margin: 1.8rem auto 0 auto;
         }
+
         .tools-grid li {
             font-family: 'Gilroy', sans-serif;
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--text-color-light);
         }
-        .research-section .container {
+
+        .research-box {
             background-color: var(--light-gray-bg);
             border-radius: 12px;
-            padding: 40px;
+            padding: 50px;
+            margin-top: 1.5rem;
         }
+
         .desk-research-layout {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 80px 40px;
-            margin-top: 40px;
+            gap: 50px 40px;
+            align-items: start;
         }
+
         .research-item {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 20px;
         }
+
         .research-item img {
             width: 100%;
             max-width: 450px;
             height: auto;
             border-radius: 8px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
+
         .research-item blockquote {
             background-color: #2c2c2c;
             color: #fff;
             padding: 25px;
             border-radius: 8px;
             font-family: 'Gilroy', sans-serif;
-            font-size: 1.1rem;
+            font-size: 1rem;
             line-height: 1.5;
-            max-width: 350px;
-            border-left: 5px solid #FF8C00;
+            width: 100%;
+            max-width: 450px;
+            border-left: 5px solid var(--accent-color);
             margin: 0;
+            text-align: left;
         }
+
         .research-item blockquote strong {
             display: block;
             margin-bottom: 10px;
             font-family: 'Touche', sans-serif;
             color: #fff;
         }
-        .research-item:nth-child(2) {
-            justify-self: end;
-            margin-top: 50px;
-        }
+
         .research-item:nth-child(3) {
             grid-column: 1 / -1;
             justify-self: center;
         }
-        .dark-panel {
-            background-color: #2c2c2c;
-            color: #f1f1f1;
-            border-radius: 8px;
-            padding: 40px;
-            margin-top: 1.5rem;
+
+        .research-intro-section .two-column-flex {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
         }
-        .dark-panel p {
-            font-size: 1.2rem;
-            color: #f1f1f1;
-            margin-bottom: 0;
+
+        .research-intro-section .text-content {
+            flex: 1.5;
         }
-        .dark-panel strong {
-            color: #fff;
+
+        .research-intro-section .image-content {
+            flex: 1;
+            text-align: center;
         }
+
+        .research-intro-section .image-content img {
+            max-width: 100%;
+            height: auto;
+            max-height: 250px;
+        }
+
+        .qualitative-preview-section h2 {
+            margin-top: 5rem;
+        }
+
+
+        .qualitative-preview-section h2,
+        .qualitative-preview-section p {
+            text-align: left;
+        }
+
+        .qualitative-preview-section p {
+            max-width: 960px;
+            text-align: left;
+            margin-left: 0, auto;
+            margin-right: auto;
+        }
+
+        .personas-section {
+            background-color: var(--light-gray-bg);
+        }
+
+        .personas-section h2 {
+            text-align: center;
+        }
+
+        .persona-slide-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            width: 100%;
+            padding: 2rem;
+            min-height: 300px;
+        }
+
+        .persona-info {
+            flex: 0 0 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .persona-avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .persona-name {
+            font-family: 'Touche', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .persona-details {
+            font-family: 'Gilroy', sans-serif;
+            color: var(--text-color-light);
+            font-size: 1rem;
+            margin: 0;
+            text-align: center;
+        }
+
+        .persona-quotes {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: stretch;
+            justify-content: flex-start;
+        }
+
+        .persona-quotes blockquote {
+            flex-basis: 200px;
+            flex-grow: 1;
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-family: 'Gilroy', sans-serif;
+            font-style: italic;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .main-footer {
             padding: 2rem 0;
             color: var(--text-color-light);
@@ -228,16 +375,14 @@
             font-size: 0.9rem;
         }
 
-        /* --- CARROSSEL DE DADOS --- */
-        .swiper {
-            width: 100%;
-            margin-top: 1.5rem;
+        /* CARROSSEL DE GRÁFICOS */
+        .carousel-section .swiper {
+             padding-bottom: 50px;
         }
-        .swiper-slide {
+        .carousel-wrapper {
             display: flex;
-            justify-content: center;
             align-items: center;
-            padding-bottom: 50px;
+            gap: 1rem;
         }
         .slide-content {
             display: flex;
@@ -245,9 +390,10 @@
             gap: 30px;
             background-color: var(--light-gray-bg);
             border-radius: 12px;
-            padding: 40px;
+            padding: 40px 60px;
             width: 100%;
             align-items: center;
+            min-height: 420px;
         }
         .slide-content .text-content {
             flex: 1;
@@ -255,29 +401,87 @@
         }
         .slide-content .text-content h3 {
             font-family: 'Touche', sans-serif;
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin-bottom: 1rem;
+            text-align: left;
         }
         .slide-content .chart-content {
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 300px;
+            min-width: 300px;
         }
         .slide-content .chart-content img {
-            max-width: 100%;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .chart-light { display: block; }
+        .chart-dark { display: none; }
+        
+        .carousel-wrapper .swiper-button-next,
+        .carousel-wrapper .swiper-button-prev {
+            position: static;
+            transform: none;
+            margin: 0;
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+        }
+        .carousel-wrapper .swiper-button-next::after,
+        .carousel-wrapper .swiper-button-prev::after {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--accent-color);
+        }
+
+        /* =============================================== */
+        /* --- SEÇÃO GALERIA DE IMAGENS (ÚLTIMA SEÇÃO) --- */
+        /* =============================================== */
+        .gallery-section {
+            padding-bottom: 80px;
+        }
+        .gallery-section h2,
+        .gallery-section p {
+            text-align: center;
+        }
+        .gallery-section p {
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 2.5rem;
+        }
+        .gallery-swiper {
+            width: 100%;
+            padding-bottom: 50px;
+        }
+        .gallery-swiper .swiper-slide {
             height: auto;
         }
-        
-        /* DARK MODE */
+        .gallery-swiper .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 600px; /* Altura máxima para a imagem */
+            object-fit: contain; /* Garante que a imagem inteira apareça sem cortes */
+            border-radius: 12px;
+        }
+        .gallery-section .swiper-button-next,
+        .gallery-section .swiper-button-prev {
+            color: var(--accent-color);
+        }
+
+        /* =============================================== */
+        /* --- DARK MODE --- */
+        /* =============================================== */
         body.dark-mode {
             --primary-color: #f1f1f1;
             --background-color: #121212;
             --text-color-light: #a0a0a0;
             --border-color: #444;
             --light-gray-bg: #1E1E1E;
-            --swiper-navigation-color: #fff;
-            --swiper-pagination-color: #fff;
         }
         body.dark-mode .main-header {
             background-color: #1E1E1E;
@@ -285,15 +489,33 @@
         body.dark-mode strong {
             color: #fff;
         }
-        body.dark-mode .research-section .container {
+        body.dark-mode p {
+            color: var(--text-color-light);
+        }
+        body.dark-mode .problem-section p {
+            color: #f8f8f8;
+        }
+        body.dark-mode .research-box,
+        body.dark-mode .research-item blockquote,
+        body.dark-mode .slide-content,
+        body.dark-mode .tools-grid,
+        body.dark-mode .personas-section {
+            background-color: #000;
+        }
+        body.dark-mode .persona-quotes blockquote {
             background-color: var(--light-gray-bg);
+            color: var(--primary-color);
         }
-        body.dark-mode .research-item blockquote {
-            background-color: #1E1E1E;
+        body.dark-mode .chart-light {
+            display: none;
         }
-        body.dark-mode .dark-panel {
-            background-color: var(--light-gray-bg);
+        body.dark-mode .chart-dark {
+            display: block;
         }
+        body.dark-mode .gallery-swiper .swiper-slide img {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+
         .dark-mode-button {
             position: fixed;
             bottom: 25px;
@@ -320,38 +542,89 @@
             height: 26px;
             stroke: currentColor;
         }
-        .dark-mode-button .icon-sun { display: none; }
-        .dark-mode-button .icon-moon { display: block; }
-        body.dark-mode .dark-mode-button .icon-moon { display: none; }
-        body.dark-mode .dark-mode-button .icon-sun { display: block; }
+        .dark-mode-button .icon-sun {
+            display: none;
+        }
+        .dark-mode-button .icon-moon {
+            display: block;
+        }
+        body.dark-mode .dark-mode-button .icon-moon {
+            display: none;
+        }
+        body.dark-mode .dark-mode-button .icon-sun {
+            display: block;
+        }
         body.dark-mode .dark-mode-button {
             background-color: var(--primary-color);
             color: var(--background-color);
             border: 2px solid var(--background-color);
         }
-        
-        /* RESPONSIVO */
+
+        /* =============================================== */
+        /* --- RESPONSIVO --- */
+        /* =============================================== */
         @media (max-width: 1024px) {
+            section {
+                padding: 40px 0;
+            }
             .banner-section {
                 background-image: url('images/yuca-banner-tablet.png');
                 height: 70vh;
             }
-            .two-column-layout {
-                flex-direction: column;
-                gap: 60px;
-            }
-            p {
-                font-size: 1.2rem;
-            }
+            .two-column-layout,
             .desk-research-layout {
                 grid-template-columns: 1fr;
-                gap: 60px;
+                flex-direction: column;
+                gap: 40px;
             }
-            .research-item:nth-child(2) {
-                justify-self: center;
-                margin-top: 0;
+            h2 {
+                font-size: 30px;
+            }
+            p {
+                font-size: 17px;
+            }
+            .slide-content {
+                flex-direction: row;
+                flex-wrap: nowrap;
+                padding: 30px;
+                gap: 25px;
+                min-height: 380px;
+            }
+            .slide-content .text-content,
+            .slide-content .chart-content {
+                flex: 1 1 50%;
+                min-width: 0;
+            }
+            .slide-content .text-content {
+                text-align: left;
+            }
+            .slide-content p {
+                font-size: 1rem;
+                text-align: left;
+            }
+            .slide-content .text-content h3 {
+                font-size: 1.5rem;
+            }
+            .slide-content .chart-content {
+                height: 260px;
+            }
+            .persona-slide-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            .persona-info {
+                flex: none;
+                width: auto;
+            }
+            .persona-quotes {
+                flex-direction: row;
+                align-items: stretch;
+            }
+            .persona-quotes blockquote {
+                max-width: 90%;
             }
         }
+
         @media (max-width: 768px) {
             .banner-section {
                 background-image: url('images/yuca-banner-mobile.png');
@@ -363,21 +636,62 @@
             section {
                 padding: 40px 20px;
             }
-            .container {
+            .container,
+            .container-wide {
                 padding: 0 20px;
             }
             h2 {
-                font-size: 2rem;
+                font-size: 28px;
+                text-align: center;
             }
             p {
-                font-size: 1.1rem;
+                font-size: 16px;
+            }
+            .research-intro-section .two-column-flex {
+                flex-direction: column;
+                text-align: center;
+            }
+            .research-intro-section h2,
+            .qualitative-preview-section h2 {
+                text-align: center;
+            }
+            .qualitative-preview-section p {
+                text-align: center;
             }
             .tools-grid {
                 grid-template-columns: 1fr;
                 gap: 15px;
+                padding: 30px;
             }
-            .dark-panel p {
-                font-size: 1.1rem;
+            .persona-slide-content {
+                gap: 1.5rem;
+                min-height: auto;
+            }
+            .persona-quotes {
+                flex-direction: column;
+            }
+            .persona-quotes blockquote {
+                max-width: 100%;
+                min-height: auto;
+            }
+            .slide-content {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+                gap: 30px;
+            }
+            .slide-content p {
+                text-align: center;
+            }
+            .slide-content .text-content h3 {
+                font-size: 1.6rem;
+            }
+            .slide-content .chart-content {
+                max-height: 220px;
+            }
+            .carousel-wrapper .swiper-button-next,
+            .carousel-wrapper .swiper-button-prev {
+                display: none;
             }
         }
     </style>
@@ -393,17 +707,21 @@
 
     <main>
         <section class="banner-section"></section>
-        
+
         <section class="project-content">
             <div class="container">
                 <div class="two-column-layout">
                     <div class="column">
                         <h2>Sobre a Yuca</h2>
-                        <p>A Yuca é uma startup de moradia como serviço. Nossa missão é revolucionar a vida de quem mora na cidade e, para isso, oferecemos aluguel descomplicado com apartamentos prontos para morar.</p>
+                        <p>A Yuca é uma startup de moradia como serviço. Nossa missão é revolucionar a vida de quem mora
+                            na cidade e, para isso, oferecemos aluguel descomplicado com apartamentos prontos para
+                            morar.</p>
                     </div>
                     <div class="column">
                         <h2>Processo</h2>
-                        <p>Para a solução do problema foi escolhido o <strong>Design Thinking</strong>. Seguindo das etapas de descobrir, definir, elaborar e entregar. No processo foi utilizado o <strong>diamante duplo</strong> para alinhar as entregas.</p>
+                        <p>Para a solução do problema foi escolhido o <strong>Design Thinking</strong>. Seguindo das
+                            etapas de descobrir, definir, elaborar e entregar. No processo foi utilizado o
+                            <strong>diamante duplo</strong> para alinhar as entregas.</p>
                     </div>
                 </div>
             </div>
@@ -432,139 +750,306 @@
                 </ul>
             </div>
         </section>
-        
+
         <section class="research-section">
             <div class="container">
                 <h2>Desk Research</h2>
-                <div class="desk-research-layout">
-                    <div class="research-item">
-                        <img src="images/research-g1.png" alt="Print da matéria do G1 sobre classes sociais">
-                        <blockquote>
-                            <strong>G1 - Economia</strong>
-                            "O afluxo às grandes cidades continua a crescer, levando ao aumento dos preços dos imóveis e da demanda por habitação de um custo mais acessível."
-                        </blockquote>
-                    </div>
-                    <div class="research-item">
-                        <img src="images/research-estadao.png" alt="Print da matéria do Estadão sobre colivings">
-                        <blockquote>
-                            <strong>Estadão</strong>
-                            "Custo baixo e contato social dão impulso a colivings em São Paulo (...) Após evasão nos primeiros meses de pandemia empreendimentos de espaços compartilhados voltam a atrair moradores com desejo de conhecer gente."
-                        </blockquote>
-                    </div>
-                    <div class="research-item">
-                        <img src="images/research-estadao-imoveis.png" alt="Print da matéria do Estadão Imóveis sobre moradia">
-                        <blockquote>
-                            <strong>Estadão Imóveis</strong>
-                            "O sentimento de solidão aumentou muito durante a pandemia e formatos de compartilhamento de espaço como o coliving vieram para suprir o lado da moradia solitória que o apartamento oferece"
-                        </blockquote>
+                <div class="research-box">
+                    <div class="desk-research-layout">
+                        <div class="research-item">
+                            <img src="images/research-g1.png" alt="Print da matéria do G1 sobre classes sociais">
+                            <blockquote>
+                                <strong>G1 - Economia</strong>
+                                "O afluxo às grandes cidades continua a crescer, levando ao aumento dos preços dos
+                                imóveis e da demanda por habitação de um custo mais acessível."
+                            </blockquote>
+                        </div>
+                        <div class="research-item">
+                            <img src="images/research-estadao.png" alt="Print da matéria do Estadão sobre colivings">
+                            <blockquote>
+                                <strong>Estadão</strong>
+                                "Custo baixo e contato social dão impulso a colivings em São Paulo (...) Após evasão nos
+                                primeiros meses de pandemia empreendimentos de espaços compartilhados voltam a atrair
+                                moradores com desejo de conhecer gente."
+                            </blockquote>
+                        </div>
+                        <div class="research-item">
+                            <img src="images/research-estadao-imoveis.png"
+                                alt="Print da matéria do Estadão Imóveis sobre moradia">
+                            <blockquote>
+                                <strong>Estadão Imóveis</strong>
+                                "O sentimento de solidão aumentou muito durante a pandemia e formatos de
+                                compartilhamento de espaço como o coliving vieram para suprir o lado da moradia
+                                solitória que o apartamento oferece"
+                            </blockquote>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <section class="quant-research-section">
-            <div class="container">
-                <h2>Prévia da Pesquisa Quantitativa</h2>
-                <div class="dark-panel">
-                    <p>
-                        Na pesquisa quantitativa, o questionário foi respondido por cerca de <strong>50 pessoas</strong>, com cerca de <strong>12 questões</strong> contendo perguntas de comportamento e até preferências de moradia. <strong>Abaixo destaques das entrevistas quantitativas que possibilitaram mostrar o direcionamento certo para o projeto.</strong>
-                    </p>
-                </div>
-            </div>
-        </section>
-        
+
         <section class="carousel-section">
             <div class="container">
                 <h2>Dados da Quantitativa</h2>
-                <div class="swiper">
+            </div>
+            <div class="container-wide">
+                <div class="carousel-wrapper">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper charts-swiper">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide" role="group"
+                                aria-label="Dados sobre com quem os entrevistados moram atualmente">
+                                <div class="slide-content">
+                                    <div class="text-content">
+                                        <h3>Atualmente moro com...</h3>
+                                        <p>Cerca de <strong>62%</strong> moram com os pais, <strong>apenas 16% moram
+                                                sozinhos</strong> e os outros <strong>16%</strong> moram com os seus
+                                            parceiros (as) ou irmãos (ãs) ou familiares.</p>
+                                    </div>
+                                    <div class="chart-content">
+                                        <img class="chart-light" src="images/grafico-pizza.svg"
+                                            alt="Gráfico de pizza mostrando: 62% com os pais, 16% sozinho, 10% com namorado(a), 4% com irmão(ã), 2% com família.">
+                                        <img class="chart-dark" src="images/grafico-pizza-dark.svg"
+                                            alt="Gráfico de pizza mostrando: 62% com os pais, 16% sozinho, 10% com namorado(a), 4% com irmão(ã), 2% com família.">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide" role="group"
+                                aria-label="Dados sobre onde os entrevistados procurariam imóveis">
+                                <div class="slide-content">
+                                    <div class="text-content">
+                                        <h3>E onde você procuraria...</h3>
+                                        <p>Aqui temos como preferências por sites de imóveis que já são especializados e
+                                            oferecem de forma clara todas as informações desde IPTU até condomínio.</p>
+                                    </div>
+                                    <div class="chart-content">
+                                        <img class="chart-light" src="images/grafico-pizza2.svg"
+                                            alt="Gráfico de pizza sobre onde procurar imóveis.">
+                                        <img class="chart-dark" src="images/grafico-pizza2-dark.svg"
+                                            alt="Gráfico de pizza sobre onde procurar imóveis.">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide" role="group"
+                                aria-label="Dados sobre como os entrevistados resolvem problemas domésticos">
+                                <div class="slide-content">
+                                    <div class="text-content">
+                                        <h3>Quando acontece aquela dor de cabeça com o chuveiro?</h3>
+                                        <p>Esses perrengues são algo que já está incluso no pacote de suporte da Yuca
+                                            porém pouca gente sabe.</p>
+                                    </div>
+                                    <div class="chart-content">
+                                        <img class="chart-light" src="images/grafico-pizza3.svg"
+                                            alt="Gráfico de pizza sobre consertos domésticos: 38% chama o profissional, 24% conserta sozinho, 14% toma banho frio, 16% abre tutorial no Youtube, 2% tem amigos que arrumam, 6% pede para o pai.">
+                                        <img class="chart-dark" src="images/grafico-pizza3-dark.svg"
+                                            alt="Gráfico de pizza sobre consertos domésticos: 38% chama o profissional, 24% conserta sozinho, 14% toma banho frio, 16% abre tutorial no Youtube, 2% tem amigos que arrumam, 6% pede para o pai.">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="swiper-slide" role="group"
+                                aria-label="Dados sobre a percepção de custo de um coliving">
+                                <div class="slide-content">
+                                    <div class="text-content">
+                                        <h3>Quanto você acha que custa pra morar em um coliving?</h3>
+                                        <p>Aqui buscamos ver a percepção de preço do Coliving. Nota 1 para
+                                            <strong>barato</strong> e nota 5 para <strong>caro</strong>.</p>
+                                    </div>
+                                    <div class="chart-content">
+                                        <img class="chart-light" src="images/grafico-pizza4.svg"
+                                            alt="Gráfico de pizza sobre percepção de preço: 56% votaram nota 3, 25% nota 4, 6% nota 2, 2% nota 5, e 1% nota 1.">
+                                        <img class="chart-dark" src="images/grafico-pizza4-dark.svg"
+                                            alt="Gráfico de pizza sobre percepção de preço: 56% votaram nota 3, 25% nota 4, 6% nota 2, 2% nota 5, e 1% nota 1.">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide" role="group"
+                                aria-label="Dados sobre a importância de morar no centro da cidade">
+                                <div class="slide-content">
+                                    <div class="text-content">
+                                        <h3>O quão importante é para você morar no centro da cidade?</h3>
+                                        <p>Boa parte dos entrevistados acredita que não é tão relevante morar no centro
+                                            da cidade. Enquanto apenas 18% considera como muito importante.</p>
+                                    </div>
+                                    <div class="chart-content">
+                                        <img class="chart-light" src="images/grafico-pizza5.svg"
+                                            alt="Gráfico sobre a importância da localização.">
+                                        <img class="chart-dark" src="images/grafico-pizza5-dark.svg"
+                                            alt="Gráfico sobre a importância da localização.">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide" role="group"
+                                aria-label="Dados sobre a disposição dos entrevistados para morar em um coliving">
+                                <div class="slide-content">
+                                    <div class="text-content">
+                                        <h3>Você moraria em um coliving?</h3>
+                                        <p>Cerca de <strong>46% toparia morar em um coliving</strong> mesmo com algumas
+                                            preocupações como regras e espaços compartilhados ser algo recente.</p>
+                                    </div>
+                                    <div class="chart-content">
+                                        <img class="chart-light" src="images/grafico-pizza6.svg"
+                                            alt="Gráfico sobre a intenção de morar em coliving.">
+                                        <img class="chart-dark" src="images/grafico-pizza6-dark.svg"
+                                            alt="Gráfico sobre a intenção de morar em coliving.">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="research-intro-section">
+            <div class="container">
+                <div class="two-column-flex">
+                    <div class="text-content">
+                        <h2>Direcionamentos da Pesquisa Quantitativa</h2>
+                        <p>Para a pesquisa qualitativa busquei pessoas que fossem semelhantes às personas. Também
+                            busquei pessoas que estivessem buscando sair de casa ou querendo mudar de cidade. Utilizando
+                            um questionário estruturado, foi possível chegar nos resultados abaixo.</p>
+                    </div>
+                    <div class="image-content">
+                        <img src="images/research-illustration.png"
+                            alt="Ilustração de um relatório com gráficos e um alvo.">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="personas-section">
+            <div class="container">
+                <h2>Proto-Personas</h2>
+                <div class="swiper personas-swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <div class="slide-content">
-                                <div class="text-content">
-                                    <h3>Atualmente moro com...</h3>
-                                    <p>Cerca de <strong>62%</strong> moram com os pais, <strong>apenas 16% moram sozinhos</strong> e os outros <strong>16%</strong> moram com os seus parceiros (as) ou irmãos (ãs) ou familiares.</p>
+                            <div class="persona-slide-content">
+                                <div class="persona-info">
+                                    <img src="images/persona-caio.png" alt="Avatar do Caio" class="persona-avatar">
+                                    <h3 class="persona-name">Caio</h3>
+                                    <p class="persona-details">28 anos - Marketeiro</p>
                                 </div>
-                                <div class="chart-content">
-                                    <img src="images/grafico-pizza.svg" alt="Gráfico de pizza sobre com quem as pessoas moram">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide-content">
-                                <div class="text-content">
-                                    <h3>E onde você procuraria...</h3>
-                                    <p>Aqui temos como preferências por sites de imóveis que já são especializados e oferecem de forma clara todas as informações desde IPTU até condomínio.</p>
-                                </div>
-                                <div class="chart-content">
-                                    <img src="images/grafico-pizza2.svg" alt="Outro gráfico">
+                                <div class="persona-quotes">
+                                    <blockquote>"Quero morar em São Paulo porém eu ainda preciso fazer um planejamento
+                                        para alcançar essa meta."</blockquote>
+                                    <blockquote>"Sim! Combinei com a minha namorada porém é complicado, tentei
+                                        incentivar mais 2 amigos meus também."</blockquote>
+                                    <blockquote>"Eu acho que o coliving seria perfeito para entender mais como é morar
+                                        (mesmo de forma temporária) em um cidade diferente."</blockquote>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="slide-content">
-                                <div class="text-content">
-                                    <h3>Título do Slide 3</h3>
-                                    <p>Texto descritivo para o terceiro slide. Adapte conforme o conteúdo da sua pesquisa.</p>
+                            <div class="persona-slide-content">
+                                <div class="persona-info">
+                                    <img src="images/persona-andrius.png" alt="Avatar de Andrius"
+                                        class="persona-avatar">
+                                    <h3 class="persona-name">Andrius</h3>
+                                    <p class="persona-details">29 anos - Programador</p>
                                 </div>
-                                <div class="chart-content">
-                                    <img src="images/grafico3.svg" alt="Gráfico 3">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide-content">
-                                <div class="text-content">
-                                    <h3>Título do Slide 4</h3>
-                                    <p>Texto descritivo para o quarto slide. Adapte conforme o conteúdo da sua pesquisa.</p>
-                                </div>
-                                <div class="chart-content">
-                                    <img src="images/grafico4.svg" alt="Gráfico 4">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide-content">
-                                <div class="text-content">
-                                    <h3>Título do Slide 5</h3>
-                                    <p>Texto descritivo para o quinto slide. Adapte conforme o conteúdo da sua pesquisa.</p>
-                                </div>
-                                <div class="chart-content">
-                                    <img src="images/grafico5.svg" alt="Gráfico 5">
+                                <div class="persona-quotes">
+                                    <blockquote>“Provavelmente eu usaria o coliving, mas como algo bem temporário, com
+                                        uma estadia em outra cidade ou país.”</blockquote>
+                                    <blockquote>“Optei pelo aluguel para sair de casa, por achar que combina mais
+                                        comigo. Ainda prefiro a minha privacidade.”</blockquote>
+                                    <blockquote>“Moro sozinho, mas sempre que posso tô chamando alguém pra dividir o
+                                        home office comigo”</blockquote>
+                                    <blockquote>“Gosto de morar por aqui, mas a ideia de viver em outro país ainda me
+                                        assusta um pouco — solidão e etc.”</blockquote>
+                                    <blockquote>"Ainda não quero comprar um imóvel, apesar de ter vontade. A área de
+                                        tecnologia acaba proporcionando propostas para outros países."</blockquote>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="slide-content">
-                                <div class="text-content">
-                                    <h3>Título do Slide 6</h3>
-                                    <p>Texto descritivo para o sexto slide. Adapte conforme o conteúdo da sua pesquisa.</p>
+                            <div class="persona-slide-content">
+                                <div class="persona-info">
+                                    <img src="images/persona-vanessa.png" alt="Avatar de Vanessa"
+                                        class="persona-avatar">
+                                    <h3 class="persona-name">Vanessa</h3>
+                                    <p class="persona-details">27 anos - Estudante</p>
                                 </div>
-                                <div class="chart-content">
-                                    <img src="images/grafico6.svg" alt="Gráfico 6">
+                                <div class="persona-quotes">
+                                    <blockquote>"Queria sair de casa logo, porém ainda não tenho estabilidade
+                                        financeira."</blockquote>
+                                    <blockquote>"Provavelmente moraria com as minhas amigas. Morar sozinho hoje em dia é
+                                        ruim, muito pelo preço de tudo."</blockquote>
+                                    <blockquote>"Já tinha ouvido falar sobre coliving, e até tive uma amiga que morou
+                                        por um tempo (...), mas as regras eram bem rígidas."</blockquote>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-pagination"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
                 </div>
             </div>
         </section>
+
+        <section class="qualitative-preview-section">
+            <div class="container">
+                <h2>Prévia da Pesquisa Qualitativa</h2>
+                <p>Depois de refinar as necessidades e dores. A Pesquisa qualitativa mostrou com clareza as reais
+                    necessidades do nosso público. Foi possível chegar nesse resultado:</p>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <div class="container">
+                <h2>Personas</h2>
+            </div>
+            <div class="container-wide">
+                <div class="swiper gallery-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/placeholder-1.png" alt="Descrição da Imagem 1"></div>
+                        <div class="swiper-slide"><img src="images/placeholder-2.png" alt="Descrição da Imagem 2"></div>
+                        <div class="swiper-slide"><img src="images/placeholder-3.png" alt="Descrição da Imagem 3"></div>
+                        <div class="swiper-slide"><img src="images/placeholder-4.png" alt="Descrição da Imagem 4"></div>
+                        <div class="swiper-slide"><img src="images/placeholder-5.png" alt="Descrição da Imagem 5"></div>
+                        <div class="swiper-slide"><img src="images/placeholder-6.png" alt="Descrição da Imagem 6"></div>
+                        <div class="swiper-slide"><img src="images/placeholder-7.png" alt="Descrição da Imagem 7"></div>
+                        <div class="swiper-slide"><img src="images/placeholder-8.png" alt="Descrição da Imagem 8"></div>
+                        <div class="swiper-slide"><img src="images/placeholder-9.png" alt="Descrição da Imagem 9 "></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+
     </main>
-    
+
     <footer class="main-footer">
         <div class="container">
-            <p>@miguelzynich - 09/25</p>
+            <p>&copy; Miguel Zynich - 2025</p>
         </div>
     </footer>
-    
+
     <button id="darkModeToggle" class="dark-mode-button" aria-label="Alternar Tema">
-        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
-        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
         </svg>
     </button>
 
@@ -572,14 +1057,17 @@
     <script>
         const darkModeToggle = document.getElementById('darkModeToggle');
         const body = document.body;
+
         const enableDarkMode = () => {
             body.classList.add('dark-mode');
             localStorage.setItem('theme', 'dark');
         };
+
         const disableDarkMode = () => {
             body.classList.remove('dark-mode');
             localStorage.setItem('theme', 'light');
         };
+
         darkModeToggle.addEventListener('click', () => {
             if (body.classList.contains('dark-mode')) {
                 disableDarkMode();
@@ -587,9 +1075,11 @@
                 enableDarkMode();
             }
         });
+
         document.addEventListener('DOMContentLoaded', () => {
             const savedTheme = localStorage.getItem('theme');
             const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
             if (savedTheme === 'dark') {
                 enableDarkMode();
             } else if (savedTheme === 'light') {
@@ -599,17 +1089,53 @@
             }
         });
 
-        const swiper = new Swiper('.swiper', {
+        // Inicialização do Swiper para as PERSONAS
+        const personasSwiper = new Swiper('.personas-swiper', {
             loop: true,
             pagination: {
-                el: '.swiper-pagination',
+                el: '.personas-swiper .swiper-pagination',
+                clickable: true,
+            },
+        });
+
+        // Inicialização do Swiper para os GRÁFICOS
+        const chartsSwiper = new Swiper('.charts-swiper', {
+            loop: true,
+            pagination: {
+                el: '.charts-swiper .swiper-pagination',
                 clickable: true,
             },
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: '.carousel-wrapper .swiper-button-next',
+                prevEl: '.carousel-wrapper .swiper-button-prev',
             },
+        });
+
+        // Inicialização do Swiper para a GALERIA DE IMAGENS (VERSÃO COM SCROLL SIMPLES)
+        const gallerySwiper = new Swiper('.gallery-swiper', {
+            // Efeito de slide padrão
+            grabCursor: true,
+            loop: true,
+            spaceBetween: 30, // Espaço de 30px entre as imagens
+
+            // Define quantos slides são visíveis por padrão
+            slidesPerView: 1,
+
+            // Navegação
+            navigation: {
+                nextEl: '.gallery-section .swiper-button-next',
+                prevEl: '.gallery-section .swiper-button-prev',
+            },
+
+            // Paginação (bolinhas)
+            pagination: {
+                el: '.gallery-swiper .swiper-pagination',
+                clickable: true,
+            },
+
+        
         });
     </script>
 </body>
+
 </html>

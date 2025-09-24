@@ -7,7 +7,7 @@
 
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
-    <link rel="icon" type="images" sizes="16x16" href="./images/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
@@ -47,6 +47,13 @@
             --background-color: #fff;
             --light-gray-bg: #f8f8f8;
             --border-color: #ddd;
+            /* Sistema de Espaçamento */
+            --spacing-xs: 0.25rem; /* 4px */
+            --spacing-sm: 0.5rem;  /* 8px */
+            --spacing-md: 1rem;    /* 16px */
+            --spacing-lg: 1.5rem;  /* 24px */
+            --spacing-xl: 2.5rem;  /* 40px */
+            --spacing-xxl: 4rem;   /* 64px */
         }
         * {
             margin: 0;
@@ -64,7 +71,7 @@
             transition: background-color 0.3s, color 0.3s;
         }
         section {
-            padding: 60px 0;
+            padding: var(--spacing-xxl) 0;
         }
         .container {
             max-width: 1100px;
@@ -78,19 +85,18 @@
         h1 {
             font-family: 'Touche', sans-serif;
             font-weight: 700;
-            font-size: 3.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 2.3rem;
+            margin-bottom: var(--spacing-sm);
         }
         h2 {
             font-family: 'Touche', sans-serif;
             font-weight: 700;
             font-size: 2rem;
-            margin-bottom: 2rem;
+            margin-bottom: var(--spacing-xl);
             text-align: center;
         }
         .section-title {
             text-align: left;
-            margin-bottom: 2rem;
         }
 
         .btn {
@@ -116,7 +122,7 @@
         .button-group {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: var(--spacing-md);
         }
         .plus-btn {
             display: inline-flex;
@@ -142,27 +148,27 @@
         .main-header {
             background-color: var(--primary-color);
             color: white;
-            padding: 1rem 0;
+            padding: var(--spacing-md) 0;
             font-weight: bold;
         }
         .logo {
             text-align: center;
         }
         .hero-section {
-            padding: 80px 0;
+            padding: var(--spacing-xxl) 0;
         }
         .profile-picture {
             width: 220px;
             height: 220px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--spacing-lg);
         }
         .subtitle {
             font-family: 'Gilroy', sans-serif;
             font-size: 1.3rem;
             color: var(--secondary-color);
-            margin-bottom: 2rem;
+            margin-bottom: var(--spacing-xl);
         }
         .projects-section {
             background-color: #F6F6F7;
@@ -180,15 +186,15 @@
         }
         .load-more {
             text-align: center;
-            margin-top: 2rem;
+            margin-top: var(--spacing-xl);
         }
         .experience-list {
-            margin-bottom: 2.5rem;
+            margin-bottom: var(--spacing-xl);
         }
         .experience-item {
             display: grid;
             grid-template-columns: 1fr 2fr 2fr;
-            padding: 1.5rem 0;
+            padding: var(--spacing-lg) 0;
             font-family: 'Touche', sans-serif;
             font-weight: 400;
             border-bottom: 1px solid var(--border-color);
@@ -209,19 +215,19 @@
         }
         .contact-section {
             background-color: var(--background-color);
-            padding: 4rem 2rem;
+            padding: var(--spacing-xxl) 2rem;
         }
         .contact-section .container {
             background-color: var(--light-gray-bg);
             border-radius: 12px;
-            padding: 3rem 2rem;
+            padding: var(--spacing-xxl) 2rem;
             max-width: 950px;
         }
         .contact-section h2 {
             font-family: 'Touche', sans-serif;
             font-weight: 700;
             font-size: 2.8rem;
-            margin-bottom: 1rem;
+            margin-bottom: var(--spacing-md);
             color: #000;
         }
         .contact-section p {
@@ -229,7 +235,7 @@
             font-size: 1rem;
             color: var(--primary-color);
             max-width: 450px;
-            margin: 0.5rem auto 2.5rem auto;
+            margin: var(--spacing-sm) auto var(--spacing-xl) auto;
         }
         .main-footer {
             padding: 2rem 0;
@@ -321,10 +327,10 @@
 
         @media (max-width: 768px) {
             section {
-                padding: 40px 20px;
+                padding: var(--spacing-xl) 20px;
             }
             h1 {
-                font-size: 2.5rem;
+                font-size: 3.5rem;
             }
             h2 {
                 font-size: 1.8rem;
@@ -363,10 +369,10 @@
                 justify-self: center;
             }
             .contact-section {
-                padding: 40px 15px;
+                padding: var(--spacing-xl) 15px;
             }
             .contact-section .container {
-                padding: 2.5rem 1.5rem;
+                padding: var(--spacing-xl) 1.5rem;
             }
             .contact-section h2 {
                 font-size: 2.2rem;
@@ -408,7 +414,7 @@
                     <div class="project-card">
                         <a href="yuca.html">
                         <img src="images/Yuca.png" alt="Preview do Projeto Yuca">
-                            </a>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -473,7 +479,7 @@
         <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
-        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
             <line x1="12" y1="21" x2="12" y2="23"></line>
