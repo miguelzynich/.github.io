@@ -106,7 +106,7 @@
         }
 
         strong {
-            font-family: 'Touche', sans-serif;
+            font-family: 'Gilroy', sans-serif;
             font-weight: 700;
             color: var(--primary-color);
         }
@@ -123,9 +123,12 @@
         }
 
         .logo {
+            display: block;
             text-align: center;
             font-family: 'Touche', sans-serif;
             font-size: 1.5rem;
+            color: inherit;
+            text-decoration: none;
         }
 
         .back-button {
@@ -276,10 +279,9 @@
             max-height: 250px;
         }
 
-        .qualitative-preview-section h2 {
-            margin-top: 5rem;
+        .qualitative-preview-section {
+            padding-top: 60px;
         }
-
 
         .qualitative-preview-section h2,
         .qualitative-preview-section p {
@@ -287,14 +289,15 @@
         }
 
         .qualitative-preview-section p {
-            max-width: 960px;
-            text-align: left;
-            margin-left: 0, auto;
-            margin-right: auto;
+            max-width: none;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 2rem;
         }
 
         .personas-section {
             background-color: var(--light-gray-bg);
+            padding-top: 60px;
         }
 
         .personas-section h2 {
@@ -375,15 +378,158 @@
             font-size: 0.9rem;
         }
 
+        /* =============================================== */
+        /* --- SEÇÃO UI DESIGN --- */
+        /* =============================================== */
+        .ui-design-section {
+            background-color: var(--background-color);
+            /* Fundo padrão do tema */
+            color: var(--primary-color);
+            padding-top: 60px;
+        }
+
+        .ui-design-section h2 {
+            color: var(--primary-color);
+        }
+
+        .ui-design-section p {
+            color: var(--text-color-light);
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+
+        .ui-layout-wrapper {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            /* Alinha as colunas verticalmente */
+        }
+
+        /* Coluna da Esquerda (Moodboard) */
+        .moodboard-column {
+            flex: 1;
+        }
+
+        .moodboard-image-wrapper {
+            flex-grow: 1;
+        }
+
+        .moodboard-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+
+        /* Lógica para alternar imagem no dark mode */
+        .moodboard-dark {
+            display: none;
+        }
+
+        .moodboard-light {
+            display: block;
+        }
+
+        body.dark-mode .moodboard-light {
+            display: none;
+        }
+
+        body.dark-mode .moodboard-dark {
+            display: block;
+        }
+
+
+        /* Coluna da Direita (Detalhes) */
+        .ui-details-column {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .ui-quote {
+            text-align: left;
+        }
+
+        .ui-quote h4 {
+            font-family: 'Touche', sans-serif;
+            font-size: 1.5rem;
+            color: var(--text-color-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .ui-quote p {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            line-height: 1.5;
+        }
+
+        .ui-quote p strong {
+            color: var(--accent-color);
+        }
+
+        .keyword-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem 1rem;
+            font-family: 'Gilroy', sans-serif;
+            font-size: 1.1rem;
+            color: var(--text-color-light);
+        }
+
+        .ui-hero-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+
+
+        /* Estilos Dark Mode para a Seção UI */
+        body.dark-mode .ui-design-section {
+            background-color: #121212;
+            color: #f1f1f1;
+        }
+
+        body.dark-mode .ui-design-section h2 {
+            color: #fff;
+        }
+
+        body.dark-mode .ui-design-section p {
+            color: #a0a0a0;
+        }
+
+        body.dark-mode .ui-quote h4 {
+            color: #a0a0a0;
+        }
+
+        body.dark-mode .ui-quote p {
+            color: #f1f1f1;
+        }
+
+        body.dark-mode .keyword-list {
+            color: #a0a0a0;
+        }
+
+        /* Responsivo para a Seção UI */
+        @media (max-width: 992px) {
+            .ui-layout-wrapper {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
         /* CARROSSEL DE GRÁFICOS */
         .carousel-section .swiper {
-             padding-bottom: 50px;
+            padding-bottom: 50px;
         }
+
         .carousel-wrapper {
             display: flex;
             align-items: center;
             gap: 1rem;
         }
+
         .slide-content {
             display: flex;
             flex-wrap: wrap;
@@ -395,16 +541,19 @@
             align-items: center;
             min-height: 420px;
         }
+
         .slide-content .text-content {
             flex: 1;
             min-width: 300px;
         }
+
         .slide-content .text-content h3 {
             font-family: 'Touche', sans-serif;
             font-size: 1.8rem;
             margin-bottom: 1rem;
             text-align: left;
         }
+
         .slide-content .chart-content {
             flex: 1;
             display: flex;
@@ -413,14 +562,21 @@
             height: 300px;
             min-width: 300px;
         }
+
         .slide-content .chart-content img {
             width: 100%;
             height: 100%;
             object-fit: contain;
         }
-        .chart-light { display: block; }
-        .chart-dark { display: none; }
-        
+
+        .chart-light {
+            display: block;
+        }
+
+        .chart-dark {
+            display: none;
+        }
+
         .carousel-wrapper .swiper-button-next,
         .carousel-wrapper .swiper-button-prev {
             position: static;
@@ -430,6 +586,7 @@
             height: 44px;
             flex-shrink: 0;
         }
+
         .carousel-wrapper .swiper-button-next::after,
         .carousel-wrapper .swiper-button-prev::after {
             font-size: 24px;
@@ -443,34 +600,117 @@
         .gallery-section {
             padding-bottom: 80px;
         }
+
         .gallery-section h2,
         .gallery-section p {
-            text-align: center;
+            text-align: left;
         }
+
         .gallery-section p {
-            max-width: 850px;
+            max-width: 1024px;
             margin-left: auto;
             margin-right: auto;
             margin-bottom: 2.5rem;
         }
+
         .gallery-swiper {
             width: 100%;
             padding-bottom: 50px;
+            position: relative;
         }
+
         .gallery-swiper .swiper-slide {
             height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+
         .gallery-swiper .swiper-slide img {
             display: block;
             width: 100%;
             height: auto;
-            max-height: 600px; /* Altura máxima para a imagem */
-            object-fit: contain; /* Garante que a imagem inteira apareça sem cortes */
+            max-height: 600px;
+            object-fit: contain;
             border-radius: 12px;
         }
-        .gallery-section .swiper-button-next,
-        .gallery-section .swiper-button-prev {
-            color: var(--accent-color);
+
+        .gallery-swiper .swiper-button-next,
+        .gallery-swiper .swiper-button-prev {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+            transition: background-color 0.2s ease;
+            z-index: 10;
+        }
+
+        .gallery-swiper .swiper-button-next:hover,
+        .gallery-swiper .swiper-button-prev:hover {
+            background-color: white;
+        }
+
+        .gallery-swiper .swiper-button-prev {
+            left: 20px;
+        }
+
+        .gallery-swiper .swiper-button-next {
+            right: 20px;
+        }
+
+        .gallery-swiper .swiper-button-next::after,
+        .gallery-swiper .swiper-button-prev::after {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Seção do Grid de Priorização */
+        .prioritization-grid-section h2,
+        .prioritization-grid-section p {
+            text-align: left;
+            /* Garante que o título e parágrafo fiquem à esquerda */
+        }
+
+        .prioritization-grid-section p {
+            margin-bottom: 2.5rem;
+            /* Mais espaço entre o parágrafo e a imagem */
+        }
+
+        .grid-image-wrapper {
+            text-align: center;
+            /* Centraliza a imagem dentro da sua div */
+        }
+
+        .grid-image-wrapper img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Dark Mode para a imagem do Grid */
+        body.dark-mode .grid-image-wrapper img {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+            /* Sombra mais escura para o dark mode */
+        }
+
+        /* Media Queries para ajuste responsivo da nova seção */
+        @media (max-width: 768px) {
+
+            .prioritization-grid-section h2,
+            .prioritization-grid-section p {
+                text-align: center;
+                /* Centraliza em telas pequenas, se preferir */
+            }
+
+            .prioritization-grid-section p {
+                margin-bottom: 2rem;
+            }
         }
 
         /* =============================================== */
@@ -483,18 +723,23 @@
             --border-color: #444;
             --light-gray-bg: #1E1E1E;
         }
+
         body.dark-mode .main-header {
             background-color: #1E1E1E;
         }
+
         body.dark-mode strong {
             color: #fff;
         }
+
         body.dark-mode p {
             color: var(--text-color-light);
         }
+
         body.dark-mode .problem-section p {
             color: #f8f8f8;
         }
+
         body.dark-mode .research-box,
         body.dark-mode .research-item blockquote,
         body.dark-mode .slide-content,
@@ -502,16 +747,20 @@
         body.dark-mode .personas-section {
             background-color: #000;
         }
+
         body.dark-mode .persona-quotes blockquote {
             background-color: var(--light-gray-bg);
             color: var(--primary-color);
         }
+
         body.dark-mode .chart-light {
             display: none;
         }
+
         body.dark-mode .chart-dark {
             display: block;
         }
+
         body.dark-mode .gallery-swiper .swiper-slide img {
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
         }
@@ -534,26 +783,33 @@
             align-items: center;
             transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
         }
+
         .dark-mode-button:hover {
             transform: scale(1.1);
         }
+
         .dark-mode-button svg {
             width: 26px;
             height: 26px;
             stroke: currentColor;
         }
+
         .dark-mode-button .icon-sun {
             display: none;
         }
+
         .dark-mode-button .icon-moon {
             display: block;
         }
+
         body.dark-mode .dark-mode-button .icon-moon {
             display: none;
         }
+
         body.dark-mode .dark-mode-button .icon-sun {
             display: block;
         }
+
         body.dark-mode .dark-mode-button {
             background-color: var(--primary-color);
             color: var(--background-color);
@@ -567,22 +823,27 @@
             section {
                 padding: 40px 0;
             }
+
             .banner-section {
                 background-image: url('images/yuca-banner-tablet.png');
                 height: 70vh;
             }
+
             .two-column-layout,
             .desk-research-layout {
                 grid-template-columns: 1fr;
                 flex-direction: column;
                 gap: 40px;
             }
+
             h2 {
                 font-size: 30px;
             }
+
             p {
                 font-size: 17px;
             }
+
             .slide-content {
                 flex-direction: row;
                 flex-wrap: nowrap;
@@ -590,36 +851,45 @@
                 gap: 25px;
                 min-height: 380px;
             }
+
             .slide-content .text-content,
             .slide-content .chart-content {
                 flex: 1 1 50%;
                 min-width: 0;
             }
+
             .slide-content .text-content {
                 text-align: left;
             }
+
             .slide-content p {
                 font-size: 1rem;
                 text-align: left;
             }
+
             .slide-content .text-content h3 {
                 font-size: 1.5rem;
             }
+
             .slide-content .chart-content {
                 height: 260px;
             }
+
             .persona-slide-content {
                 flex-direction: column;
                 gap: 2rem;
             }
+
             .persona-info {
                 flex: none;
                 width: auto;
             }
+
             .persona-quotes {
                 flex-direction: row;
                 align-items: stretch;
             }
+
             .persona-quotes blockquote {
                 max-width: 90%;
             }
@@ -630,69 +900,90 @@
                 background-image: url('images/yuca-banner-mobile.png');
                 height: 85vh;
             }
+
             .main-header {
                 padding: 1.5rem 0;
             }
+
             section {
                 padding: 40px 20px;
             }
+
             .container,
             .container-wide {
                 padding: 0 20px;
             }
+
             h2 {
                 font-size: 28px;
                 text-align: center;
             }
+
             p {
                 font-size: 16px;
             }
+
             .research-intro-section .two-column-flex {
                 flex-direction: column;
                 text-align: center;
             }
+
             .research-intro-section h2,
             .qualitative-preview-section h2 {
                 text-align: center;
             }
+
             .qualitative-preview-section p {
                 text-align: center;
             }
+
             .tools-grid {
                 grid-template-columns: 1fr;
                 gap: 15px;
                 padding: 30px;
             }
+
             .persona-slide-content {
                 gap: 1.5rem;
                 min-height: auto;
             }
+
             .persona-quotes {
                 flex-direction: column;
             }
+
             .persona-quotes blockquote {
                 max-width: 100%;
                 min-height: auto;
             }
+
             .slide-content {
                 flex-direction: column;
                 text-align: center;
                 padding: 30px 20px;
                 gap: 30px;
             }
+
             .slide-content p {
                 text-align: center;
             }
+
             .slide-content .text-content h3 {
                 font-size: 1.6rem;
             }
+
             .slide-content .chart-content {
                 max-height: 220px;
             }
+
             .carousel-wrapper .swiper-button-next,
             .carousel-wrapper .swiper-button-prev {
                 display: none;
             }
+
+
+
+
         }
     </style>
 </head>
@@ -700,8 +991,8 @@
 <body>
     <header class="main-header">
         <div class="container">
-            <a href="index.html" class="back-button" aria-label="Voltar para a página inicial">&larr;</a>
-            <div class="logo">MZ</div>
+            <a href="index.html" class="back-button">&larr;</a>
+            <a class="logo" href="index.html">MZ</a>
         </div>
     </header>
 
@@ -721,7 +1012,8 @@
                         <h2>Processo</h2>
                         <p>Para a solução do problema foi escolhido o <strong>Design Thinking</strong>. Seguindo das
                             etapas de descobrir, definir, elaborar e entregar. No processo foi utilizado o
-                            <strong>diamante duplo</strong> para alinhar as entregas.</p>
+                            <strong>diamante duplo</strong> para alinhar as entregas.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -849,14 +1141,15 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="swiper-slide" role="group"
                                 aria-label="Dados sobre a percepção de custo de um coliving">
                                 <div class="slide-content">
                                     <div class="text-content">
                                         <h3>Quanto você acha que custa pra morar em um coliving?</h3>
                                         <p>Aqui buscamos ver a percepção de preço do Coliving. Nota 1 para
-                                            <strong>barato</strong> e nota 5 para <strong>caro</strong>.</p>
+                                            <strong>barato</strong> e nota 5 para <strong>caro</strong>.
+                                        </p>
                                     </div>
                                     <div class="chart-content">
                                         <img class="chart-light" src="images/grafico-pizza4.svg"
@@ -1005,6 +1298,13 @@
         <section class="gallery-section">
             <div class="container">
                 <h2>Personas</h2>
+                <p>
+                    Para ir além dos dados demográficos e construir uma <strong>conexão real com o usuário</strong>,
+                    elaboramos um <strong>Mapa de Empatia</strong>. A seguir, detalhamos o que nossa persona
+                    <strong>Pensa e Sente, Vê, Ouve, Fala e Faz</strong>.
+                    Este exercício foi <strong>fundamental para guiar o design</strong> de forma <strong>empática e
+                        focada na resolução de seus principais problemas</strong>.
+                </p>
             </div>
             <div class="container-wide">
                 <div class="swiper gallery-swiper">
@@ -1015,18 +1315,57 @@
                         <div class="swiper-slide"><img src="images/placeholder-4.png" alt="Descrição da Imagem 4"></div>
                         <div class="swiper-slide"><img src="images/placeholder-5.png" alt="Descrição da Imagem 5"></div>
                         <div class="swiper-slide"><img src="images/placeholder-6.png" alt="Descrição da Imagem 6"></div>
-                        <div class="swiper-slide"><img src="images/placeholder-7.png" alt="Descrição da Imagem 7"></div>
-                        <div class="swiper-slide"><img src="images/placeholder-8.png" alt="Descrição da Imagem 8"></div>
-                        <div class="swiper-slide"><img src="images/placeholder-9.png" alt="Descrição da Imagem 9 "></div>
+                        <div class="swiper-slide"><img src="images/placeholder-7.png" alt="Descrição da Imagem 6"></div>
+                        <div class="swiper-slide"><img src="images/placeholder-8.png" alt="Descrição da Imagem 6"></div>
+                        <div class="swiper-slide"><img src="images/placeholder-9.png" alt="Descrição da Imagem 6"></div>
                     </div>
                     <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
             </div>
         </section>
 
+        <section class="prioritization-grid-section">
+            <div class="container">
+                <h2>Grid de Priorização</h2>
+                <p>
+                    Após reunir uma quantidade significativa de dados e ideias, foi essencial aplicar um <strong>Grid de
+                        Priorização</strong>. Esta ferramenta nos permitiu <strong>avaliar e classificar as
+                        funcionalidades e problemas identificados</strong> com base em dois critérios principais: o
+                    <strong>impacto no usuário</strong> e a <strong>complexidade de implementação</strong>. Dessa forma,
+                    pudemos <strong>focar nos pontos mais críticos e com maior valor</strong> para o projeto, garantindo
+                    um desenvolvimento eficiente e direcionado às reais necessidades dos usuários.
+                </p>
+                <div class="grid-image-wrapper">
+                    <img src="images/prioritization-grid.png" alt="Grid de Priorização com impacto vs esforço">
+                </div>
+            </div>
+        </section>
+        <section class="ui-design-section">
+            <div class="container">
+                <h2>UI Design</h2>
+                <p>Com base na pesquisa podemos criar nossos primeiros passos em UI com os processos abaixo:</p>
+                <div class="moodboard-column">
+                    <div class="moodboard-image-wrapper"> <img class="moodboard-image moodboard-light"
+                            src="images/moodboard-light.png" alt="Moodboard do projeto (versão light)">
+                        <img class="moodboard-image moodboard-dark" src="images/moodboard-completo.png"
+                            alt="Moodboard do projeto (versão dark)">
+                    </div>
+                </div>
     </main>
+
+    <section class="grid-system-section">
+    <div class="container">
+        <h2>Estrutura e Grid Responsivo</h2>
+        <p>
+            Para garantir consistência, alinhamento e uma experiência de usuário fluida em todas as plataformas, o design foi construído sobre um <strong>sistema de grid flexível</strong>. Adotamos um layout de <strong>12 colunas para desktop</strong>, que se adapta para <strong>8 colunas em tablets</strong> e <strong>4 colunas em dispositivos móveis</strong>, assegurando que o conteúdo seja sempre organizado e legível. Todo o espaçamento foi baseado em um <strong>grid de 8pt</strong>, garantindo ritmo e harmonia visual entre os componentes.
+        </p>
+        <div class="grid-image-wrapper">
+            <img src="images/responsive-grids.png" alt="Demonstração do grid responsivo em desktops, tablets e celulares">
+        </div>
+    </div>
+</section>
 
     <footer class="main-footer">
         <div class="container">
@@ -1111,29 +1450,22 @@
             },
         });
 
-        // Inicialização do Swiper para a GALERIA DE IMAGENS (VERSÃO COM SCROLL SIMPLES)
+        // Inicialização do Swiper para a GALERIA DE IMAGENS (CORRIGIDO)
         const gallerySwiper = new Swiper('.gallery-swiper', {
-            // Efeito de slide padrão
             grabCursor: true,
             loop: true,
-            spaceBetween: 30, // Espaço de 30px entre as imagens
+            spaceBetween: 30,
+            slidesPerView: 1, // Garante 1 slide por vez em todas as telas
 
-            // Define quantos slides são visíveis por padrão
-            slidesPerView: 1,
-
-            // Navegação
             navigation: {
-                nextEl: '.gallery-section .swiper-button-next',
-                prevEl: '.gallery-section .swiper-button-prev',
+                nextEl: '.gallery-swiper .swiper-button-next',
+                prevEl: '.gallery-swiper .swiper-button-prev',
             },
 
-            // Paginação (bolinhas)
             pagination: {
                 el: '.gallery-swiper .swiper-pagination',
                 clickable: true,
             },
-
-        
         });
     </script>
 </body>
