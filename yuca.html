@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" />
 
     <style>
         /* =============================================== */
@@ -484,6 +485,51 @@
             border-radius: 12px;
         }
 
+        .lb-image {
+            max-width: 95vw !important;
+            /* vw = Largura da Viewport (área visível) */
+            max-height: 95vh !important;
+            /* vh = Altura da Viewport */
+            border-radius: 8px;
+            /* Opcional: Adiciona bordas arredondadas à imagem no lightbox */
+        }
+
+        /* Essas regras ajudam a resetar o tamanho que o Lightbox calcula via JS,
+  forçando a imagem a obedecer nossas regras de max-width e max-height.
+*/
+        .lightbox .lb-image {
+            width: auto !important;
+            height: auto !important;
+        }
+
+        .lb-outerContainer {
+            width: auto !important;
+            height: auto !important;
+        }
+
+
+        /* =============================================== */
+        /* --- SEÇÃO DE VÍDEO RESPONSIVO --- */
+        /* =============================================== */
+        .video-section .container {
+            text-align: center;
+        }
+
+        .video-section h2 {
+            width: 100%;
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            aspect-ratio: 1260 / 709;
+        }
+
 
         /* Estilos Dark Mode para a Seção UI */
         body.dark-mode .ui-design-section {
@@ -713,6 +759,352 @@
             }
         }
 
+
+        /* =============================================== */
+        /* --- SEÇÃO WIREFRAMES --- */
+        /* =============================================== */
+        .wireframes-section {
+            padding: 60px 0;
+            background-color: var(--light-gray-bg);
+            /* Ou a cor de fundo que preferir */
+        }
+
+        .wireframes-section h2,
+        .wireframes-section p {
+            text-align: left;
+        }
+
+        .wireframes-section p {
+            margin-bottom: 2.5rem;
+        }
+
+        .wireframe-gallery {
+            display: grid;
+            /* Cria um grid responsivo: tenta encaixar colunas de no mínimo 300px */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .wireframe-item {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            /* Garante que a imagem não saia das bordas arredondadas */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: var(--background-color);
+        }
+
+        .wireframe-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .wireframe-item img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        /* Estilos para o Dark Mode */
+        body.dark-mode .wireframes-section {
+            background-color: #000;
+            /* Fundo mais escuro para a seção */
+        }
+
+        body.dark-mode .wireframe-item {
+            border-color: #333;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        body.dark-mode .wireframe-item:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+        }
+
+
+        /* =============================================== */
+        /* --- SEÇÃO GRID RESPONSIVO --- */
+        /* =============================================== */
+        .grid-system-section {
+            padding-top: 60px;
+        }
+
+        .grid-system-section h2,
+        .grid-system-section p {
+            text-align: left;
+            /* Centraliza o texto introdutório */
+        }
+
+        .grid-system-section p {
+            max-width: 1200px;
+            /* Limita a largura do parágrafo para melhor legibilidade */
+            margin-right: auto;
+            margin-bottom: 3rem;
+            /* Espaço entre o texto e a imagem */
+        }
+
+        .grid-image-wrapper {
+            text-align: center;
+            /* Centraliza a imagem */
+        }
+
+        .grid-image-wrapper img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilo para a imagem no dark mode */
+        body.dark-mode .grid-image-wrapper img {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            background-color: rgba(255, 255, 255, 0.05);
+            /* Um leve brilho para imagens com fundo transparente */
+        }
+
+
+        /* =============================================== */
+        /* --- SEÇÃO STYLE GUIDE --- */
+        /* =============================================== */
+        .style-guide-section {
+            background-color: var(--light-gray-bg);
+            padding: 40px 0;
+        }
+
+        body.dark-mode .style-guide-section {
+            background-color: #000;
+        }
+
+        .style-guide-grid {
+            display: grid;
+            grid-template-columns: repeat(3fr, minmax(360px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .guide-item {
+            background-color: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        body.dark-mode .guide-item {
+            background-color: var(--light-gray-bg);
+        }
+
+        .guide-item h3 {
+            font-family: 'Touche', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .typography-guide .font-family-name {
+            font-family: 'Gilroy', sans-serif;
+            font-size: 2.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .type-scale p {
+            font-family: 'Gilroy', sans-serif;
+            font-weight: bold;
+            color: rgb(0, 0, 0);
+            margin-bottom: 0.8rem !important;
+            line-height: 1.2;
+        }
+
+        .type-scale {
+            display: grid;
+            gap: 1.6rem;
+            align-items: left;
+        }
+
+
+        .type-scale .h1-style {
+            font-size: 60px;
+        }
+
+        .type-scale .h2-style {
+            font-size: 48px;
+        }
+
+        .type-scale .h3-style {
+            font-size: 36px;
+        }
+
+        .type-scale .h4-style {
+            font-size: 24px;
+        }
+
+        .color-palette {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .color-swatch {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .color-swatch span {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 4px;
+            border: 0px solid var(--border-color);
+        }
+
+        .color-swatch code {
+            font-family: 'Gilroy';
+
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .color-swatch::after {
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .color-swatch.copied::after {
+            opacity: 1;
+        }
+
+        /* 3. Botões */
+        .button-showcase {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem;
+            padding: 2rem;
+        }
+
+        .sg-btn {
+            border: none;
+            border-radius: 6px;
+            padding: 12px 20px;
+            font-size: 0.95rem;
+            line-height: 1;
+            cursor: pointer;
+            color: #fff;
+            font-family: 'Gilroy', sans-serif;
+            font-weight: bold;
+            transition: transform 0.2s ease, filter 0.2s ease;
+            white-space: nowrap;
+            width: 240px;
+        }
+
+        .button-showcase .sg-btn {
+            min-width: auto;
+        }
+
+        /* Cores Base dos Botões */
+        .sg-btn.btn-green {
+            background-color: #09AD70;
+        }
+
+        .sg-btn.btn-purple {
+            background-color: #742794;
+        }
+
+        .sg-btn.btn-orange {
+            background-color: #FF650E;
+        }
+
+        /* Cores Específicas para o HOVER */
+        .sg-btn.btn-green:hover {
+            background-color: #057D51;
+        }
+
+        .sg-btn.btn-purple:hover {
+            background-color: #4B1761;
+        }
+
+        .sg-btn.btn-orange:hover {
+            background-color: #C14B08;
+        }
+
+        .icon-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            row-gap: 2.5rem;
+            column-gap: 1.5rem;
+            justify-content: space-between;
+        }
+
+        .icon-wrapper {
+            /* 1. Transforma o wrapper em um container de posicionamento */
+            position: relative;
+            width: 28px;
+            height: 28px;
+        }
+
+        .icon-wrapper img {
+            /* 2. Coloca AMBAS as imagens na mesma posição, uma sobre a outra */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            /* 3. Adiciona uma transição suave para a troca */
+            transition: opacity 0.2s ease-in-out;
+        }
+
+        /* 4. Lógica de troca com OPACIDADE em vez de display */
+        .icon-light {
+            opacity: 1;
+            /* Visível */
+        }
+
+        .icon-dark {
+            opacity: 0;
+            /* Invisível */
+        }
+
+        body.dark-mode .icon-light {
+            opacity: 0;
+            /* Invisível no dark mode */
+        }
+
+        body.dark-mode .icon-dark {
+            opacity: 1;
+            /* Visível no dark mode */
+        }
+
+        /* =============================================== */
+        /* --- AJUSTE DE CENTRALIZAÇÃO DO VÍDEO --- */
+        /* =============================================== */
+
+        .video-section .container {
+            /* Centraliza todos os textos dentro do container desta seção */
+            text-align: center;
+        }
+
+        .video-section h2 {
+            /* Garante que o título use 100% da largura para se centralizar corretamente */
+            width: 100%;
+        }
+
         /* =============================================== */
         /* --- DARK MODE --- */
         /* =============================================== */
@@ -893,6 +1285,7 @@
             .persona-quotes blockquote {
                 max-width: 90%;
             }
+
         }
 
         @media (max-width: 768px) {
@@ -980,13 +1373,11 @@
             .carousel-wrapper .swiper-button-prev {
                 display: none;
             }
-
-
-
-
         }
     </style>
 </head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" />
+
 
 <body>
     <header class="main-header">
@@ -1356,118 +1747,364 @@
     </main>
 
     <section class="grid-system-section">
-    <div class="container">
-        <h2>Estrutura e Grid Responsivo</h2>
-        <p>
-            Para garantir consistência, alinhamento e uma experiência de usuário fluida em todas as plataformas, o design foi construído sobre um <strong>sistema de grid flexível</strong>. Adotamos um layout de <strong>12 colunas para desktop</strong>, que se adapta para <strong>8 colunas em tablets</strong> e <strong>4 colunas em dispositivos móveis</strong>, assegurando que o conteúdo seja sempre organizado e legível. Todo o espaçamento foi baseado em um <strong>grid de 8pt</strong>, garantindo ritmo e harmonia visual entre os componentes.
-        </p>
-        <div class="grid-image-wrapper">
-            <img src="images/responsive-grids.png" alt="Demonstração do grid responsivo em desktops, tablets e celulares">
-        </div>
-    </div>
-</section>
-
-    <footer class="main-footer">
         <div class="container">
-            <p>&copy; Miguel Zynich - 2025</p>
+            <h2>Estrutura e Grid Responsivo</h2>
+            <p>
+                Para garantir consistência, alinhamento e uma experiência de usuário fluida em todas as plataformas, o
+                design foi construído sobre um <strong>sistema de grid flexível</strong>. Adotamos um layout de
+                <strong>12 colunas para desktop</strong>, que se adapta para <strong>8 colunas em tablets</strong> e
+                <strong>4 colunas em dispositivos móveis</strong>, assegurando que o conteúdo seja sempre organizado e
+                legível. Todo o espaçamento foi baseado em um <strong>grid de 8pt</strong>, garantindo ritmo e harmonia
+                visual entre os componentes.
+            </p>
+            <div class="grid-image-wrapper">
+                <img src="images/responsive-grids.png"
+                    alt="Demonstração do grid responsivo em desktops, tablets e celulares">
+            </div>
         </div>
-    </footer>
+    </section>
 
-    <button id="darkModeToggle" class="dark-mode-button" aria-label="Alternar Tema">
-        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
-        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-        </svg>
-    </button>
+    <section class="wireframes-section">
+        <div class="container">
+            <h2>Wireframes em Baixa Fidelidade</h2>
+            <p>
+                O processo começou com a criação de wireframes de baixa fidelidade para estruturar as informações e
+                definir o fluxo de navegação principal. O foco nesta etapa foi puramente na funcionalidade e na
+                hierarquia do conteúdo, sem distrações visuais.
+            </p>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        const body = document.body;
+            <div class="wireframe-gallery">
+                <a href="images/wireframe-completo-1.png" data-lightbox="wireframes"
+                    data-title="Wireframe da Tela Inicial: Visão geral da busca de apartamentos.">
+                    <div class="wireframe-item">
+                        <img src="images/wireframe-thumb-1.png" alt="Wireframe em baixa fidelidade da página inicial"
+                            loading="lazy">
+                    </div>
+                </a>
 
-        const enableDarkMode = () => {
-            body.classList.add('dark-mode');
-            localStorage.setItem('theme', 'dark');
-        };
+                <a href="images/wireframe-completo-2.png" data-lightbox="wireframes"
+                    data-title="Wireframe da Página de Detalhes: Informações, fotos e mapa do apartamento.">
+                    <div class="wireframe-item">
+                        <img src="images/wireframe-thumb-2.png"
+                            alt="Wireframe em baixa fidelidade da página de detalhes do imóvel" loading="lazy">
+                    </div>
+                </a>
 
-        const disableDarkMode = () => {
-            body.classList.remove('dark-mode');
-            localStorage.setItem('theme', 'light');
-        };
+                <a href="images/wireframe-completo-3.png" data-lightbox="wireframes"
+                    data-title="Wireframe da Tela de Pesquisa: Filtros avançados e resultados em lista.">
+                    <div class="wireframe-item">
+                        <img src="images/wireframe-thumb-3.png"
+                            alt="Wireframe em baixa fidelidade da tela de busca com filtros" loading="lazy">
+                    </div>
+                </a>
 
-        darkModeToggle.addEventListener('click', () => {
-            if (body.classList.contains('dark-mode')) {
-                disableDarkMode();
-            } else {
-                enableDarkMode();
-            }
-        });
+            </div>
+        </div>
+    </section>
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedTheme = localStorage.getItem('theme');
-            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-            if (savedTheme === 'dark') {
-                enableDarkMode();
-            } else if (savedTheme === 'light') {
-                disableDarkMode();
-            } else if (prefersDark) {
-                enableDarkMode();
-            }
-        });
+    <section class="style-guide-section">
+        <div class="container">
+            <h2>Style Guide</h2>
+            <p>
+                Abaixo estão os principais componentes visuais que definem a identidade do projeto,
+                construídos com código. Passe o mouse sobre os botões, para ver os efeitos.
+            </p>
+            <div class="style-guide-grid">
+                <div class="guide-item typography-guide guide-item-wide">
+                    <h3>Tipografia</h3>
+                    <p class="font-family-name">Gilroy</p>
+                    <div class="type-scale">
+                        <p class="h1-style">Headline 1 - 60px</p>
+                        <p class="h2-style">Headline 2 - 48px</p>
+                        <p class="h3-style">Headline 3 - 36px</p>
+                        <p class="h4-style">Headline 4 - 24px</p>
+                    </div>
+                </div>
 
-        // Inicialização do Swiper para as PERSONAS
-        const personasSwiper = new Swiper('.personas-swiper', {
-            loop: true,
-            pagination: {
-                el: '.personas-swiper .swiper-pagination',
-                clickable: true,
-            },
-        });
+                <div class="guide-item colors-guide">
+                    <h3>Cores</h3>
+                    <div class="color-palette">
+                        <div class="color-swatch" data-color="#001716">
+                            <span style="background-color: #001716;"></span>
+                            <code>#001716</code>
+                        </div>
+                        <div class="color-swatch" data-color="#09AD70">
+                            <span style="background-color: #09AD70;"></span>
+                            <code>#09AD70</code>
+                        </div>
+                        <div class="color-swatch" data-color="#742794">
+                            <span style="background-color: #742794;"></span>
+                            <code>#742794</code>
+                        </div>
+                        <div class="color-swatch" data-color="#FF650E">
+                            <span style="background-color: #FF650E;"></span>
+                            <code>#FF650E</code>
+                        </div>
+                    </div>
+                </div>
 
-        // Inicialização do Swiper para os GRÁFICOS
-        const chartsSwiper = new Swiper('.charts-swiper', {
-            loop: true,
-            pagination: {
-                el: '.charts-swiper .swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.carousel-wrapper .swiper-button-next',
-                prevEl: '.carousel-wrapper .swiper-button-prev',
-            },
-        });
+                <div class="guide-item buttons-guide guide-item-wide">
+                    <h3>Botões</h3>
+                    <div class="button-showcase">
+                        <button class="sg-btn btn-green">Saiba mais</button>
+                        <button class="sg-btn btn-green">Alugue agora</button>
+                        <button class="sg-btn btn-green">Mais opções</button>
+                        <button class="sg-btn btn-purple">Saiba mais</button>
+                        <button class="sg-btn btn-purple">Alugue agora</button>
+                        <button class="sg-btn btn-purple">Mais opções</button>
+                        <button class="sg-btn btn-orange">Saiba mais</button>
+                        <button class="sg-btn btn-orange">Alugue agora</button>
+                        <button class="sg-btn btn-orange">Mais opções</button>
+                    </div>
+                </div>
 
-        // Inicialização do Swiper para a GALERIA DE IMAGENS (CORRIGIDO)
-        const gallerySwiper = new Swiper('.gallery-swiper', {
-            grabCursor: true,
-            loop: true,
-            spaceBetween: 30,
-            slidesPerView: 1, // Garante 1 slide por vez em todas as telas
+                <div class="guide-item icons-guide">
+                    <h3>Ícones</h3>
+                    <div class="icon-showcase">
 
-            navigation: {
-                nextEl: '.gallery-swiper .swiper-button-next',
-                prevEl: '.gallery-swiper .swiper-button-prev',
-            },
+                        <div class="icon-wrapper">
+                            <img src="images/icons/search-light.svg" alt="Ícone de Busca" class="icon-light">
+                            <img src="images/icons/search-dark.svg" alt="Ícone de Busca" class="icon-dark">
+                        </div>
+                        <div class="icon-wrapper">
+                            <img src="images/icons/bed-light.svg" alt="Ícone de Cama" class="icon-light">
+                            <img src="images/icons/bed-dark.svg" alt="Ícone de Cama" class="icon-dark">
+                        </div>
+                        <div class="icon-wrapper">
+                            <img src="images/icons/shower-light.svg" alt="Ícone de Chuveiro" class="icon-light">
+                            <img src="images/icons/shower-dark.svg" alt="Ícone de Chuveiro" class="icon-dark">
+                        </div>
+                        <div class="icon-wrapper">
+                            <img src="images/icons/area-light.svg" alt="Ícone de Área" class="icon-light">
+                            <img src="images/icons/area-dark.svg" alt="Ícone de Área" class="icon-dark">
+                        </div>
+                        <div class="icon-wrapper">
+                            <img src="images/icons/pet-light.svg" alt="Ícone de Pet" class="icon-light">
+                            <img src="images/icons/pet-dark.svg" alt="Ícone de Pet" class="icon-dark">
+                        </div>
+                        <div class="icon-wrapper">
+                            <img src="images/icons/gps-light.svg" alt="Ícone de Localização" class="icon-light">
+                            <img src="images/icons/gps-dark.svg" alt="Ícone de Localização" class="icon-dark">
+                        </div>
+                        <div class="icon-wrapper">
+                            <img src="images/icons/heart-light.svg" alt="Ícone de Coração" class="icon-light">
+                            <img src="images/icons/heart-dark.svg" alt="Ícone de Coração" class="icon-dark">
+                        </div>
+                        <div class="icon-wrapper">
+                            <img src="images/icons/share-light.svg" alt="Ícone de Compartilhar" class="icon-light">
+                            <img src="images/icons/share-dark.svg" alt="Ícone de Compartilhar" class="icon-dark">
+                        </div>
+                        <div class="icon-wrapper">
+                            <img src="images/icons/instagram-light.svg" alt="Ícone do Instagram" class="icon-light">
+                            <img src="images/icons/instagram-dark.svg" alt="Ícone do Instagram" class="icon-dark">
+                        </div>
+                        <div class="icon-wrapper">
+                            <img src="images/icons/facebook-light.svg" alt="Ícone do Facebook" class="icon-light">
+                            <img src="images/icons/facebook-dark.svg" alt="Ícone do Facebook" class="icon-dark">
+                        </div>
+                        <div class="icon-wrapper">
+                            <img src="images/icons/linkedin-light.svg" alt="Ícone do LinkedIn" class="icon-light">
+                            <img src="images/icons/linkedin-dark.svg" alt="Ícone do LinkedIn" class="icon-dark">
+                        </div>
+                        <div class="icon-wrapper">
+                            <img src="images/icons/whatsapp-light.svg" alt="Ícone do WhatsApp" class="icon-light">
+                            <img src="images/icons/whatsapp-dark.svg" alt="Ícone do WhatsApp" class="icon-dark">
+                        </div>
 
-            pagination: {
-                el: '.gallery-swiper .swiper-pagination',
-                clickable: true,
-            },
-        });
-    </script>
+                    </div>
+                </div>
+            </div>
+
+
+                <section class="wireframes-section">
+        <div class="container">
+            <h2>Wireframes em Alta Fidelidade</h2>
+            <p>
+               Evoluindo da estrutura de baixa fidelidade, os wireframes de alta fidelidade aplicam a camada visual completa do projeto. Aqui, cores, fontes, ícones e componentes são integrados para simular com precisão a experiência final do usuário, validando o design e preparando para o desenvolvimento.
+            </p>
+
+            <div class="wireframe-gallery">
+                <a href="images/wireframe-completo-1.png" data-lightbox="wireframes"
+                    data-title="Wireframe da Tela Inicial: Visão geral da busca de apartamentos.">
+                    <div class="wireframe-item">
+                        <img src="images/wireframe-thumb-1.png" alt="Wireframe em baixa fidelidade da página inicial"
+                            loading="lazy">
+                    </div>
+                </a>
+
+                <a href="images/wireframe-completo-2.png" data-lightbox="wireframes"
+                    data-title="Wireframe da Página de Detalhes: Informações, fotos e mapa do apartamento.">
+                    <div class="wireframe-item">
+                        <img src="images/wireframe-thumb-2.png"
+                            alt="Wireframe em baixa fidelidade da página de detalhes do imóvel" loading="lazy">
+                    </div>
+                </a>
+
+                <a href="images/wireframe-completo-3.png" data-lightbox="wireframes"
+                    data-title="Wireframe da Tela de Pesquisa: Filtros avançados e resultados em lista.">
+                    <div class="wireframe-item">
+                        <img src="images/wireframe-thumb-3.png"
+                            alt="Wireframe em baixa fidelidade da tela de busca com filtros" loading="lazy">
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+
+
+            <section class="video-section">
+                <div class="container">
+                    <h2>Preview em Vídeo</h2>
+                    <div class="video-container">
+                        <iframe
+                            src="https://player.vimeo.com/video/809893184?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                            frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" title="Yuca">
+                        </iframe>
+                    </div>
+                </div>
+            </section>
+
+            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="960" height="760" src="https://embed.figma.com/design/QxdVEkUo0e2WhmXJSFAxxA/Yuca?node-id=1-20&embed-host=share" allowfullscreen></iframe>
+
+
+            
+
+    
+
+            <footer class="main-footer">
+                <div class="container">
+                    <p>&copy; Miguel Zynich - 2025</p>
+                </div>
+            </footer>
+
+            <button id="darkModeToggle" class="dark-mode-button" aria-label="Alternar Tema">
+                <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            </button>
+
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+            <script>
+                const darkModeToggle = document.getElementById('darkModeToggle');
+                const body = document.body;
+
+                const enableDarkMode = () => {
+                    body.classList.add('dark-mode');
+                    localStorage.setItem('theme', 'dark');
+                };
+
+                const disableDarkMode = () => {
+                    body.classList.remove('dark-mode');
+                    localStorage.setItem('theme', 'light');
+                };
+
+                darkModeToggle.addEventListener('click', () => {
+                    if (body.classList.contains('dark-mode')) {
+                        disableDarkMode();
+                    } else {
+                        enableDarkMode();
+                    }
+                });
+
+                document.addEventListener('DOMContentLoaded', () => {
+                    const savedTheme = localStorage.getItem('theme');
+                    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+                    if (savedTheme === 'dark') {
+                        enableDarkMode();
+                    } else if (savedTheme === 'light') {
+                        disableDarkMode();
+                    } else if (prefersDark) {
+                        enableDarkMode();
+                    }
+                });
+
+                // Inicialização do Swiper para as PERSONAS
+                const personasSwiper = new Swiper('.personas-swiper', {
+                    loop: true,
+                    pagination: {
+                        el: '.personas-swiper .swiper-pagination',
+                        clickable: true,
+                    },
+                });
+
+                // Inicialização do Swiper para os GRÁFICOS
+                const chartsSwiper = new Swiper('.charts-swiper', {
+                    loop: true,
+                    pagination: {
+                        el: '.charts-swiper .swiper-pagination',
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: '.carousel-wrapper .swiper-button-next',
+                        prevEl: '.carousel-wrapper .swiper-button-prev',
+                    },
+                });
+
+                // Inicialização do Swiper para a GALERIA DE IMAGENS (CORRIGIDO)
+                const gallerySwiper = new Swiper('.gallery-swiper', {
+                    grabCursor: true,
+                    loop: true,
+                    spaceBetween: 30,
+                    slidesPerView: 1, // Garante 1 slide por vez em todas as telas
+
+                    navigation: {
+                        nextEl: '.gallery-swiper .swiper-button-next',
+                        prevEl: '.gallery-swiper .swiper-button-prev',
+                    },
+
+                    pagination: {
+                        el: '.gallery-swiper .swiper-pagination',
+                        clickable: true,
+                    },
+                });
+
+                lightbox.option({
+                    'fitImagesInViewport': false
+                });
+
+
+                /* --- INTERATIVIDADE DO STYLE GUIDE --- */
+                document.addEventListener('DOMContentLoaded', () => {
+                    const colorSwatches = document.querySelectorAll('.color-swatch');
+
+                    colorSwatches.forEach(swatch => {
+                        swatch.addEventListener('click', () => {
+                            const color = swatch.dataset.color;
+                            navigator.clipboard.writeText(color).then(() => {
+                                // Adiciona a classe 'copied' para mostrar o tooltip
+                                swatch.classList.add('copied');
+
+                                // Remove a classe após 1.5 segundos
+                                setTimeout(() => {
+                                    swatch.classList.remove('copied');
+                                }, 1500);
+                            }).catch(err => {
+                                console.error('Falha ao copiar cor: ', err);
+                            });
+                        });
+                    });
+                });
+
+            </script>
 </body>
 
 </html>
