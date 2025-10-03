@@ -18,6 +18,8 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 
     <style>
         /* =============================================== */
@@ -122,6 +124,48 @@
             font-weight: bold;
             position: relative;
         }
+
+        .back-button {
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-5%);
+
+            color: #fff;
+
+            background-color: transparent;
+
+            border: none;
+
+            text-decoration: none;
+
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+
+            transition: color 0.2s ease-in-out;
+        }
+
+        .back-button:hover {
+            color: var(--accent-color, #ff6600);
+
+            transform: translateY(-50%);
+        }
+
+        .back-button .fas.fa-arrow-left {
+            display: block;
+        }
+
+        /* Opcional: Para telas menores, você pode ajustar o tamanho ou a posição */
+        @media (max-width: 768px) {
+            .back-button {
+                top: 15px;
+                left: 15px;
+                font-size: 20px;
+                padding: 8px;
+            }
+        }
+
 
         .logo {
             display: block;
@@ -379,6 +423,70 @@
             font-size: 0.9rem;
         }
 
+
+        /* =================================================================== */
+        /* --- CSS Customizado para o Swiper do Mapa de Empatia/Jornada --- */
+        /* =================================================================== */
+
+        .journey-swiper {
+            position: relative;
+        }
+
+        .journey-swiper .swiper-slide {
+            width: auto;
+        }
+
+        .journey-swiper .swiper-slide img {
+            max-width: none;
+        }
+
+        @media (min-width: 768px) {
+
+
+            .journey-swiper .swiper-button-next,
+            .journey-swiper .swiper-button-prev {
+                width: 44px;
+                height: 44px;
+                background-color: rgba(255, 255, 255, 0.9);
+                border-radius: 50%;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+                transition: background-color 0.3s ease, transform 0.3s ease;
+            }
+
+            .journey-swiper .swiper-button-next::after,
+            .journey-swiper .swiper-button-prev::after {
+                font-size: 18px;
+                font-weight: 700;
+                color: #1a1a1a;
+            }
+
+            .journey-swiper .swiper-button-next:hover,
+            .journey-swiper .swiper-button-prev:hover {
+                background-color: #ffffff;
+                transform: scale(1.1);
+            }
+
+            .journey-swiper {
+                padding: 0 40px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .journey-swiper .swiper-button-prev {
+                left: -22px;
+            }
+
+            .journey-swiper .swiper-button-next {
+                right: -22px;
+            }
+
+            .journey-swiper {
+                padding: 0 40px;
+            }
+        }
+
+
+
         /* =============================================== */
         /* --- SEÇÃO UI DESIGN --- */
         /* =============================================== */
@@ -487,11 +595,8 @@
 
         .lb-image {
             max-width: 95vw !important;
-            /* vw = Largura da Viewport (área visível) */
             max-height: 95vh !important;
-            /* vh = Altura da Viewport */
             border-radius: 8px;
-            /* Opcional: Adiciona bordas arredondadas à imagem no lightbox */
         }
 
         /* Essas regras ajudam a resetar o tamanho que o Lightbox calcula via JS,
@@ -739,6 +844,27 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
+        .figma-embed-container {
+            display: flex;
+            justify-content: center;
+            /* Centraliza o iframe horizontalmente */
+            padding: 24px 16px;
+            /* Adiciona um respiro nas laterais em telas menores */
+            width: 100%;
+        }
+
+        .figma-embed-container iframe {
+            width: 100%;
+            /* O iframe ocupa 100% da largura do container */
+            max-width: 960px;
+            /* Define a largura máxima original do iframe */
+            aspect-ratio: 960 / 760;
+            /* Mantém a proporção original (largura / altura) */
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            /* Opcional: adiciona bordas arredondadas */
+        }
+
         /* Dark Mode para a imagem do Grid */
         body.dark-mode .grid-image-wrapper img {
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
@@ -780,8 +906,7 @@
 
         .wireframe-gallery {
             display: grid;
-            /* Cria um grid responsivo: tenta encaixar colunas de no mínimo 300px */
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
         }
 
@@ -789,7 +914,6 @@
             border: 1px solid var(--border-color);
             border-radius: 12px;
             overflow: hidden;
-            /* Garante que a imagem não saia das bordas arredondadas */
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             background-color: var(--background-color);
@@ -806,10 +930,8 @@
             height: auto;
         }
 
-        /* Estilos para o Dark Mode */
         body.dark-mode .wireframes-section {
             background-color: #000;
-            /* Fundo mais escuro para a seção */
         }
 
         body.dark-mode .wireframe-item {
@@ -989,7 +1111,7 @@
 
         /* 3. Botões */
         .button-showcase {
-            display: grid;
+            display: flex;
             grid-template-columns: repeat(3, 1fr);
             flex-wrap: wrap;
             align-items: center;
@@ -1089,6 +1211,115 @@
         body.dark-mode .icon-dark {
             opacity: 1;
             /* Visível no dark mode */
+        }
+
+        /* ============================================= */
+        /* --- ESTILOS RESPONSIVOS (MEDIA QUERIES) --- */
+        /* ============================================= */
+
+        /* Base para telas pequenas (Mobile First)
+   ------------------------------------------ */
+        .style-guide-grid,
+        .wireframe-gallery {
+            display: flex;
+            flex-direction: column;
+            /* Empilha os itens verticalmente */
+            gap: 24px;
+            /* Espaçamento entre os itens */
+        }
+
+        /* Ajusta o tamanho da fonte para melhor leitura em telas menores */
+        .type-scale .h1-style {
+            font-size: 40px;
+        }
+
+        .type-scale .h2-style {
+            font-size: 32px;
+        }
+
+        .type-scale .h3-style {
+            font-size: 28px;
+        }
+
+
+        /* Para Tablets (telas a partir de 768px de largura)
+   ------------------------------------------------- */
+        @media (min-width: 768px) {
+            .style-guide-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                /* Cria um grid de 2 colunas */
+            }
+
+            /* Faz os itens marcados como 'wide' ocuparem as duas colunas */
+            .guide-item-wide {
+                grid-column: span 2;
+            }
+
+            .wireframe-gallery {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                /* Galeria com 2 colunas */
+            }
+
+            /* Reajusta a fonte para tablets */
+            .type-scale .h1-style {
+                font-size: 50px;
+            }
+
+            .type-scale .h2-style {
+                font-size: 40px;
+            }
+        }
+
+
+        /* Para Desktops (telas a partir de 1024px de largura)
+   -------------------------------------------------- */
+        @media (min-width: 1024px) {
+            .style-guide-grid {
+                /* Layout final para desktop */
+                grid-template-columns: 2fr 1fr;
+                /* Uma coluna mais larga e outra mais estreita */
+                grid-template-areas:
+                    "typography colors"
+                    "buttons buttons"
+                    "icons icons";
+            }
+
+            /* Mapeia cada item do grid para sua área designada */
+            .typography-guide {
+                grid-area: typography;
+            }
+
+            .colors-guide {
+                grid-area: colors;
+            }
+
+            .buttons-guide {
+                grid-area: buttons;
+            }
+
+            .icons-guide {
+                grid-area: icons;
+            }
+
+            .wireframe-gallery {
+                grid-template-columns: repeat(3, 1fr);
+                /* Galeria com 3 colunas */
+            }
+
+            /* Restaura o tamanho original da fonte para desktop */
+            .type-scale .h1-style {
+                font-size: 60px;
+            }
+
+            .type-scale .h2-style {
+                font-size: 48px;
+            }
+
+            .type-scale .h3-style {
+                font-size: 36px;
+            }
         }
 
         /* =============================================== */
@@ -1208,9 +1439,43 @@
             border: 2px solid var(--background-color);
         }
 
+
+        .video-container {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            /* Força o container a manter a proporção 16:9 */
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            /* O iframe ocupa 100% do container que agora é responsivo */
+        }
+
         /* =============================================== */
         /* --- RESPONSIVO --- */
         /* =============================================== */
+
+        @media (max-width: 1023px) {
+            /* Unificando para 1023px como padrão */
+
+            .carousel-wrapper .swiper-button-prev,
+            .carousel-wrapper .swiper-button-next {
+                display: none;
+            }
+
+            .personas-swiper .swiper-button-next,
+            .personas-swiper .swiper-button-prev {
+                display: none;
+            }
+
+            /* Regra movida para dentro do @media query */
+            .gallery-swiper .swiper-button-next,
+            .gallery-swiper .swiper-button-prev {
+                display: none;
+            }
+        }
+
         @media (max-width: 1024px) {
             section {
                 padding: 40px 0;
@@ -1291,7 +1556,7 @@
         @media (max-width: 768px) {
             .banner-section {
                 background-image: url('images/yuca-banner-mobile.png');
-                height: 85vh;
+                height: 65vh;
             }
 
             .main-header {
@@ -1299,7 +1564,7 @@
             }
 
             section {
-                padding: 40px 20px;
+                padding: 30px 20px;
             }
 
             .container,
@@ -1382,7 +1647,8 @@
 <body>
     <header class="main-header">
         <div class="container">
-            <a href="index.html" class="back-button">&larr;</a>
+            <button class="back-button" aria-label="Voltar para a página anterior">
+                <i class="fas fa-arrow-left"></i></button>
             <a class="logo" href="index.html">MZ</a>
         </div>
     </header>
@@ -1615,6 +1881,7 @@
                 <h2>Proto-Personas</h2>
                 <div class="swiper personas-swiper">
                     <div class="swiper-wrapper">
+
                         <div class="swiper-slide">
                             <div class="persona-slide-content">
                                 <div class="persona-info">
@@ -1632,6 +1899,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="swiper-slide">
                             <div class="persona-slide-content">
                                 <div class="persona-info">
@@ -1654,6 +1922,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="swiper-slide">
                             <div class="persona-slide-content">
                                 <div class="persona-info">
@@ -1672,8 +1941,12 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                     <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+
                 </div>
             </div>
         </section>
@@ -1917,44 +2190,44 @@
             </div>
 
 
-                <section class="wireframes-section">
-        <div class="container">
-            <h2>Wireframes em Alta Fidelidade</h2>
-            <p>
-               Evoluindo da estrutura de baixa fidelidade, os wireframes de alta fidelidade aplicam a camada visual completa do projeto. Aqui, cores, fontes, ícones e componentes são integrados para simular com precisão a experiência final do usuário, validando o design e preparando para o desenvolvimento.
-            </p>
+            <section class="wireframes-section">
+                <div class="container">
+                    <h2>Wireframes em Alta Fidelidade</h2>
+                    <p>
+                        Evoluindo da estrutura de baixa fidelidade, os wireframes de alta fidelidade aplicam a camada
+                        visual completa do projeto. Aqui, cores, fontes, ícones e componentes são integrados para
+                        simular com precisão a experiência final do usuário, validando o design e preparando para o
+                        desenvolvimento.
+                    </p>
 
-            <div class="wireframe-gallery">
-                <a href="images/wireframe-completo-1.png" data-lightbox="wireframes"
-                    data-title="Wireframe da Tela Inicial: Visão geral da busca de apartamentos.">
-                    <div class="wireframe-item">
-                        <img src="images/wireframe-thumb-1.png" alt="Wireframe em baixa fidelidade da página inicial"
-                            loading="lazy">
+                    <div class="wireframe-gallery">
+                        <a href="images/wireframe-alta-1.png" data-lightbox="wireframes"
+                            data-title="Wireframe da Tela Inicial: Visão geral da busca de apartamentos.">
+                            <div class="wireframe-item">
+                                <img src="images/wireframe-thumb-alta-1.png"
+                                    alt="Wireframe em alta fidelidade da página inicial" loading="lazy">
+                            </div>
+                        </a>
+
+                        <a href="images/wireframe-completo-2.png" data-lightbox="wireframes"
+                            data-title="Wireframe da Página de Detalhes: Informações, fotos e mapa do apartamento.">
+                            <div class="wireframe-item">
+                                <img src="images/wireframe-thumb-alta-2.png"
+                                    alt="Wireframe em baixa fidelidade da página de detalhes do imóvel" loading="lazy">
+                            </div>
+                        </a>
+
+                        <a href="images/wireframe-completo-3.png" data-lightbox="wireframes"
+                            data-title="Wireframe da Tela de Pesquisa: Filtros avançados e resultados em lista.">
+                            <div class="wireframe-item">
+                                <img src="images/wireframe-thumb-alta-3.png"
+                                    alt="Wireframe em baixa fidelidade da tela de busca com filtros" loading="lazy">
+                            </div>
+                        </a>
+
                     </div>
-                </a>
-
-                <a href="images/wireframe-completo-2.png" data-lightbox="wireframes"
-                    data-title="Wireframe da Página de Detalhes: Informações, fotos e mapa do apartamento.">
-                    <div class="wireframe-item">
-                        <img src="images/wireframe-thumb-2.png"
-                            alt="Wireframe em baixa fidelidade da página de detalhes do imóvel" loading="lazy">
-                    </div>
-                </a>
-
-                <a href="images/wireframe-completo-3.png" data-lightbox="wireframes"
-                    data-title="Wireframe da Tela de Pesquisa: Filtros avançados e resultados em lista.">
-                    <div class="wireframe-item">
-                        <img src="images/wireframe-thumb-3.png"
-                            alt="Wireframe em baixa fidelidade da tela de busca com filtros" loading="lazy">
-                    </div>
-                </a>
-
-            </div>
-        </div>
-    </section>
-
-
-
+                </div>
+            </section>
             <section class="video-section">
                 <div class="container">
                     <h2>Preview em Vídeo</h2>
@@ -1969,13 +2242,11 @@
                 </div>
             </section>
 
-            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="960" height="760" src="https://embed.figma.com/design/QxdVEkUo0e2WhmXJSFAxxA/Yuca?node-id=1-20&embed-host=share" allowfullscreen></iframe>
-
-
-            
-
-    
-
+            <div class="figma-embed-container">
+                <iframe src="https://embed.figma.com/design/QxdVEkUo0e2WhmXJSFAxxA/Yuca?node-id=1-20&embed-host=share"
+                    allowfullscreen>
+                </iframe>
+            </div>
             <footer class="main-footer">
                 <div class="container">
                     <p>&copy; Miguel Zynich - 2025</p>
@@ -2001,110 +2272,125 @@
                 </svg>
             </button>
 
-            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-            <script>
-                const darkModeToggle = document.getElementById('darkModeToggle');
-                const body = document.body;
+           <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    // --- LÓGICA DO DARK MODE (pode ficar fora do DOMContentLoaded) ---
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
 
-                const enableDarkMode = () => {
-                    body.classList.add('dark-mode');
-                    localStorage.setItem('theme', 'dark');
-                };
+    const enableDarkMode = () => {
+        body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+    };
 
-                const disableDarkMode = () => {
-                    body.classList.remove('dark-mode');
-                    localStorage.setItem('theme', 'light');
-                };
+    const disableDarkMode = () => {
+        body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+    };
 
-                darkModeToggle.addEventListener('click', () => {
-                    if (body.classList.contains('dark-mode')) {
-                        disableDarkMode();
-                    } else {
-                        enableDarkMode();
-                    }
+    darkModeToggle.addEventListener('click', () => {
+        if (body.classList.contains('dark-mode')) {
+            disableDarkMode();
+        } else {
+            enableDarkMode();
+        }
+    });
+
+    // --- INICIALIZAÇÃO DE TUDO QUANDO A PÁGINA CARREGAR ---
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        // 1. Lógica do Tema
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            enableDarkMode();
+        } else {
+            disableDarkMode();
+        }
+
+        // 2. Lógica dos Swatches de Cor
+        const colorSwatches = document.querySelectorAll('.color-swatch');
+        colorSwatches.forEach(swatch => {
+            swatch.addEventListener('click', () => {
+                const color = swatch.dataset.color;
+                navigator.clipboard.writeText(color).then(() => {
+                    swatch.classList.add('copied');
+                    setTimeout(() => {
+                        swatch.classList.remove('copied');
+                    }, 1500);
+                }).catch(err => {
+                    console.error('Falha ao copiar cor: ', err);
                 });
+            });
+        });
 
-                document.addEventListener('DOMContentLoaded', () => {
-                    const savedTheme = localStorage.getItem('theme');
-                    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        // 3. Lógica do Botão Voltar
+        const backButton = document.querySelector('.back-button');
+        if (backButton) {
+            backButton.addEventListener('click', () => {
+                window.history.back();
+            });
+        }
 
-                    if (savedTheme === 'dark') {
-                        enableDarkMode();
-                    } else if (savedTheme === 'light') {
-                        disableDarkMode();
-                    } else if (prefersDark) {
-                        enableDarkMode();
-                    }
-                });
+        // --- INICIALIZAÇÃO DOS SWIPERS ---
 
-                // Inicialização do Swiper para as PERSONAS
-                const personasSwiper = new Swiper('.personas-swiper', {
-                    loop: true,
-                    pagination: {
-                        el: '.personas-swiper .swiper-pagination',
-                        clickable: true,
-                    },
-                });
+        const personasSwiper = new Swiper('.personas-swiper', {
+            loop: true,
+            pagination: {
+                el: '.personas-swiper .swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.personas-swiper .swiper-button-next',
+                prevEl: '.personas-swiper .swiper-button-prev',
+            },
+        });
 
-                // Inicialização do Swiper para os GRÁFICOS
-                const chartsSwiper = new Swiper('.charts-swiper', {
-                    loop: true,
-                    pagination: {
-                        el: '.charts-swiper .swiper-pagination',
-                        clickable: true,
-                    },
-                    navigation: {
-                        nextEl: '.carousel-wrapper .swiper-button-next',
-                        prevEl: '.carousel-wrapper .swiper-button-prev',
-                    },
-                });
+        const chartsSwiper = new Swiper('.charts-swiper', {
+            loop: true,
+            // 'fadeEffect' removido pois era redundante sem 'effect: fade'
+            pagination: {
+                el: '.charts-swiper .swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.carousel-wrapper .swiper-button-next',
+                prevEl: '.carousel-wrapper .swiper-button-prev',
+            },
+        });
 
-                // Inicialização do Swiper para a GALERIA DE IMAGENS (CORRIGIDO)
-                const gallerySwiper = new Swiper('.gallery-swiper', {
-                    grabCursor: true,
-                    loop: true,
-                    spaceBetween: 30,
-                    slidesPerView: 1, // Garante 1 slide por vez em todas as telas
+        const gallerySwiper = new Swiper('.gallery-swiper', {
+            grabCursor: true,
+            loop: true,
+            spaceBetween: 30,
+            slidesPerView: 1,
+            breakpoints: {
+                768: {
+                    slidesPerView: 1,
+                    spaceBetween: 20
+                },
+                1024: {
+                    slidesPerView: 1,
+                    spaceBetween: 30
+                }
+            },
+            navigation: {
+                nextEl: '.gallery-swiper .swiper-button-next',
+                prevEl: '.gallery-swiper .swiper-button-prev',
+            },
+            pagination: {
+                el: '.gallery-swiper .swiper-pagination',
+                clickable: true,
+            },
+        });
 
-                    navigation: {
-                        nextEl: '.gallery-swiper .swiper-button-next',
-                        prevEl: '.gallery-swiper .swiper-button-prev',
-                    },
+        // Inicialização do Lightbox
+        lightbox.option({
+            'fitImagesInViewport': false
+        });
 
-                    pagination: {
-                        el: '.gallery-swiper .swiper-pagination',
-                        clickable: true,
-                    },
-                });
-
-                lightbox.option({
-                    'fitImagesInViewport': false
-                });
-
-
-                /* --- INTERATIVIDADE DO STYLE GUIDE --- */
-                document.addEventListener('DOMContentLoaded', () => {
-                    const colorSwatches = document.querySelectorAll('.color-swatch');
-
-                    colorSwatches.forEach(swatch => {
-                        swatch.addEventListener('click', () => {
-                            const color = swatch.dataset.color;
-                            navigator.clipboard.writeText(color).then(() => {
-                                // Adiciona a classe 'copied' para mostrar o tooltip
-                                swatch.classList.add('copied');
-
-                                // Remove a classe após 1.5 segundos
-                                setTimeout(() => {
-                                    swatch.classList.remove('copied');
-                                }, 1500);
-                            }).catch(err => {
-                                console.error('Falha ao copiar cor: ', err);
-                            });
-                        });
-                    });
-                });
-
-            </script>
+    }); // Fim do DOMContentLoaded
+</script>
 </body>
 
 </html>
