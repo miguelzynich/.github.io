@@ -22,9 +22,6 @@
 
 
     <style>
-        /* =============================================== */
-        /* --- FONTES E VARIÁVEIS GLOBAIS --- */
-        /* =============================================== */
         @font-face {
             font-family: 'Touche';
             src: url('fonts/ToucheW03-Bold.woff2') format('woff2');
@@ -50,13 +47,14 @@
             --swiper-pagination-color: var(--accent-color);
         }
 
-        /* =============================================== */
-        /* --- RESET E ESTILOS GLOBAIS --- */
-        /* =============================================== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        h2 {
+            text-align: left !important;
         }
 
         html,
@@ -114,9 +112,6 @@
             color: var(--primary-color);
         }
 
-        /* =============================================== */
-        /* --- COMPONENTES E SEÇÕES --- */
-        /* =============================================== */
         .main-header {
             background-color: var(--primary-color);
             color: white;
@@ -156,7 +151,6 @@
             display: block;
         }
 
-        /* Opcional: Para telas menores, você pode ajustar o tamanho ou a posição */
         @media (max-width: 768px) {
             .back-button {
                 top: 15px;
@@ -321,7 +315,7 @@
         .research-intro-section .image-content img {
             max-width: 100%;
             height: auto;
-            max-height: 250px;
+            max-height: 220px;
         }
 
         .qualitative-preview-section {
@@ -346,7 +340,7 @@
         }
 
         .personas-section h2 {
-            text-align: center;
+            text-align: left;
         }
 
         .persona-slide-content {
@@ -423,11 +417,6 @@
             font-size: 0.9rem;
         }
 
-
-        /* =================================================================== */
-        /* --- CSS Customizado para o Swiper do Mapa de Empatia/Jornada --- */
-        /* =================================================================== */
-
         .journey-swiper {
             position: relative;
         }
@@ -485,17 +474,13 @@
             }
         }
 
-
-
-        /* =============================================== */
-        /* --- SEÇÃO UI DESIGN --- */
-        /* =============================================== */
         .ui-design-section {
             background-color: var(--background-color);
-            /* Fundo padrão do tema */
             color: var(--primary-color);
             padding-top: 60px;
         }
+
+
 
         .ui-design-section h2 {
             color: var(--primary-color);
@@ -503,7 +488,7 @@
 
         .ui-design-section p {
             color: var(--text-color-light);
-            max-width: 600px;
+            max-width: 900px;
             margin-bottom: 3rem;
         }
 
@@ -511,43 +496,8 @@
             display: flex;
             gap: 3rem;
             align-items: center;
-            /* Alinha as colunas verticalmente */
         }
 
-        /* Coluna da Esquerda (Moodboard) */
-        .moodboard-column {
-            flex: 1;
-        }
-
-        .moodboard-image-wrapper {
-            flex-grow: 1;
-        }
-
-        .moodboard-image {
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-        }
-
-        /* Lógica para alternar imagem no dark mode */
-        .moodboard-dark {
-            display: none;
-        }
-
-        .moodboard-light {
-            display: block;
-        }
-
-        body.dark-mode .moodboard-light {
-            display: none;
-        }
-
-        body.dark-mode .moodboard-dark {
-            display: block;
-        }
-
-
-        /* Coluna da Direita (Detalhes) */
         .ui-details-column {
             flex: 1.2;
             display: flex;
@@ -599,9 +549,6 @@
             border-radius: 8px;
         }
 
-        /* Essas regras ajudam a resetar o tamanho que o Lightbox calcula via JS,
-  forçando a imagem a obedecer nossas regras de max-width e max-height.
-*/
         .lightbox .lb-image {
             width: auto !important;
             height: auto !important;
@@ -612,12 +559,8 @@
             height: auto !important;
         }
 
-
-        /* =============================================== */
-        /* --- SEÇÃO DE VÍDEO RESPONSIVO --- */
-        /* =============================================== */
         .video-section .container {
-            text-align: center;
+            text-align: left;
         }
 
         .video-section h2 {
@@ -635,8 +578,6 @@
             aspect-ratio: 1260 / 709;
         }
 
-
-        /* Estilos Dark Mode para a Seção UI */
         body.dark-mode .ui-design-section {
             background-color: #121212;
             color: #f1f1f1;
@@ -662,7 +603,6 @@
             color: #a0a0a0;
         }
 
-        /* Responsivo para a Seção UI */
         @media (max-width: 992px) {
             .ui-layout-wrapper {
                 flex-direction: column;
@@ -670,7 +610,6 @@
             }
         }
 
-        /* CARROSSEL DE GRÁFICOS */
         .carousel-section .swiper {
             padding-bottom: 50px;
         }
@@ -745,9 +684,6 @@
             color: var(--accent-color);
         }
 
-        /* =============================================== */
-        /* --- SEÇÃO GALERIA DE IMAGENS (ÚLTIMA SEÇÃO) --- */
-        /* =============================================== */
         .gallery-section {
             padding-bottom: 80px;
         }
@@ -820,21 +756,17 @@
             color: #333;
         }
 
-        /* Seção do Grid de Priorização */
         .prioritization-grid-section h2,
         .prioritization-grid-section p {
             text-align: left;
-            /* Garante que o título e parágrafo fiquem à esquerda */
         }
 
         .prioritization-grid-section p {
             margin-bottom: 2.5rem;
-            /* Mais espaço entre o parágrafo e a imagem */
         }
 
         .grid-image-wrapper {
             text-align: center;
-            /* Centraliza a imagem dentro da sua div */
         }
 
         .grid-image-wrapper img {
@@ -847,37 +779,27 @@
         .figma-embed-container {
             display: flex;
             justify-content: center;
-            /* Centraliza o iframe horizontalmente */
             padding: 24px 16px;
-            /* Adiciona um respiro nas laterais em telas menores */
             width: 100%;
         }
 
         .figma-embed-container iframe {
             width: 100%;
-            /* O iframe ocupa 100% da largura do container */
             max-width: 960px;
-            /* Define a largura máxima original do iframe */
             aspect-ratio: 960 / 760;
-            /* Mantém a proporção original (largura / altura) */
             border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 8px;
-            /* Opcional: adiciona bordas arredondadas */
         }
 
-        /* Dark Mode para a imagem do Grid */
         body.dark-mode .grid-image-wrapper img {
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-            /* Sombra mais escura para o dark mode */
         }
 
-        /* Media Queries para ajuste responsivo da nova seção */
         @media (max-width: 768px) {
 
             .prioritization-grid-section h2,
             .prioritization-grid-section p {
-                text-align: center;
-                /* Centraliza em telas pequenas, se preferir */
+                text-align: left;
             }
 
             .prioritization-grid-section p {
@@ -885,14 +807,9 @@
             }
         }
 
-
-        /* =============================================== */
-        /* --- SEÇÃO WIREFRAMES --- */
-        /* =============================================== */
         .wireframes-section {
             padding: 60px 0;
             background-color: var(--light-gray-bg);
-            /* Ou a cor de fundo que preferir */
         }
 
         .wireframes-section h2,
@@ -944,9 +861,7 @@
         }
 
 
-        /* =============================================== */
-        /* --- SEÇÃO GRID RESPONSIVO --- */
-        /* =============================================== */
+
         .grid-system-section {
             padding-top: 60px;
         }
@@ -954,20 +869,16 @@
         .grid-system-section h2,
         .grid-system-section p {
             text-align: left;
-            /* Centraliza o texto introdutório */
         }
 
         .grid-system-section p {
             max-width: 1200px;
-            /* Limita a largura do parágrafo para melhor legibilidade */
             margin-right: auto;
             margin-bottom: 3rem;
-            /* Espaço entre o texto e a imagem */
         }
 
         .grid-image-wrapper {
             text-align: center;
-            /* Centraliza a imagem */
         }
 
         .grid-image-wrapper img {
@@ -977,17 +888,11 @@
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
         }
 
-        /* Estilo para a imagem no dark mode */
         body.dark-mode .grid-image-wrapper img {
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
             background-color: rgba(255, 255, 255, 0.05);
-            /* Um leve brilho para imagens com fundo transparente */
         }
 
-
-        /* =============================================== */
-        /* --- SEÇÃO STYLE GUIDE --- */
-        /* =============================================== */
         .style-guide-section {
             background-color: var(--light-gray-bg);
             padding: 40px 0;
@@ -995,6 +900,34 @@
 
         body.dark-mode .style-guide-section {
             background-color: #000;
+        }
+
+        .moodboard-column {
+            max-width: 900px;
+            margin: 4rem auto 0 auto;
+        }
+
+        .moodboard-image {
+            width: 100%;
+            border-radius: 12px;
+            display: block;
+        }
+
+
+        .moodboard-light {
+            display: block;
+        }
+
+        .moodboard-dark {
+            display: none;
+        }
+
+        body.dark-mode .moodboard-light {
+            display: none;
+        }
+
+        body.dark-mode .moodboard-dark {
+            display: block;
         }
 
         .style-guide-grid {
@@ -1109,7 +1042,6 @@
             opacity: 1;
         }
 
-        /* 3. Botões */
         .button-showcase {
             display: flex;
             grid-template-columns: repeat(3, 1fr);
@@ -1138,7 +1070,6 @@
             min-width: auto;
         }
 
-        /* Cores Base dos Botões */
         .sg-btn.btn-green {
             background-color: #09AD70;
         }
@@ -1151,7 +1082,6 @@
             background-color: #FF650E;
         }
 
-        /* Cores Específicas para o HOVER */
         .sg-btn.btn-green:hover {
             background-color: #057D51;
         }
@@ -1174,61 +1104,44 @@
         }
 
         .icon-wrapper {
-            /* 1. Transforma o wrapper em um container de posicionamento */
             position: relative;
             width: 28px;
             height: 28px;
         }
 
         .icon-wrapper img {
-            /* 2. Coloca AMBAS as imagens na mesma posição, uma sobre a outra */
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
 
-            /* 3. Adiciona uma transição suave para a troca */
             transition: opacity 0.2s ease-in-out;
         }
 
-        /* 4. Lógica de troca com OPACIDADE em vez de display */
         .icon-light {
             opacity: 1;
-            /* Visível */
         }
 
         .icon-dark {
             opacity: 0;
-            /* Invisível */
         }
 
         body.dark-mode .icon-light {
             opacity: 0;
-            /* Invisível no dark mode */
         }
 
         body.dark-mode .icon-dark {
             opacity: 1;
-            /* Visível no dark mode */
         }
 
-        /* ============================================= */
-        /* --- ESTILOS RESPONSIVOS (MEDIA QUERIES) --- */
-        /* ============================================= */
-
-        /* Base para telas pequenas (Mobile First)
-   ------------------------------------------ */
         .style-guide-grid,
         .wireframe-gallery {
             display: flex;
             flex-direction: column;
-            /* Empilha os itens verticalmente */
             gap: 24px;
-            /* Espaçamento entre os itens */
         }
 
-        /* Ajusta o tamanho da fonte para melhor leitura em telas menores */
         .type-scale .h1-style {
             font-size: 40px;
         }
@@ -1242,16 +1155,12 @@
         }
 
 
-        /* Para Tablets (telas a partir de 768px de largura)
-   ------------------------------------------------- */
         @media (min-width: 768px) {
             .style-guide-grid {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                /* Cria um grid de 2 colunas */
             }
 
-            /* Faz os itens marcados como 'wide' ocuparem as duas colunas */
             .guide-item-wide {
                 grid-column: span 2;
             }
@@ -1259,10 +1168,8 @@
             .wireframe-gallery {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                /* Galeria com 2 colunas */
             }
 
-            /* Reajusta a fonte para tablets */
             .type-scale .h1-style {
                 font-size: 50px;
             }
@@ -1273,20 +1180,15 @@
         }
 
 
-        /* Para Desktops (telas a partir de 1024px de largura)
-   -------------------------------------------------- */
         @media (min-width: 1024px) {
             .style-guide-grid {
-                /* Layout final para desktop */
                 grid-template-columns: 2fr 1fr;
-                /* Uma coluna mais larga e outra mais estreita */
                 grid-template-areas:
                     "typography colors"
                     "buttons buttons"
                     "icons icons";
             }
 
-            /* Mapeia cada item do grid para sua área designada */
             .typography-guide {
                 grid-area: typography;
             }
@@ -1305,10 +1207,8 @@
 
             .wireframe-gallery {
                 grid-template-columns: repeat(3, 1fr);
-                /* Galeria com 3 colunas */
             }
 
-            /* Restaura o tamanho original da fonte para desktop */
             .type-scale .h1-style {
                 font-size: 60px;
             }
@@ -1322,23 +1222,14 @@
             }
         }
 
-        /* =============================================== */
-        /* --- AJUSTE DE CENTRALIZAÇÃO DO VÍDEO --- */
-        /* =============================================== */
-
         .video-section .container {
-            /* Centraliza todos os textos dentro do container desta seção */
-            text-align: center;
+            text-align: left;
         }
 
         .video-section h2 {
-            /* Garante que o título use 100% da largura para se centralizar corretamente */
             width: 100%;
         }
 
-        /* =============================================== */
-        /* --- DARK MODE --- */
-        /* =============================================== */
         body.dark-mode {
             --primary-color: #f1f1f1;
             --background-color: #121212;
@@ -1443,21 +1334,15 @@
         .video-container {
             width: 100%;
             aspect-ratio: 16 / 9;
-            /* Força o container a manter a proporção 16:9 */
         }
 
         .video-container iframe {
             width: 100%;
             height: 100%;
-            /* O iframe ocupa 100% do container que agora é responsivo */
         }
 
-        /* =============================================== */
-        /* --- RESPONSIVO --- */
-        /* =============================================== */
 
         @media (max-width: 1023px) {
-            /* Unificando para 1023px como padrão */
 
             .carousel-wrapper .swiper-button-prev,
             .carousel-wrapper .swiper-button-next {
@@ -1469,7 +1354,6 @@
                 display: none;
             }
 
-            /* Regra movida para dentro do @media query */
             .gallery-swiper .swiper-button-next,
             .gallery-swiper .swiper-button-prev {
                 display: none;
@@ -1588,11 +1472,11 @@
 
             .research-intro-section h2,
             .qualitative-preview-section h2 {
-                text-align: center;
+                text-align: left;
             }
 
             .qualitative-preview-section p {
-                text-align: center;
+                text-align: left;
             }
 
             .tools-grid {
@@ -2011,12 +1895,17 @@
                 <h2>UI Design</h2>
                 <p>Com base na pesquisa podemos criar nossos primeiros passos em UI com os processos abaixo:</p>
                 <div class="moodboard-column">
-                    <div class="moodboard-image-wrapper"> <img class="moodboard-image moodboard-light"
-                            src="images/moodboard-light.png" alt="Moodboard do projeto (versão light)">
-                        <img class="moodboard-image moodboard-dark" src="images/moodboard-completo.png"
-                            alt="Moodboard do projeto (versão dark)">
+                    <div class="moodboard-image-wrapper">
+                       <h2>Moodboard</h2>
+                        <img class="moodboard-image moodboard-mobile moodboard-light"
+                            src="images/moodboard-mobile-light.png" alt="Moodboard do projeto para mobile (tema claro)">
+                        <img class="moodboard-image moodboard-mobile moodboard-dark"
+                            src="images/moodboard-mobile-dark.png" alt="Moodboard do projeto para mobile (tema escuro)">
                     </div>
                 </div>
+            </div>
+        </section>
+
     </main>
 
     <section class="grid-system-section">
@@ -2031,8 +1920,14 @@
                 visual entre os componentes.
             </p>
             <div class="grid-image-wrapper">
-                <img src="images/responsive-grids.png"
-                    alt="Demonstração do grid responsivo em desktops, tablets e celulares">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="images/responsive-grids-mobile.png">
+
+                    <source media="(min-width: 769px)" srcset="images/responsive-grids.png">
+
+                    <img src="images/responsive-grids.png"
+                        alt="Demonstração do grid responsivo em desktops, tablets e celulares">
+                </picture>
             </div>
         </div>
     </section>
@@ -2209,7 +2104,7 @@
                             </div>
                         </a>
 
-                        <a href="images/wireframe-completo-2.png" data-lightbox="wireframes"
+                        <a href="images/wireframe-alta-2.png" data-lightbox="wireframes"
                             data-title="Wireframe da Página de Detalhes: Informações, fotos e mapa do apartamento.">
                             <div class="wireframe-item">
                                 <img src="images/wireframe-thumb-alta-2.png"
@@ -2217,7 +2112,7 @@
                             </div>
                         </a>
 
-                        <a href="images/wireframe-completo-3.png" data-lightbox="wireframes"
+                        <a href="images//wireframe-alta-3.png" data-lightbox="wireframes"
                             data-title="Wireframe da Tela de Pesquisa: Filtros avançados e resultados em lista.">
                             <div class="wireframe-item">
                                 <img src="images/wireframe-thumb-alta-3.png"
@@ -2242,155 +2137,156 @@
                 </div>
             </section>
 
-            <div class="figma-embed-container">
-                <iframe src="https://embed.figma.com/design/QxdVEkUo0e2WhmXJSFAxxA/Yuca?node-id=1-20&embed-host=share"
-                    allowfullscreen>
-                </iframe>
-            </div>
-            <footer class="main-footer">
+
+            <section class="figma-section">
                 <div class="container">
-                    <p>&copy; Miguel Zynich - 2025</p>
+                    <h2>Figma</h2>
                 </div>
-            </footer>
 
-            <button id="darkModeToggle" class="dark-mode-button" aria-label="Alternar Tema">
-                <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24"
-                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-                <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24"
-                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-            </button>
+                <div class="figma-embed-container">
+                    <iframe
+                        src="https://embed.figma.com/design/QxdVEkUo0e2WhmXJSFAxxA/Yuca?node-id=1-20&embed-host=share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <footer class="main-footer">
+                    <div class="container">
+                        <p>&copy; miguel zynich - 2025</p>
+                    </div>
+                </footer>
 
-           <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-    // --- LÓGICA DO DARK MODE (pode ficar fora do DOMContentLoaded) ---
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const body = document.body;
+                <button id="darkModeToggle" class="dark-mode-button" aria-label="Alternar Tema">
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
 
-    const enableDarkMode = () => {
-        body.classList.add('dark-mode');
-        localStorage.setItem('theme', 'dark');
-    };
+                <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+                <script>
+                    const darkModeToggle = document.getElementById('darkModeToggle');
+                    const body = document.body;
 
-    const disableDarkMode = () => {
-        body.classList.remove('dark-mode');
-        localStorage.setItem('theme', 'light');
-    };
+                    const enableDarkMode = () => {
+                        body.classList.add('dark-mode');
+                        localStorage.setItem('theme', 'dark');
+                    };
 
-    darkModeToggle.addEventListener('click', () => {
-        if (body.classList.contains('dark-mode')) {
-            disableDarkMode();
-        } else {
-            enableDarkMode();
-        }
-    });
+                    const disableDarkMode = () => {
+                        body.classList.remove('dark-mode');
+                        localStorage.setItem('theme', 'light');
+                    };
 
-    // --- INICIALIZAÇÃO DE TUDO QUANDO A PÁGINA CARREGAR ---
-    document.addEventListener('DOMContentLoaded', () => {
-        
-        // 1. Lógica do Tema
-        const savedTheme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-            enableDarkMode();
-        } else {
-            disableDarkMode();
-        }
+                    darkModeToggle.addEventListener('click', () => {
+                        if (body.classList.contains('dark-mode')) {
+                            disableDarkMode();
+                        } else {
+                            enableDarkMode();
+                        }
+                    });
 
-        // 2. Lógica dos Swatches de Cor
-        const colorSwatches = document.querySelectorAll('.color-swatch');
-        colorSwatches.forEach(swatch => {
-            swatch.addEventListener('click', () => {
-                const color = swatch.dataset.color;
-                navigator.clipboard.writeText(color).then(() => {
-                    swatch.classList.add('copied');
-                    setTimeout(() => {
-                        swatch.classList.remove('copied');
-                    }, 1500);
-                }).catch(err => {
-                    console.error('Falha ao copiar cor: ', err);
-                });
-            });
-        });
+                    document.addEventListener('DOMContentLoaded', () => {
 
-        // 3. Lógica do Botão Voltar
-        const backButton = document.querySelector('.back-button');
-        if (backButton) {
-            backButton.addEventListener('click', () => {
-                window.history.back();
-            });
-        }
+                        const savedTheme = localStorage.getItem('theme');
+                        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                            enableDarkMode();
+                        } else {
+                            disableDarkMode();
+                        }
 
-        // --- INICIALIZAÇÃO DOS SWIPERS ---
+                        const colorSwatches = document.querySelectorAll('.color-swatch');
+                        colorSwatches.forEach(swatch => {
+                            swatch.addEventListener('click', () => {
+                                const color = swatch.dataset.color;
+                                navigator.clipboard.writeText(color).then(() => {
+                                    swatch.classList.add('copied');
+                                    setTimeout(() => {
+                                        swatch.classList.remove('copied');
+                                    }, 1500);
+                                }).catch(err => {
+                                    console.error('Falha ao copiar cor: ', err);
+                                });
+                            });
+                        });
 
-        const personasSwiper = new Swiper('.personas-swiper', {
-            loop: true,
-            pagination: {
-                el: '.personas-swiper .swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.personas-swiper .swiper-button-next',
-                prevEl: '.personas-swiper .swiper-button-prev',
-            },
-        });
+                        const backButton = document.querySelector('.back-button');
+                        if (backButton) {
+                            backButton.addEventListener('click', () => {
+                                window.history.back();
+                            });
+                        }
 
-        const chartsSwiper = new Swiper('.charts-swiper', {
-            loop: true,
-            // 'fadeEffect' removido pois era redundante sem 'effect: fade'
-            pagination: {
-                el: '.charts-swiper .swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.carousel-wrapper .swiper-button-next',
-                prevEl: '.carousel-wrapper .swiper-button-prev',
-            },
-        });
 
-        const gallerySwiper = new Swiper('.gallery-swiper', {
-            grabCursor: true,
-            loop: true,
-            spaceBetween: 30,
-            slidesPerView: 1,
-            breakpoints: {
-                768: {
-                    slidesPerView: 1,
-                    spaceBetween: 20
-                },
-                1024: {
-                    slidesPerView: 1,
-                    spaceBetween: 30
-                }
-            },
-            navigation: {
-                nextEl: '.gallery-swiper .swiper-button-next',
-                prevEl: '.gallery-swiper .swiper-button-prev',
-            },
-            pagination: {
-                el: '.gallery-swiper .swiper-pagination',
-                clickable: true,
-            },
-        });
+                        const personasSwiper = new Swiper('.personas-swiper', {
+                            loop: true,
+                            pagination: {
+                                el: '.personas-swiper .swiper-pagination',
+                                clickable: true,
+                            },
+                            navigation: {
+                                nextEl: '.personas-swiper .swiper-button-next',
+                                prevEl: '.personas-swiper .swiper-button-prev',
+                            },
+                        });
 
-        // Inicialização do Lightbox
-        lightbox.option({
-            'fitImagesInViewport': false
-        });
+                        const chartsSwiper = new Swiper('.charts-swiper', {
+                            loop: true,
+                            pagination: {
+                                el: '.charts-swiper .swiper-pagination',
+                                clickable: true,
+                            },
+                            navigation: {
+                                nextEl: '.carousel-wrapper .swiper-button-next',
+                                prevEl: '.carousel-wrapper .swiper-button-prev',
+                            },
+                        });
 
-    }); // Fim do DOMContentLoaded
-</script>
+                        const gallerySwiper = new Swiper('.gallery-swiper', {
+                            grabCursor: true,
+                            loop: true,
+                            spaceBetween: 30,
+                            slidesPerView: 1,
+                            breakpoints: {
+                                768: {
+                                    slidesPerView: 1,
+                                    spaceBetween: 20
+                                },
+                                1024: {
+                                    slidesPerView: 1,
+                                    spaceBetween: 30
+                                }
+                            },
+                            navigation: {
+                                nextEl: '.gallery-swiper .swiper-button-next',
+                                prevEl: '.gallery-swiper .swiper-button-prev',
+                            },
+                            pagination: {
+                                el: '.gallery-swiper .swiper-pagination',
+                                clickable: true,
+                            },
+                        });
+
+                        lightbox.option({
+                            'fitImagesInViewport': false
+                        });
+
+                    });
+                </script>
 </body>
 
 </html>
