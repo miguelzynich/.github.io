@@ -1,0 +1,223 @@
+/* =============================================== */
+/* --- ESTILOS ESPECÍFICOS DO PROJETO YUCA --- */
+/* =============================================== */
+
+/* --- Banner --- */
+.banner-section {
+    width: 100%;
+    height: 55vh;
+    padding: 0;
+    background-image: url('images/yuca-banner-desktop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* --- Layout de 2 Colunas --- */
+.two-column-layout {
+    display: flex;
+    gap: 100px;
+    align-items: flex-start;
+    margin-top: 1.8rem;
+}
+.two-column-layout .column { flex: 1; }
+
+
+/* --- Seção Problema e Ferramentas (Centralizadas) --- */
+.problem-section h2, .tools-section h2 { text-align: center; }
+
+.problem-section p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    color: var(--primary-color);
+}
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 40px;
+    list-style: none;
+    padding: 50px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 1.8rem auto 0 auto;
+}
+.tools-grid li {
+    font-family: 'Gilroy', sans-serif;
+    font-size: 1rem;
+    color: var(--text-color-light);
+}
+
+/* --- Seção UI Design & Moodboard --- */
+.ui-design-section p { max-width: 900px; margin-bottom: 3rem; }
+
+.moodboard-desktop { display: none; }
+.moodboard-mobile.moodboard-light { display: block; }
+.moodboard-mobile.moodboard-dark { display: none; }
+body.dark-mode .moodboard-mobile.moodboard-light { display: none; }
+body.dark-mode .moodboard-mobile.moodboard-dark { display: block; }
+
+@media (min-width: 769px) {
+    .moodboard-mobile { display: none !important; }
+    .moodboard-desktop.moodboard-light { display: block; }
+    .moodboard-desktop.moodboard-dark { display: none; }
+    body.dark-mode .moodboard-desktop.moodboard-light { display: none; }
+    body.dark-mode .moodboard-desktop.moodboard-dark { display: block; }
+}
+
+.moodboard-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* --- Carrosséis --- */
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.slide-content {
+    display: flex;
+    gap: 30px;
+    background-color: var(--light-gray-bg);
+    border-radius: 12px;
+    padding: 40px 60px;
+    width: 100%;
+    align-items: center;
+    min-height: 420px;
+}
+.slide-content .text-content { flex: 1; min-width: 300px; }
+.slide-content .text-content h3 {
+    font-family: 'Touche', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+.slide-content .chart-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    min-width: 300px;
+}
+.slide-content .chart-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.carousel-wrapper .swiper-button-next,
+.carousel-wrapper .swiper-button-prev {
+    position: static;
+    transform: none;
+    margin: 0;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+}
+.carousel-wrapper .swiper-button-next::after,
+.carousel-wrapper .swiper-button-prev::after {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+/* --- Seção Figma & Vídeo --- */
+.video-container, .figma-embed-container iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+.figma-embed-container {
+    display: flex;
+    justify-content: center;
+    padding: 24px 16px;
+}
+.figma-embed-container iframe {
+    max-width: 960px;
+    aspect-ratio: 960 / 760;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+/* --- Dark Mode Específico para Yuca --- */
+body.dark-mode .problem-section p { color: #f8f8f8; }
+body.dark-mode .slide-content,
+body.dark-mode .tools-grid,
+body.dark-mode .personas-section {
+    background-color: #000;
+}
+body.dark-mode .persona-quotes blockquote {
+    background-color: var(--light-gray-bg);
+    color: var(--primary-color);
+}
+body.dark-mode .chart-light { display: none; }
+body.dark-mode .chart-dark { display: block; }
+
+
+/* =============================================== */
+/* --- RESPONSIVO (ESPECÍFICO DO PROJETO YUCA) --- */
+/* =============================================== */
+
+/* --- TABLET (telas a partir de 768px) --- */
+@media (min-width: 768px) {
+    .tools-grid { grid-template-columns: repeat(2, 1fr); }
+    .wireframe-gallery { grid-template-columns: repeat(2, 1fr); }
+    .style-guide-grid { grid-template-columns: 1fr 1fr; }
+    .guide-item-wide { grid-column: span 2; }
+}
+
+/* --- DESKTOP (telas a partir de 1024px) --- */
+@media (min-width: 1024px) {
+    .tools-grid { grid-template-columns: repeat(3, 1fr); }
+    .wireframe-gallery { grid-template-columns: repeat(3, 1fr); }
+    .style-guide-grid {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas:
+            "typography colors"
+            "buttons buttons"
+            "icons icons";
+    }
+    .typography-guide { grid-area: typography; }
+    .colors-guide { grid-area: colors; }
+    .buttons-guide { grid-area: buttons; }
+    .icons-guide { grid-area: icons; }
+
+    /* Mostra as setas dos carrosséis APENAS no Desktop */
+    .personas-swiper .swiper-button-next,
+    .personas-swiper .swiper-button-prev,
+    .gallery-swiper .swiper-button-next,
+    .gallery-swiper .swiper-button-prev,
+    .carousel-wrapper .swiper-button-next,
+    .carousel-wrapper .swiper-button-prev {
+        display: flex;
+    }
+}
+
+/* --- MOBILE (telas até 767px) --- */
+@media (max-width: 767px) {
+    section { padding: 40px 20px; }
+    .container, .container-wide { padding: 0; }
+    
+    h2 { font-size: 28px; }
+    p { font-size: 16px; }
+
+    .problem-section h2, .tools-section h2, .personas-section h2 { text-align: center; }
+
+    .banner-section {
+        background-image: url('images/yuca-banner-mobile.png');
+        height: 65vh;
+    }
+    .two-column-layout { flex-direction: column; gap: 40px; }
+    .tools-grid { grid-template-columns: 1fr; }
+    .slide-content, .persona-quotes, .persona-slide-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .slide-content p, .slide-content h3 { text-align: center; }
+
+    /* Esconde TODAS as setas de navegação no mobile */
+    .swiper-button-next, .swiper-button-prev {
+        display: none !important;
+    }
+}
