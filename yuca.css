@@ -216,8 +216,8 @@ body.dark-mode .chart-dark { display: block; }
     }
     .slide-content p, .slide-content h3 { text-align: center; }
 
-    /* Esconde TODAS as setas de navegação no mobile */
     .swiper-button-next, .swiper-button-prev {
         display: none !important;
     }
 }
+

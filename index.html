@@ -52,8 +52,6 @@
             --background-color: #fff;
             --light-gray-bg: #f8f8f8;
             --border-color: #ddd;
-            --spacing-xs: 0.25rem;
-            --spacing-sm: 0.5rem;
             --spacing-md: 1rem;
             --spacing-lg: 1.5rem;
             --spacing-xl: 2.5rem;
@@ -71,16 +69,6 @@
             overflow-x: hidden;
         }
 
-        .logo {
-            display: block;
-            text-align: center;
-            font-family: 'Touche', sans-serif;
-            font-size: 1.5rem;
-            color: inherit;
-            text-decoration: none;
-        }
-
-       
         body {
             font-family: 'Inter', sans-serif;
             color: var(--primary-color);
@@ -89,25 +77,17 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
-        section {
-            padding: var(--spacing-xxl) 0;
-        }
-
         .container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        .text-center {
-            text-align: center;
-        }
-
         h1 {
             font-family: 'Touche', sans-serif;
             font-weight: 700;
             font-size: 2.3rem;
-            margin-bottom: var(--spacing-sm);
+            margin-bottom: 0.5rem;
         }
 
         h2 {
@@ -120,6 +100,26 @@
 
         .section-title {
             text-align: left;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .main-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: var(--spacing-md) 0;
+            font-weight: bold;
+        }
+
+        .logo {
+            display: block;
+            text-align: center;
+            font-family: 'Touche', sans-serif;
+            font-size: 1.5rem;
+            color: inherit;
+            text-decoration: none;
         }
 
         .btn {
@@ -150,39 +150,6 @@
             gap: var(--spacing-md);
         }
 
-        .plus-btn {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            width: 3rem;
-            height: 2.8rem;
-            border-radius: 0;
-            border: 5px solid var(--primary-color);
-            font-size: 2.3rem;
-            font-family: 'Touche', sans-serif;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .plus-btn:hover {
-            background-color: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-        }
-
-        .main-header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: var(--spacing-md) 0;
-            font-weight: bold;
-        }
-
-        .logo {
-            text-align: center;
-        }
-
         .hero-section {
             padding: var(--spacing-xxl) 0;
         }
@@ -203,7 +170,8 @@
         }
 
         .projects-section {
-            background-color: #F6F6F7;
+            background-color: var(--light-gray-bg);
+            padding: var(--spacing-xxl) 0;
         }
 
         .project-grid {
@@ -219,68 +187,103 @@
             border-radius: 8px;
         }
 
-        .load-more {
-            text-align: center;
-            margin-top: var(--spacing-xl);
+        #sobre-e-experiencia {
+            padding: 80px 20px;
+        }
+
+        body.dark-mode #sobre-e-experiencia {
+            background-color: #000000;
+        }
+
+        body:not(.dark-mode) #sobre-e-experiencia {
+            background-color: var(--light-gray-bg);
+        }
+
+        .two-column-layout {
+            display: flex;
+            gap: 80px;
+            align-items: flex-start;
+        }
+
+        .about-column {
+            flex: 1.5;
+        }
+
+        .about-column p {
+            font-family: 'Gilroy', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--secondary-color);
+        }
+
+        .experience-column {
+            flex: 1.5;
         }
 
         .experience-list {
-            margin-bottom: var(--spacing-xl);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
         }
 
         .experience-item {
-            display: grid;
-            grid-template-columns: 1fr 2fr 2fr;
-            padding: var(--spacing-lg) 0;
-            font-family: 'Touche', sans-serif;
-            font-weight: 400;
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0 24px;
+            padding-bottom: 24px;
             border-bottom: 1px solid var(--border-color);
-            align-items: center;
         }
 
-        .experience-item:first-child {
-            border-top: 1px solid var(--border-color);
+        .experience-item:last-child {
+            border-bottom: none;
         }
 
         .experience-item .date {
+            font-size: 1rem;
             color: var(--secondary-color);
+            flex: 0 0 120px;
         }
 
         .experience-item .role {
-            font-weight: 700;
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary-color);
         }
 
         .experience-item .company {
-            justify-self: end;
-            color: var(--secondary-color);
-        }
-
-        .contact-section {
-            background-color: var(--background-color);
-            padding: var(--spacing-xxl) 2rem;
-        }
-
-        .contact-section .container {
-            background-color: var(--light-gray-bg);
-            border-radius: 12px;
-            padding: var(--spacing-xxl) 2rem;
-            max-width: 950px;
-        }
-
-        .contact-section h2 {
-            font-family: 'Touche', sans-serif;
-            font-weight: 700;
-            font-size: 2.8rem;
-            margin-bottom: var(--spacing-md);
-            color: #000;
-        }
-
-        .contact-section p {
-            font-family: 'Gilroy', sans-serif;
             font-size: 1rem;
-            color: var(--primary-color);
+            color: var(--secondary-color);
+            margin-left: auto;
+            text-align: right;
+        }
+
+        #contact {
+            padding: var(--spacing-xxl) 20px;
+        }
+
+        #contact .container {
+            border-radius: 16px;
+            padding: 50px;
+            text-align: center;
+        }
+
+        #contact .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        #contact p {
+            font-size: 1.1rem;
+            color: var(--secondary-color);
             max-width: 450px;
-            margin: var(--spacing-sm) auto var(--spacing-xl) auto;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+        }
+
+        #contact .button-group {
+            justify-content: center;
         }
 
         .main-footer {
@@ -305,31 +308,13 @@
             background-color: var(--light-gray-bg);
         }
 
-        body.dark-mode .contact-section h2 {
-            color: var(--primary-color);
+        body.dark-mode #contact .container {
+            background-color: #000000;
+            border: 1px solid var(--border-color);
         }
 
-        body.dark-mode .btn {
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-            -webkit-text-stroke: 0.4px var(--primary-color);
-        }
-
-        body.dark-mode .btn:hover {
-            background-color: var(--primary-color);
-            color: var(--background-color);
-            -webkit-text-stroke: 0.4px var(--background-color);
-        }
-
-        body.dark-mode .plus-btn {
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-        }
-
-        body.dark-mode .plus-btn:hover {
-            background-color: var(--primary-color);
-            color: var(--background-color);
-            border-color: var(--primary-color);
+        body:not(.dark-mode) #contact .container {
+            background-color: var(--light-gray-bg);
         }
 
         .dark-mode-button {
@@ -348,7 +333,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .dark-mode-button:hover {
@@ -359,7 +344,6 @@
             width: 26px;
             height: 26px;
             stroke: currentColor;
-            transition: opacity 0.3s ease;
         }
 
         .dark-mode-button .icon-sun {
@@ -378,28 +362,28 @@
             display: block;
         }
 
-        body.dark-mode .dark-mode-button {
-            background-color: var(--primary-color);
-            color: var(--background-color);
-            border: 2px solid var(--background-color);
+        @media (max-width: 992px) {
+            .two-column-layout {
+                flex-direction: column;
+                gap: 60px;
+            }
         }
-
 
         @media (max-width: 768px) {
             section {
-                padding: var(--spacing-xl) 20px;
+                padding: var(--spacing-xl) 0;
+            }
+
+            .container {
+                padding: 0 15px;
             }
 
             h1 {
-                font-size: 3.5rem;
+                font-size: 2.5rem;
             }
 
             h2 {
                 font-size: 1.8rem;
-            }
-
-            .section-title {
-                text-align: left;
             }
 
             .hero-section .profile-picture {
@@ -407,21 +391,15 @@
                 height: 180px;
             }
 
-            .hero-section .container {
-                width: 100%;
-            }
-
             .button-group {
                 flex-direction: column;
                 align-items: center;
                 gap: 1rem;
-                width: 100%;
-                max-width: 320px;
-                margin: 0 auto;
             }
 
             .button-group .btn {
-                width: 60%;
+                width: 100%;
+                max-width: 280px;
                 text-align: center;
             }
 
@@ -429,30 +407,28 @@
                 grid-template-columns: 1fr;
             }
 
+            #sobre-e-experiencia {
+                padding: var(--spacing-xl) 20px;
+            }
+
+            #contact {
+                padding: var(--spacing-xl) 20px;
+            }
+
+            #contact .container {
+                padding: 40px 25px;
+            }
+
             .experience-item {
-                grid-template-columns: 1fr;
-                gap: 0.5rem;
-                text-align: center;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
             }
 
             .experience-item .company {
-                justify-self: center;
+                margin-left: 0;
+                text-align: left;
             }
-
-            .contact-section {
-                padding: var(--spacing-xl) 15px;
-            }
-
-            .contact-section .container {
-                padding: var(--spacing-xl) 1.5rem;
-            }
-
-            .contact-section h2 {
-                font-size: 2.2rem;
-                line-height: 1.3;
-            }
-
-           
         }
     </style>
 </head>
@@ -487,58 +463,72 @@
                 <h2 class="section-title">Projetos</h2>
                 <div class="project-grid">
                     <div class="project-card">
-                        <a href="vortigo.html">
-                        <img src="images/vortigo_projeto.png" alt="Preview do Projeto Vortigo">
-                        </a>
+                        <a href="cores.html"> <img src="images/cores_caixa.png" alt="Preview do Projeto de Cores"></a>
+                    </div>
+                     <div class="project-card">
+                        <a href="yuca.html"><img src="images/Yuca.png" alt="Preview do Projeto Yuca"></a>
                     </div>
                     <div class="project-card">
-                        <a href="yuca.html">
-                            <img src="images/Yuca.png" alt="Preview do Projeto Yuca">
-                        </a>
+                        <a href="vortigo.html"><img src="images/vortigo_projeto.png"
+                                alt="Preview do Projeto Vortigo"></a>
                     </div>
                 </div>
             </div>
-            <div class="load-more">
-                <a href="#" class="plus-btn" aria-label="Carregar mais projetos">+</a>
-            </div>
         </section>
 
-        <section id="experience" class="experience-section">
+        <section id="sobre-e-experiencia">
             <div class="container">
-                <h2 class="section-title">Experiência</h2>
-                <div class="experience-list">
-                    <div class="experience-item">
-                        <span class="date">2022 - 2025</span>
-                        <span class="role">UX/UI Designer</span>
-                        <span class="company">Qintess</span>
+                <div class="two-column-layout">
+                    <div class="about-column">
+                        <h2 class="section-title">Sobre</h2>
+                        <p>
+                            <strong>UX/UI Designer com 4 anos de experiência </strong> em produtos digitais e 13 anos como Diretor de
+                            Arte. Sou especialista em unir design funcional, centrado no usuário e acessível com uma
+                            estética visual de alto impacto.<strong> Pós-graduando em User Experience Design and Beyond (PUCRS).</strong>
+                            Engajado com a comunidade de design, em 2022 também atuei como voluntário no projeto Kurumin, uma iniciativa da <strong>Vagas UX.</strong>
+                            Na Qintess, otimizei a User Experience dos sistemas de Loterias da Caixa, liderando processos de
+                            pesquisa, prototipação e garantindo a inclusão através da acessibilidade.
+
+                        </p>
                     </div>
-                    <div class="experience-item">
-                        <span class="date">2021 - 2022</span>
-                        <span class="role">UX/UI Designer</span>
-                        <span class="company">Agência JKR</span>
-                    </div>
-                    <div class="experience-item">
-                        <span class="date">2020 - 2021</span>
-                        <span class="role">Diretor de Arte</span>
-                        <span class="company">Prefeitura de Viamão</span>
-                    </div>
-                    <div class="experience-item">
-                        <span class="date">2019 - 2019</span>
-                        <span class="role">Diretor de Arte</span>
-                        <span class="company">Hits Entretenimento</span>
-                    </div>
-                    <div class="experience-item">
-                        <span class="date">2019 - 2019</span>
-                        <span class="role">Web Designer</span>
-                        <span class="company">Reweb</span>
+
+                    <div class="experience-column">
+                        <h2 class="section-title">Experiência</h2>
+                        <div class="experience-list">
+                            <div class="experience-item">
+                                <span class="date">2022 - 2025</span>
+                                <span class="role">UX/UI Designer</span>
+                                <span class="company">Qintess</span>
+                            </div>
+                            <div class="experience-item">
+                                <span class="date">2021 - 2022</span>
+                                <span class="role">UX/UI Designer</span>
+                                <span class="company">Agência JKR</span>
+                            </div>
+                            <div class="experience-item">
+                                <span class="date">2022 - 2022</span>
+                                <span class="role">UX Voluntário</span>
+                                <span class="company">Projeto Kurumin</span>
+                            </div>
+                            <div class="experience-item">
+                                <span class="date">2020 - 2021</span>
+                                <span class="role">Diretor de Arte</span>
+                                <span class="company">Prefeitura de Viamão</span>
+                            </div>
+                            <div class="experience-item">
+                                <span class="date">2019 - 2019</span>
+                                <span class="role">Web Designer</span>
+                                <span class="company">Reweb</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="contact-section">
-            <div class="container text-center">
-                <h2>Bora trocar uma ideia!</h2>
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">Fale Comigo!</h2>
                 <p>Se você tem uma ideia, uma vaga ou só quer trocar uma figurinha, me manda uma mensagem.</p>
                 <div class="button-group">
                     <a href="mailto:miguelzynich@gmail.com" class="btn">E-mail</a>
@@ -559,11 +549,11 @@
 
     <button id="darkModeToggle" class="dark-mode-button" aria-label="Alternar Tema">
         <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
-        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none"
-            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
             <line x1="12" y1="21" x2="12" y2="23"></line>
