@@ -1,3 +1,12 @@
+body {
+    font-family: 'Gilroy', sans-serif;
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+    color: #FFFFFF;
+}
+
 
 .cores-caixa {
     width: 100%;
@@ -77,7 +86,7 @@
     margin-bottom: 15px;
     min-height: 50px;
     display: flex;
-    align-items: center;
+    align-items: left;
     justify-content: flex-start;
     width: 100%;
 }
@@ -101,7 +110,7 @@
     padding: 25px;
     width: 100%;
     box-sizing: border-box;
-    text-align: center;
+    text-align: left;
     margin-top: auto;
 }
 
@@ -110,7 +119,7 @@
     font-size: 56px;
     margin: 0 0 8px 0;
     display: block;
-    text-align: center;
+    text-align: left !important;
     width: 100%;
 }
 
@@ -137,7 +146,7 @@
 .detail-row {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: left;
     margin: 0 0 8px 0;
 }
 
@@ -172,6 +181,7 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
+    text-align: left;
 }
 
 
@@ -182,9 +192,48 @@
 
 .comparison-grid.four-columns .comparison-column {
     flex: 1 1 350px;
-    
+
     max-width: 400px;
-    min-width: 320px; 
+    min-width: 320px;
+}
+
+
+.two-column-layout {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.two-column-layout:last-child {
+    margin-bottom: 0;
+}
+
+.two-column-layout .column {
+    flex: 1;
+}
+
+.two-column-layout .column h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: var(--spacing-lg);
+    color: var(--primary-color);
+}
+
+.two-column-layout .column p {
+    font-family: 'Gilroy', sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--primary-color);
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .two-column-layout {
+        flex-direction: column;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
 }
 
 .comparison-column .contrast-card h2 {
@@ -205,7 +254,7 @@
 
     .cores-caixa {
         height: 80vh;
-        background-image: url('./images/cores/cores_banner_tablet.png'); 
+        background-image: url('./images/cores/cores_banner_tablet.png');
     }
 }
 
@@ -237,9 +286,9 @@
         min-height: auto;
     }
 
-        .cores-caixa {
+    .cores-caixa {
         height: 55vh;
-        background-image: url('./images/cores/cores_banner_mobile.png'); 
+        background-image: url('./images/cores/cores_banner_mobile.png');
     }
 }
 
@@ -251,12 +300,17 @@
 body.dark-mode {
     --primary-color: #f1f1f1;
     --background-color: #121212;
-    --text-color-light: #a0a0a0;
+    --text-color-light: #eeeeee;
     --border-color: #444;
     --light-gray-bg: #1E1E1E;
 }
+
 body.dark-mode .bg-white {
-    background-color: #121212 !important; /* Força a seção branca a ficar escura */
+    background-color: #121212 !important;
+}
+
+body.dark-mode .main-header {
+    background-color: var(--light-gray-bg); /* que é igual a #1E1E1E */
 }
 
 body.dark-mode .project-content {
@@ -265,15 +319,17 @@ body.dark-mode .project-content {
 
 /* Estilo do botão de toggle */
 /* =================================
-   BOTÃO DARK MODE UNIFICADO
+   BOTÃO DARK MODE UNIFICADO    
 ==================================== */
 .dark-mode-button {
-            position: fixed !important;
-            bottom: 25px !important;
-            right: 25px !important;
-            top: auto !important; /* Reseta qualquer 'top' conflitante */
-            left: auto !important; /* Reseta qualquer 'left' conflitante */
-        }
+    position: fixed !important;
+    bottom: 25px !important;
+    right: 25px !important;
+    top: auto !important;
+    /* Reseta qualquer 'top' conflitante */
+    left: auto !important;
+    /* Reseta qualquer 'left' conflitante */
+}
 
 
 .dark-mode-button {
@@ -292,7 +348,8 @@ body.dark-mode .project-content {
     justify-content: center;
     align-items: center;
     transition: all 0.3s ease;
-    overflow: hidden; /* Essencial para a animação */
+    overflow: hidden;
+    /* Essencial para a animação */
 }
 
 .dark-mode-button:hover {
@@ -301,14 +358,13 @@ body.dark-mode .project-content {
 }
 
 .dark-mode-button svg {
-    position: absolute; /* Permite que os ícones fiquem no mesmo lugar */
+    position: absolute;
     width: 26px;
     height: 26px;
     stroke: var(--background-color);
     transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
-/* Estado Padrão (Light Mode) */
 .dark-mode-button .icon-moon {
     transform: translateY(0) rotate(0deg);
     opacity: 1;
@@ -319,7 +375,6 @@ body.dark-mode .project-content {
     opacity: 0;
 }
 
-/* Estado Dark Mode */
 body.dark-mode .dark-mode-button .icon-moon {
     transform: translateY(-150%) rotate(-90deg);
     opacity: 0;
@@ -333,15 +388,28 @@ body.dark-mode .dark-mode-button .icon-sun {
 .dark-mode-button:hover {
     transform: scale(1.1);
 }
+
 .dark-mode-button svg {
     width: 26px;
     height: 26px;
     stroke: currentColor;
 }
-.dark-mode-button .icon-sun { display: none; }
-.dark-mode-button .icon-moon { display: block; }
-body.dark-mode .dark-mode-button .icon-moon { display: none; }
-body.dark-mode .dark-mode-button .icon-sun { display: block; }
+
+.dark-mode-button .icon-sun {
+    display: none;
+}
+
+.dark-mode-button .icon-moon {
+    display: block;
+}
+
+body.dark-mode .dark-mode-button .icon-moon {
+    display: none;
+}
+
+body.dark-mode .dark-mode-button .icon-sun {
+    display: block;
+}
 
 
 body.dark-mode .comparison-section {
@@ -349,7 +417,7 @@ body.dark-mode .comparison-section {
 }
 
 
-body.dark-mode .comparison-column > h2 {
+body.dark-mode .comparison-column>h2 {
     color: var(--primary-color);
 }
 

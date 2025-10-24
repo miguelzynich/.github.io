@@ -1,6 +1,3 @@
-    /* =============================================== */
-    /* --- FONTES (Específico do Projeto Vortigo) --- */
-    /* =============================================== */
     @font-face {
         font-family: 'Gil Sans Pro MT';
         src: url('./fonts/GillSansMTPro.woff2') format('woff2');
@@ -19,8 +16,7 @@
         font-family: 'Gilroy', sans-serif;
         font-size: 16px;
         line-height: 1.6;
-        color: var(--text-color-light);
-    }
+        }
 
     /* =============================================== */
     /* --- SEÇÕES ESPECÍFICAS (Vortigo) --- */
@@ -284,9 +280,7 @@
 
     .color-grid {
         display: grid;
-        /* ESTA É A LINHA CRÍTICA PARA O LAYOUT DE DESKTOP */
         grid-template-columns: repeat(4, 1fr); /* 4 colunas com larguras iguais */
-        
         gap: 20px; /* Espaçamento entre os quadrados, ajuste se necessário */
         justify-items: center; /* Centraliza os itens dentro de suas células de grid */
         align-items: stretch; /* Garante que os itens preencham a altura disponível */

@@ -57,7 +57,7 @@
         }
 
         h2 {
-            text-align: left !important;
+            text-align: center;
         }
 
         html,
@@ -101,6 +101,7 @@
             text-align: left;
         }
 
+
         p {
             font-family: 'Gilroy', sans-serif;
             font-size: 18px;
@@ -123,45 +124,8 @@
             position: relative;
         }
 
-        .back-button {
-            position: absolute;
-            top: 50%;
-            left: 15px;
-            transform: translateY(-5%);
 
-            color: #fff;
-
-            background-color: transparent;
-
-            border: none;
-
-            text-decoration: none;
-
-            font-size: 1.5rem;
-            font-weight: bold;
-            cursor: pointer;
-
-            transition: color 0.2s ease-in-out;
-        }
-
-        .back-button:hover {
-            color: var(--accent-color, #ff6600);
-
-            transform: translateY(-50%);
-        }
-
-        .back-button .fas.fa-arrow-left {
-            display: block;
-        }
-
-        @media (max-width: 768px) {
-            .back-button {
-                top: 15px;
-                left: 15px;
-                font-size: 20px;
-                padding: 8px;
-            }
-        }
+        @media (max-width: 768px) {}
 
 
         .logo {
@@ -173,27 +137,11 @@
             text-decoration: none;
         }
 
-        .back-button {
-            position: absolute;
-            top: 50%;
-            left: 20px;
-            transform: translateY(-50%);
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.5rem;
-            font-weight: bold;
-            transition: transform 0.2s ease;
-        }
-
-        .back-button:hover {
-            transform: scale(1.1);
-        }
-
         .banner-section {
             width: 100%;
             height: 55vh;
             padding: 0;
-            background-image: url('images/yuca-banner-desktop.png');
+            background-image: url('images//yuca/yuca-banner-desktop.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -411,13 +359,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .main-footer {
-            padding: 2rem 0;
-            color: var(--text-color-light);
-            text-align: center;
-            font-size: 0.9rem;
         }
 
         .journey-swiper {
@@ -1159,48 +1100,6 @@
 
 
 
-        .breadcrumb-nav {
-            padding: 12px 20px;
-        }
-
-        .breadcrumb-list {
-            font-family: 'Gilroy';
-            display: flex;
-            flex-wrap: wrap;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            font-size: 0.9rem;
-        }
-
-        .breadcrumb-item {
-            display: flex;
-            align-items: center;
-
-        }
-
-        .breadcrumb-item:not(:first-child)::before {
-            content: '>';
-            margin: 0 10px;
-            color: var(--text-color-light);
-        }
-
-        .breadcrumb-item a {
-            color: var(--text-color-light);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .breadcrumb-item a:hover {
-            color: var(--primary-color);
-            text-decoration: underline;
-        }
-
-        .breadcrumb-item[aria-current="page"] {
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
 
         @media (min-width: 768px) {
             .style-guide-grid {
@@ -1413,7 +1312,7 @@
             }
 
             .banner-section {
-                background-image: url('images/yuca-banner-tablet.png');
+                background-image: url('images/yuca/yuca-banner-tablet.png');
                 height: 70vh;
             }
 
@@ -1486,7 +1385,7 @@
 
         @media (max-width: 768px) {
             .banner-section {
-                background-image: url('images/yuca-banner-mobile.png');
+                background-image: url('images/yuca/yuca-banner-mobile.png');
                 height: 65vh;
             }
 
@@ -1575,11 +1474,11 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M2BKP8Y23H"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-M2BKP8Y23H');
+    gtag('config', 'G-M2BKP8Y23H');
 </script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" />
@@ -1658,7 +1557,7 @@
                 <div class="research-box">
                     <div class="desk-research-layout">
                         <div class="research-item">
-                            <img src="images/research-g1.png" alt="Print da matéria do G1 sobre classes sociais">
+                            <img src="images/yuca/research-g1.png" alt="Print da matéria do G1 sobre classes sociais">
                             <blockquote>
                                 <strong>G1 - Economia</strong>
                                 "O afluxo às grandes cidades continua a crescer, levando ao aumento dos preços dos
@@ -1666,7 +1565,8 @@
                             </blockquote>
                         </div>
                         <div class="research-item">
-                            <img src="images/research-estadao.png" alt="Print da matéria do Estadão sobre colivings">
+                            <img src="images/yuca/research-estadao.png"
+                                alt="Print da matéria do Estadão sobre colivings">
                             <blockquote>
                                 <strong>Estadão</strong>
                                 "Custo baixo e contato social dão impulso a colivings em São Paulo (...) Após evasão nos
@@ -1675,7 +1575,7 @@
                             </blockquote>
                         </div>
                         <div class="research-item">
-                            <img src="images/research-estadao-imoveis.png"
+                            <img src="images/yuca/research-estadao-imoveis.png"
                                 alt="Print da matéria do Estadão Imóveis sobre moradia">
                             <blockquote>
                                 <strong>Estadão Imóveis</strong>
@@ -1709,9 +1609,9 @@
                                             parceiros (as) ou irmãos (ãs) ou familiares.</p>
                                     </div>
                                     <div class="chart-content">
-                                        <img class="chart-light" src="images/grafico-pizza.svg"
+                                        <img class="chart-light" src="images/yuca/grafico-pizza.svg"
                                             alt="Gráfico de pizza mostrando: 62% com os pais, 16% sozinho, 10% com namorado(a), 4% com irmão(ã), 2% com família.">
-                                        <img class="chart-dark" src="images/grafico-pizza-dark.svg"
+                                        <img class="chart-dark" src="images/yuca/grafico-pizza-dark.svg"
                                             alt="Gráfico de pizza mostrando: 62% com os pais, 16% sozinho, 10% com namorado(a), 4% com irmão(ã), 2% com família.">
                                     </div>
                                 </div>
@@ -1726,9 +1626,9 @@
                                             oferecem de forma clara todas as informações desde IPTU até condomínio.</p>
                                     </div>
                                     <div class="chart-content">
-                                        <img class="chart-light" src="images/grafico-pizza2.svg"
+                                        <img class="chart-light" src="images/yuca/grafico-pizza2.svg"
                                             alt="Gráfico de pizza sobre onde procurar imóveis.">
-                                        <img class="chart-dark" src="images/grafico-pizza2-dark.svg"
+                                        <img class="chart-dark" src="images/yuca/grafico-pizza2-dark.svg"
                                             alt="Gráfico de pizza sobre onde procurar imóveis.">
                                     </div>
                                 </div>
@@ -1743,9 +1643,9 @@
                                             porém pouca gente sabe.</p>
                                     </div>
                                     <div class="chart-content">
-                                        <img class="chart-light" src="images/grafico-pizza3.svg"
+                                        <img class="chart-light" src="images/yuca/grafico-pizza3.svg"
                                             alt="Gráfico de pizza sobre consertos domésticos: 38% chama o profissional, 24% conserta sozinho, 14% toma banho frio, 16% abre tutorial no Youtube, 2% tem amigos que arrumam, 6% pede para o pai.">
-                                        <img class="chart-dark" src="images/grafico-pizza3-dark.svg"
+                                        <img class="chart-dark" src="images/yuca/grafico-pizza3-dark.svg"
                                             alt="Gráfico de pizza sobre consertos domésticos: 38% chama o profissional, 24% conserta sozinho, 14% toma banho frio, 16% abre tutorial no Youtube, 2% tem amigos que arrumam, 6% pede para o pai.">
                                     </div>
                                 </div>
@@ -1761,9 +1661,9 @@
                                         </p>
                                     </div>
                                     <div class="chart-content">
-                                        <img class="chart-light" src="images/grafico-pizza4.svg"
+                                        <img class="chart-light" src="images/yuca/grafico-pizza4.svg"
                                             alt="Gráfico de pizza sobre percepção de preço: 56% votaram nota 3, 25% nota 4, 6% nota 2, 2% nota 5, e 1% nota 1.">
-                                        <img class="chart-dark" src="images/grafico-pizza4-dark.svg"
+                                        <img class="chart-dark" src="images/yuca/grafico-pizza4-dark.svg"
                                             alt="Gráfico de pizza sobre percepção de preço: 56% votaram nota 3, 25% nota 4, 6% nota 2, 2% nota 5, e 1% nota 1.">
                                     </div>
                                 </div>
@@ -1778,9 +1678,9 @@
                                             da cidade. Enquanto apenas 18% considera como muito importante.</p>
                                     </div>
                                     <div class="chart-content">
-                                        <img class="chart-light" src="images/grafico-pizza5.svg"
+                                        <img class="chart-light" src="images/yuca/grafico-pizza5.svg"
                                             alt="Gráfico sobre a importância da localização.">
-                                        <img class="chart-dark" src="images/grafico-pizza5-dark.svg"
+                                        <img class="chart-dark" src="images/yuca/grafico-pizza5-dark.svg"
                                             alt="Gráfico sobre a importância da localização.">
                                     </div>
                                 </div>
@@ -1795,9 +1695,9 @@
                                             preocupações como regras e espaços compartilhados ser algo recente.</p>
                                     </div>
                                     <div class="chart-content">
-                                        <img class="chart-light" src="images/grafico-pizza6.svg"
+                                        <img class="chart-light" src="images/yuca/grafico-pizza6.svg"
                                             alt="Gráfico sobre a intenção de morar em coliving.">
-                                        <img class="chart-dark" src="images/grafico-pizza6-dark.svg"
+                                        <img class="chart-dark" src="images/yuca/grafico-pizza6-dark.svg"
                                             alt="Gráfico sobre a intenção de morar em coliving.">
                                     </div>
                                 </div>
@@ -1821,7 +1721,7 @@
                             um questionário estruturado, foi possível chegar nos resultados abaixo.</p>
                     </div>
                     <div class="image-content">
-                        <img src="images/research-illustration.png"
+                        <img src="images/yuca/research-illustration.png"
                             alt="Ilustração de um relatório com gráficos e um alvo.">
                     </div>
                 </div>
@@ -1837,7 +1737,7 @@
                         <div class="swiper-slide">
                             <div class="persona-slide-content">
                                 <div class="persona-info">
-                                    <img src="images/persona-caio.png" alt="Avatar do Caio" class="persona-avatar">
+                                    <img src="images/yuca/persona-caio.png" alt="Avatar do Caio" class="persona-avatar">
                                     <h3 class="persona-name">Caio</h3>
                                     <p class="persona-details">28 anos - Marketeiro</p>
                                 </div>
@@ -1855,7 +1755,7 @@
                         <div class="swiper-slide">
                             <div class="persona-slide-content">
                                 <div class="persona-info">
-                                    <img src="images/persona-andrius.png" alt="Avatar de Andrius"
+                                    <img src="images/yuca/persona-andrius.png" alt="Avatar de Andrius"
                                         class="persona-avatar">
                                     <h3 class="persona-name">Andrius</h3>
                                     <p class="persona-details">29 anos - Programador</p>
@@ -1878,7 +1778,7 @@
                         <div class="swiper-slide">
                             <div class="persona-slide-content">
                                 <div class="persona-info">
-                                    <img src="images/persona-vanessa.png" alt="Avatar de Vanessa"
+                                    <img src="images/yuca/persona-vanessa.png" alt="Avatar de Vanessa"
                                         class="persona-avatar">
                                     <h3 class="persona-name">Vanessa</h3>
                                     <p class="persona-details">27 anos - Estudante</p>
@@ -1925,15 +1825,24 @@
             <div class="container-wide">
                 <div class="swiper gallery-swiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/placeholder-1.png" alt="Descrição da Imagem 1"></div>
-                        <div class="swiper-slide"><img src="images/placeholder-2.png" alt="Descrição da Imagem 2"></div>
-                        <div class="swiper-slide"><img src="images/placeholder-3.png" alt="Descrição da Imagem 3"></div>
-                        <div class="swiper-slide"><img src="images/placeholder-4.png" alt="Descrição da Imagem 4"></div>
-                        <div class="swiper-slide"><img src="images/placeholder-5.png" alt="Descrição da Imagem 5"></div>
-                        <div class="swiper-slide"><img src="images/placeholder-6.png" alt="Descrição da Imagem 6"></div>
-                        <div class="swiper-slide"><img src="images/placeholder-7.png" alt="Descrição da Imagem 6"></div>
-                        <div class="swiper-slide"><img src="images/placeholder-8.png" alt="Descrição da Imagem 6"></div>
-                        <div class="swiper-slide"><img src="images/placeholder-9.png" alt="Descrição da Imagem 6"></div>
+                        <div class="swiper-slide"><img src="images/yuca/placeholder-1.png" alt="Descrição da Imagem 1">
+                        </div>
+                        <div class="swiper-slide"><img src="images/yuca/placeholder-2.png" alt="Descrição da Imagem 2">
+                        </div>
+                        <div class="swiper-slide"><img src="images/yuca/placeholder-3.png" alt="Descrição da Imagem 3">
+                        </div>
+                        <div class="swiper-slide"><img src="images/yuca/placeholder-4.png" alt="Descrição da Imagem 4">
+                        </div>
+                        <div class="swiper-slide"><img src="images/yuca/placeholder-5.png" alt="Descrição da Imagem 5">
+                        </div>
+                        <div class="swiper-slide"><img src="images/yuca/placeholder-6.png" alt="Descrição da Imagem 6">
+                        </div>
+                        <div class="swiper-slide"><img src="images/yuca/placeholder-7.png" alt="Descrição da Imagem 6">
+                        </div>
+                        <div class="swiper-slide"><img src="images/yuca/placeholder-8.png" alt="Descrição da Imagem 6">
+                        </div>
+                        <div class="swiper-slide"><img src="images/yuca/placeholder-9.png" alt="Descrição da Imagem 6">
+                        </div>
                     </div>
                     <div class="swiper-pagination"></div>
                     <div class="swiper-button-next"></div>
@@ -1954,7 +1863,7 @@
                     um desenvolvimento eficiente e direcionado às reais necessidades dos usuários.
                 </p>
                 <div class="grid-image-wrapper">
-                    <img src="images/prioritization-grid.png" alt="Grid de Priorização com impacto vs esforço">
+                    <img src="images/yuca/prioritization-grid.png" alt="Grid de Priorização com impacto vs esforço">
                 </div>
             </div>
         </section>
@@ -1966,9 +1875,11 @@
                     <div class="moodboard-image-wrapper">
                         <h2>Moodboard</h2>
                         <img class="moodboard-image moodboard-mobile moodboard-light"
-                            src="images/moodboard-mobile-light.png" alt="Moodboard do projeto para mobile (tema claro)">
+                            src="images/yuca/moodboard-mobile-light.png"
+                            alt="Moodboard do projeto para mobile (tema claro)">
                         <img class="moodboard-image moodboard-mobile moodboard-dark"
-                            src="images/moodboard-mobile-dark.png" alt="Moodboard do projeto para mobile (tema escuro)">
+                            src="images/yuca/moodboard-mobile-dark.png"
+                            alt="Moodboard do projeto para mobile (tema escuro)">
                     </div>
                 </div>
             </div>
@@ -1989,11 +1900,11 @@
             </p>
             <div class="grid-image-wrapper">
                 <picture>
-                    <source media="(max-width: 768px)" srcset="images/responsive-grids-mobile.png">
+                    <source media="(max-width: 768px)" srcset="images/yuca/responsive-grids-mobile.png">
 
-                    <source media="(min-width: 769px)" srcset="images/responsive-grids.png">
+                    <source media="(min-width: 769px)" srcset="images/yuca/responsive-grids.png">
 
-                    <img src="images/responsive-grids.png"
+                    <img src="images/yuca/responsive-grids.png"
                         alt="Demonstração do grid responsivo em desktops, tablets e celulares">
                 </picture>
             </div>
@@ -2010,26 +1921,26 @@
             </p>
 
             <div class="wireframe-gallery">
-                <a href="images/wireframe-completo-1.png" data-lightbox="wireframes"
+                <a href="images/yuca/wireframe-completo-1.png" data-lightbox="wireframes"
                     data-title="Wireframe da Tela Inicial: Visão geral da busca de apartamentos.">
                     <div class="wireframe-item">
-                        <img src="images/wireframe-thumb-1.png" alt="Wireframe em baixa fidelidade da página inicial"
-                            loading="lazy">
+                        <img src="images/yuca/wireframe-thumb-1.png"
+                            alt="Wireframe em baixa fidelidade da página inicial" loading="lazy">
                     </div>
                 </a>
 
-                <a href="images/wireframe-completo-2.png" data-lightbox="wireframes"
+                <a href="images/yuca/wireframe-completo-2.png" data-lightbox="wireframes"
                     data-title="Wireframe da Página de Detalhes: Informações, fotos e mapa do apartamento.">
                     <div class="wireframe-item">
-                        <img src="images/wireframe-thumb-2.png"
+                        <img src="images/yuca/wireframe-thumb-2.png"
                             alt="Wireframe em baixa fidelidade da página de detalhes do imóvel" loading="lazy">
                     </div>
                 </a>
 
-                <a href="images/wireframe-completo-3.png" data-lightbox="wireframes"
+                <a href="images/yuca/wireframe-completo-3.png" data-lightbox="wireframes"
                     data-title="Wireframe da Tela de Pesquisa: Filtros avançados e resultados em lista.">
                     <div class="wireframe-item">
-                        <img src="images/wireframe-thumb-3.png"
+                        <img src="images/yuca/wireframe-thumb-3.png"
                             alt="Wireframe em baixa fidelidade da tela de busca com filtros" loading="lazy">
                     </div>
                 </a>
@@ -2164,26 +2075,26 @@
                     </p>
 
                     <div class="wireframe-gallery">
-                        <a href="images/wireframe-alta-1.png" data-lightbox="wireframes"
+                        <a href="images/yuca/wireframe-alta-1.png" data-lightbox="wireframes"
                             data-title="Wireframe da Tela Inicial: Visão geral da busca de apartamentos.">
                             <div class="wireframe-item">
-                                <img src="images/wireframe-thumb-alta-1.png"
+                                <img src="images/yuca/wireframe-thumb-alta-1.png"
                                     alt="Wireframe em alta fidelidade da página inicial" loading="lazy">
                             </div>
                         </a>
 
-                        <a href="images/wireframe-alta-2.png" data-lightbox="wireframes"
+                        <a href="images/yuca/wireframe-alta-2.png" data-lightbox="wireframes"
                             data-title="Wireframe da Página de Detalhes: Informações, fotos e mapa do apartamento.">
                             <div class="wireframe-item">
-                                <img src="images/wireframe-thumb-alta-2.png"
+                                <img src="images/yuca/wireframe-thumb-alta-2.png"
                                     alt="Wireframe em baixa fidelidade da página de detalhes do imóvel" loading="lazy">
                             </div>
                         </a>
 
-                        <a href="images//wireframe-alta-3.png" data-lightbox="wireframes"
+                        <a href="images/yuca/wireframe-alta-3.png" data-lightbox="wireframes"
                             data-title="Wireframe da Tela de Pesquisa: Filtros avançados e resultados em lista.">
                             <div class="wireframe-item">
-                                <img src="images/wireframe-thumb-alta-3.png"
+                                <img src="images/yuca/wireframe-thumb-alta-3.png"
                                     alt="Wireframe em baixa fidelidade da tela de busca com filtros" loading="lazy">
                             </div>
                         </a>
@@ -2231,11 +2142,11 @@
                         </div>
                     </div>
                 </section>
-
+                </main>
 
                 <footer class="main-footer">
                     <div class="container text-center">
-                        <p>@miguelzynich - 09/25</p>
+                        <p>@miguelzynich - 10/25</p>
                     </div>
                 </footer>
 
@@ -2373,6 +2284,10 @@
 
                     });
                 </script>
+
+                <script src="main.js"></script>
+
+
 </body>
 
 </html>

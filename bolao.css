@@ -1,0 +1,212 @@
+/* =================================
+   ESTILOS ESPECÍFICOS - PROJETO BOLÃO
+==================================== */
+
+body {
+    font-family: 'Gilroy', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+h2 {
+    font-size: 2.2rem;
+    text-align: left;
+}
+
+p {
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+.banner-bolao {
+    width: 100%;
+    height: 56vh;
+    padding: 0;
+    background-image: url('./images/bolao/bolao-section.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.project-content {
+    background-color: var(--background-color);
+}
+
+body.dark-mode .project-content {
+    background-color: var(--background-color);
+}
+
+.two-column-layout {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.two-column-layout:last-child {
+    margin-bottom: 0;
+}
+
+.two-column-layout .column {
+    flex: 1;
+}
+
+.two-column-layout .column p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--primary -color);
+}
+
+.list-section {
+    background-color: var(--light-gray-bg);
+}
+
+body.dark-mode .list-section {
+    background-color: var(--light-gray-bg);
+}
+
+.processo-lista {
+    list-style-position: outside;
+    padding-left: 20px;
+    margin-top: 30px;
+}
+
+.processo-lista li {
+    margin-bottom: 15px;
+    line-height: 1.7;
+    color: var(--primary-color);
+}
+
+.processo-lista li strong {
+    color: var(--primary-color);
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.benchmark-section {
+    background-color: var(--background-color);
+}
+
+body.dark-mode .benchmark-section {
+    background-color: var(--background-color);
+}
+
+.benchmark-section p {
+    max-width: 960px;
+    margin-bottom: var(--spacing-xl);
+}
+
+.two-column-img {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.two-column-img .column h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.two-column-img .column img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+#userflow-section {
+    background-color: var(--light-gray-bg);
+    text-align: left;
+}
+
+body.dark-mode #userflow-section {
+    background-color: var(--light-gray-bg);
+}
+
+#userflow-section h2 {
+    text-align: left;
+}
+
+#userflow-section p {
+    max-width: 1020px;
+    margin: 0 auto 40px auto;
+    text-align: left;
+}
+
+#userflow-section img {
+    display: block;
+    margin: 40px auto 0 auto;
+    max-width: 90%;
+    height: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+#wire-baixa,
+#wire-alta,
+#wire-mobile {
+    background-color: var(--background-color);
+}
+
+body.dark-mode #wire-baixa,
+body.dark-mode #wire-alta,
+body.dark-mode #wire-mobile {
+    background-color: var(--background-color);
+}
+
+#wire-baixa p,
+#wire-alta p,
+#wire-mobile p {
+    max-width: 1060px;
+}
+
+#wire-baixa img,
+#wire-alta img,
+#wire-mobile img {
+    display: block;
+    margin: 40px auto 0 auto;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* =================================
+   RESPONSIVIDADE - PÁGINA BOLÃO
+==================================== */
+
+@media (max-width: 1024px) {
+    .banner-bolao {
+        height: 85vh;
+        background-image: url('./images/bolao/bolao-tablet.png');
+    }
+}
+
+@media (max-width: 768px) {
+    .banner-bolao {
+        height: 50vh;
+    }
+
+    .two-column-layout {
+        flex-direction: column;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    .two-column-img {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    #userflow-section p {
+        max-width: 100%;
+    }
+
+    #userflow-section img {
+        max-width: 100%;
+    }
+}

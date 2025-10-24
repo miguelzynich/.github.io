@@ -16,434 +16,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://t.contentsquare.net/uxa/734555fce281e.js"></script>
 
+    <link rel="stylesheet" href="style.css">
 
-    <style>
-        @font-face {
-            font-family: 'Touche';
-            src: url('fonts/ToucheW03-Regular.woff2') format('woff2');
-            font-weight: 400;
-            font-style: normal;
-        }
-
-        @font-face {
-            font-family: 'Touche';
-            src: url('fonts/ToucheW03-Bold.woff2') format('woff2');
-            font-weight: 700;
-            font-style: normal;
-        }
-
-        @font-face {
-            font-family: 'Gilroy';
-            src: url('fonts/Gilroy-Regular.woff') format('woff');
-            font-weight: 400;
-            font-style: normal;
-        }
-
-        @font-face {
-            font-family: 'Gilroy';
-            src: url('fonts/Gilroy-Bold.woff') format('woff');
-            font-weight: 700;
-            font-style: normal;
-        }
-
-        :root {
-            --primary-color: #222;
-            --secondary-color: #3d3d3d;
-            --background-color: #fff;
-            --light-gray-bg: #f8f8f8;
-            --border-color: #ddd;
-            --spacing-md: 1rem;
-            --spacing-lg: 1.5rem;
-            --spacing-xl: 2.5rem;
-            --spacing-xxl: 4rem;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            overflow-x: hidden;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--primary-color);
-            background-color: var(--background-color);
-            line-height: 1.6;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        h1 {
-            font-family: 'Touche', sans-serif;
-            font-weight: 700;
-            font-size: 2.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        h2 {
-            font-family: 'Touche', sans-serif;
-            font-weight: 700;
-            font-size: 2rem;
-            margin-bottom: var(--spacing-xl);
-            text-align: center;
-        }
-
-        .section-title {
-            text-align: left;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .main-header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: var(--spacing-md) 0;
-            font-weight: bold;
-        }
-
-        .logo {
-            display: block;
-            text-align: center;
-            font-family: 'Touche', sans-serif;
-            font-size: 1.5rem;
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .btn {
-            display: inline-block;
-            color: var(--primary-color);
-            background-color: transparent;
-            text-decoration: none;
-            padding: 12px 24px;
-            border: 5px solid var(--primary-color);
-            font-size: 0.9rem;
-            letter-spacing: 0.3rem;
-            font-family: 'Touche', sans-serif;
-            font-weight: 700;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            -webkit-text-stroke: 0.4px var(--primary-color);
-        }
-
-        .btn:hover {
-            background-color: var(--primary-color);
-            color: var(--background-color);
-            -webkit-text-stroke: 0.4px var(--background-color);
-        }
-
-        .button-group {
-            display: flex;
-            justify-content: center;
-            gap: var(--spacing-md);
-        }
-
-        .hero-section {
-            padding: var(--spacing-xxl) 0;
-        }
-
-        .profile-picture {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: var(--spacing-lg);
-        }
-
-        .subtitle {
-            font-family: 'Gilroy', sans-serif;
-            font-size: 1.3rem;
-            color: var(--secondary-color);
-            margin-bottom: var(--spacing-xl);
-        }
-
-        .projects-section {
-            background-color: var(--light-gray-bg);
-            padding: var(--spacing-xxl) 0;
-        }
-
-        .project-grid {
-            display: grid;
-            gap: 2rem;
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        .project-card img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 8px;
-        }
-
-        #sobre-e-experiencia {
-            padding: 80px 20px;
-        }
-
-        body.dark-mode #sobre-e-experiencia {
-            background-color: #000000;
-        }
-
-        body:not(.dark-mode) #sobre-e-experiencia {
-            background-color: var(--light-gray-bg);
-        }
-
-        .two-column-layout {
-            display: flex;
-            gap: 80px;
-            align-items: flex-start;
-        }
-
-        .about-column {
-            flex: 1.5;
-        }
-
-        .about-column p {
-            font-family: 'Gilroy', sans-serif;
-            font-size: 1.15rem;
-            line-height: 1.8;
-            color: var(--secondary-color);
-        }
-
-        .experience-column {
-            flex: 1.5;
-        }
-
-        .experience-list {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .experience-item {
-            display: flex;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 0 24px;
-            padding-bottom: 24px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .experience-item:last-child {
-            border-bottom: none;
-        }
-
-        .experience-item .date {
-            font-size: 1rem;
-            color: var(--secondary-color);
-            flex: 0 0 120px;
-        }
-
-        .experience-item .role {
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        .experience-item .company {
-            font-size: 1rem;
-            color: var(--secondary-color);
-            margin-left: auto;
-            text-align: right;
-        }
-
-        #contact {
-            padding: var(--spacing-xxl) 20px;
-        }
-
-        #contact .container {
-            border-radius: 16px;
-            padding: 50px;
-            text-align: center;
-        }
-
-        #contact .section-title {
-            font-size: 2.5rem;
-            text-align: center;
-        }
-
-        #contact p {
-            font-size: 1.1rem;
-            color: var(--secondary-color);
-            max-width: 450px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 30px;
-        }
-
-        #contact .button-group {
-            justify-content: center;
-        }
-
-        .main-footer {
-            padding: 2rem 0;
-            color: var(--secondary-color);
-            font-size: 0.9rem;
-        }
-
-        body.dark-mode {
-            --primary-color: #f1f1f1;
-            --secondary-color: #a0a0a0;
-            --background-color: #121212;
-            --light-gray-bg: #1E1E1E;
-            --border-color: #333;
-        }
-
-        body.dark-mode .main-header {
-            background-color: var(--light-gray-bg);
-        }
-
-        body.dark-mode .projects-section {
-            background-color: var(--light-gray-bg);
-        }
-
-        body.dark-mode #contact .container {
-            background-color: #000000;
-            border: 1px solid var(--border-color);
-        }
-
-        body:not(.dark-mode) #contact .container {
-            background-color: var(--light-gray-bg);
-        }
-
-        .dark-mode-button {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            z-index: 1000;
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background-color: var(--primary-color);
-            color: var(--background-color);
-            border: 2px solid var(--background-color);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: all 0.3s ease;
-        }
-
-        .dark-mode-button:hover {
-            transform: scale(1.1);
-        }
-
-        .dark-mode-button svg {
-            width: 26px;
-            height: 26px;
-            stroke: currentColor;
-        }
-
-        .dark-mode-button .icon-sun {
-            display: none;
-        }
-
-        .dark-mode-button .icon-moon {
-            display: block;
-        }
-
-        body.dark-mode .dark-mode-button .icon-moon {
-            display: none;
-        }
-
-        body.dark-mode .dark-mode-button .icon-sun {
-            display: block;
-        }
-
-        @media (max-width: 992px) {
-            .two-column-layout {
-                flex-direction: column;
-                gap: 60px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            section {
-                padding: var(--spacing-xl) 0;
-            }
-
-            .container {
-                padding: 0 15px;
-            }
-
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            h2 {
-                font-size: 1.8rem;
-            }
-
-            .hero-section .profile-picture {
-                width: 180px;
-                height: 180px;
-            }
-
-            .button-group {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-
-            .button-group .btn {
-                width: 100%;
-                max-width: 280px;
-                text-align: center;
-            }
-
-            .project-grid {
-                grid-template-columns: 1fr;
-            }
-
-            #sobre-e-experiencia {
-                padding: var(--spacing-xl) 20px;
-            }
-
-            #contact {
-                padding: var(--spacing-xl) 20px;
-            }
-
-            #contact .container {
-                padding: 40px 25px;
-            }
-
-            .experience-item {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 4px;
-            }
-
-            .experience-item .company {
-                margin-left: 0;
-                text-align: left;
-            }
-        }
-    </style>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M2BKP8Y23H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-M2BKP8Y23H');
-</script>
-
 
 <body>
     <header class="main-header">
@@ -474,15 +50,17 @@
             <div class="container">
                 <h2 class="section-title">Projetos</h2>
                 <div class="project-grid">
-                    <div class="project-card">
-                        <a href="cores.html"> <img src="images/cores_caixa.png" alt="Preview do Projeto de Cores"></a>
-                    </div>
-                     <div class="project-card">
-                        <a href="yuca.html"><img src="images/Yuca.png" alt="Preview do Projeto Yuca"></a>
+                    <div class="project-card">  
+                        <a href="bolao.html"> <img src="images/thumbs/bolao_caixa.png" alt="Preview do Bolao de aposta"></a>
                     </div>
                     <div class="project-card">
-                        <a href="vortigo.html"><img src="images/vortigo_projeto.png"
-                                alt="Preview do Projeto Vortigo"></a>
+                        <a href="cores.html"> <img src="images/thumbs/cores_caixa.png" alt="Preview do Projeto de Cores"></a>
+                    </div>
+                    <div class="project-card">
+                        <a href="yuca.html"><img src="images/thumbs/yuca.png" alt="Preview do Projeto Yuca"></a>
+                    </div>
+                    <div class="project-card">
+                        <a href="vortigo.html"><img src="images/thumbs/vortigo.png" alt="Preview do Projeto Vortigo"></a>
                     </div>
                 </div>
             </div>
@@ -494,16 +72,20 @@
                     <div class="about-column">
                         <h2 class="section-title">Sobre</h2>
                         <p>
-                            <strong>UX/UI Designer com 4 anos de experiência </strong> em produtos digitais e 13 anos como Diretor de
+                            <strong>UX/UI Designer com 4 anos de experiência</strong> em produtos digitais e 13 anos
+                            como Diretor de
                             Arte. Sou especialista em unir design funcional, centrado no usuário e acessível com uma
-                            estética visual de alto impacto.<strong> Pós-graduando em User Experience Design and Beyond (PUCRS).</strong>
-                            Engajado com a comunidade de design, em 2022 também atuei como voluntário no projeto Kurumin, uma iniciativa da <strong>Vagas UX.</strong>
-                            Na Qintess, otimizei a User Experience dos sistemas de Loterias da Caixa, liderando processos de
+                            estética visual de alto impacto.<strong> Pós-graduando em User Experience Design and Beyond
+                                (PUCRS).</strong>
+                            Engajado com a comunidade de design, em 2022 também atuei como voluntário no projeto
+                            Kurumin, uma
+                            iniciativa da <strong>Vagas UX.</strong>
+                            Na Qintess, otimizei a User Experience dos sistemas de Loterias da Caixa, liderando
+                            processos de
                             pesquisa, prototipação e garantindo a inclusão através da acessibilidade.
 
-                        </p>
+                        </p> <a href="./doc/UX_UI_Miguel_Zynich.pdf#zoom=25" id="openCvModalBtn" class="btn cv-btn">Ver Currículo Completo</a>
                     </div>
-
                     <div class="experience-column">
                         <h2 class="section-title">Experiência</h2>
                         <div class="experience-list">
@@ -555,7 +137,7 @@
 
     <footer class="main-footer">
         <div class="container text-center">
-            <p>@miguelzynich - 09/25</p>
+            <p>@miguelzynich - 10/25</p>
         </div>
     </footer>
 
@@ -578,41 +160,7 @@
         </svg>
     </button>
 
-    <script>
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        const body = document.body;
-
-        const enableDarkMode = () => {
-            body.classList.add('dark-mode');
-            localStorage.setItem('theme', 'dark');
-        };
-
-        const disableDarkMode = () => {
-            body.classList.remove('dark-mode');
-            localStorage.setItem('theme', 'light');
-        };
-
-        darkModeToggle.addEventListener('click', () => {
-            if (body.classList.contains('dark-mode')) {
-                disableDarkMode();
-            } else {
-                enableDarkMode();
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedTheme = localStorage.getItem('theme');
-            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-            if (savedTheme === 'dark') {
-                enableDarkMode();
-            } else if (savedTheme === 'light') {
-                disableDarkMode();
-            } else if (prefersDark) {
-                enableDarkMode();
-            }
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 
 </html>
