@@ -42,6 +42,7 @@ body {
     font-size: 2.5rem;
     font-family: 'Gilroy', sans-serif;
     margin-bottom: 40px;
+    color: var(--background-color);
 }
 
 
@@ -253,15 +254,15 @@ body {
     }
 
     .cores-caixa {
-        height: 80vh;
-        background-image: url('./images/cores/cores_banner_tablet.png');
+        height: 38vh;
+        background-image: url('./images/cores/cores_banner.png');
     }
 }
 
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 868px) {
 
     .project-content,
     .comparison-section {
@@ -310,27 +311,30 @@ body.dark-mode .bg-white {
 }
 
 body.dark-mode .main-header {
-    background-color: var(--light-gray-bg); /* que é igual a #1E1E1E */
+    background-color: var(--light-gray-bg);
 }
 
 body.dark-mode .project-content {
     background-color: var(--background-color);
 }
 
-/* Estilo do botão de toggle */
-/* =================================
-   BOTÃO DARK MODE UNIFICADO    
-==================================== */
+
 .dark-mode-button {
     position: fixed !important;
     bottom: 25px !important;
     right: 25px !important;
     top: auto !important;
-    /* Reseta qualquer 'top' conflitante */
     left: auto !important;
-    /* Reseta qualquer 'left' conflitante */
 }
 
+.dark-mode .project-content h3,
+.comparison-section h3 {
+    text-align: left;
+    font-size: 2.5rem;
+    font-family: 'Gilroy', sans-serif;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
 
 .dark-mode-button {
     position: fixed;
@@ -349,7 +353,6 @@ body.dark-mode .project-content {
     align-items: center;
     transition: all 0.3s ease;
     overflow: hidden;
-    /* Essencial para a animação */
 }
 
 .dark-mode-button:hover {
@@ -392,7 +395,6 @@ body.dark-mode .dark-mode-button .icon-sun {
 .dark-mode-button svg {
     width: 26px;
     height: 26px;
-    stroke: currentColor;
 }
 
 .dark-mode-button .icon-sun {
@@ -427,4 +429,8 @@ body.dark-mode .comparison-column .description {
 
 body.dark-mode .contrast-card {
     background-color: #000000;
+}
+
+.dark-mode .h3{
+    color: #FFFFFF;
 }

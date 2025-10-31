@@ -29,16 +29,18 @@
     font-style: normal;
 }
 
+/* --- CORRIGIDO: Adicionada extensão .woff2 --- */
 @font-face {
     font-family: 'Gil Sans Pro MT';
-    src: url('fonts/GilSansProMT-Regular') format('woff2');
+    src: url('fonts/GilSansProMT-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
 }
 
+/* --- CORRIGIDO: Adicionada extensão .woff2 --- */
 @font-face {
     font-family: 'Gil Sans Pro MT';
-    src: url('fonts/GilSansProMT-Bold') format('woff2');
+    src: url('fonts/GilSansProMT-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
 }
@@ -50,12 +52,15 @@
     --primary-color: #222;
     --secondary-color: #3d3d3d;
     --background-color: #fff;
-    --light-gray-bg: #f8f8f8;
+    --section-bg: #f5f5f5;
+
     --border-color: #ddd;
     --spacing-md: 1rem;
     --spacing-lg: 1.5rem;
     --spacing-xl: 2.5rem;
     --spacing-xxl: 4rem;
+    --text-color-light: var(--secondary-color);
+    --card-bg: #ffffff;
 }
 
 * {
@@ -71,11 +76,9 @@ body {
 
 body {
     font-family: 'Gilroy', sans-serif;
-    /* Fonte padrão definida */
     color: var(--primary-color);
     background-color: var(--background-color);
     line-height: 1.7;
-    /* Espaçamento de linha melhorado */
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -110,7 +113,6 @@ h2 {
     font-size: 2.2rem;
     margin-bottom: var(--spacing-xl);
     text-align: left;
-    /* Padrão alinhado à esquerda */
     color: var(--primary-color);
 }
 
@@ -216,8 +218,8 @@ p {
 }
 
 .breadcrumb-nav {
-    background-color: var(--primar-color-bg);
-    padding: 12px 20px;
+    background-color: var(--primary -color-bg);
+    padding: 12px 20px; 
 }
 
 .breadcrumb-list {
@@ -257,6 +259,10 @@ p {
     font-weight: bold;
 }
 
+.breadcrumb-nav.breadcrumb-nav--alt-bg {
+     background-color: var(--section-bg);
+}
+
 /* =============================================== */
 /* --- SEÇÕES DA HOME (INDEX.HTML) --- */
 /* =============================================== */
@@ -281,34 +287,25 @@ p {
     text-align: center;
 }
 
+
 .projects-section {
-    background-color: var(--light-gray-bg);
-    padding: var(--spacing-xxl) 0;
+    padding: 6rem 0;
+    background-color: var(--section-bg);
 }
 
-.project-grid {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.project-card img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-}
+/* --- REMOVIDO: Bloco .project-grid e .project-card img duplicado e antigo --- */
 
 #sobre-e-experiencia {
     padding: 80px 20px;
 }
 
 body.dark-mode #sobre-e-experiencia {
-    background-color: #000000;
+    background-color: #121212;
 }
 
 body:not(.dark-mode) #sobre-e-experiencia {
-    background-color: var(--light-gray-bg);
+    /* --- CORRIGIDO: Usando a nova variável --- */
+    background-color: var(--background-color);
 }
 
 .two-column-layout {
@@ -372,12 +369,16 @@ body:not(.dark-mode) #sobre-e-experiencia {
 
 #contact {
     padding: var(--spacing-xxl) 20px;
+        background-color: #f5f5f5;
+
 }
 
 #contact .container {
     border-radius: 16px;
     padding: 50px;
     text-align: center;
+    border: 1px solid var(--border-color);
+
 }
 
 #contact .section-title {
@@ -397,16 +398,120 @@ body:not(.dark-mode) #sobre-e-experiencia {
     justify-content: center;
 }
 
-/* =============================================== */
-/* --- SEÇÃO DE PROJETOS RECOMENDADOS (GLOBAL) --- */
-/* =============================================== */
-.recommended-projects {
-    padding: var(--spacing-xxl) 0;
-    background-color: var(--light-gray-bg);
-    border-top: 1px solid var(--border-color);
+/* --- ESTA É A SEÇÃO CORRETA DOS CARDS DE PROJETO --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
 }
 
-/* Esta seção reutiliza .project-grid e .project-card, que já são responsivos */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    background-color: var(--card-bg);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.project-image-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+}
+
+.project-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image-wrapper img {
+    transform: scale(1.05);
+}
+
+.project-text-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-title-mini {
+    font-family: 'Touche', sans-serif;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.project-desc-mini {
+    font-family: 'Gilroy', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-color-light);
+    margin: 0 0 1rem 0;
+    line-height: 1.4;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.project-tags-mini {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.project-tags-mini li {
+    font-family: 'Gilroy', sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    background-color: var(--border-color);
+    color: var(--text-color-light);
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+body.dark-mode .project-card {
+    background-color: var(--card-bg);
+}
+
+body.dark-mode .project-card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .project-title-mini {
+    color: var(--primary-color);
+}
+
+body.dark-mode .project-desc-mini {
+    color: var(--text-color-light);
+}
+
+body.dark-mode .project-tags-mini li {
+    background-color: var(--bullet-bg-dark);
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* FIM DA SEÇÃO CORRETA DOS CARDS DE PROJETO */
 
 
 /* =============================================== */
@@ -414,28 +519,42 @@ body:not(.dark-mode) #sobre-e-experiencia {
 /* =============================================== */
 
 body.dark-mode {
+    color: var(--primary-color);
     --primary-color: #f1f1f1;
-    --secondary-color: #a0a0a0;
+    --secondary-color: #f3f3f3;
     --background-color: #121212;
-    --light-gray-bg: #1E1E1E;
-    --border-color: #333;
+    --section-bg: #1a1a1a;
+    --text-color-light: #a0a0a0;
+    --border-color: #444;
+    --card-bg: #222222;
+    --bullet-bg-dark: #333333;
 }
 
+/* --- CORRIGIDO: Usando a nova variável --- */
 body.dark-mode .main-header {
-    background-color: var(--light-gray-bg);
+    background-color: var(--card-bg);
+}
+
+body.dark-mode p {
+    color: var(--text-color-light);
 }
 
 body.dark-mode .projects-section {
-    background-color: var(--light-gray-bg);
+    background-color: var(--section-bg);
 }
 
 body.dark-mode #contact .container {
-    background-color: #000000;
+    background-color: var(--section-bg);
     border: 1px solid var(--border-color);
+
+}
+
+body.dark-mode #contact {
+    background-color: #1a1a1a;
 }
 
 body:not(.dark-mode) #contact .container {
-    background-color: var(--light-gray-bg);
+    background-color: var(--card-bg);
 }
 
 body.dark-mode .btn {
@@ -458,8 +577,12 @@ body.dark-mode .breadcrumb-nav {
     background-color: #121212;
 }
 
+body.dark-mode .breadcrumb-nav.breadcrumb-nav--alt-bg {
+     background-color: var(--section-bg); 
+}
+
 body.dark-mode .recommended-projects {
-    background-color: var(--light-gray-bg);
+    background-color: var(--section-bg);
     border-top: 1px solid var(--border-color);
 }
 
@@ -467,7 +590,6 @@ body.dark-mode strong {
     color: #fff;
 }
 
-/* --- Botão Dark Mode (REGRA CORRETA E ÚNICA) --- */
 .dark-mode-button {
     position: fixed;
     bottom: 25px;
@@ -568,9 +690,10 @@ body.dark-mode .dark-mode-button .icon-sun {
         max-width: 280px;
     }
 
-    .project-grid {
-        grid-template-columns: 1fr;
-    }
+    /* Esta regra é redundante, pois a regra correta está na seção de cards */
+    /* .project-grid {
+        grid-template-columns: 1fr;
+    } */
 
     #sobre-e-experiencia {
         padding: var(--spacing-xl) 20px;
@@ -613,3 +736,4 @@ body.dark-mode .dark-mode-button .icon-sun {
         margin-bottom: 0;
     }
 }
+

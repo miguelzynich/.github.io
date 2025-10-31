@@ -1,6 +1,8 @@
 /* =================================
-   ESTILOS ESPECÍFICOS - PROJETO BOLÃO
+   ESTILOS ESPECÍFICOS - PROJETO BOLÃO
 ==================================== */
+
+/* --- Configurações Gerais da Página --- */
 
 body {
     font-family: 'Gilroy', sans-serif;
@@ -18,6 +20,23 @@ p {
     text-align: left;
 }
 
+/* * REGRA AUTOMÁTICA DE COR DE FUNDO
+ * Define o fundo "cor sim, cor não" para todas as seções
+ * dentro do <main>. Funciona para light e dark mode.
+*/
+main>section {
+    background-color: var(--background-color);
+    /* Cor Padrão (Branco / #121212) */
+}
+
+main>section:nth-of-type(even) {
+    background-color: var(--section-bg);
+    /* Cor Alternada (Cinza / #1a1a1a) */
+}
+
+
+/* --- Banner --- */
+
 .banner-bolao {
     width: 100%;
     height: 56vh;
@@ -28,13 +47,7 @@ p {
     background-repeat: no-repeat;
 }
 
-.project-content {
-    background-color: var(--background-color);
-}
-
-body.dark-mode .project-content {
-    background-color: var(--background-color);
-}
+/* --- Layouts Reutilizáveis --- */
 
 .two-column-layout {
     display: flex;
@@ -50,49 +63,11 @@ body.dark-mode .project-content {
     flex: 1;
 }
 
-.two-column-layout .column p {
+.two-column-layout .column p {  
     font-size: 1.15rem;
     line-height: 1.8;
-    color: var(--primary -color);
-}
-
-.list-section {
-    background-color: var(--light-gray-bg);
-}
-
-body.dark-mode .list-section {
-    background-color: var(--light-gray-bg);
-}
-
-.processo-lista {
-    list-style-position: outside;
-    padding-left: 20px;
-    margin-top: 30px;
-}
-
-.processo-lista li {
-    margin-bottom: 15px;
-    line-height: 1.7;
+    /* CORRIGIDO: Removido espaço em 'var(--primary -color)' */
     color: var(--primary-color);
-}
-
-.processo-lista li strong {
-    color: var(--primary-color);
-    display: inline-block;
-    margin-right: 5px;
-}
-
-.benchmark-section {
-    background-color: var(--background-color);
-}
-
-body.dark-mode .benchmark-section {
-    background-color: var(--background-color);
-}
-
-.benchmark-section p {
-    max-width: 960px;
-    margin-bottom: var(--spacing-xl);
 }
 
 .two-column-img {
@@ -116,59 +91,49 @@ body.dark-mode .benchmark-section {
     border: 1px solid var(--border-color);
 }
 
-#userflow-section {
-    background-color: var(--light-gray-bg);
-    text-align: left;
+/* --- Componentes Específicos --- */
+
+.processo-lista {
+    list-style-position: outside;
+    padding-left: 20px;
+    margin-top: 30px;
 }
 
-body.dark-mode #userflow-section {
-    background-color: var(--light-gray-bg);
+.processo-lista li {
+    margin-bottom: 15px;
+    line-height: 1.7;
+    color: var(--primary-color);
 }
 
-#userflow-section h2 {
-    text-align: left;
+.processo-lista li strong {
+    color: var(--primary-color);
+    display: inline-block;
+    margin-right: 5px;
 }
 
-#userflow-section p {
+.benchmark-section p {
+    max-width: 960px;
+    margin-bottom: var(--spacing-xl);
+}
+
+.userflow-section p {
     max-width: 1020px;
     margin: 0 auto 40px auto;
     text-align: left;
 }
 
-#userflow-section img {
-    display: block;
-    margin: 40px auto 0 auto;
-    max-width: 90%;
-    height: auto;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-#wire-baixa,
-#wire-alta,
-#wire-mobile {
-    background-color: var(--background-color);
-}
-
-body.dark-mode #wire-baixa,
-body.dark-mode #wire-alta,
-body.dark-mode #wire-mobile {
-    background-color: var(--background-color);
-}
-
-#wire-baixa p,
-#wire-alta p,
-#wire-mobile p {
+/* CONSOLIDADO: Estilo para as seções de wireframe */
+.wireframe-display-section p {
     max-width: 1060px;
 }
 
-#wire-baixa img,
-#wire-alta img,
-#wire-mobile img {
+/* CONSOLIDADO: Estilo de imagem para userflow E wireframes */
+.userflow-section img,
+.wireframe-display-section img {
     display: block;
     margin: 40px auto 0 auto;
     max-width: 100%;
+    /* Ajustado para ser 100% por padrão */
     height: auto;
     border: 1px solid var(--border-color);
     border-radius: 8px;
@@ -176,7 +141,7 @@ body.dark-mode #wire-mobile {
 }
 
 /* =================================
-   RESPONSIVIDADE - PÁGINA BOLÃO
+   RESPONSIVIDADE - PÁGINA BOLÃO
 ==================================== */
 
 @media (max-width: 1024px) {
@@ -202,11 +167,9 @@ body.dark-mode #wire-mobile {
         gap: 40px;
     }
 
-    #userflow-section p {
+    .userflow-section p {
         max-width: 100%;
     }
 
-    #userflow-section img {
-        max-width: 100%;
-    }
+
 }

@@ -10,7 +10,19 @@
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
     <link rel="manifest" href="favicon/site.webmanifest">
+
     <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="Yuca | Portfólio - Miguel Zynich">
+    <meta property="og:description" content="UX/UI Designer com 4 anos de experiência e 13 anos como Diretor de Arte, focado em soluções acessíveis e de alto impacto visual.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://miguelzynich.github.io/.github.io/index.html">
+    <meta property="og:image" content="https://miguelzynich.github.io/.github.io/images/social-thumb2.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Yuca | Portfólio - Miguel Zynich">
+    <meta name="twitter:description" content="UX/UI Designer com 4 anos de experiência e 13 anos como Diretor de Arte, focado em soluções acessíveis e de alto impacto visual.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://miguelzynich.github.io/.github.io/images/social-thumb2.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +32,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./yuca.css">
     <script src="https://t.contentsquare.net/uxa/734555fce281e.js"></script>
 
 
@@ -39,16 +52,6 @@
             font-style: normal;
         }
 
-        :root {
-            --primary-color: #222;
-            --background-color: #fff;
-            --text-color-light: #3d3d3d;
-            --border-color: #ddd;
-            --light-gray-bg: #f8f8f8;
-            --accent-color: #FF8C00;
-            --swiper-navigation-color: var(--accent-color);
-            --swiper-pagination-color: var(--accent-color);
-        }
 
         * {
             margin: 0;
@@ -123,1353 +126,9 @@
             font-weight: bold;
             position: relative;
         }
-
-
-        @media (max-width: 768px) {}
-
-
-        .logo {
-            display: block;
-            text-align: center;
-            font-family: 'Touche', sans-serif;
-            font-size: 1.5rem;
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .banner-section {
-            width: 100%;
-            height: 55vh;
-            padding: 0;
-            background-image: url('images//yuca/yuca-banner-desktop.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .two-column-layout {
-            display: flex;
-            gap: 100px;
-            align-items: flex-start;
-            margin-top: 1.8rem;
-        }
-
-        .two-column-layout .column {
-            flex: 1;
-        }
-
-        .problem-section h2 {
-            text-align: center;
-        }
-
-        .problem-section p {
-            font-size: 1.5rem;
-            font-weight: bold;
-            font-style: italic;
-            text-align: center;
-            color: var(--primary-color);
-        }
-
-        .tools-section h2 {
-            text-align: center;
-        }
-
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px 40px;
-            list-style: none;
-            padding: 50px;
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            max-width: 900px;
-            margin: 1.8rem auto 0 auto;
-        }
-
-        .tools-grid li {
-            font-family: 'Gilroy', sans-serif;
-            font-size: 1rem;
-            color: var(--text-color-light);
-        }
-
-        .research-box {
-            background-color: var(--light-gray-bg);
-            border-radius: 12px;
-            padding: 50px;
-            margin-top: 1.5rem;
-        }
-
-        .desk-research-layout {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 50px 40px;
-            align-items: start;
-        }
-
-        .research-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .research-item img {
-            width: 100%;
-            max-width: 450px;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        }
-
-        .research-item blockquote {
-            background-color: #2c2c2c;
-            color: #fff;
-            padding: 25px;
-            border-radius: 8px;
-            font-family: 'Gilroy', sans-serif;
-            font-size: 1rem;
-            line-height: 1.5;
-            width: 100%;
-            max-width: 450px;
-            border-left: 5px solid var(--accent-color);
-            margin: 0;
-            text-align: left;
-        }
-
-        .research-item blockquote strong {
-            display: block;
-            margin-bottom: 10px;
-            font-family: 'Touche', sans-serif;
-            color: #fff;
-        }
-
-        .research-item:nth-child(3) {
-            grid-column: 1 / -1;
-            justify-self: center;
-        }
-
-        .research-intro-section .two-column-flex {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-        }
-
-        .research-intro-section .text-content {
-            flex: 1.5;
-        }
-
-        .research-intro-section .image-content {
-            flex: 1;
-            text-align: center;
-        }
-
-        .research-intro-section .image-content img {
-            max-width: 100%;
-            height: auto;
-            max-height: 220px;
-        }
-
-        .qualitative-preview-section {
-            padding-top: 60px;
-        }
-
-        .qualitative-preview-section h2,
-        .qualitative-preview-section p {
-            text-align: left;
-        }
-
-        .qualitative-preview-section p {
-            max-width: none;
-            margin-left: 0;
-            margin-right: 0;
-            margin-top: 2rem;
-        }
-
-        .personas-section {
-            background-color: var(--light-gray-bg);
-            padding-top: 60px;
-        }
-
-        .personas-section h2 {
-            text-align: left;
-        }
-
-        .persona-slide-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 3rem;
-            width: 100%;
-            padding: 2rem;
-            min-height: 300px;
-        }
-
-        .persona-info {
-            flex: 0 0 200px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .persona-avatar {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 1rem;
-        }
-
-        .persona-name {
-            font-family: 'Touche', sans-serif;
-            font-size: 1.8rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .persona-details {
-            font-family: 'Gilroy', sans-serif;
-            color: var(--text-color-light);
-            font-size: 1rem;
-            margin: 0;
-            text-align: center;
-        }
-
-        .persona-quotes {
-            flex: 1;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            align-items: stretch;
-            justify-content: flex-start;
-        }
-
-        .persona-quotes blockquote {
-            flex-basis: 200px;
-            flex-grow: 1;
-            background-color: var(--primary-color);
-            color: var(--background-color);
-            padding: 1.5rem;
-            border-radius: 12px;
-            font-family: 'Gilroy', sans-serif;
-            font-style: italic;
-            font-size: 1rem;
-            line-height: 1.5;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .journey-swiper {
-            position: relative;
-        }
-
-        .journey-swiper .swiper-slide {
-            width: auto;
-        }
-
-        .journey-swiper .swiper-slide img {
-            max-width: none;
-        }
-
-        @media (min-width: 768px) {
-
-
-            .journey-swiper .swiper-button-next,
-            .journey-swiper .swiper-button-prev {
-                width: 44px;
-                height: 44px;
-                background-color: rgba(255, 255, 255, 0.9);
-                border-radius: 50%;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-                transition: background-color 0.3s ease, transform 0.3s ease;
-            }
-
-            .journey-swiper .swiper-button-next::after,
-            .journey-swiper .swiper-button-prev::after {
-                font-size: 18px;
-                font-weight: 700;
-                color: #1a1a1a;
-            }
-
-            .journey-swiper .swiper-button-next:hover,
-            .journey-swiper .swiper-button-prev:hover {
-                background-color: #ffffff;
-                transform: scale(1.1);
-            }
-
-            .journey-swiper {
-                padding: 0 40px;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .journey-swiper .swiper-button-prev {
-                left: -22px;
-            }
-
-            .journey-swiper .swiper-button-next {
-                right: -22px;
-            }
-
-            .journey-swiper {
-                padding: 0 40px;
-            }
-        }
-
-        .ui-design-section {
-            background-color: var(--background-color);
-            color: var(--primary-color);
-            padding-top: 60px;
-        }
-
-
-
-        .ui-design-section h2 {
-            color: var(--primary-color);
-        }
-
-        .ui-design-section p {
-            color: var(--text-color-light);
-            max-width: 900px;
-            margin-bottom: 3rem;
-        }
-
-        .ui-layout-wrapper {
-            display: flex;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .ui-details-column {
-            flex: 1.2;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .ui-quote {
-            text-align: left;
-        }
-
-        .ui-quote h4 {
-            font-family: 'Touche', sans-serif;
-            font-size: 1.5rem;
-            color: var(--text-color-light);
-            margin-bottom: 0.5rem;
-        }
-
-        .ui-quote p {
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            line-height: 1.5;
-        }
-
-        .ui-quote p strong {
-            color: var(--accent-color);
-        }
-
-        .keyword-list {
-            list-style: none;
-            padding: 0;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.5rem 1rem;
-            font-family: 'Gilroy', sans-serif;
-            font-size: 1.1rem;
-            color: var(--text-color-light);
-        }
-
-        .ui-hero-image {
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-        }
-
-        .lb-image {
-            max-width: 95vw !important;
-            max-height: 95vh !important;
-            border-radius: 8px;
-        }
-
-        .lightbox .lb-image {
-            width: auto !important;
-            height: auto !important;
-        }
-
-        .lb-outerContainer {
-            width: auto !important;
-            height: auto !important;
-        }
-
-        .video-section .container {
-            text-align: left;
-        }
-
-        .video-section h2 {
-            width: 100%;
-        }
-
-        .video-container {
-            width: 100%;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .video-container iframe {
-            width: 100%;
-            aspect-ratio: 1260 / 709;
-        }
-
-        body.dark-mode .ui-design-section {
-            background-color: #121212;
-            color: #f1f1f1;
-        }
-
-        body.dark-mode .ui-design-section h2 {
-            color: #fff;
-        }
-
-        body.dark-mode .ui-design-section p {
-            color: #a0a0a0;
-        }
-
-        body.dark-mode .ui-quote h4 {
-            color: #a0a0a0;
-        }
-
-        body.dark-mode .ui-quote p {
-            color: #f1f1f1;
-        }
-
-        body.dark-mode .keyword-list {
-            color: #a0a0a0;
-        }
-
-        @media (max-width: 992px) {
-            .ui-layout-wrapper {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
-
-        .carousel-section .swiper {
-            padding-bottom: 50px;
-        }
-
-        .carousel-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .slide-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            background-color: var(--light-gray-bg);
-            border-radius: 12px;
-            padding: 40px 60px;
-            width: 100%;
-            align-items: center;
-            min-height: 420px;
-        }
-
-        .slide-content .text-content {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .slide-content .text-content h3 {
-            font-family: 'Touche', sans-serif;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            text-align: left;
-        }
-
-        .slide-content .chart-content {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 300px;
-            min-width: 300px;
-        }
-
-        .slide-content .chart-content img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .chart-light {
-            display: block;
-        }
-
-        .chart-dark {
-            display: none;
-        }
-
-        .carousel-wrapper .swiper-button-next,
-        .carousel-wrapper .swiper-button-prev {
-            position: static;
-            transform: none;
-            margin: 0;
-            width: 44px;
-            height: 44px;
-            flex-shrink: 0;
-        }
-
-        .carousel-wrapper .swiper-button-next::after,
-        .carousel-wrapper .swiper-button-prev::after {
-            font-size: 24px;
-            font-weight: 800;
-            color: var(--accent-color);
-        }
-
-        .gallery-section {
-            padding-bottom: 80px;
-        }
-
-        .gallery-section h2,
-        .gallery-section p {
-            text-align: left;
-        }
-
-        .gallery-section p {
-            max-width: 1024px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 2.5rem;
-        }
-
-        .gallery-swiper {
-            width: 100%;
-            padding-bottom: 50px;
-            position: relative;
-        }
-
-        .gallery-swiper .swiper-slide {
-            height: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .gallery-swiper .swiper-slide img {
-            display: block;
-            width: 100%;
-            height: auto;
-            max-height: 600px;
-            object-fit: contain;
-            border-radius: 12px;
-        }
-
-        .gallery-swiper .swiper-button-next,
-        .gallery-swiper .swiper-button-prev {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 44px;
-            height: 44px;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-            transition: background-color 0.2s ease;
-            z-index: 10;
-        }
-
-        .gallery-swiper .swiper-button-next:hover,
-        .gallery-swiper .swiper-button-prev:hover {
-            background-color: white;
-        }
-
-        .gallery-swiper .swiper-button-prev {
-            left: 20px;
-        }
-
-        .gallery-swiper .swiper-button-next {
-            right: 20px;
-        }
-
-        .gallery-swiper .swiper-button-next::after,
-        .gallery-swiper .swiper-button-prev::after {
-            font-size: 18px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .prioritization-grid-section h2,
-        .prioritization-grid-section p {
-            text-align: left;
-        }
-
-        .prioritization-grid-section p {
-            margin-bottom: 2.5rem;
-        }
-
-        .grid-image-wrapper {
-            text-align: center;
-        }
-
-        .grid-image-wrapper img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .figma-embed-container {
-            display: flex;
-            justify-content: center;
-            padding: 24px 16px;
-            width: 100%;
-        }
-
-        .figma-embed-container iframe {
-            width: 100%;
-            max-width: 960px;
-            aspect-ratio: 960 / 760;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        body.dark-mode .grid-image-wrapper img {
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-        }
-
-        @media (max-width: 768px) {
-
-            .prioritization-grid-section h2,
-            .prioritization-grid-section p {
-                text-align: left;
-            }
-
-            .prioritization-grid-section p {
-                margin-bottom: 2rem;
-            }
-        }
-
-        .wireframes-section {
-            padding: 60px 0;
-            background-color: var(--light-gray-bg);
-        }
-
-        .wireframes-section h2,
-        .wireframes-section p {
-            text-align: left;
-        }
-
-        .wireframes-section p {
-            margin-bottom: 2.5rem;
-        }
-
-        .wireframe-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .wireframe-item {
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background-color: var(--background-color);
-        }
-
-        .wireframe-item:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-        }
-
-        .wireframe-item img {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        body.dark-mode .wireframes-section {
-            background-color: #000;
-        }
-
-        body.dark-mode .wireframe-item {
-            border-color: #333;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-        }
-
-        body.dark-mode .wireframe-item:hover {
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-        }
-
-
-
-        .grid-system-section {
-            padding-top: 60px;
-        }
-
-        .grid-system-section h2,
-        .grid-system-section p {
-            text-align: left;
-        }
-
-        .grid-system-section p {
-            max-width: 1200px;
-            margin-right: auto;
-            margin-bottom: 3rem;
-        }
-
-        .grid-image-wrapper {
-            text-align: center;
-        }
-
-        .grid-image-wrapper img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-        }
-
-        body.dark-mode .grid-image-wrapper img {
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-
-        .style-guide-section {
-            background-color: var(--light-gray-bg);
-            padding: 40px 0;
-        }
-
-        body.dark-mode .style-guide-section {
-            background-color: #000;
-        }
-
-        .moodboard-column {
-            max-width: 900px;
-            margin: 4rem auto 0 auto;
-        }
-
-        .moodboard-image {
-            width: 100%;
-            border-radius: 12px;
-            display: block;
-        }
-
-
-        .moodboard-light {
-            display: block;
-        }
-
-        .moodboard-dark {
-            display: none;
-        }
-
-        body.dark-mode .moodboard-light {
-            display: none;
-        }
-
-        body.dark-mode .moodboard-dark {
-            display: block;
-        }
-
-        .style-guide-grid {
-            display: grid;
-            grid-template-columns: repeat(3fr, minmax(360px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .guide-item {
-            background-color: var(--background-color);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem;
-        }
-
-        body.dark-mode .guide-item {
-            background-color: var(--light-gray-bg);
-        }
-
-        .guide-item h3 {
-            font-family: 'Touche', sans-serif;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.5rem;
-        }
-
-        .typography-guide .font-family-name {
-            font-family: 'Gilroy', sans-serif;
-            font-size: 2.8rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-
-        .type-scale p {
-            font-family: 'Gilroy', sans-serif;
-            font-weight: bold;
-            color: rgb(0, 0, 0);
-            margin-bottom: 0.8rem !important;
-            line-height: 1.2;
-        }
-
-        .type-scale {
-            display: grid;
-            gap: 1.6rem;
-            align-items: left;
-        }
-
-
-        .type-scale .h1-style {
-            font-size: 60px;
-        }
-
-        .type-scale .h2-style {
-            font-size: 48px;
-        }
-
-        .type-scale .h3-style {
-            font-size: 36px;
-        }
-
-        .type-scale .h4-style {
-            font-size: 24px;
-        }
-
-        .color-palette {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-        }
-
-        .color-swatch {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .color-swatch span {
-            width: 3rem;
-            height: 3rem;
-            border-radius: 4px;
-            border: 0px solid var(--border-color);
-        }
-
-        .color-swatch code {
-            font-family: 'Gilroy';
-
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-
-        .color-swatch::after {
-            position: absolute;
-            bottom: 110%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: var(--primary-color);
-            color: var(--background-color);
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-
-        .color-swatch.copied::after {
-            opacity: 1;
-        }
-
-        .button-showcase {
-            display: flex;
-            grid-template-columns: repeat(3, 1fr);
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 1rem;
-            padding: 2rem;
-        }
-
-        .sg-btn {
-            border: none;
-            border-radius: 6px;
-            padding: 12px 20px;
-            font-size: 0.95rem;
-            line-height: 1;
-            cursor: pointer;
-            color: #fff;
-            font-family: 'Gilroy', sans-serif;
-            font-weight: bold;
-            transition: transform 0.2s ease, filter 0.2s ease;
-            white-space: nowrap;
-            width: 240px;
-        }
-
-        .button-showcase .sg-btn {
-            min-width: auto;
-        }
-
-        .sg-btn.btn-green {
-            background-color: #09AD70;
-        }
-
-        .sg-btn.btn-purple {
-            background-color: #742794;
-        }
-
-        .sg-btn.btn-orange {
-            background-color: #FF650E;
-        }
-
-        .sg-btn.btn-green:hover {
-            background-color: #057D51;
-        }
-
-        .sg-btn.btn-purple:hover {
-            background-color: #4B1761;
-        }
-
-        .sg-btn.btn-orange:hover {
-            background-color: #C14B08;
-        }
-
-        .icon-showcase {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            row-gap: 2.5rem;
-            column-gap: 1.5rem;
-            justify-content: space-between;
-        }
-
-        .icon-wrapper {
-            position: relative;
-            width: 28px;
-            height: 28px;
-        }
-
-        .icon-wrapper img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-
-            transition: opacity 0.2s ease-in-out;
-        }
-
-        .icon-light {
-            opacity: 1;
-        }
-
-        .icon-dark {
-            opacity: 0;
-        }
-
-        body.dark-mode .icon-light {
-            opacity: 0;
-        }
-
-        body.dark-mode .icon-dark {
-            opacity: 1;
-        }
-
-        .style-guide-grid,
-        .wireframe-gallery {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .type-scale .h1-style {
-            font-size: 40px;
-        }
-
-        .type-scale .h2-style {
-            font-size: 32px;
-        }
-
-        .type-scale .h3-style {
-            font-size: 28px;
-        }
-
-
-
-
-        @media (min-width: 768px) {
-            .style-guide-grid {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .guide-item-wide {
-                grid-column: span 2;
-            }
-
-            .wireframe-gallery {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .type-scale .h1-style {
-                font-size: 50px;
-            }
-
-            .type-scale .h2-style {
-                font-size: 40px;
-            }
-        }
-
-
-        @media (min-width: 1024px) {
-            .style-guide-grid {
-                grid-template-columns: 2fr 1fr;
-                grid-template-areas:
-                    "typography colors"
-                    "buttons buttons"
-                    "icons icons";
-            }
-
-            .typography-guide {
-                grid-area: typography;
-            }
-
-            .colors-guide {
-                grid-area: colors;
-            }
-
-            .buttons-guide {
-                grid-area: buttons;
-            }
-
-            .icons-guide {
-                grid-area: icons;
-            }
-
-            .wireframe-gallery {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .type-scale .h1-style {
-                font-size: 60px;
-            }
-
-            .type-scale .h2-style {
-                font-size: 48px;
-            }
-
-            .type-scale .h3-style {
-                font-size: 36px;
-            }
-        }
-
-        .video-section .container {
-            text-align: left;
-        }
-
-        .video-section h2 {
-            width: 100%;
-        }
-
-        body.dark-mode {
-            --primary-color: #f1f1f1;
-            --background-color: #121212;
-            --text-color-light: #a0a0a0;
-            --border-color: #444;
-            --light-gray-bg: #1E1E1E;
-        }
-
-        body.dark-mode .main-header {
-            background-color: #1E1E1E;
-        }
-
-        body.dark-mode strong {
-            color: #fff;
-        }
-
-        body.dark-mode p {
-            color: var(--text-color-light);
-        }
-
-        body.dark-mode .problem-section p {
-            color: #f8f8f8;
-        }
-
-        body.dark-mode .research-box,
-        body.dark-mode .research-item blockquote,
-        body.dark-mode .slide-content,
-        body.dark-mode .tools-grid,
-        body.dark-mode .personas-section {
-            background-color: #000;
-        }
-
-        body.dark-mode .persona-quotes blockquote {
-            background-color: var(--light-gray-bg);
-            color: var(--primary-color);
-        }
-
-        body.dark-mode .chart-light {
-            display: none;
-        }
-
-        body.dark-mode .chart-dark {
-            display: block;
-        }
-
-        body.dark-mode .gallery-swiper .swiper-slide img {
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-        }
-
-        .dark-mode-button {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            z-index: 1000;
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background-color: var(--primary-color);
-            color: var(--background-color);
-            border: 2px solid var(--background-color);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .dark-mode-button:hover {
-            transform: scale(1.1);
-        }
-
-        .dark-mode-button svg {
-            width: 26px;
-            height: 26px;
-            stroke: currentColor;
-        }
-
-        .dark-mode-button .icon-sun {
-            display: none;
-        }
-
-        .dark-mode-button .icon-moon {
-            display: block;
-        }
-
-        body.dark-mode .dark-mode-button .icon-moon {
-            display: none;
-        }
-
-        body.dark-mode .dark-mode-button .icon-sun {
-            display: block;
-        }
-
-        body.dark-mode .dark-mode-button {
-            background-color: var(--primary-color);
-            color: var(--background-color);
-            border: 2px solid var(--background-color);
-        }
-
-
-        .video-container {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-        }
-
-        .video-container iframe {
-            width: 100%;
-            height: 100%;
-        }
-
-
-        @media (max-width: 1023px) {
-
-            .carousel-wrapper .swiper-button-prev,
-            .carousel-wrapper .swiper-button-next {
-                display: none;
-            }
-
-            .personas-swiper .swiper-button-next,
-            .personas-swiper .swiper-button-prev {
-                display: none;
-            }
-
-            .gallery-swiper .swiper-button-next,
-            .gallery-swiper .swiper-button-prev {
-                display: none;
-            }
-        }
-
-        @media (max-width: 1024px) {
-            section {
-                padding: 40px 0;
-            }
-
-            .banner-section {
-                background-image: url('images/yuca/yuca-banner-tablet.png');
-                height: 70vh;
-            }
-
-            .two-column-layout,
-            .desk-research-layout {
-                grid-template-columns: 1fr;
-                flex-direction: column;
-                gap: 40px;
-            }
-
-            h2 {
-                font-size: 30px;
-            }
-
-            p {
-                font-size: 17px;
-            }
-
-            .slide-content {
-                flex-direction: row;
-                flex-wrap: nowrap;
-                padding: 30px;
-                gap: 25px;
-                min-height: 380px;
-            }
-
-            .slide-content .text-content,
-            .slide-content .chart-content {
-                flex: 1 1 50%;
-                min-width: 0;
-            }
-
-            .slide-content .text-content {
-                text-align: left;
-            }
-
-            .slide-content p {
-                font-size: 1rem;
-                text-align: left;
-            }
-
-            .slide-content .text-content h3 {
-                font-size: 1.5rem;
-            }
-
-            .slide-content .chart-content {
-                height: 260px;
-            }
-
-            .persona-slide-content {
-                flex-direction: column;
-                gap: 2rem;
-            }
-
-            .persona-info {
-                flex: none;
-                width: auto;
-            }
-
-            .persona-quotes {
-                flex-direction: row;
-                align-items: stretch;
-            }
-
-            .persona-quotes blockquote {
-                max-width: 90%;
-            }
-
-        }
-
-        @media (max-width: 768px) {
-            .banner-section {
-                background-image: url('images/yuca/yuca-banner-mobile.png');
-                height: 65vh;
-            }
-
-            .main-header {
-                padding: 1.5rem 0;
-            }
-
-            section {
-                padding: 30px 20px;
-            }
-
-            .container,
-            .container-wide {
-                padding: 0 20px;
-            }
-
-            h2 {
-                font-size: 28px;
-                text-align: center;
-            }
-
-            p {
-                font-size: 16px;
-            }
-
-            .research-intro-section .two-column-flex {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .research-intro-section h2,
-            .qualitative-preview-section h2 {
-                text-align: left;
-            }
-
-            .qualitative-preview-section p {
-                text-align: left;
-            }
-
-            .tools-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
-                padding: 30px;
-            }
-
-            .persona-slide-content {
-                gap: 1.5rem;
-                min-height: auto;
-            }
-
-            .persona-quotes {
-                flex-direction: column;
-            }
-
-            .persona-quotes blockquote {
-                max-width: 100%;
-                min-height: auto;
-            }
-
-            .slide-content {
-                flex-direction: column;
-                text-align: center;
-                padding: 30px 20px;
-                gap: 30px;
-            }
-
-            .slide-content p {
-                text-align: center;
-            }
-
-            .slide-content .text-content h3 {
-                font-size: 1.6rem;
-            }
-
-            .slide-content .chart-content {
-                max-height: 220px;
-            }
-
-            .carousel-wrapper .swiper-button-next,
-            .carousel-wrapper .swiper-button-prev {
-                display: none;
-            }
-        }
     </style>
+
+
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M2BKP8Y23H"></script>
@@ -2062,230 +721,230 @@
                     </div>
                 </div>
             </div>
+    </section>
 
+    <section class="wireframes-section-high">
+        <div class="container">
+            <h2>Wireframes em Alta Fidelidade</h2>
+            <p>
+                Evoluindo da estrutura de baixa fidelidade, os wireframes de alta fidelidade aplicam a camada
+                visual completa do projeto. Aqui, cores, fontes, ícones e componentes são integrados para
+                simular com precisão a experiência final do usuário, validando o design e preparando para o
+                desenvolvimento.
+            </p>
 
-            <section class="wireframes-section">
-                <div class="container">
-                    <h2>Wireframes em Alta Fidelidade</h2>
-                    <p>
-                        Evoluindo da estrutura de baixa fidelidade, os wireframes de alta fidelidade aplicam a camada
-                        visual completa do projeto. Aqui, cores, fontes, ícones e componentes são integrados para
-                        simular com precisão a experiência final do usuário, validando o design e preparando para o
-                        desenvolvimento.
-                    </p>
-
-                    <div class="wireframe-gallery">
-                        <a href="images/yuca/wireframe-alta-1.png" data-lightbox="wireframes"
-                            data-title="Wireframe da Tela Inicial: Visão geral da busca de apartamentos.">
-                            <div class="wireframe-item">
-                                <img src="images/yuca/wireframe-thumb-alta-1.png"
-                                    alt="Wireframe em alta fidelidade da página inicial" loading="lazy">
-                            </div>
-                        </a>
-
-                        <a href="images/yuca/wireframe-alta-2.png" data-lightbox="wireframes"
-                            data-title="Wireframe da Página de Detalhes: Informações, fotos e mapa do apartamento.">
-                            <div class="wireframe-item">
-                                <img src="images/yuca/wireframe-thumb-alta-2.png"
-                                    alt="Wireframe em baixa fidelidade da página de detalhes do imóvel" loading="lazy">
-                            </div>
-                        </a>
-
-                        <a href="images/yuca/wireframe-alta-3.png" data-lightbox="wireframes"
-                            data-title="Wireframe da Tela de Pesquisa: Filtros avançados e resultados em lista.">
-                            <div class="wireframe-item">
-                                <img src="images/yuca/wireframe-thumb-alta-3.png"
-                                    alt="Wireframe em baixa fidelidade da tela de busca com filtros" loading="lazy">
-                            </div>
-                        </a>
-
+            <div class="wireframe-gallery">
+                <a href="images/yuca/wireframe-alta-1.png" data-lightbox="wireframes"
+                    data-title="Wireframe da Tela Inicial: Visão geral da busca de apartamentos.">
+                    <div class="wireframe-item">
+                        <img src="images/yuca/wireframe-thumb-alta-1.png"
+                            alt="Wireframe em alta fidelidade da página inicial" loading="lazy">
                     </div>
-                </div>
-            </section>
-            <section class="video-section">
-                <div class="container">
-                    <h2>Preview em Vídeo</h2>
-                    <div class="video-container">
-                        <iframe
-                            src="https://player.vimeo.com/video/809893184?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                            frameborder="0"
-                            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" title="Yuca">
-                        </iframe>
+                </a>
+
+                <a href="images/yuca/wireframe-alta-2.png" data-lightbox="wireframes"
+                    data-title="Wireframe da Página de Detalhes: Informações, fotos e mapa do apartamento.">
+                    <div class="wireframe-item">
+                        <img src="images/yuca/wireframe-thumb-alta-2.png"
+                            alt="Wireframe em baixa fidelidade da página de detalhes do imóvel" loading="lazy">
                     </div>
-                </div>
-            </section>
+                </a>
 
-
-            <section class="figma-section">
-                <div class="container">
-                    <h2>Figma</h2>
-                </div>
-
-                <div class="figma-embed-container">
-                    <iframe
-                        src="https://embed.figma.com/design/QxdVEkUo0e2WhmXJSFAxxA/Yuca?node-id=1-20&embed-host=share"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-
-                <section id="contact">
-                    <div class="container">
-                        <h2 class="section-title">Fale Comigo!</h2>
-                        <p>Se você tem uma ideia, uma vaga ou só quer trocar uma figurinha, me manda uma mensagem.</p>
-                        <div class="button-group">
-                            <a href="mailto:miguelzynich@gmail.com" class="btn">E-mail</a>
-                            <a href="https://www.linkedin.com/in/miguelzynich/" class="btn" target="_blank"
-                                rel="noopener noreferrer">LinkedIn</a>
-                            <a href="https://wa.me/5193072515" class="btn" target="_blank"
-                                rel="noopener noreferrer">Whatsapp</a>
-                        </div>
+                <a href="images/yuca/wireframe-alta-3.png" data-lightbox="wireframes"
+                    data-title="Wireframe da Tela de Pesquisa: Filtros avançados e resultados em lista.">
+                    <div class="wireframe-item">
+                        <img src="images/yuca/wireframe-thumb-alta-3.png"
+                            alt="Wireframe em baixa fidelidade da tela de busca com filtros" loading="lazy">
                     </div>
-                </section>
-                </main>
+                </a>
 
-                <footer class="main-footer">
-                    <div class="container text-center">
-                        <p>@miguelzynich - 10/25</p>
-                    </div>
-                </footer>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-section">
+        <div class="container">
+            <h2>Preview em Vídeo</h2>
+            <div class="video-container">
+                <iframe
+                    src="https://player.vimeo.com/video/809893184?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                    frameborder="0"
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" title="Yuca">
+                </iframe>
+            </div>
+        </div>
+    </section>
 
 
 
-                <button id="darkModeToggle" class="dark-mode-button" aria-label="Alternar Tema">
-                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
+    <section class="figma-section">
+        <div class="container">
+            <h2>Figma</h2>
+        </div>
 
-                <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-                <script>
-                    const darkModeToggle = document.getElementById('darkModeToggle');
-                    const body = document.body;
+        <div class="figma-embed-container">
+            <iframe src="https://embed.figma.com/design/QxdVEkUo0e2WhmXJSFAxxA/Yuca?node-id=1-20&embed-host=share"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
 
-                    const enableDarkMode = () => {
-                        body.classList.add('dark-mode');
-                        localStorage.setItem('theme', 'dark');
-                    };
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Fale Comigo!</h2>
+            <p>Se você tem uma ideia, uma vaga ou só quer trocar uma figurinha, me manda uma mensagem.</p>
+            <div class="button-group">
+                <a href="mailto:miguelzynich@gmail.com" class="btn">E-mail</a>
+                <a href="https://www.linkedin.com/in/miguelzynich/" class="btn" target="_blank"
+                    rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://wa.me/5193072515" class="btn" target="_blank" rel="noopener noreferrer">Whatsapp</a>
+            </div>
+        </div>
+    </section>
 
-                    const disableDarkMode = () => {
-                        body.classList.remove('dark-mode');
-                        localStorage.setItem('theme', 'light');
-                    };
+    <footer class="main-footer">
+        <div class="container text-center">
+            <p>@miguelzynich - 10/25</p>
+        </div>
+    </footer>
+    </main>
 
-                    darkModeToggle.addEventListener('click', () => {
-                        if (body.classList.contains('dark-mode')) {
-                            disableDarkMode();
-                        } else {
-                            enableDarkMode();
-                        }
+
+
+
+    <button id="darkModeToggle" class="dark-mode-button" aria-label="Alternar Tema">
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        const enableDarkMode = () => {
+            body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark');
+        };
+
+        const disableDarkMode = () => {
+            body.classList.remove('dark-mode');
+            localStorage.setItem('theme', 'light');
+        };
+
+        darkModeToggle.addEventListener('click', () => {
+            if (body.classList.contains('dark-mode')) {
+                disableDarkMode();
+            } else {
+                enableDarkMode();
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                enableDarkMode();
+            } else {
+                disableDarkMode();
+            }
+
+            const colorSwatches = document.querySelectorAll('.color-swatch');
+            colorSwatches.forEach(swatch => {
+                swatch.addEventListener('click', () => {
+                    const color = swatch.dataset.color;
+                    navigator.clipboard.writeText(color).then(() => {
+                        swatch.classList.add('copied');
+                        setTimeout(() => {
+                            swatch.classList.remove('copied');
+                        }, 1500);
+                    }).catch(err => {
+                        console.error('Falha ao copiar cor: ', err);
                     });
+                });
+            });
 
-                    document.addEventListener('DOMContentLoaded', () => {
-
-                        const savedTheme = localStorage.getItem('theme');
-                        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-                        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-                            enableDarkMode();
-                        } else {
-                            disableDarkMode();
-                        }
-
-                        const colorSwatches = document.querySelectorAll('.color-swatch');
-                        colorSwatches.forEach(swatch => {
-                            swatch.addEventListener('click', () => {
-                                const color = swatch.dataset.color;
-                                navigator.clipboard.writeText(color).then(() => {
-                                    swatch.classList.add('copied');
-                                    setTimeout(() => {
-                                        swatch.classList.remove('copied');
-                                    }, 1500);
-                                }).catch(err => {
-                                    console.error('Falha ao copiar cor: ', err);
-                                });
-                            });
-                        });
-
-                        const backButton = document.querySelector('.back-button');
-                        if (backButton) {
-                            backButton.addEventListener('click', () => {
-                                window.history.back();
-                            });
-                        }
+            const backButton = document.querySelector('.back-button');
+            if (backButton) {
+                backButton.addEventListener('click', () => {
+                    window.history.back();
+                });
+            }
 
 
-                        const personasSwiper = new Swiper('.personas-swiper', {
-                            loop: true,
-                            pagination: {
-                                el: '.personas-swiper .swiper-pagination',
-                                clickable: true,
-                            },
-                            navigation: {
-                                nextEl: '.personas-swiper .swiper-button-next',
-                                prevEl: '.personas-swiper .swiper-button-prev',
-                            },
-                        });
+            const personasSwiper = new Swiper('.personas-swiper', {
+                loop: true,
+                pagination: {
+                    el: '.personas-swiper .swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.personas-swiper .swiper-button-next',
+                    prevEl: '.personas-swiper .swiper-button-prev',
+                },
+            });
 
-                        const chartsSwiper = new Swiper('.charts-swiper', {
-                            loop: true,
-                            pagination: {
-                                el: '.charts-swiper .swiper-pagination',
-                                clickable: true,
-                            },
-                            navigation: {
-                                nextEl: '.carousel-wrapper .swiper-button-next',
-                                prevEl: '.carousel-wrapper .swiper-button-prev',
-                            },
-                        });
+            const chartsSwiper = new Swiper('.charts-swiper', {
+                loop: true,
+                pagination: {
+                    el: '.charts-swiper .swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.carousel-wrapper .swiper-button-next',
+                    prevEl: '.carousel-wrapper .swiper-button-prev',
+                },
+            });
 
-                        const gallerySwiper = new Swiper('.gallery-swiper', {
-                            grabCursor: true,
-                            loop: true,
-                            spaceBetween: 30,
-                            slidesPerView: 1,
-                            breakpoints: {
-                                768: {
-                                    slidesPerView: 1,
-                                    spaceBetween: 20
-                                },
-                                1024: {
-                                    slidesPerView: 1,
-                                    spaceBetween: 30
-                                }
-                            },
-                            navigation: {
-                                nextEl: '.gallery-swiper .swiper-button-next',
-                                prevEl: '.gallery-swiper .swiper-button-prev',
-                            },
-                            pagination: {
-                                el: '.gallery-swiper .swiper-pagination',
-                                clickable: true,
-                            },
-                        });
+            const gallerySwiper = new Swiper('.gallery-swiper', {
+                grabCursor: true,
+                loop: true,
+                spaceBetween: 30,
+                slidesPerView: 1,
+                breakpoints: {
+                    768: {
+                        slidesPerView: 1,
+                        spaceBetween: 20
+                    },
+                    1024: {
+                        slidesPerView: 1,
+                        spaceBetween: 30
+                    }
+                },
+                navigation: {
+                    nextEl: '.gallery-swiper .swiper-button-next',
+                    prevEl: '.gallery-swiper .swiper-button-prev',
+                },
+                pagination: {
+                    el: '.gallery-swiper .swiper-pagination',
+                    clickable: true,
+                },
+            });
 
-                        lightbox.option({
-                            'fitImagesInViewport': false
-                        });
+            lightbox.option({
+                'fitImagesInViewport': false
+            });
 
-                    });
-                </script>
+        });
+    </script>
 
-                <script src="main.js"></script>
+    <script src="main.js"></script>
 
 
 </body>
