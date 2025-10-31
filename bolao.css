@@ -63,7 +63,7 @@ main>section:nth-of-type(even) {
     flex: 1;
 }
 
-.two-column-layout .column p {  
+.two-column-layout .column p {
     font-size: 1.15rem;
     line-height: 1.8;
     /* CORRIGIDO: Removido espaço em 'var(--primary -color)' */
@@ -140,6 +140,64 @@ main>section:nth-of-type(even) {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
+.mobile-gallery-section h2 {
+    text-align: left;
+    margin-bottom: 3rem;
+}
+
+.mobile-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.gallery-item {
+    background-color: var(--section-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    padding: 40px;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-unit {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* Espaço entre a legenda e o card */
+}
+
+/* 2. A LEGENDA (Texto acima do card) */
+.gallery-label {
+    font-family: 'Gilroy', sans-serif;
+    font-size: 1rem;
+    color: var(--text-color-light);
+    /* Pega a cor correta (escura/clara) */
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.gallery-item p {
+    padding: 0;
+    margin-top: 15px;
+    font-size: 1rem;
+    color: var(--text-color-light);
+    text-align: center;
+}
+
 /* =================================
    RESPONSIVIDADE - PÁGINA BOLÃO
 ==================================== */
@@ -148,6 +206,12 @@ main>section:nth-of-type(even) {
     .banner-bolao {
         height: 85vh;
         background-image: url('./images/bolao/bolao-tablet.png');
+    }
+}
+
+@media (max-width: 991px) {
+    .mobile-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -171,5 +235,7 @@ main>section:nth-of-type(even) {
         max-width: 100%;
     }
 
-
+    .mobile-gallery-grid {
+        grid-template-columns: 1fr;
+    }
 }
