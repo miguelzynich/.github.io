@@ -1,3 +1,7 @@
+/* =============================================== */
+/* --- ESTILOS DA PÁGINA BOLÃO (bolao.css) --- */
+/* =============================================== */
+
 body {
     font-family: 'Gilroy', sans-serif;
     font-size: 16px;
@@ -14,6 +18,7 @@ p {
     text-align: left;
 }
 
+/* Define fundos alternados para as seções */
 main>section {
     background-color: var(--background-color);
 }
@@ -73,6 +78,14 @@ main>section:nth-of-type(even) {
     border: 1px solid var(--border-color);
 }
 
+.problem-section p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    /* <-- CORRIGIDO (era font-style) */
+    text-align: center;
+    color: var(--primary-color);
+}
+
 
 .processo-lista {
     list-style-position: outside;
@@ -93,19 +106,14 @@ main>section:nth-of-type(even) {
 }
 
 .benchmark-section p {
-    max-width: 960px;
     margin-bottom: var(--spacing-xl);
 }
 
 .userflow-section p {
-    max-width: 1020px;
     margin: 0 auto 40px auto;
     text-align: left;
 }
 
-.wireframe-display-section p {
-    max-width: 1060px;
-}
 
 .userflow-section img,
 .wireframe-display-section img {
@@ -173,12 +181,104 @@ main>section:nth-of-type(even) {
     text-align: center;
 }
 
+/* =============================================== */
+/* --- ESTILOS DO MODAL DE IMAGEM (ZOOM) --- */
+/* =============================================== */
+
+.zoomable-image {
+    cursor: zoom-in;
+    transition: opacity 0.2s;
+}
+
+.zoomable-image:hover {
+    opacity: 0.8;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(26, 26, 26, 0.95);
+}
+
+/* A imagem dentro do modal (REGRA ÚNICA CORRIGIDA) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: auto;
+    max-width: 90%;
+    max-height: 90vh;
+    cursor: grab;
+    transition: transform 0.1s ease-out;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    animation-name: zoom;
+    animation-duration: 0.4s;
+}
+
+.modal-content.dragging {
+    cursor: grabbing;
+}
+
+#imageModal .modal-inner-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* O botão de fechar (X) */
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+@keyframes zoom {
+    from {
+        transform: translate(-50%, -50%) scale(0.1);
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* =============================================== */
+/* --- ESTILOS RESPONSIVOS --- */
+/* =============================================== */
+
 @media (max-width: 1024px) {
     .banner-bolao {
         height: 85vh;
         background-image: url('./images/bolao/bolao-tablet.png');
     }
 }
+
+body.dark-mode .gallery-item {
+    background-color: var(--background-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
 
 @media (max-width: 991px) {
     .mobile-gallery-grid {
@@ -208,5 +308,94 @@ main>section:nth-of-type(even) {
 
     .mobile-gallery-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+
+/* =============================================
+   AJUSTES RESPONSIVOS (MOBILE)
+================================================ */
+
+@media (max-width: 768px) {
+
+    
+    /* Define o padding padrão para todas as seções no mobile */
+    main>section {
+        padding: 30px 20px; /* 30px topo/baixo, 20px laterais */
+    }
+
+    h2,
+    .project-content h2,
+    .benchmark-section h2,
+    .userflow-section h2,
+    .wireframe-display-section h2,
+    .mobile-gallery-section h2 {
+        font-size: 28px; 
+        text-align: left;
+    }
+
+    p {
+        font-size: 16px;
+    }
+    
+    .problem-section p {
+        text-align: center;
+    }
+    
+    .two-column-img .column h2,
+    .mobile-gallery-section h2 {
+         text-align: left;
+    }
+
+
+    .banner-bolao {
+        height: 50vh;
+    }
+
+    .two-column-layout {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .two-column-img {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .userflow-section p {
+        max-width: 100%;
+        text-align: left; /* Alinha parágrafos ao centro também */
+    }
+
+    .mobile-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-label {
+        font-size: 0.875rem;
+    }
+}
+
+/* Breakpoint para Celulares Pequenos */
+@media (max-width: 480px) {
+
+    /* Mantém o h2 no tamanho de 28px definido no breakpoint de 768px */
+
+    .button-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .button-group .btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .mobile-gallery-grid {
+        /* Limita a largura da galeria (agora 1 coluna) */
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }

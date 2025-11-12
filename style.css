@@ -9,6 +9,7 @@
     font-display: swap;
 }
 
+/* ... (todo o resto do seu style.css que você me enviou) ... */
 @font-face {
     font-family: 'Touche';
     src: url('fonts/ToucheW03-Bold.woff2') format('woff2');
@@ -33,7 +34,6 @@
     font-display: swap;
 }
 
-/* --- CORRIGIDO: Adicionada extensão .woff2 --- */
 @font-face {
     font-family: 'Gil Sans Pro MT';
     src: url('fonts/GilSansProMT-Regular.woff2') format('woff2');
@@ -42,7 +42,6 @@
     font-display: swap;
 }
 
-/* --- CORRIGIDO: Adicionada extensão .woff2 --- */
 @font-face {
     font-family: 'Gil Sans Pro MT';
     src: url('fonts/GilSansProMT-Bold.woff2') format('woff2');
@@ -59,7 +58,6 @@
     --secondary-color: #3d3d3d;
     --background-color: #fff;
     --section-bg: #f5f5f5;
-
     --border-color: #ddd;
     --spacing-md: 1rem;
     --spacing-lg: 1.5rem;
@@ -225,7 +223,7 @@ p {
 
 .breadcrumb-nav {
     background-color: var(--primary -color-bg);
-    padding: 12px 20px; 
+    padding: 12px 20px;
 }
 
 .breadcrumb-list {
@@ -266,13 +264,12 @@ p {
 }
 
 .breadcrumb-nav.breadcrumb-nav--alt-bg {
-     background-color: var(--section-bg);
+    background-color: var(--section-bg);
 }
 
 /* =============================================== */
 /* --- SEÇÕES DA HOME (INDEX.HTML) --- */
 /* =============================================== */
-
 .hero-section {
     padding: var(--spacing-xxl) 0;
 }
@@ -293,13 +290,10 @@ p {
     text-align: center;
 }
 
-
 .projects-section {
     padding: 6rem 0;
     background-color: var(--section-bg);
 }
-
-/* --- REMOVIDO: Bloco .project-grid e .project-card img duplicado e antigo --- */
 
 #sobre-e-experiencia {
     padding: 80px 20px;
@@ -310,7 +304,6 @@ body.dark-mode #sobre-e-experiencia {
 }
 
 body:not(.dark-mode) #sobre-e-experiencia {
-    /* --- CORRIGIDO: Usando a nova variável --- */
     background-color: var(--background-color);
 }
 
@@ -375,8 +368,7 @@ body:not(.dark-mode) #sobre-e-experiencia {
 
 #contact {
     padding: var(--spacing-xxl) 20px;
-        background-color: #f5f5f5;
-
+    background-color: #f5f5f5;
 }
 
 #contact .container {
@@ -384,7 +376,6 @@ body:not(.dark-mode) #sobre-e-experiencia {
     padding: 50px;
     text-align: center;
     border: 1px solid var(--border-color);
-
 }
 
 #contact .section-title {
@@ -404,7 +395,6 @@ body:not(.dark-mode) #sobre-e-experiencia {
     justify-content: center;
 }
 
-/* --- ESTA É A SEÇÃO CORRETA DOS CARDS DE PROJETO --- */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -523,7 +513,6 @@ body.dark-mode .project-tags-mini li {
 /* =============================================== */
 /* --- DARK MODE --- */
 /* =============================================== */
-
 body.dark-mode {
     color: var(--primary-color);
     --primary-color: #f1f1f1;
@@ -536,7 +525,6 @@ body.dark-mode {
     --bullet-bg-dark: #333333;
 }
 
-/* --- CORRIGIDO: Usando a nova variável --- */
 body.dark-mode .main-header {
     background-color: var(--card-bg);
 }
@@ -552,7 +540,6 @@ body.dark-mode .projects-section {
 body.dark-mode #contact .container {
     background-color: var(--section-bg);
     border: 1px solid var(--border-color);
-
 }
 
 body.dark-mode #contact {
@@ -584,7 +571,7 @@ body.dark-mode .breadcrumb-nav {
 }
 
 body.dark-mode .breadcrumb-nav.breadcrumb-nav--alt-bg {
-     background-color: var(--section-bg); 
+    background-color: var(--section-bg);
 }
 
 body.dark-mode .recommended-projects {
@@ -650,7 +637,6 @@ body.dark-mode .dark-mode-button .icon-sun {
 /* =============================================== */
 /* --- ESTILOS RESPONSIVOS --- */
 /* =============================================== */
-
 @media (max-width: 992px) {
     .two-column-layout {
         flex-direction: column;
@@ -682,7 +668,7 @@ body.dark-mode .dark-mode-button .icon-sun {
 
     .hero-section .profile-picture {
         width: 180px;
-        height: 180px;
+        Read-only height: 180px;
     }
 
     .button-group {
@@ -696,13 +682,8 @@ body.dark-mode .dark-mode-button .icon-sun {
         max-width: 280px;
     }
 
-    /* Esta regra é redundante, pois a regra correta está na seção de cards */
-    /* .project-grid {
-        grid-template-columns: 1fr;
-    } */
-
     #sobre-e-experiencia {
-        padding: var(--spacing-xl) 20px;
+        t padding: var(--spacing-xl) 20px;
     }
 
     #contact {
@@ -724,6 +705,7 @@ body.dark-mode .dark-mode-button .icon-sun {
         margin-bottom: 0;
         border-bottom: none;
         padding-bottom: 0;
+        t
     }
 
     .experience-item span {
@@ -742,4 +724,3 @@ body.dark-mode .dark-mode-button .icon-sun {
         margin-bottom: 0;
     }
 }
-

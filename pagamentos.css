@@ -1,0 +1,82 @@
+body {
+    font-family: 'Gilroy', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+h2 {
+    font-size: 2.2rem;
+    text-align: left;
+}
+
+p {
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+main>section {
+    background-color: var(--background-color);
+}
+
+main>section:nth-of-type(even) {
+    background-color: var(--section-bg);
+}
+
+.banner-pag {
+    width: 100%;
+    height: 56vh;
+    padding: 0;
+    background-image: url('./images/pagamentos/banner_pagamentos.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.two-column-layout {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.two-column-layout:last-child {
+    margin-bottom: 0;
+}
+
+.two-column-layout .column {
+    flex: 1;
+}
+
+.two-column-layout .column p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--primary-color);
+}
+
+.two-column-img {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.two-column-img .column h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.two-column-img .column img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.problem-section p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: bold;
+    text-align: center;
+    color: var(--primary-color);
+}

@@ -104,6 +104,38 @@ body {
     color: #000000;
 }
 
+.mockup-container {
+    /* Mesmo tamanho da última versão */
+    width: 100%; /* <-- ALTERAÇÃO APLICADA (era 23rem) */
+    height: 30rem;
+    margin: 0 auto 1.5rem auto;
+    border-radius: 20px;
+    background-color: var(--background-color);
+    /* <-- Era var(--white-color) */
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.mockup-container img {
+    max-width: 95%;
+    max-height: 95%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    border: none;
+    box-shadow: none;
+    /* Garante que a imagem em si não tenha sombra */
+}
+
+.mockup-container--alt {
+    background-color: #f5f5f5;
+}
+
+
 
 .contrast-card {
     background-color: #1E1E1E;
@@ -229,33 +261,15 @@ body {
     text-align: left;
 }
 
-@media (max-width: 768px) {
-    .two-column-layout {
-        flex-direction: column;
-        gap: 40px;
-        margin-bottom: 40px;
-    }
-}
-
-.comparison-column .contrast-card h2 {
-    color: #FFFFFF;
-    font-size: 56px;
-    margin: 0 0 8px 0;
-
-    display: block !important;
-    text-align: center !important;
-    width: 100%;
-}
-
 @media (max-width: 1024px) {
     .comparison-grid.four-columns .comparison-column {
-        flex-basis: 45%;
+        flex-basis: 100%;
         max-width: 400px;
     }
 
     .cores-caixa {
-        height: 38vh;
-        background-image: url('./images/cores/cores_banner.png');
+        height: 65vh;
+        background-image: url('./images/cores/cores_banner_mobile.png');
     }
 }
 
@@ -295,8 +309,26 @@ body {
 
 
 
+@media (max-width: 768px) {
+    .two-column-layout {
+        flex-direction: column;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+}
+
+.comparison-column .contrast-card h2 {
+    color: #FFFFFF;
+    font-size: 56px;
+    margin: 0 0 8px 0;
+    display: block !important;
+    text-align: center !important;
+    width: 100%;
+}
+
+
 /* =================================
-   DARK MODE 🌑
+    DARK MODE 🌑
 ==================================== */
 body.dark-mode {
     --primary-color: #f1f1f1;
@@ -431,6 +463,11 @@ body.dark-mode .contrast-card {
     background-color: #000000;
 }
 
-.dark-mode .h3{
+.dark-mode .h3 {
     color: #FFFFFF;
+}
+
+body.dark-mode .mockup-container {
+    background-color: #222;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
