@@ -84,6 +84,7 @@ body {
     background-color: var(--background-color);
     line-height: 1.7;
     transition: background-color 0.3s, color 0.3s;
+    padding-top: 60px;
 }
 
 section {
@@ -131,22 +132,97 @@ p {
     margin-bottom: var(--spacing-xl);
 }
 
+.scroll-hidden {
+    opacity: 0;
+    /* Começa invisível */
+    transform: translateY(50px);
+    /* Começa deslocado para baixo */
+    transition: all 1s ease-out;
+    /* Demora 1s para subir */
+}
+
+.scroll-visible {
+    opacity: 1 !important;
+    /* Força a visibilidade */
+    transform: translateY(0) !important;
+    /* Força a posição original */
+    filter: blur(0);
+}
+
+/* Delays opcionais */
+.delay-100 {
+    transition-delay: 100ms;
+}
+
+.delay-200 {
+    transition-delay: 200ms;
+}
+
+.delay-300 {
+    transition-delay: 300ms;
+}
+
 /* =============================================== */
 /* --- COMPONENTES GLOBAIS --- */
 /* =============================================== */
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+}
+
 .main-header {
     background-color: var(--primary-color);
     color: white;
     padding: 1rem 0;
     font-weight: bold;
-    position: relative;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo-svg {
+    padding-top: 0.5rem;
+    width: 36px;
+    height: auto;
+}
+
+.mask-m,
+.mask-z {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+}
+
+.mask-m {
+    animation: revelarSuave 1.4s cubic-bezier(0.45, 0, 0.55, 1) forwards;
+}
+
+.mask-z {
+    animation: revelarSuave 1.4s cubic-bezier(0.45, 0, 0.55, 1) 0.9s forwards;
+}
+
+@keyframes revelarSuave {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.mz-base {
+    fill: #fff;
 }
 
 .logo {
     display: block;
     text-align: center;
     font-family: 'Touche', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: inherit;
     text-decoration: none;
 }
@@ -156,7 +232,7 @@ p {
     left: 20px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #FFFFFF;
     text-decoration: none;
     transition: transform 0.2s ease, color 0.2s ease;
@@ -270,8 +346,18 @@ p {
 /* =============================================== */
 /* --- SEÇÕES DA HOME (INDEX.HTML) --- */
 /* =============================================== */
+/* --- AJUSTE HERO SECTION (CAPA) --- */
+
 .hero-section {
-    padding: var(--spacing-xxl) 0;
+    min-height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+    margin-bottom: 40px;
 }
 
 .profile-picture {
@@ -660,6 +746,13 @@ body.dark-mode .dark-mode-button .icon-sun {
 
     h2 {
         font-size: 1.8rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .problem-section p {
+        font-size: 1.2rem;
+        text-align: left;
+
     }
 
     .section-title {
@@ -668,7 +761,7 @@ body.dark-mode .dark-mode-button .icon-sun {
 
     .hero-section .profile-picture {
         width: 180px;
-        Read-only height: 180px;
+        height: 180px;
     }
 
     .button-group {
@@ -682,8 +775,10 @@ body.dark-mode .dark-mode-button .icon-sun {
         max-width: 280px;
     }
 
+
+
     #sobre-e-experiencia {
-        t padding: var(--spacing-xl) 20px;
+        padding: var(--spacing-xl) 20px;
     }
 
     #contact {
@@ -723,4 +818,141 @@ body.dark-mode .dark-mode-button .icon-sun {
     .experience-item span:last-child {
         margin-bottom: 0;
     }
-}
+
+
+    @media (min-width: 480px) {
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.2rem;
+            text-align: left;
+        }
+
+        .problem-section p {
+            font-size: 1.2rem;
+            text-align: left;
+
+        }
+
+        /* --- HEADER MOBILE (FORÇADO) --- */
+
+        /* 1. O Container vira a referência de posicionamento */
+        .main-header .container {
+            position: relative;
+            /* Necessário para o absolute funcionar */
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            /* Alinha a seta no início */
+            height: 60px;
+            /* Altura fixa para garantir o centro vertical */
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        /* 2. A Seta de Voltar (Fica na esquerda) */
+        .back-button {
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            font-size: 24px;
+            /* Tamanho do ícone */
+            padding: 10px;
+            /* Área de toque */
+            margin-left: -10px;
+            /* Compensa o padding para alinhar na margem */
+            z-index: 2;
+            /* Garante que fique clicável */
+            cursor: pointer;
+        }
+
+        /* 3. O Logo MZ (Centralizado na MARRA) */
+        .logo {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Touche', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #ffffff;
+            text-decoration: none;
+            line-height: 1;
+            white-space: nowrap;
+            z-index: 1;
+        }
+
+        /* --- ANIMAÇÃO DE ENTRADA (SURGIR) --- */
+
+        /* 1. Definimos como a animação funciona */
+        @keyframes surgirSuave {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+                /* Começa 40px para baixo */
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                /* Termina na posição original */
+            }
+        }
+
+        /* 2. Aplicamos a animação nos blocos principais da Home */
+        /* Estou selecionando o Header, o Main e o Footer */
+        .main-header,
+        main,
+        footer {
+            /* Configuração da animação */
+            animation: surgirSuave 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+
+            /* Começa invisível para não "piscar" antes de animar */
+            opacity: 0;
+        }
+
+        /* 3. O "Pulo do Gato": Delays (Efeito Cascata) */
+        /* Fazemos cada parte aparecer em um tempo diferente para dar ritmo */
+
+        /* O Header aparece primeiro (quase imediato) */
+        .main-header {
+            animation-delay: 0.1s;
+        }
+
+        /* O conteúdo principal (projetos, textos) espera um pouco */
+        main {
+            animation-delay: 0.4s;
+        }
+
+        /* O rodapé aparece por último */
+        footer {
+            animation-delay: 0.8s;
+        }
+
+    }
+
+    /* --- ANIMAÇÃO SCROLL REVEAL --- */
+
+    /* Estado Inicial (Invisível) */
+    .scroll-hidden {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: opacity, transform;
+    }
+
+    /* Estado Final (Visível) - O JS vai adicionar essa classe */
+    .scroll-visible {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+
+    /* Dica: Se quiser que os elementos demorem tempos diferentes (cascata) */
+    .delay-200 {
+        transition-delay: 200ms;
+    }
+
+    .delay-400 {
+        transition-delay: 400ms;
+    }

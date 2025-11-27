@@ -80,3 +80,116 @@ main>section:nth-of-type(even) {
     text-align: center;
     color: var(--primary-color);
 }
+
+
+/* --- GRID DE CENÁRIOS (CARDS) --- */
+
+.scenarios-grid {
+    display: grid;
+ 
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.scenario-card {
+    background-color: var(--card-bg); 
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.scenarios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.scenario-card {
+    background-color: #ffffff; 
+    border: 1px solid #E5E5E5; 
+    border-radius: 16px;      
+    padding: 16px 24px;      
+    display: flex;
+    align-items: center;
+    gap: 20px;                 
+    transition: all 0.3s ease;
+    min-height: 80px;         
+}
+
+.scenario-card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+
+.gateway-indicator {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    overflow: hidden;
+    background-color: #ffffff; 
+    display: flex;           
+    align-items: center;      
+    justify-content: center;   
+    padding: 8px;             
+}
+
+.gateway-indicator img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block; /* Remove espaços fantasmas */
+}
+
+.mp-style .gateway-indicator {
+    background-color: #FFE600; 
+}
+
+.rp-style .gateway-indicator {
+    background-color: #042C4F; 
+}
+
+.multi-style .gateway-indicator {
+    background: linear-gradient(135deg, #3dabda, #3279c0);
+}
+
+.scenario-card span {
+    font-family: 'Gilroy', sans-serif;
+    font-size: 1rem;
+    color: #333333; 
+    line-height: 1.3;
+    font-weight: 500;
+}
+
+
+
+.scenario-card.multi-style .gateway-indicator img {
+    filter: brightness(0) invert(1);
+    width: 28px;    
+}
+
+body.dark-mode .scenario-card {
+    background-color: #1E1E1E; 
+    border-color: #333;
+}
+
+body.dark-mode .scenario-card span {
+    color: #f1f1f1;
+}

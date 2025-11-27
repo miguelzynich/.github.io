@@ -970,9 +970,6 @@ body.dark-mode .grid-system-section {
     background-color: #000000;
 }
 
-
-
-
 body.dark-mode .wireframe-item {
     border-color: #333;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
@@ -1141,7 +1138,7 @@ body.dark-mode .video-section {
     }
 
     .main-header {
-        padding: 1.5rem 0;
+        padding: 0;
     }
 
     section {
@@ -1328,4 +1325,199 @@ body.dark-mode .video-section {
     .type-scale .h3-style {
         font-size: 36px;
     }
+}
+
+
+@media (max-width: 1024px) {
+    .banner-section {
+        background-image: url('images/yuca/yuca-banner-tablet.png');
+        height: 60vh; 
+    }
+
+    .two-column-layout,
+    .desk-research-layout,
+    .research-intro-section .two-column-flex,
+    .ui-layout-wrapper {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .slide-content {
+        flex-direction: column; 
+        padding: 40px;
+        height: auto;
+    }
+    
+    .slide-content .chart-content {
+        height: auto;
+        max-height: 300px;
+    }
+
+    .persona-slide-content {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 30px;
+    }
+
+    .style-guide-grid {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    section, 
+    .problem-section,
+    .tools-section,
+    .prioritization-grid-section,
+    .video-section,
+    .figma-section,
+    .wireframes-section, 
+    .style-guide-section {
+        padding: 40px 0; 
+    }
+
+    .container-wide,
+    .container,
+    .video-section,
+    .figma-embed-container {
+        padding-left: 30px; 
+        padding-right: 20px;
+    }
+
+    h2 {
+        font-size: 26px; 
+        line-height: 1.3;
+        text-align: left; 
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    .problem-section h2,
+    .tools-section h2,
+    .slide-content h3 {
+        text-align: center;
+    }
+
+    .banner-section {
+        background-image: url('images/yuca/yuca-banner-mobile.png');
+        height: 60vh;
+    }
+
+    .main-header {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 1rem 0;
+        font-weight: bold;
+    }
+
+    .two-column-layout,
+    .desk-research-layout,
+    .tools-grid,
+    .wireframe-gallery,
+    .style-guide-grid, 
+    .keyword-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        width: 100%;
+        margin-top: 2rem;
+    }
+
+    .tools-grid {
+        padding: 24px; 
+        gap: 20px;
+    }
+
+    .research-box {
+        padding: 24px; 
+        margin-top: 2rem;
+    }
+
+    .research-item img,
+    .research-item blockquote {
+        max-width: 100%; 
+    }
+
+    .slide-content {
+        padding: 30px 20px;
+        border-radius: 8px;
+    }
+    
+    .persona-quotes {
+        flex-direction: column;
+    }
+
+    /* 6. Style Guide Mobile */
+    .button-showcase {
+        justify-content: center;
+        padding: 0;
+    }
+    
+    .sg-btn {
+        width: 100%; 
+    }
+    
+    .type-scale .h1-style { font-size: 32px; }
+    .type-scale .h2-style { font-size: 28px; }
+    .type-scale .h3-style { font-size: 24px; }
+
+    .carousel-wrapper .swiper-button-prev,
+    .carousel-wrapper .swiper-button-next,
+    .gallery-swiper .swiper-button-next,
+    .gallery-swiper .swiper-button-prev {
+        display: none;
+    }
+
+    .ui-design-section p {
+        margin-bottom: 2rem;
+    }
+
+    .video-container {
+        width: 100%;
+        height: 250px;
+    }
+    
+    .moodboard-column {
+        margin-top: 2rem;
+    }
+
+    .video-section, .figma-section {
+        padding: 40px 0;
+    }
+    .video-section .container, .figma-section .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        display: block;
+    }
+    .video-section h2, .figma-section h2 {
+        text-align: left;
+        width: 100%;
+    }
+    .video-container {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+    }
+
+
+    .figma-embed-container {
+        padding: 20px;
+        margin: 0, auto;
+        width: 100%;
+    }
+    .figma-embed-container iframe {
+        width: 100%; height: 350px;
+    }
+
+
 }

@@ -49,21 +49,38 @@
 
 <body>
     <header class="main-header">
-        <div class="container">
-            <a class="logo" href="index.html">MZ</a>
+        <div class="container ">
+            <a class="logo-link" href="index.html" aria-label="Voltar para a página inicial">
+                <svg xmlns="http://www.w3.org/2000/svg" width="53" height="26" viewBox="0 0 53 26" class="logo-svg">
+                    <defs>
+                        <mask id="mascara-suave">
+                            <path class="mask-m" d="M 3.5,26 V 2 L 14.5,14 L 25,2 V 26" fill="none" stroke="white"
+                                stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+
+                            <path class="mask-z" d="M 34,2 H 51 L 38,24 H 53" fill="none" stroke="white"
+                                stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+                        </mask>
+                    </defs>
+
+                    <path class="mz-base" mask="url(#mascara-suave)"
+                        d="M-1.20997e-05 25.272V4.76837e-07H7.37999L14.472 13.968L21.528 4.76837e-07H28.584V25.272H22.428V9.936L16.416 21.672H12.096L6.11999 10.188V25.272H-1.20997e-05ZM52.3921 4.76837e-07V4.68L42.0961 19.872H52.3921V25.272H34.5361V20.592L44.8321 5.4H34.5361V4.76837e-07H52.3921Z"
+                        fill="white" />
+                </svg>
+            </a>
         </div>
     </header>
 
     <main>
         <section id="hero" class="hero-section">
             <div class="container text-center">
-                <img src="images/foto.png" alt="Foto de perfil de Miguel Zynich" class="profile-picture">
-                <h1>Miguel Zynich</h1>
-                <p class="subtitle">
+
+                <img src="images/foto.png" alt="Foto de perfil de Miguel Zynich" class="profile-picture scroll-hidden">
+                <h1 class="scroll-hidden delay-100">Miguel Zynich</h1>
+                <p class="subtitle scroll-hidden delay-100">
                     <strong>UX/UI Designer com 4 anos de experiência,</strong><br>
                     pós-graduado em User Experience Design pela PUCRS
                 </p>
-                <div class="button-group">
+                <div class="button-group scroll-hidden delay-100">
                     <a href="https://www.linkedin.com/in/miguelzynich/" target="_blank" rel="noopener noreferrer"
                         class="btn">LinkedIn</a>
                     <a href="https://wa.me/5193072515" target="_blank" rel="noopener noreferrer"
@@ -183,7 +200,7 @@
         <section id="sobre-e-experiencia">
             <div class="container">
                 <div class="two-column-layout">
-                    <div class="about-column">
+                    <div class="about-column  scroll-hidden delay-100">
                         <h2 class="section-title">Sobre</h2>
                         <p>
                             <strong>UX/UI Designer com 4 anos de experiência</strong> em produtos digitais e 13 anos
@@ -201,7 +218,7 @@
                         </p> <a href="./doc/UX_UI_Miguel_Zynich.pdf#zoom=25" id="openCvModalBtn" class="btn cv-btn">Ver
                             Currículo Completo</a>
                     </div>
-                    <div class="experience-column">
+                    <div class="experience-column  scroll-hidden delay-100">
                         <h2 class="section-title">Experiência</h2>
                         <div class="experience-list">
                             <div class="experience-item">
@@ -216,8 +233,8 @@
                             </div>
                             <div class="experience-item">
                                 <span class="date">2022 - 2022</span>
-                                <span class="role">UX Voluntário</span>
-                                <span class="company">Projeto Kurumin</span>
+                                <span class="role">UX Designer</span>
+                                <span class="company">Projeto Kurumin - Voluntário</span>
                             </div>
                             <div class="experience-item">
                                 <span class="date">2020 - 2021</span>
@@ -226,8 +243,19 @@
                             </div>
                             <div class="experience-item">
                                 <span class="date">2019 - 2019</span>
-                                <span class="role">Web Designer</span>
+                                <span class="role">UI Designer</span>
                                 <span class="company">Reweb</span>
+                            </div>
+                            <div class="experience-item">
+                                <span class="date">2015 - 2017</span>
+                                <span class="role">Assistente de Design</span>
+                                <span class="company">PUCRS</span>
+                            </div>
+
+                            <div class="experience-item">
+                                <span class="date">2014 - 2014</span>
+                                <span class="role">Assistente de Design</span>
+                                <span class="company">FADERS</span>
                             </div>
                         </div>
                     </div>

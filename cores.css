@@ -106,7 +106,8 @@ body {
 
 .mockup-container {
     /* Mesmo tamanho da última versão */
-    width: 100%; /* <-- ALTERAÇÃO APLICADA (era 23rem) */
+    width: 100%;
+    /* <-- ALTERAÇÃO APLICADA (era 23rem) */
     height: 30rem;
     margin: 0 auto 1.5rem auto;
     border-radius: 20px;
@@ -274,8 +275,6 @@ body {
 }
 
 
-
-
 @media (max-width: 868px) {
 
     .project-content,
@@ -326,6 +325,31 @@ body {
     width: 100%;
 }
 
+
+@media (min-width: 480px) {
+
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 0.1rem;
+        text-align: left;
+    }
+
+    .problem-section p {        
+        font-size: 1.2rem;
+        text-align: left;
+
+    }
+
+    .comparison-column .description {
+        font-size: 1.2rem;
+        text-align: left;
+    }
+
+}
+
+p {
+    font-size: 1.2rem;
+}
 
 /* =================================
     DARK MODE 🌑

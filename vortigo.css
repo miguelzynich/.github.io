@@ -22,6 +22,12 @@ main>section:nth-of-type(even) {
     background-color: var(--section-bg);
 }
 
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
 .banner-section-vortigo {
     width: 100%;
     height: 56vh;
@@ -111,6 +117,12 @@ main>section:nth-of-type(even) {
     text-align: left;
 }
 
+.grid-section .gallery-grid {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 .grid-section .gallery-grid .grid-item img {
     max-width: 75%;
     height: auto;
@@ -118,12 +130,6 @@ main>section:nth-of-type(even) {
     margin: 0 auto;
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-.grid-section .gallery-grid {
-    display: flex;
-    justify-content: center;
-    width: 100%;
 }
 
 .gallery-grid-section {
@@ -603,39 +609,99 @@ body.dark-mode .wire-display-box img {
 }
 
 @media (max-width: 480px) {
-    h2 {
-        font-size: 1.5rem;
+
+    .main-header .logo {
+        font-size: 1.8rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #ffffff;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+
+    .banner-section-vortigo {
+        height: 55vh;
+        background-image: url('images/vortigo/header-tablet.png');
+        background-position: center;
+        margin-bottom: 0;
+    }
+
+
+    .project-content {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 30px;    
+        padding-bottom: 40px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .two-column-layout {
+        display: flex;
+        flex-direction: column; 
+        gap: 50px;              
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .two-column-layout .column h2 {
+        font-size: 2rem;
         margin-bottom: 1rem;
+        text-align: left;
+        margin-top: 0;
+    }
+
+    .two-column-layout .column p {
+        padding: 0;     
+        font-size: 1.2rem;
+        text-align: left;
+        margin-bottom: 0;
+    }
+
+
+
+    section {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    h2 {
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        text-align: left;
     }
 
     p {
-        font-size: 15px;
-        margin-bottom: 0.8rem;
+        font-size: 1.2rem !important;
+        line-height: 1.5;
+        margin-bottom: 1rem;
     }
 
-    p:last-of-type {
-        margin-bottom: 0;
-        
+    .section-texto h2 {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    .problem-section p {
+        font-size: 1rem;
+        text-align: left;
     }
 
     .two-column-layout .column p,
     .process-content-wrapper p,
-    .grid-section p {
-        font-size: 16px;
-    }
-
-    .banner-section-vortigo {
-        height: 35vh;
-        margin-bottom: 25px;
+    .grid-section p,
+    .project-content,
+    .gallery-grid-section .grid-item p {
+        font-size: 1.2rem;
     }
 
     .font-card .font-name {
         font-size: 1.8rem;
-    }
-
-    .font-card .large-aa {
-        font-size: 80px;
-        bottom: 15px;
     }
 
     .color-grid {
@@ -648,6 +714,140 @@ body.dark-mode .wire-display-box img {
     }
 
     .stat-number {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
+    }
+
+    .grid-section,
+    .process-content-wrapper {
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .grid-section .gallery-grid .grid-item img {
+        max-width: 100% !important;
+        width: 100%;
+        height: auto;
+        margin: 20px 0;
+        border-radius: 0px;
+    }
+
+    .grid-section .gallery-grid {
+        display: block;
+        width: 100%;
+    }
+
+    .typography-section {
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .font-card {
+        width: 100% !important;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 2rem;
+        padding-bottom: 70px;
+        overflow: hidden;
+    }
+
+    .font-cards-grid {
+        display: block;
+        width: 100%;
+        padding: 0;
+        gap: 1rem;
+    }
+
+    .font-card .large-aa {
+        font-size: 5rem;
+        bottom: 20px;
+        right: 10px;
+        line-height: 0.8;
+        opacity: 0.4;
+        margin-top: 1rem;
+        color: #ffffff;
+    }
+
+    .colors-section {
+        padding: 30px 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .color-palette-card {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px;
+    }
+
+    .fullscreen-image-section {
+        height: auto !important;
+        min-height: auto !important;
+        padding: 40px 20px;
+        display: block;
+    }
+
+    .fullscreen-image-section img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 12px;
+        margin: 0;
+    }
+
+    .stats-section {
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .stat-item {
+        padding: 30px 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .stat-description {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .wireframe-section {
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 100%;
+        box-sizing: border-box;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .wire-display-box {
+        margin-top: 1.5rem;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .wire-display-box img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        display: block;
+    }
+
+    .wireframe-section h2 {
+        margin-bottom: 0.5rem;
     }
 }

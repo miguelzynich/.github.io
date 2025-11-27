@@ -120,13 +120,7 @@
             color: var(--primary-color);
         }
 
-        .main-header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1rem 0;
-            font-weight: bold;
-            position: relative;
-        }
+ 
     </style>
 
 
@@ -147,12 +141,11 @@
 <body>
     <header class="main-header">
         <div class="container">
-            <button class="back-button" aria-label="Voltar para a página anterior">
+            <button class="back-button" onclick="history.back()" aria-label="Voltar para a página anterior">
                 <i class="fas fa-arrow-left"></i></button>
             <a class="logo" href="index.html">MZ</a>
         </div>
     </header>
-
     <main>
         <section class="banner-section"></section>
 
@@ -911,11 +904,13 @@
                     nextEl: '.carousel-wrapper .swiper-button-next',
                     prevEl: '.carousel-wrapper .swiper-button-prev',
                 },
+                
             });
 
             const gallerySwiper = new Swiper('.gallery-swiper', {
                 grabCursor: true,
-                loop: true,
+                loop: false,
+                autoHeight: true,
                 spaceBetween: 30,
                 slidesPerView: 1,
                 breakpoints: {

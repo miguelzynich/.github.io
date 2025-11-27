@@ -70,32 +70,46 @@
         </nav>
 
 
-<section class="project-content">
-    <div class="container">
-        
-        <div class="two-column-layout">
-            <div class="column">
-                <h2>Contexto</h2>
-                <p>O projeto iniciou com um kick-off de alinhamento com os Product Owners (POs) da Caixa, pois esta integração de gateways de pagamento era uma funcionalidade totalmente inédita na plataforma.
-                O objetivo de negócio era expandir as opções do usuário, mas o desafio de UX era complexo: como "costurar" as telas e regras de negócio do sistema legado da Caixa com os fluxos externos do Mercado Pago e Recarga Pay?</p>
-            </div>
+        <section class="project-content">
+            <div class="container">
 
-            <div class="column">
-                <h2>Passado</h2>
-                <p>A experiência de resgate era limitada e pouco flexível. O usuário tinha apenas três opções para reaver o valor: presencialmente em uma Agência Lotérica, em uma agência da Caixa, ou via transferência bancária. Além de confuso esse fluxo, possuia regras não tão claras como apenas o titular do CPF poderia resgatar ou a leitura de QR Code</p>
-            </div>
-        </div> <div class="two-column-layout">
-             <div class="column">
-                <h2>Solução</h2>
-                <p> Meu papel foi absorver essa visão, mapear os novos fluxos (incluindo todos os cenários de erro e validação) e desenhar uma jornada de pagamento unificada, garantindo que a transição entre os diferentes sistemas fosse fluida e, para o usuário final, parecesse uma experiência única e contínua.</p>
-            </div>
+                <div class="two-column-layout">
+                    <div class="column">
+                        <h2>Contexto</h2>
+                        <p>O projeto iniciou com um kick-off de alinhamento com os Product Owners (POs) da Caixa, pois
+                            esta integração de gateways de pagamento era uma funcionalidade totalmente inédita na
+                            plataforma.
+                            O objetivo de negócio era expandir as opções do usuário, mas o desafio de UX era complexo:
+                            como "costurar" as telas e regras de negócio do sistema legado da Caixa com os fluxos
+                            externos do Mercado Pago e Recarga Pay?</p>
+                    </div>
 
-            <div class="column">
-                <h2>Resultados</h2>
-                <p>(Aqui você pode adicionar os resultados do projeto, como a melhoria na conversão ou a redução no tempo de pagamento.)</p>
+                    <div class="column">
+                        <h2>Passado</h2>
+                        <p>A experiência de resgate era limitada e pouco flexível. O usuário tinha apenas três opções
+                            para reaver o valor: presencialmente em uma Agência Lotérica, em uma agência da Caixa, ou
+                            via transferência bancária. Além de confuso esse fluxo, possuia regras não tão claras como
+                            apenas o titular do CPF poderia resgatar ou a leitura de QR Code</p>
+                    </div>
+                </div>
+                <div class="two-column-layout">
+                    <div class="column">
+                        <h2>Solução</h2>
+                        <p> Meu papel foi absorver essa visão, mapear os novos fluxos (incluindo todos os cenários de
+                            erro e validação) e desenhar uma jornada de pagamento unificada, garantindo que a transição
+                            entre os diferentes sistemas fosse fluida e, para o usuário final, parecesse uma experiência
+                            única e contínua.</p>
+                    </div>
+
+                    <div class="column">
+                        <h2>Resumo</h2>
+                        <p>Criar uma interface unificada que servisse como uma camada visual sobre os
+                            gateways. O objetivo era garantir que o usuário sentisse que ainda estava no ambiente seguro
+                            da loja, independentemente de escolher pagar com Mercado Pago ou Recarga Pay.</p>
+                    </div>
+                </div>
             </div>
-        </div> </div> 
-</section>
+        </section>
 
 
         <section class="problem-section">
@@ -103,11 +117,60 @@
                 <h2>Problema</h2>
                 <p>
                     A plataforma de pagamentos estava limitada aos métodos tradicionais da Caixa, gerando uma
-                    <strong>alta taxa de reclamação por parte dos usuários</strong>. A ausência de opções e possibilidades
+                    <strong>alta taxa de reclamação por parte dos usuários</strong>. A ausência de opções e
+                    possibilidades
                     resultava em <strong>confusão na hora de receber o prêmio dos jogadores.</strong>.
                 </p>
             </div>
         </section>
+
+
+        <section class="tools-section">
+            <div class="container">
+                <h2>Principais Fricções Identificadas</h2>
+                <ul class="tools-grid" style="margin-top: 2rem;">
+
+                    <li style="flex-direction: column; align-items: flex-start; text-align: left; gap: 10px;">
+                        <strong style="font-size: 1.2rem; color: #ff4444;">⛔ Inconsistência Visual</strong>
+                        <span style="font-size: 0.95rem; color: #ccc;">Botões e inputs com estilos diferentes para cada
+                            método, quebrando a identidade da marca.</span>
+                    </li>
+
+                    <li style="flex-direction: column; align-items: flex-start; text-align: left; gap: 10px;">
+                        <strong style="font-size: 1.2rem; color: #ff4444;">⛔ Feedback Confuso</strong>
+                        <span style="font-size: 0.95rem; color: #ccc;">O usuário ficava no escuro sem saber se o
+                            pagamento foi aprovado ou se ainda estava processando.</span>
+                    </li>
+
+                    <li style="flex-direction: column; align-items: flex-start; text-align: left; gap: 10px;">
+                        <strong style="font-size: 1.2rem; color: #ff4444;">⛔ Excesso de Passos</strong>
+                        <span style="font-size: 0.95rem; color: #ccc;">Múltiplos redirecionamentos de tela aumentavam o
+                            tempo de checkout e a chance de desistência.</span>
+                    </li>
+
+                    <li style="flex-direction: column; align-items: flex-start; text-align: left; gap: 10px;">
+                        <strong style="font-size: 1.2rem; color: #ff4444;">⛔ Erros Genéricos</strong>
+                        <span style="font-size: 0.95rem; color: #ccc;">Falta de clareza no motivo da recusa (ex: saldo
+                            vs. erro de sistema), impedindo a recuperação da venda.</span>
+                    </li>
+
+                    <li style="flex-direction: column; align-items: flex-start; text-align: left; gap: 10px;">
+                        <strong style="font-size: 1.2rem; color: #ff4444;">⛔ Perda de Dados</strong>
+                        <span style="font-size: 0.95rem; color: #ccc;">O formulário apagava as informações se o usuário
+                            precisasse voltar uma etapa para corrigir algo.</span>
+                    </li>
+
+                    <li style="flex-direction: column; align-items: flex-start; text-align: left; gap: 10px;">
+                        <strong style="font-size: 1.2rem; color: #ff4444;">⛔ Quebra de Confiança</strong>
+                        <span style="font-size: 0.95rem; color: #ccc;">Mudança brusca de layout ao ir para o gateway
+                            fazia o usuário sentir que saiu do ambiente seguro.</span>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+
+
 
         <section class="list-section">
             <div class="container">
@@ -148,10 +211,12 @@
 
                 O objetivo foi identificar as melhores práticas em dois pontos-chave:
 
-                <strong>Orquestração de Pagamentos:</strong> Como eles apresentam múltiplas opções (Pix, Saldo, Cartões) de forma clara e
+                <strong>Orquestração de Pagamentos:</strong> Como eles apresentam múltiplas opções (Pix, Saldo, Cartões)
+                de forma clara e
                 hierárquica.
 
-                <strong>Redução de Fricção:</strong> Como eles constroem confiança e simplificam a jornada para maximizar a conversão e
+                <strong>Redução de Fricção:</strong> Como eles constroem confiança e simplificam a jornada para
+                maximizar a conversão e
                 diminuir o abandono de carrinho.</p>
 
                 <div class="two-column-img">
@@ -176,99 +241,145 @@
             </div>
         </section>
 
-        
-                   <!-- 
-        <section class="userflow-section">
-            <div class="container">
-                <h2>UserFlow</h2>
-                <p>Utilizamos User Flows para mapear visualmente os passos que o usuário percorreria para
-                    encontrar e comprar um bolão próximo. Isso nos permitiu visualizar toda a jornada,
-                    identificar os pontos de decisão chave e garantir que o fluxo fosse o mais claro e intuitivo
-                    possível.</p>
-                <img src="./images/bolao/user-flow.png"
-                    alt="Imagem com o caminho do site de página em página, em um mapa visual">
-            </div>
-        </section>
 
-        <section class="wireframe-display-section">
+        <section class="scenarios-section" style="padding: 60px 0;">
             <div class="container">
-                <h2>Wireframe de baixa fidelidade</h2>
-                <p>Esta primeira versão do wireframe de baixa fidelidade foca exclusivamente na estrutura da informação
-                    e no fluxo principal do usuário. O objetivo aqui foi estabelecer a arquitetura e a navegação
-                    essenciais, livre das distrações do design visual, garantindo uma base sólida para a experiência.
+                <h2>Mapeamento de Cenários</h2>
+                <p>
+                    Para garantir uma integração robusta, mapeamos e prototipamos cada estado possível da interface,
+                    cobrindo os fluxos de compra e as particularidades dos fluxos de resgate para ambos os gateways.
                 </p>
-                <img src="./images/bolao/wire-baixa.png"
-                    alt="Imagem mostra os wireframes de baixa fidelidade alinhados um do lado do outro">
+
+                <h3
+                    style="margin-top: 3rem; margin-bottom: 1.5rem; font-family: 'Touche', sans-serif; color: var(--accent-color);">
+                    🛍️ Jornada de Compra e Cartões
+                </h3>
+                <ul class="scenarios-grid">
+
+                    <li class="scenario-card mp-style">
+                        <div class="gateway-indicator">
+                            <img src="images/pagamentos/mercado-pago-icon.png" alt="Logo MP">
+                        </div>
+                        <span>Sem cartão cadastrado</span>
+                    </li>
+                    <li class="scenario-card rp-style">
+                        <div class="gateway-indicator">
+                            <img src="images/pagamentos/recargapay-icon.png" alt="Logo RP">
+                        </div>
+                        <span>Sem cartão cadastrado</span>
+                    </li>
+
+                    <li class="scenario-card mp-style">
+                        <div class="gateway-indicator">
+                            <img src="images/pagamentos/mercado-pago-icon.png" alt="Logo MP">
+                        </div>
+                        <span>1 cartão cadastrado (débito não autorizado)</span>
+                    </li>
+                    <li class="scenario-card mp-style">
+                        <div class="gateway-indicator">
+                            <img src="images/pagamentos/mercado-pago-icon.png" alt="Logo MP">
+                        </div>
+                        <span>2 cartões cadastrados (Em processamento)</span>
+                    </li>
+                    <li class="scenario-card rp-style">
+                        <div class="gateway-indicator">
+                            <img src="images/pagamentos/recargapay-icon.png" alt="Logo RP">
+                        </div>
+                        <span>1 cartão cadastrado</span>
+                    </li>
+
+                    <li class="scenario-card multi-style">
+                        <div class="gateway-indicator">
+                            <img src="images/pagamentos/wallet.svg  " alt="Carteira"
+                                onerror="this.style.display='none'">
+                        </div>
+                        <span>Vários cartões com scroll (Alterar/Cancelar)</span>
+                    </li>
+                    <li class="scenario-card multi-style">
+                        <div class="gateway-indicator">
+                            <img src="images/pagamentos/cart.svg " alt="Carrinho" onerror="this.style.display='none'">
+                        </div>
+                        <span>Carrinho: Detalhamento de compras</span>
+                    </li>
+                    <li class="scenario-card multi-style">
+                        <div class="gateway-indicator">
+                            <img src="images/pagamentos/card.svg" alt="Cartão" onerror="this.style.display='none'">
+                        </div>
+                        <span>Meus cartões salvos</span>
+                    </li>
+                </ul>
+
+                <h3 style="margin-top: 4rem; margin-bottom: 1.5rem; font-family: 'Touche', sans-serif; color: #ffffff;">
+                    💰 Jornada de Resgate
+                </h3>
+                <ul class="scenarios-grid">
+                    <li class="scenario-card mp-style">
+                        <div class="gateway-indicator">
+                            <img src="images/pagamentos/mercado-pago-icon.png" alt="Logo MP">
+                        </div>
+                        <span>Com conta existente</span>
+                    </li>
+                    <li class="scenario-card mp-style">
+                        <div class="gateway-indicator">
+                            <img src="images/pagamentos/mercado-pago-icon.png" alt="Logo MP">
+                        </div>
+                        <span>Sem conta </span>
+                    </li>
+                    <li class="scenario-card mp-style error-state">
+                        <div class="gateway-indicator">
+                            <img src="images/pagamentos/mercado-pago-icon.png" alt="Logo MP">
+                        </div>
+                        <span>Aviso de conta inexistente (Erro)</span>
+                    </li>
+
+                    <li class="scenario-card rp-style">
+                        <div class="gateway-indicator">
+                            <img src="images/pagamentos/recargapay-icon.png" alt="Logo RP">
+                        </div>
+                        <span>Com conta existente</span>
+                    </li>
+                    <li class="scenario-card rp-style">
+                        <div class="gateway-indicator">
+                            <img src="images/pagamentos/recargapay-icon.png" alt="Logo RP">
+                        </div>
+                        <span>Sem conta </span>
+                    </li>
+                    <li class="scenario-card rp-style error-state">
+                        <div class="gateway-indicator">
+                            <img src="images/pagamentos/recargapay-icon.png" alt="Logo RP">
+                        </div>
+                        <span>Aviso de conta inexistente (Erro)</span>
+                    </li>
+                </ul>
             </div>
         </section>
 
+
         <section class="wireframe-display-section">
             <div class="container">
-                <h2>Wireframe de Alta fidelidade</h2>
-                <p>Avançando da estrutura validada nos wireframes de baixa fidelidade, a versão de alta fidelidade
-                    incorpora a camada visual completa do produto. Nesta fase, aplicamos a identidade visual definida
-                    (cores, tipografia, componentes) para criar uma representação fiel da interface final...</p>
-                <p><strong>Importante:</strong> As telas apresentadas são um exemplo representativo. O projeto completo
-                    abrangeu os
-                    fluxos de todas as modalidades de loterias, incluindo variações para eventos sazonais como a
-                    mega-sena da virada, garantindo consistência em toda a plataforma.
+                <h2>Jornada de Compra e Cartões</h2>
+                <p>Com a estrutura e os fluxos validados na etapa anterior, chegou o momento de aplicar a camada visual
+                    final. A missão aqui era transformar uma integração técnica complexa em algo simples e invisível
+                    para o usuário.
+
+                    O grande desafio dos protótipos de alta fidelidade foi criar uma interface única que "vestisse" os
+                    dois gateways. O objetivo era garantir que, seja pagando com Mercado Pago ou Recarga Pay, a pessoa
+                    sentisse que estava sempre no mesmo ambiente seguro e familiar, sem sustos ou mudanças bruscas de
+                    design.
+
+                    Importante: Para organizar a apresentação do portfólio, dividi o resultado final nas duas principais
+                    jornadas do usuário: a Jornada de Compra (colocando dinheiro) e a Jornada de Resgate (retirando
+                    prêmios). As telas abaixo são um recorte representativo; o projeto completo envolveu o design
+                    detalhado de dezenas de variações, incluindo todos os estados de erro e fluxos alternativos para
+                    ambos os parceiros.
                 </p>
-                <img src="./images/bolao/wire-alta.png"
-                    alt="Imagem mostra os wireframes de alta fidelidade alinhados um do lado do outro">
-            </div>
-        </section>
-
-        <section class="wireframe-display-section">
-            <div class="container">
-                <h2>Mobile</h2>
-                <p>Considerando que a maioria dos usuários acessa a plataforma via celular, a experiência mobile foi uma
-                    prioridade estratégica. Todos os fluxos de alta fidelidade foram adaptados para dispositivos móveis,
-                    focando em uma navegação intuitiva, componentes de toque claros e legibilidade total, garantindo que
-                    o usuário pudesse completar uma aposta de forma rápida e acessível em qualquer tela.</p>
-                <img src="./images/bolao/mobile.png" alt="Imagem mostra os wireframes da versão mobile">
+                <img src="./images/pagamentos/telas.png"
+                    alt="Imagem mostra os wireframes de alta fidelidade alinhados um do lado do outro"
+                    class="zoomable-image">
             </div>
         </section>
 
 
-        <section class="mobile-gallery-section">
-            <div class="container">
-                <h2>Algumas telas mobile</h2>
-
-                <div class="mobile-gallery-grid">
-
-                    <div class="gallery-unit">
-                        <p class="gallery-label">Tela Inicial</p>
-                        <div class="gallery-item">
-                            <img src="./images/bolao/tela_1.png" alt="Tela do aplicativo +milionária">
-                        </div>
-                    </div>
-
-                    <div class="gallery-unit">
-                        <p class="gallery-label">Seleção de Bolão</p>
-                        <div class="gallery-item">
-                            <img src="./images/bolao/tela_2.png" alt="Mockup da tela de seleção de bolão">
-                        </div>
-                    </div>
-
-                    <div class="gallery-unit">
-                        <p class="gallery-label">Detalhe do Jogo</p>
-                        <div class="gallery-item">
-                            <img src="./images/bolao/tela_3.png" alt="Mockup da tela de detalhe do jogo">
-                        </div>
-                    </div>
-
-                    <div class="gallery-unit">
-                        <p class="gallery-label">Filtros</p>
-                        <div class="gallery-item">
-                            <img src="./images/bolao/tela_4.png" alt="Mockup da tela de filtros de aposta">
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        -->
 
         <section id="contact">
             <div class="container">
