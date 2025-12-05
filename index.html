@@ -48,27 +48,33 @@
 </head>
 
 <body>
-    <header class="main-header">
-        <div class="container ">
-            <a class="logo-link" href="index.html" aria-label="Voltar para a página inicial">
+<header class="main-header">
+    <div class="container">
+        
+        <div class="header-spacer"></div>
+
+        <div class="logo">
+            <a href="#" aria-label="Topo da página">
                 <svg xmlns="http://www.w3.org/2000/svg" width="53" height="26" viewBox="0 0 53 26" class="logo-svg">
                     <defs>
                         <mask id="mascara-suave">
-                            <path class="mask-m" d="M 3.5,26 V 2 L 14.5,14 L 25,2 V 26" fill="none" stroke="white"
-                                stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
-
-                            <path class="mask-z" d="M 34,2 H 51 L 38,24 H 53" fill="none" stroke="white"
-                                stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+                            <path class="mask-m" d="M 3.5,26 V 2 L 14.5,14 L 25,2 V 26" fill="none" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+                            <path class="mask-z" d="M 34,2 H 51 L 38,24 H 53" fill="none" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
                         </mask>
                     </defs>
-
-                    <path class="mz-base" mask="url(#mascara-suave)"
-                        d="M-1.20997e-05 25.272V4.76837e-07H7.37999L14.472 13.968L21.528 4.76837e-07H28.584V25.272H22.428V9.936L16.416 21.672H12.096L6.11999 10.188V25.272H-1.20997e-05ZM52.3921 4.76837e-07V4.68L42.0961 19.872H52.3921V25.272H34.5361V20.592L44.8321 5.4H34.5361V4.76837e-07H52.3921Z"
-                        fill="white" />
+                    <path class="mz-base" mask="url(#mascara-suave)" d="M-1.20997e-05 25.272V4.76837e-07H7.37999L14.472 13.968L21.528 4.76837e-07H28.584V25.272H22.428V9.936L16.416 21.672H12.096L6.11999 10.188V25.272H-1.20997e-05ZM52.3921 4.76837e-07V4.68L42.0961 19.872H52.3921V25.272H34.5361V20.592L44.8321 5.4H34.5361V4.76837e-07H52.3921Z" fill="white" />
                 </svg>
             </a>
         </div>
-    </header>
+
+        <div class="lang-switch-header">
+            <a href="index.html" class="lang-link active">PT</a>
+            <span class="divider">|</span>
+            <a href="en/index.html" class="lang-link">EN</a>
+        </div>
+
+    </div>
+</header>
 
     <main>
         <section id="hero" class="hero-section">
@@ -96,7 +102,7 @@
 
                 <div class="project-grid">
 
-                    <!--  <a href="pagamentos.html" class="project-card" aria-label="Ver projeto Bolão Lotérico">
+                  <a href="pagamentos.html" class="project-card" aria-label="Ver projeto Bolão Lotérico">
                         <div class="project-image-wrapper">
                             <img src="images/thumbs/pagamentos.png" alt="Preview do Projeto de pagamentos">
                         </div>
@@ -113,8 +119,7 @@
                                 <li>Checkout</li>
                             </ul>
                         </div>
-                    </a> -->
-
+                    </a>
 
 
                     <a href="bolao.html" class="project-card" aria-label="Ver projeto Bolão Lotérico">
@@ -280,7 +285,7 @@
 
     <footer class="main-footer">
         <div class="container text-center">
-            <p>@miguelzynich - 10/25</p>
+            <p>@miguelzynich - 12/25</p>
         </div>
     </footer>
 

@@ -1,13 +1,8 @@
-/* === SCRIPT GLOBAL DO PORTFÓLIO (VERSÃO ESTÁVEL CORRIGIDA) === */
-
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. VOLTAMOS A USAR O <body>
     const body = document.body;
     let darkModeToggle;
 
-    // --- Funções do Dark Mode (USANDO O BODY) ---
-    // Elas estão DENTRO do DOMContentLoaded, assim como o botão
     const enableDarkMode = () => {
         body.classList.add('dark-mode');
         localStorage.setItem('theme', 'dark');
@@ -18,28 +13,37 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', 'light');
     };
 
-    // --- Função para Injetar o Botão de Voltar (Sua versão) ---
-    function injetarBotaoVoltar() {
-        const headerContainer = document.querySelector('.main-header .container');
+function injetarBotaoVoltar() {
+    const headerContainer = document.querySelector('.main-header .container');
 
-        if (window.location.pathname.endsWith('/') || window.location.pathname.endsWith('index.html')) {
-            return;
-        }
-
-        if (headerContainer) {
-            const backButton = document.createElement('a');
-            backButton.href = 'index.html';
-            backButton.className = 'back-button';
-            backButton.setAttribute('aria-label', 'Voltar para a página inicial');
-
-            const icon = document.createElement('i');
-            icon.className = 'fas fa-arrow-left';
-            backButton.appendChild(icon);
-
-            headerContainer.prepend(backButton);
-        }
+    const path = window.location.pathname;
+    if (path.endsWith('/') || path.endsWith('index.html')) {
+        return;
     }
 
+    if (headerContainer) {
+        const backButton = document.createElement('a');
+        backButton.href = 'index.html'; // Fallback padrão
+        backButton.className = 'back-button';
+        backButton.setAttribute('aria-label', 'Voltar para a página inicial');
+
+        backButton.addEventListener('click', (e) => {
+            if (document.referrer && document.referrer.includes(window.location.hostname)) {
+                e.preventDefault(); 
+                history.back();     
+            }
+        });
+
+        const icon = document.createElement('i');
+        icon.className = 'fas fa-arrow-left';
+        backButton.appendChild(icon);
+
+        headerContainer.prepend(backButton);
+    }
+}
+
+// Não esqueça de chamar a função quando a página carregar
+document.addEventListener('DOMContentLoaded', injetarBotaoVoltar);
     // --- Função para Injetar o Botão de Dark Mode ---
     function injetarBotaoDarkMode() {
         if (document.getElementById('darkModeToggle')) return;
@@ -85,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Lógica do Modal do Currículo (CORRIGIDO) ---
     const openCvBtn = document.getElementById('openCvModalBtn');
     const closeCvBtn = document.getElementById('closeCvModalBtn');
     const cvOverlay = document.getElementById('cvModalOverlay');
@@ -102,7 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // O 'keydown' e 'click' SÓ SÃO ADICIONADOS SE O MODAL EXISTIR
     if (cvOverlay) {
         cvOverlay.addEventListener('click', (event) => {
             if (event.target === cvOverlay) {
@@ -180,7 +182,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- LÓGICA DO MODAL DE IMAGEM (ZOOM) ---
     var modal = document.getElementById("imageModal");
 
     if (modal) {
@@ -259,9 +260,9 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             const scaleFactor = 1.1;
 
-            if (event.deltaY < 0) { // Zoom in
+            if (event.deltaY < 0) { 
                 currentScale *= scaleFactor;
-            } else { // Zoom out
+            } else {
                 currentScale /= scaleFactor;
             }
             currentScale = Math.max(1, Math.min(currentScale, 5));
@@ -276,7 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function handleMouseDown(event) {
-            if (currentScale === 1) return; // Corrigido de 'return.'
+            if (currentScale === 1) return; 
 
             isDragging = true;
             modalImg.classList.add('dragging');
@@ -299,16 +300,14 @@ document.addEventListener('DOMContentLoaded', () => {
             clampPan();
             applyTransform();
         }
-    } // Fim do 'if (modal)'
+    } 
 
 
-    // --- INICIALIZAÇÃO DE TUDO ---
 
     injetarBotaoVoltar();
     injetarBotaoDarkMode();
     injetarProjetosRecomendados();
 
-    // SCRIPT DE VERIFICAÇÃO INICIAL (O original, que causa o "atraso")
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -320,24 +319,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 })
 
-/* --- ANIMAÇÃO DE SCROLL (REVEAL) --- */
 document.addEventListener("DOMContentLoaded", () => {
 
     // Configuração do Observador
     const observerOptions = {
-        root: null,      // Observa a viewport (tela)
+        root: null,     
         rootMargin: '0px 0px -250px 0px',    
-        threshold: 0.1   // Dispara quando 10% do elemento aparecer
+        threshold: 0.1   
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Adiciona a classe que faz aparecer
                 entry.target.classList.add('scroll-visible');
 
-                // (Opcional) Para de observar depois que apareceu uma vez
-                // Se quiser que a animação repita ao subir e descer, remova a linha abaixo
                 observer.unobserve(entry.target);
             }
         });
@@ -346,4 +341,87 @@ document.addEventListener("DOMContentLoaded", () => {
     // Seleciona tudo que tem a classe .scroll-hidden e manda vigiar
     const hiddenElements = document.querySelectorAll('.scroll-hidden');
     hiddenElements.forEach((el) => observer.observe(el));
-});     
+})     
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("Main.js carregado com sucesso!");
+
+    // 1. Pegando os elementos pelo ID
+    const btnMenu = document.getElementById('btn-menu-projetos');
+    const btnFechar = document.getElementById('btn-fechar-overlay');
+    const overlay = document.getElementById('project-overlay');
+    const links = document.querySelectorAll('.menu-link');
+
+    // 2. Verificação de Segurança (Debug)
+    if (!btnMenu) {
+        console.error("ERRO CRÍTICO: Não achei o botão de abrir! Verifique se o ID 'btn-menu-projetos' está no <button> do Header.");
+        return; // Para o código aqui se não achar o botão
+    }
+    
+    if (!overlay) {
+        console.error("ERRO: Não achei a div do overlay.");
+        return;
+    }
+
+    // 3. A Função que faz a mágica
+    function toggleMenu() {
+        const estaAberto = overlay.classList.contains('active');
+        
+        if (estaAberto) {
+            overlay.classList.remove('active');
+            document.body.style.overflow = ''; // Destrava o scroll
+        } else {
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Trava o scroll
+        }
+    }
+
+    // 4. Adicionando os cliques
+    btnMenu.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleMenu();
+    });
+
+    if (btnFechar) {
+        btnFechar.addEventListener('click', toggleMenu);
+    }
+
+    // Fecha ao clicar nos links
+    links.forEach(link => {
+        link.addEventListener('click', toggleMenu);
+    });
+});
+
+function injetarBotaoVoltar() {
+    const headerContainer = document.querySelector('.main-header .container');
+    const path = window.location.pathname;
+    
+    const isEnglish = path.includes('/en/');
+
+    if (path.endsWith('/') || path.endsWith('index.html')) return;
+
+    if (headerContainer) {
+        const backButton = document.createElement('a');
+        
+        backButton.href = 'index.html'; 
+        
+        backButton.className = 'back-button';
+        
+        const labelText = isEnglish ? 'Back to Home' : 'Voltar para a página inicial';
+        backButton.setAttribute('aria-label', labelText);
+
+        backButton.innerHTML = '<i class="fas fa-arrow-left"></i>'; 
+
+        backButton.addEventListener('click', (e) => {
+            if (document.referrer && document.referrer.includes(window.location.hostname)) {
+                e.preventDefault();
+                history.back();
+            }
+        });
+
+        headerContainer.prepend(backButton);
+    }
+}

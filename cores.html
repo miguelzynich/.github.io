@@ -55,14 +55,29 @@
 
 <body>
 
-    <header class="main-header">
-        <div class="container">
-            <button class="back-button" onclick="history.back()" aria-label="Voltar para a página anterior">
-                <i class="fas fa-arrow-left"></i>
-            </button>
-            <a class="logo" href="index.html">MZ</a>
+
+<header class="main-header">
+    <div class="container">
+        
+        <div class="logo">
+            <a href="index.html">MZ</a>
         </div>
-    </header>
+
+        <div class="header-actions">
+            
+            <div class="lang-switch-header">
+                <a href="cores.html" class="lang-link active">PT</a>
+                <span class="divider">|</span>
+                <a href="en/cores.html" class="lang-link">EN</a>
+            </div>
+
+            <button id="btn-menu-projetos" aria-label="Abrir menu">
+                <img src="./images/vortigo/menu.svg" alt="Menu" class="menu-icon-img">
+            </button>
+
+        </div>
+    </div>
+</header>
 
     <main>
 
@@ -642,30 +657,30 @@
                         <div class="mockup-container">
                             <img src="./images/cores/time3.png" alt="Tela do aplicativo com contraste 4.65:1">
                         </div>
-                            <div class="contrast-card">
-                                <h2>4.65:1</h2>
-                                <p class="subtitle">Simple Contrast (WCAG)</p>
-                                <div class="contrast-details">
-                                    <div class="detail-column">
-                                        <p class="column-title">Normal Text</p>
-                                        <div class="detail-row"><span class="status pass">AA</span><span
-                                                class="ratio">4.5:1</span></div>
-                                        <div class="detail-row"><span class="status fail">AAA</span><span
-                                                class="ratio">7:1</span></div>
-                                    </div>
-                                    <div class="detail-column">
-                                        <p class="column-title">Large Text</p>
-                                        <div class="detail-row"><span class="status pass">AA</span><span
-                                                class="ratio">3:1</span></div>
-                                        <div class="detail-row"><span class="status pass">AAA</span><span
-                                                class="ratio">4.5:1</span></div>
-                                    </div>
+                        <div class="contrast-card">
+                            <h2>4.65:1</h2>
+                            <p class="subtitle">Simple Contrast (WCAG)</p>
+                            <div class="contrast-details">
+                                <div class="detail-column">
+                                    <p class="column-title">Normal Text</p>
+                                    <div class="detail-row"><span class="status pass">AA</span><span
+                                            class="ratio">4.5:1</span></div>
+                                    <div class="detail-row"><span class="status fail">AAA</span><span
+                                            class="ratio">7:1</span></div>
+                                </div>
+                                <div class="detail-column">
+                                    <p class="column-title">Large Text</p>
+                                    <div class="detail-row"><span class="status pass">AA</span><span
+                                            class="ratio">3:1</span></div>
+                                    <div class="detail-row"><span class="status pass">AAA</span><span
+                                            class="ratio">4.5:1</span></div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
+
                 </div>
+            </div>
         </section>
 
         <section class="project-content">
@@ -695,17 +710,38 @@
                 </div>
             </div>
         </section>
-    </main>
 
     <footer class="main-footer">
         <div class="container text-center">
-            <p>@miguelzynich - 10/25</p>
+            <p>@miguelzynich - 12/25</p>
         </div>
     </footer>
 
     </main>
 
-    <script src="main.js"></script>
+
+
+    <div id="project-overlay" class="overlay">
+        <button id="btn-fechar-overlay" aria-label="Fechar menu">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+
+        <nav class="overlay-menu">
+            <ul>
+                <li><a href="pagamentos.html" class="menu-link">Pagamentos</a></li>       
+                <li><a href="bolao.html" class="menu-link">Bolão Lotérico</a></li>
+                <li><a href="yuca.html" class="menu-link">Yuca</a></li>
+                <li><a href="vortigo.html" class="menu-link">Vortigo</a></li>
+                <li><a href="index.html#sobre-e-experiencia" class="menu-link"> Sobre</a></li>
+            </ul>
+        </nav>
+    </div>
+
+        <script src="main.js"></script>
 
 </body>
 

@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuca | Portfolio - Miguel Zynich</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../images/favicon/site.webmanifest">
+
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="Yuca | Portfolio - Miguel Zynich">
+    <meta property="og:description" content="UX/UI Designer with 4 years of experience and 13 years as Art Director.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://miguelzynich.github.io/.github.io/en/yuca.html">
+    <meta property="og:image" content="../images/social-thumb2.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Yuca | Portfolio - Miguel Zynich">
+    <meta name="twitter:description" content="UX/UI Designer with 4 years of experience and 13 years as Art Director.">
+    <meta name="twitter:image" content="../images/social-thumb2.png">
+    <meta name="description" content="End-to-end UX/UI project for Yuca, a coliving platform. See the research process, wireframes, and prototyping solutions.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../yuca.css">
+    <script src="https://t.contentsquare.net/uxa/734555fce281e.js"></script>
+
+    <style>
+        @font-face {
+            font-family: 'Touche';
+            src: url('../fonts/ToucheW03-Bold.woff2') format('woff2'); /* Ajuste ../ */
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Gilroy';
+            src: url('../fonts/Gilroy-Regular.woff') format('woff'); /* Ajuste ../ */
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        h2 { text-align: center; }
+        html, body { overflow-x: hidden; }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--primary-color);
+            background-color: var(--background-color);
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+        .container-wide { max-width: 1300px; margin: 0 auto; padding: 0 40px; }
+        section { padding: 60px 0; }
+        section+section { padding-top: 0; }
+        h2 {
+            font-family: 'Touche', sans-serif;
+            font-weight: 700;
+            font-size: 32px;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+        p {
+            font-family: 'Gilroy', sans-serif;
+            font-size: 18px;
+            margin-bottom: 1.5rem;
+            color: var(--text-color-light);
+            text-align: left;
+        }
+        strong {
+            font-family: 'Gilroy', sans-serif;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M2BKP8Y23H"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-M2BKP8Y23H');
+</script>
+
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            
+            <div class="logo">
+                <a href="index.html">MZ</a>
+            </div>
+
+            <div class="header-actions">
+                
+                <div class="lang-switch-header">
+                    <a href="../yuca.html" class="lang-link">PT</a>
+                    <span class="divider">|</span>
+                    <a href="yuca.html" class="lang-link active">EN</a>
+                </div>
+
+                <button id="btn-menu-projetos" aria-label="Open menu">
+                    <img src="../images/vortigo/menu.svg" alt="Menu" class="menu-icon-img">
+                </button>
+
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="banner-section"></section>
+
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <div class="container">
+                <ol class="breadcrumb-list">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="index.html#projects">Projects</a></li>
+                    <li class="breadcrumb-item" aria-current="page">Yuca</li>
+                </ol>
+            </div>
+        </nav>
+
+        <section class="project-content">
+            <div class="container">
+                <div class="two-column-layout">
+                    <div class="column">
+                        <h2>About Yuca</h2>
+                        <p>Yuca is a housing-as-a-service startup. Our mission is to revolutionize the lives of those living in the city, and to achieve this, we offer uncomplicated rentals with apartments ready to move in.</p>
+                    </div>
+                    <div class="column">
+                        <h2>Process</h2>
+                        <p>To solve the problem, <strong>Design Thinking</strong> was chosen. Following the steps of discover, define, develop, and deliver. In the process, the <strong>Double Diamond</strong> was used to align deliveries.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="problem-section">
+            <div class="container">
+                <h2>The Problem</h2>
+                <p>Discover why young people are not opting for coliving.</p>
+            </div>
+        </section>
+
+        <section class="tools-section">
+            <div class="container">
+                <h2>Tools Used</h2>
+                <ul class="tools-grid">
+                    <li>Quantitative Research</li>
+                    <li>Empathy Map</li>
+                    <li>Usability Testing</li>
+                    <li>Qualitative Research</li>
+                    <li>Prioritization Grid</li>
+                    <li>Personas</li>
+                    <li>Moodboard</li>
+                    <li>Wireframes</li>
+                    <li>Benchmarks</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="research-section">
+            <div class="container">
+                <h2>Desk Research</h2>
+                <div class="research-box">
+                    <div class="desk-research-layout">
+                        <div class="research-item">
+                            <img src="../images/yuca/research-g1.png" alt="Print of G1 article about social classes">
+                            <blockquote>
+                                <strong>G1 - Economics</strong>
+                                "The influx to large cities continues to grow, leading to rising property prices and demand for more affordable housing."
+                            </blockquote>
+                        </div>
+                        <div class="research-item">
+                            <img src="../images/yuca/research-estadao.png" alt="Print of Estadão article about colivings">
+                            <blockquote>
+                                <strong>Estadão</strong>
+                                "Low cost and social contact boost colivings in São Paulo (...) After evasion in the first months of the pandemic, shared space ventures attract residents wishing to meet people again."
+                            </blockquote>
+                        </div>
+                        <div class="research-item">
+                            <img src="../images/yuca/research-estadao-imoveis.png" alt="Print of Estadão Imóveis article about housing">
+                            <blockquote>
+                                <strong>Estadão Imóveis</strong>
+                                "The feeling of loneliness increased greatly during the pandemic, and space-sharing formats like coliving came to supply the side of solitary living that apartments offer."
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="carousel-section">
+            <div class="container">
+                <h2>Quantitative Data</h2>
+            </div>
+            <div class="container-wide">
+                <div class="carousel-wrapper">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper charts-swiper">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide" role="group" aria-label="Data on who respondents currently live with">
+                                <div class="slide-content">
+                                    <div class="text-content">
+                                        <h3>Currently I live with...</h3>
+                                        <p>About <strong>62%</strong> live with their parents, <strong>only 16% live alone</strong>, and the other <strong>16%</strong> live with their partners, siblings, or relatives.</p>
+                                    </div>
+                                    <div class="chart-content">
+                                        <img class="chart-light" src="../images/yuca/grafico-pizza.svg" alt="Pie chart showing living arrangements">
+                                        <img class="chart-dark" src="../images/yuca/grafico-pizza-dark.svg" alt="Pie chart showing living arrangements">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide" role="group" aria-label="Data on where respondents would search for real estate">
+                                <div class="slide-content">
+                                    <div class="text-content">
+                                        <h3>Where would you search...</h3>
+                                        <p>Here we see preferences for specialized real estate sites that clearly offer all information, from property tax to condominium fees.</p>
+                                    </div>
+                                    <div class="chart-content">
+                                        <img class="chart-light" src="../images/yuca/grafico-pizza2.svg" alt="Pie chart about where to search for properties">
+                                        <img class="chart-dark" src="../images/yuca/grafico-pizza2-dark.svg" alt="Pie chart about where to search for properties">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide" role="group" aria-label="Data on how respondents solve domestic problems">
+                                <div class="slide-content">
+                                    <div class="text-content">
+                                        <h3>When that headache with the shower happens?</h3>
+                                        <p>These hassles are something already included in the Yuca support package, but few people know about it.</p>
+                                    </div>
+                                    <div class="chart-content">
+                                        <img class="chart-light" src="../images/yuca/grafico-pizza3.svg" alt="Pie chart about domestic repairs">
+                                        <img class="chart-dark" src="../images/yuca/grafico-pizza3-dark.svg" alt="Pie chart about domestic repairs">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide" role="group" aria-label="Data on cost perception of a coliving">
+                                <div class="slide-content">
+                                    <div class="text-content">
+                                        <h3>How much do you think it costs to live in a coliving?</h3>
+                                        <p>Here we sought to see the price perception of Coliving. Score 1 for <strong>cheap</strong> and score 5 for <strong>expensive</strong>.</p>
+                                    </div>
+                                    <div class="chart-content">
+                                        <img class="chart-light" src="../images/yuca/grafico-pizza4.svg" alt="Pie chart on price perception">
+                                        <img class="chart-dark" src="../images/yuca/grafico-pizza4-dark.svg" alt="Pie chart on price perception">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide" role="group" aria-label="Data on importance of living in the city center">
+                                <div class="slide-content">
+                                    <div class="text-content">
+                                        <h3>How important is it for you to live in the city center?</h3>
+                                        <p>A good part of the interviewees believe it is not so relevant to live in the city center. While only 18% consider it very important.</p>
+                                    </div>
+                                    <div class="chart-content">
+                                        <img class="chart-light" src="../images/yuca/grafico-pizza5.svg" alt="Chart on location importance">
+                                        <img class="chart-dark" src="../images/yuca/grafico-pizza5-dark.svg" alt="Chart on location importance">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide" role="group" aria-label="Data on willingness to live in a coliving">
+                                <div class="slide-content">
+                                    <div class="text-content">
+                                        <h3>Would you live in a coliving?</h3>
+                                        <p>About <strong>46% would agree to live in a coliving</strong> even with some concerns like rules and shared spaces being something recent.</p>
+                                    </div>
+                                    <div class="chart-content">
+                                        <img class="chart-light" src="../images/yuca/grafico-pizza6.svg" alt="Chart on intention to live in coliving">
+                                        <img class="chart-dark" src="../images/yuca/grafico-pizza6-dark.svg" alt="Chart on intention to live in coliving">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="research-intro-section">
+            <div class="container">
+                <div class="two-column-flex">
+                    <div class="text-content">
+                        <h2>Quantitative Research Directions</h2>
+                        <p>For the qualitative research, I sought people who were similar to the personas. I also looked for people who were looking to leave home or wanting to move cities. Using a structured questionnaire, it was possible to reach the results below.</p>
+                    </div>
+                    <div class="image-content">
+                        <img src="../images/yuca/research-illustration.png" alt="Illustration of a report with charts and a target">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="personas-section">
+            <div class="container">
+                <h2>Proto-Personas</h2>
+                <div class="swiper personas-swiper">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="persona-slide-content">
+                                <div class="persona-info">
+                                    <img src="../images/yuca/persona-caio.png" alt="Avatar of Caio" class="persona-avatar">
+                                    <h3 class="persona-name">Caio</h3>
+                                    <p class="persona-details">28 years old - Marketer</p>
+                                </div>
+                                <div class="persona-quotes">
+                                    <blockquote>"I want to live in São Paulo, but I still need to plan to achieve this goal."</blockquote>
+                                    <blockquote>"Yes! I agreed with my girlfriend but it's complicated, I tried to encourage 2 more friends of mine too."</blockquote>
+                                    <blockquote>"I think coliving would be perfect to understand more what it's like to live (even temporarily) in a different city."</blockquote>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="persona-slide-content">
+                                <div class="persona-info">
+                                    <img src="../images/yuca/persona-andrius.png" alt="Avatar of Andrius" class="persona-avatar">
+                                    <h3 class="persona-name">Andrius</h3>
+                                    <p class="persona-details">29 years old - Developer</p>
+                                </div>
+                                <div class="persona-quotes">
+                                    <blockquote>“I would probably use coliving, but as something very temporary, with a stay in another city or country.”</blockquote>
+                                    <blockquote>“I chose to rent to leave home, because I think it suits me better. I still prefer my privacy.”</blockquote>
+                                    <blockquote>“I live alone, but whenever I can I'm calling someone to share the home office with me.”</blockquote>
+                                    <blockquote>“I like living around here, but the idea of living in another country still scares me a bit — loneliness, etc.”</blockquote>
+                                    <blockquote>"I don't want to buy a property yet, although I want to. The technology area ends up providing offers for other countries."</blockquote>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="persona-slide-content">
+                                <div class="persona-info">
+                                    <img src="../images/yuca/persona-vanessa.png" alt="Avatar of Vanessa" class="persona-avatar">
+                                    <h3 class="persona-name">Vanessa</h3>
+                                    <p class="persona-details">27 years old - Student</p>
+                                </div>
+                                <div class="persona-quotes">
+                                    <blockquote>"I wanted to leave home soon, but I still don't have financial stability."</blockquote>
+                                    <blockquote>"I would probably live with my friends. Living alone nowadays is bad, mostly because of the price of everything."</blockquote>
+                                    <blockquote>"I had already heard about coliving, and even had a friend who lived for a while (...), but the rules were very strict."</blockquote>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="qualitative-preview-section">
+            <div class="container">
+                <h2>Qualitative Research Preview</h2>
+                <p>After refining needs and pains, qualitative research clearly showed the real needs of our audience. It was possible to reach this result:</p>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <div class="container">
+                <h2>Personas</h2>
+                <p>
+                    To go beyond demographic data and build a <strong>real connection with the user</strong>, we created an <strong>Empathy Map</strong>. Below, we detail what our persona <strong>Thinks and Feels, Sees, Hears, Says, and Does</strong>. This exercise was <strong>fundamental to guide the design</strong> in an <strong>empathic way and focused on solving their main problems</strong>.
+                </p>
+            </div>
+            <div class="container-wide">
+                <div class="swiper gallery-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="../images/yuca/placeholder-1.png" alt="Image Description 1"></div>
+                        <div class="swiper-slide"><img src="../images/yuca/placeholder-2.png" alt="Image Description 2"></div>
+                        <div class="swiper-slide"><img src="../images/yuca/placeholder-3.png" alt="Image Description 3"></div>
+                        <div class="swiper-slide"><img src="../images/yuca/placeholder-4.png" alt="Image Description 4"></div>
+                        <div class="swiper-slide"><img src="../images/yuca/placeholder-5.png" alt="Image Description 5"></div>
+                        <div class="swiper-slide"><img src="../images/yuca/placeholder-6.png" alt="Image Description 6"></div>
+                        <div class="swiper-slide"><img src="../images/yuca/placeholder-7.png" alt="Image Description 7"></div>
+                        <div class="swiper-slide"><img src="../images/yuca/placeholder-8.png" alt="Image Description 8"></div>
+                        <div class="swiper-slide"><img src="../images/yuca/placeholder-9.png" alt="Image Description 9"></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="prioritization-grid-section">
+            <div class="container">
+                <h2>Prioritization Grid</h2>
+                <p>
+                    After gathering a significant amount of data and ideas, it was essential to apply a <strong>Prioritization Grid</strong>. This tool allowed us to <strong>evaluate and classify the identified features and problems</strong> based on two main criteria: <strong>user impact</strong> and <strong>implementation complexity</strong>. In this way, we could <strong>focus on the most critical points with the highest value</strong> for the project, ensuring efficient development directed at real user needs.
+                </p>
+                <div class="grid-image-wrapper">
+                    <img src="../images/yuca/prioritization-grid.png" alt="Prioritization Grid with impact vs effort">
+                </div>
+            </div>
+        </section>
+
+        <section class="ui-design-section">
+            <div class="container">
+                <h2>UI Design</h2>
+                <p>Based on the research, we can create our first steps in UI with the processes below:</p>
+                <div class="moodboard-column">
+                    <div class="moodboard-image-wrapper">
+                        <h2>Moodboard</h2>
+                        <img class="moodboard-image moodboard-mobile moodboard-light" src="../images/yuca/moodboard-mobile-light.png" alt="Project Moodboard for mobile (light theme)">
+                        <img class="moodboard-image moodboard-mobile moodboard-dark" src="../images/yuca/moodboard-mobile-dark.png" alt="Project Moodboard for mobile (dark theme)">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <section class="grid-system-section">
+        <div class="container">
+            <h2>Structure and Responsive Grid</h2>
+            <p>
+                To ensure consistency, alignment, and a fluid user experience across all platforms, the design was built on a <strong>flexible grid system</strong>. We adopted a <strong>12-column layout for desktop</strong>, adapting to <strong>8 columns on tablets</strong> and <strong>4 columns on mobile devices</strong>, ensuring that content is always organized and readable. All spacing was based on an <strong>8pt grid</strong>, ensuring rhythm and visual harmony between components.
+            </p>
+            <div class="grid-image-wrapper">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="../images/yuca/responsive-grids-mobile.png">
+                    <source media="(min-width: 769px)" srcset="../images/yuca/responsive-grids.png">
+                    <img src="../images/yuca/responsive-grids.png" alt="Responsive grid demonstration on desktop, tablet, and mobile">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    <section class="wireframes-section">
+        <div class="container">
+            <h2>Low-Fidelity Wireframes</h2>
+            <p>
+                The process began with the creation of low-fidelity wireframes to structure information and define the main navigation flow. The focus at this stage was purely on functionality and content hierarchy, without visual distractions.
+            </p>
+
+            <div class="wireframe-gallery">
+                <a href="../images/yuca/wireframe-completo-1.png" data-lightbox="wireframes" data-title="Home Screen Wireframe: Overview of apartment search.">
+                    <div class="wireframe-item">
+                        <img src="../images/yuca/wireframe-thumb-1.png" alt="Low-fidelity wireframe of the home page" loading="lazy">
+                    </div>
+                </a>
+
+                <a href="../images/yuca/wireframe-completo-2.png" data-lightbox="wireframes" data-title="Details Page Wireframe: Information, photos, and apartment map.">
+                    <div class="wireframe-item">
+                        <img src="../images/yuca/wireframe-thumb-2.png" alt="Low-fidelity wireframe of the property details page" loading="lazy">
+                    </div>
+                </a>
+
+                <a href="../images/yuca/wireframe-completo-3.png" data-lightbox="wireframes" data-title="Search Screen Wireframe: Advanced filters and list results.">
+                    <div class="wireframe-item">
+                        <img src="../images/yuca/wireframe-thumb-3.png" alt="Low-fidelity wireframe of the search screen with filters" loading="lazy">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="style-guide-section">
+        <div class="container">
+            <h2>Style Guide</h2>
+            <p>
+                Below are the main visual components that define the project's identity, built with code. Hover over the buttons to see the effects.
+            </p>
+            <div class="style-guide-grid">
+                <div class="guide-item typography-guide guide-item-wide">
+                    <h3>Typography</h3>
+                    <p class="font-family-name">Gilroy</p>
+                    <div class="type-scale">
+                        <p class="h1-style">Headline 1 - 60px</p>
+                        <p class="h2-style">Headline 2 - 48px</p>
+                        <p class="h3-style">Headline 3 - 36px</p>
+                        <p class="h4-style">Headline 4 - 24px</p>
+                    </div>
+                </div>
+
+                <div class="guide-item colors-guide">
+                    <h3>Colors</h3>
+                    <div class="color-palette">
+                        <div class="color-swatch" data-color="#001716">
+                            <span style="background-color: #001716;"></span>
+                            <code>#001716</code>
+                        </div>
+                        <div class="color-swatch" data-color="#09AD70">
+                            <span style="background-color: #09AD70;"></span>
+                            <code>#09AD70</code>
+                        </div>
+                        <div class="color-swatch" data-color="#742794">
+                            <span style="background-color: #742794;"></span>
+                            <code>#742794</code>
+                        </div>
+                        <div class="color-swatch" data-color="#FF650E">
+                            <span style="background-color: #FF650E;"></span>
+                            <code>#FF650E</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-item buttons-guide guide-item-wide">
+                    <h3>Buttons</h3>
+                    <div class="button-showcase">
+                        <button class="sg-btn btn-green">Learn more</button>
+                        <button class="sg-btn btn-green">Rent now</button>
+                        <button class="sg-btn btn-green">More options</button>
+                        <button class="sg-btn btn-purple">Learn more</button>
+                        <button class="sg-btn btn-purple">Rent now</button>
+                        <button class="sg-btn btn-purple">More options</button>
+                        <button class="sg-btn btn-orange">Learn more</button>
+                        <button class="sg-btn btn-orange">Rent now</button>
+                        <button class="sg-btn btn-orange">More options</button>
+                    </div>
+                </div>
+
+                <div class="guide-item icons-guide">
+                    <h3>Icons</h3>
+                    <div class="icon-showcase">
+                        <div class="icon-wrapper">
+                            <img src="../images/icons/search-light.svg" alt="Search Icon" class="icon-light">
+                            <img src="../images/icons/search-dark.svg" alt="Search Icon" class="icon-dark">
+                        </div>
+                        <div class="icon-wrapper">
+                            <img src="../images/icons/bed-light.svg" alt="Bed Icon" class="icon-light">
+                            <img src="../images/icons/bed-dark.svg" alt="Bed Icon" class="icon-dark">
+                        </div>
+                        <div class="icon-wrapper">
+                            <img src="../images/icons/shower-light.svg" alt="Shower Icon" class="icon-light">
+                            <img src="../images/icons/shower-dark.svg" alt="Shower Icon" class="icon-dark">
+                        </div>
+                        <div class="icon-wrapper">
+                            <img src="../images/icons/area-light.svg" alt="Area Icon" class="icon-light">
+                            <img src="../images/icons/area-dark.svg" alt="Area Icon" class="icon-dark">
+                        </div>
+                        <div class="icon-wrapper">
+                            <img src="../images/icons/pet-light.svg" alt="Pet Icon" class="icon-light">
+                            <img src="../images/icons/pet-dark.svg" alt="Pet Icon" class="icon-dark">
+                        </div>
+                        <div class="icon-wrapper">
+                            <img src="../images/icons/gps-light.svg" alt="Location Icon" class="icon-light">
+                            <img src="../images/icons/gps-dark.svg" alt="Location Icon" class="icon-dark">
+                        </div>
+                        <div class="icon-wrapper">
+                            <img src="../images/icons/heart-light.svg" alt="Heart Icon" class="icon-light">
+                            <img src="../images/icons/heart-dark.svg" alt="Heart Icon" class="icon-dark">
+                        </div>
+                        <div class="icon-wrapper">
+                            <img src="../images/icons/share-light.svg" alt="Share Icon" class="icon-light">
+                            <img src="../images/icons/share-dark.svg" alt="Share Icon" class="icon-dark">
+                        </div>
+                        <div class="icon-wrapper">
+                            <img src="../images/icons/instagram-light.svg" alt="Instagram Icon" class="icon-light">
+                            <img src="../images/icons/instagram-dark.svg" alt="Instagram Icon" class="icon-dark">
+                        </div>
+                        <div class="icon-wrapper">
+                            <img src="../images/icons/facebook-light.svg" alt="Facebook Icon" class="icon-light">
+                            <img src="../images/icons/facebook-dark.svg" alt="Facebook Icon" class="icon-dark">
+                        </div>
+                        <div class="icon-wrapper">
+                            <img src="../images/icons/linkedin-light.svg" alt="LinkedIn Icon" class="icon-light">
+                            <img src="../images/icons/linkedin-dark.svg" alt="LinkedIn Icon" class="icon-dark">
+                        </div>
+                        <div class="icon-wrapper">
+                            <img src="../images/icons/whatsapp-light.svg" alt="WhatsApp Icon" class="icon-light">
+                            <img src="../images/icons/whatsapp-dark.svg" alt="WhatsApp Icon" class="icon-dark">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="wireframes-section-high">
+        <div class="container">
+            <h2>High-Fidelity Wireframes</h2>
+            <p>
+                Evolving from the low-fidelity structure, high-fidelity wireframes apply the complete visual layer of the project. Here, colors, fonts, icons, and components are integrated to accurately simulate the final user experience, validating the design and preparing for development.
+            </p>
+
+            <div class="wireframe-gallery">
+                <a href="../images/yuca/wireframe-alta-1.png" data-lightbox="wireframes" data-title="Home Screen Wireframe: Overview of apartment search.">
+                    <div class="wireframe-item">
+                        <img src="../images/yuca/wireframe-thumb-alta-1.png" alt="High-fidelity wireframe of the home page" loading="lazy">
+                    </div>
+                </a>
+
+                <a href="../images/yuca/wireframe-alta-2.png" data-lightbox="wireframes" data-title="Details Page Wireframe: Information, photos, and apartment map.">
+                    <div class="wireframe-item">
+                        <img src="../images/yuca/wireframe-thumb-alta-2.png" alt="High-fidelity wireframe of the property details page" loading="lazy">
+                    </div>
+                </a>
+
+                <a href="../images/yuca/wireframe-alta-3.png" data-lightbox="wireframes" data-title="Search Screen Wireframe: Advanced filters and list results.">
+                    <div class="wireframe-item">
+                        <img src="../images/yuca/wireframe-thumb-alta-3.png" alt="High-fidelity wireframe of the search screen with filters" loading="lazy">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-section">
+        <div class="container">
+            <h2>Video Preview</h2>
+            <div class="video-container">
+                <iframe src="https://player.vimeo.com/video/809893184?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Yuca">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="figma-section">
+        <div class="container">
+            <h2>Figma</h2>
+        </div>
+
+        <div class="figma-embed-container">
+            <iframe src="https://embed.figma.com/design/QxdVEkUo0e2WhmXJSFAxxA/Yuca?node-id=1-20&embed-host=share" allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Talk to Me!</h2>
+            <p>If you have an idea, a job opportunity, or just want to chat, send me a message.</p>
+            <div class="button-group">
+                <a href="mailto:miguelzynich@gmail.com" class="btn">E-mail</a>
+                <a href="https://www.linkedin.com/in/miguelzynich/" class="btn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://wa.me/5193072515" class="btn" target="_blank" rel="noopener noreferrer">Whatsapp</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container text-center">
+            <p>@miguelzynich - 12/25</p>
+        </div>
+    </footer>
+    </main>
+
+    <button id="darkModeToggle" class="dark-mode-button" aria-label="Toggle Theme">
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        const enableDarkMode = () => {
+            body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark');
+        };
+
+        const disableDarkMode = () => {
+            body.classList.remove('dark-mode');
+            localStorage.setItem('theme', 'light');
+        };
+
+        darkModeToggle.addEventListener('click', () => {
+            if (body.classList.contains('dark-mode')) {
+                disableDarkMode();
+            } else {
+                enableDarkMode();
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                enableDarkMode();
+            } else {
+                disableDarkMode();
+            }
+
+            const colorSwatches = document.querySelectorAll('.color-swatch');
+            colorSwatches.forEach(swatch => {
+                swatch.addEventListener('click', () => {
+                    const color = swatch.dataset.color;
+                    navigator.clipboard.writeText(color).then(() => {
+                        swatch.classList.add('copied');
+                        setTimeout(() => {
+                            swatch.classList.remove('copied');
+                        }, 1500);
+                    }).catch(err => {
+                        console.error('Failed to copy color: ', err);
+                    });
+                });
+            });
+
+            const backButton = document.querySelector('.back-button');
+            if (backButton) {
+                backButton.addEventListener('click', () => {
+                    window.history.back();
+                });
+            }
+
+            const personasSwiper = new Swiper('.personas-swiper', {
+                loop: true,
+                pagination: {
+                    el: '.personas-swiper .swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.personas-swiper .swiper-button-next',
+                    prevEl: '.personas-swiper .swiper-button-prev',
+                },
+            });
+
+            const chartsSwiper = new Swiper('.charts-swiper', {
+                loop: true,
+                pagination: {
+                    el: '.charts-swiper .swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.carousel-wrapper .swiper-button-next',
+                    prevEl: '.carousel-wrapper .swiper-button-prev',
+                },
+
+            });
+
+            const gallerySwiper = new Swiper('.gallery-swiper', {
+                grabCursor: true,
+                loop: false,
+                autoHeight: true,
+                spaceBetween: 30,
+                slidesPerView: 1,
+                breakpoints: {
+                    768: {
+                        slidesPerView: 1,
+                        spaceBetween: 20
+                    },
+                    1024: {
+                        slidesPerView: 1,
+                        spaceBetween: 30
+                    }
+                },
+                navigation: {
+                    nextEl: '.gallery-swiper .swiper-button-next',
+                    prevEl: '.gallery-swiper .swiper-button-prev',
+                },
+                pagination: {
+                    el: '.gallery-swiper .swiper-pagination',
+                    clickable: true,
+                },
+            });
+
+            lightbox.option({
+                'fitImagesInViewport': false
+            });
+
+        });
+    </script>
+
+    <script src="../main.js"></script>
+
+    <div id="project-overlay" class="overlay">
+        <button id="btn-fechar-overlay" aria-label="Close menu">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+
+        <nav class="overlay-menu">
+            <ul>
+                <li><a href="pagamentos.html" class="menu-link">Payments</a></li>       
+                <li><a href="bolao.html" class="menu-link">Lottery Pool</a></li>
+                <li><a href="cores.html" class="menu-link">Color Optimization</a></li>
+                <li><a href="vortigo.html" class="menu-link">Vortigo</a></li>
+                <li><a href="index.html#sobre-e-experiencia" class="menu-link about-link">About Me</a></li>
+            </ul>
+        </nav>
+    </div>
+
+</body>
+</html>

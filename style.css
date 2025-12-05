@@ -134,18 +134,13 @@ p {
 
 .scroll-hidden {
     opacity: 0;
-    /* Começa invisível */
     transform: translateY(50px);
-    /* Começa deslocado para baixo */
     transition: all 1s ease-out;
-    /* Demora 1s para subir */
 }
 
 .scroll-visible {
     opacity: 1 !important;
-    /* Força a visibilidade */
     transform: translateY(0) !important;
-    /* Força a posição original */
     filter: blur(0);
 }
 
@@ -174,6 +169,7 @@ header {
     height: 80px;
 }
 
+
 .main-header {
     background-color: var(--primary-color);
     color: white;
@@ -192,6 +188,100 @@ header {
     padding-top: 0.5rem;
     width: 36px;
     height: auto;
+}
+
+.main-header .container {
+    display: grid !important;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+.header-spacer {
+    grid-column: 1;
+}
+
+
+.lang-switch-header {
+    grid-column: 3;
+    justify-self: end;
+
+    display: flex;
+    gap: 15px;
+    /* 15px é melhor para clique que 8px */
+    align-items: center;
+
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.lang-switch-header .lang-link {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.lang-switch-header .lang-link.active {
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-color: #00FFFB;
+    text-underline-offset: 4px;
+}
+
+.lang-switch-header .lang-link:hover {
+    color: #00FFFB;
+}
+
+.lang-switch-header .divider {
+    color: #333;
+}
+
+
+.header-actions {
+    grid-column: 3;
+    /* Fica na terceira coluna do Grid principal */
+    justify-self: end;
+    /* Empurra tudo para o canto direito */
+    display: flex;
+    /* Coloca um ao lado do outro */
+    align-items: center;
+    /* Alinha verticalmente no centro */
+    gap: 20px;
+    /* Espaço entre o "EN" e o ícone do Menu */
+}
+
+
+.lang-switch-header .lang-link {
+    text-decoration: none;
+    color: #888;
+    /* Cinza discreto */
+    transition: color 0.3s;
+}
+
+.lang-switch-header .lang-link.active {
+    color: #fff;
+    /* Branco destacado */
+}
+
+.lang-switch-header .lang-link:hover {
+    color: #00FFFB;
+    /* Cyan no hover */
+}
+
+.divider {
+    color: #444;
+}
+
+#sobre-e-experiencia {
+    scroll-margin-top: 120px;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 .mask-m,
@@ -565,6 +655,80 @@ body:not(.dark-mode) #sobre-e-experiencia {
     border-radius: 20px;
 }
 
+
+
+/* =========================================
+   4. OVERLAY MENU (GAVETA)
+   ========================================= */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(14, 14, 14, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+#btn-fechar-overlay {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#btn-fechar-overlay:hover {
+    transform: rotate(90deg);
+    color: #ff4757;
+}
+
+.overlay-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.menu-link {
+    font-family: 'Gilroy', 'Inter', sans-serif;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.menu-link:hover {
+    color: #a8a7a7;
+    /* Cyan */
+    transform: translateY(-5px);
+    /* Leve subida */
+}
+
+
 body.dark-mode .project-card {
     background-color: var(--card-bg);
 }
@@ -723,10 +887,18 @@ body.dark-mode .dark-mode-button .icon-sun {
 /* =============================================== */
 /* --- ESTILOS RESPONSIVOS --- */
 /* =============================================== */
+
 @media (max-width: 992px) {
     .two-column-layout {
         flex-direction: column;
-        gap: 60px;
+        gap: 40px;
+    }
+
+    .about-column, 
+    .experience-column {
+        width: 100% !important; /* Força ocupar a tela toda */
+        flex: none !important;  /* Remove restrições de flex do desktop */
+        max-width: 100% !important;
     }
 }
 
@@ -774,12 +946,52 @@ body.dark-mode .dark-mode-button .icon-sun {
         width: 100%;
         max-width: 280px;
     }
-
-
-
+    
     #sobre-e-experiencia {
         padding: var(--spacing-xl) 20px;
     }
+/* =========================================
+   AJUSTE EXPERIÊNCIA - MOBILE (CENTRALIZADO)
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* 1. Transforma a linha em coluna e centraliza tudo */
+    .experience-item {
+        display: flex;
+        flex-direction: column; /* Um embaixo do outro */
+        align-items: center;    /* Centraliza os itens no meio da tela */
+        text-align: center;     /* Centraliza o texto */
+        gap: 8px;               /* Espacinho entre as linhas */
+        padding-bottom: 24px;
+        margin-bottom: 24px;
+        border-bottom: 1px solid var(--border-color);
+        width: 100%; /* A lista pega toda a largura */
+    }
+
+    .experience-item .company {
+        margin-left: 0 !important; /* Anula o margin-left: auto do desktop */
+        text-align: center !important;
+        width: 100%; 
+        font-weight: 400; /* Opcional: Deixa a empresa mais leve visualmente */
+    }
+
+    /* 3. Ajuste para a Data */
+    .experience-item .date {
+        flex: auto;
+        width: 100%;
+        text-align: center;
+        font-size: 0.9rem;
+        opacity: 0.7; /* Data um pouco mais discreta */
+    }
+
+    /* 4. Destaque para o Cargo */
+    .experience-item .role {
+        width: 100%;
+        text-align: center;
+        font-size: 1.2rem;
+        margin-bottom: 0;
+    }
+}
 
     #contact {
         padding: var(--spacing-xl) 20px;
@@ -800,7 +1012,7 @@ body.dark-mode .dark-mode-button .icon-sun {
         margin-bottom: 0;
         border-bottom: none;
         padding-bottom: 0;
-        t
+        
     }
 
     .experience-item span {
@@ -820,139 +1032,105 @@ body.dark-mode .dark-mode-button .icon-sun {
     }
 
 
-    @media (min-width: 480px) {
-
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 0.2rem;
-            text-align: left;
-        }
-
-        .problem-section p {
-            font-size: 1.2rem;
-            text-align: left;
-
-        }
-
-        /* --- HEADER MOBILE (FORÇADO) --- */
-
-        /* 1. O Container vira a referência de posicionamento */
-        .main-header .container {
-            position: relative;
-            /* Necessário para o absolute funcionar */
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            /* Alinha a seta no início */
-            height: 60px;
-            /* Altura fixa para garantir o centro vertical */
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-
-        /* 2. A Seta de Voltar (Fica na esquerda) */
-        .back-button {
-            background: transparent;
-            border: none;
-            color: #ffffff;
-            font-size: 24px;
-            /* Tamanho do ícone */
-            padding: 10px;
-            /* Área de toque */
-            margin-left: -10px;
-            /* Compensa o padding para alinhar na margem */
-            z-index: 2;
-            /* Garante que fique clicável */
-            cursor: pointer;
-        }
-
-        /* 3. O Logo MZ (Centralizado na MARRA) */
-        .logo {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            font-family: 'Touche', sans-serif;
-            font-size: 2rem;
-            font-weight: 800;
-            color: #ffffff;
-            text-decoration: none;
-            line-height: 1;
-            white-space: nowrap;
-            z-index: 1;
-        }
-
-        /* --- ANIMAÇÃO DE ENTRADA (SURGIR) --- */
-
-        /* 1. Definimos como a animação funciona */
-        @keyframes surgirSuave {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-                /* Começa 40px para baixo */
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-                /* Termina na posição original */
-            }
-        }
-
-        /* 2. Aplicamos a animação nos blocos principais da Home */
-        /* Estou selecionando o Header, o Main e o Footer */
-        .main-header,
-        main,
-        footer {
-            /* Configuração da animação */
-            animation: surgirSuave 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-
-            /* Começa invisível para não "piscar" antes de animar */
-            opacity: 0;
-        }
-
-        /* 3. O "Pulo do Gato": Delays (Efeito Cascata) */
-        /* Fazemos cada parte aparecer em um tempo diferente para dar ritmo */
-
-        /* O Header aparece primeiro (quase imediato) */
-        .main-header {
-            animation-delay: 0.1s;
-        }
-
-        /* O conteúdo principal (projetos, textos) espera um pouco */
-        main {
-            animation-delay: 0.4s;
-        }
-
-        /* O rodapé aparece por último */
-        footer {
-            animation-delay: 0.8s;
-        }
-
+    .overlay-menu ul {  
+        gap: 20px;
     }
 
-    /* --- ANIMAÇÃO SCROLL REVEAL --- */
-
-    /* Estado Inicial (Invisível) */
-    .scroll-hidden {
-        opacity: 0;
-        transform: translateY(40px);
-        transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-        will-change: opacity, transform;
+    .menu-link {
+        font-size: 1.5rem;
+        font-weight: 700;
     }
 
-    /* Estado Final (Visível) - O JS vai adicionar essa classe */
-    .scroll-visible {
-        opacity: 1;
-        filter: blur(0);
-        transform: translateY(0);
+    .about-link {
+        font-size: 1.1rem;
+        margin-top: 20px;
+    }
+    
+
+    .main-header .container {
+        display: flex !important; 
+        justify-content: space-between; /* Separa os itens */
+        align-items: center;
+        padding: 0 20px; /* Margem lateral de segurança */
     }
 
-    /* Dica: Se quiser que os elementos demorem tempos diferentes (cascata) */
-    .delay-200 {
-        transition-delay: 200ms;
+
+    .header-spacer,
+    .back-button {
+        display: none !important;
     }
 
-    .delay-400 {
-        transition-delay: 400ms;
+    .main-header .logo {
+        margin: 0;
+        justify-self: start;
     }
+    
+    .header-actions {
+        gap: 15px; 
+    }
+}
+
+
+
+
+@media (min-width: 480px) {
+
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 0.2rem;
+        text-align: left;
+    }
+
+    .problem-section p {
+        font-size: 1.2rem;
+        text-align: left;
+
+    }
+ 
+
+
+    .main-header .container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        height: 60px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .back-button {
+        background: transparent;
+        border: none;
+        color: #ffffff;
+        font-size: 24px;
+        padding: 10px;
+        margin-left: -10px;
+        z-index: 2;
+        cursor: pointer;
+    }
+
+
+
+}
+
+.scroll-hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+.scroll-visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+.delay-200 {
+    transition-delay: 200ms;
+}
+
+.delay-400 {
+    transition-delay: 400ms;
+}

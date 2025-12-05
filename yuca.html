@@ -13,17 +13,20 @@
 
     <meta name="theme-color" content="#ffffff">
     <meta property="og:title" content="Yuca | Portfólio - Miguel Zynich">
-    <meta property="og:description" content="UX/UI Designer com 4 anos de experiência e 13 anos como Diretor de Arte, focado em soluções acessíveis e de alto impacto visual.">
+    <meta property="og:description"
+        content="UX/UI Designer com 4 anos de experiência e 13 anos como Diretor de Arte, focado em soluções acessíveis e de alto impacto visual.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://miguelzynich.github.io/.github.io/index.html">
     <meta property="og:image" content="https://miguelzynich.github.io/.github.io/images/social-thumb2.png">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Yuca | Portfólio - Miguel Zynich">
-    <meta name="twitter:description" content="UX/UI Designer com 4 anos de experiência e 13 anos como Diretor de Arte, focado em soluções acessíveis e de alto impacto visual.">
+    <meta name="twitter:description"
+        content="UX/UI Designer com 4 anos de experiência e 13 anos como Diretor de Arte, focado em soluções acessíveis e de alto impacto visual.">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://miguelzynich.github.io/.github.io/images/social-thumb2.png">
-    <meta name="description" content="Projeto de UX/UI de ponta a ponta para a Yuca, uma plataforma de coliving. Veja o processo de pesquisa, wireframes e prototipagem da solução.">
+    <meta name="description"
+        content="Projeto de UX/UI de ponta a ponta para a Yuca, uma plataforma de coliving. Veja o processo de pesquisa, wireframes e prototipagem da solução.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -119,8 +122,6 @@
             font-weight: 700;
             color: var(--primary-color);
         }
-
- 
     </style>
 
 
@@ -139,13 +140,29 @@
 
 
 <body>
-    <header class="main-header">
-        <div class="container">
-            <button class="back-button" onclick="history.back()" aria-label="Voltar para a página anterior">
-                <i class="fas fa-arrow-left"></i></button>
-            <a class="logo" href="index.html">MZ</a>
+
+<header class="main-header">
+    <div class="container">
+        
+        <div class="logo">
+            <a href="index.html">MZ</a>
         </div>
-    </header>
+
+        <div class="header-actions">
+            
+            <div class="lang-switch-header">
+                <a href="yuca.html" class="lang-link active">PT</a>
+                <span class="divider">|</span>
+                <a href="en/yuca.html" class="lang-link">EN</a>
+            </div>
+
+            <button id="btn-menu-projetos" aria-label="Abrir menu">
+                <img src="./images/vortigo/menu.svg" alt="Menu" class="menu-icon-img">
+            </button>
+
+        </div>
+    </div>
+</header>
     <main>
         <section class="banner-section"></section>
 
@@ -799,7 +816,7 @@
 
     <footer class="main-footer">
         <div class="container text-center">
-            <p>@miguelzynich - 10/25</p>
+            <p>@miguelzynich - 12/25</p>
         </div>
     </footer>
     </main>
@@ -904,7 +921,7 @@
                     nextEl: '.carousel-wrapper .swiper-button-next',
                     prevEl: '.carousel-wrapper .swiper-button-prev',
                 },
-                
+
             });
 
             const gallerySwiper = new Swiper('.gallery-swiper', {
@@ -941,6 +958,28 @@
     </script>
 
     <script src="main.js"></script>
+
+
+
+    <div id="project-overlay" class="overlay">
+        <button id="btn-fechar-overlay" aria-label="Fechar menu">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+
+        <nav class="overlay-menu">
+            <ul>
+                <li><a href="pagamentos.html" class="menu-link">Pagamentos</a></li>       
+                <li><a href="bolao.html" class="menu-link">Bolão Lotérico</a></li>
+                <li><a href="cores.html" class="menu-link">Cores das Modalidades</a></li>
+                <li><a href="vortigo.html" class="menu-link">Vortigo</a></li>
+                <li><a href="index.html#sobre-e-experiencia" class="menu-link"> Sobre</a></li>
+            </ul>
+        </nav>
+    </div>
 
 
 </body>

@@ -50,11 +50,28 @@
 </head>
 
 <body>
-    <header class="main-header">
-        <div class="container">
-            <a class="logo" href="index.html">MZ</a>
+<header class="main-header">
+    <div class="container">
+        
+        <div class="logo">
+            <a href="index.html">MZ</a>
         </div>
-    </header>
+
+        <div class="header-actions">
+            
+            <div class="lang-switch-header">
+                <a href="pagamentos.html" class="lang-link active">PT</a>
+                <span class="divider">|</span>
+                <a href="en/pagamentos.html" class="lang-link">EN</a>
+            </div>
+
+            <button id="btn-menu-projetos" aria-label="Abrir menu">
+                <img src="./images/vortigo/menu.svg" alt="Menu" class="menu-icon-img">
+            </button>
+
+        </div>
+    </div>
+</header>
 
     <main>
         <section class="banner-pag"></section>
@@ -379,6 +396,44 @@
             </div>
         </section>
 
+        <section class="wireframe-display-section">
+            <div class="container">
+                <h2>Jornada de Resgate</h2>
+                <p>Para a retirada de prêmios e valores, a prioridade visual mudou para a transparência. Diferente da
+                    compra, onde a familiaridade com o gateway era vital, aqui o usuário precisa ter clareza absoluta
+                    sobre o status da sua solicitação.
+
+                    Desenhei fluxos que mantêm o usuário informado em tempo real, utilizando a mesma linguagem visual
+                    unificada para evitar a sensação de ruptura. O resultado é um processo de resgate sem atritos, onde
+                    a interface guia o usuário com segurança, desde a seleção do valor até a confirmação final da
+                    transferência.
+                </p>
+                <img src="./images/pagamentos/telas-2.png"
+                    alt="Imagem mostra os wireframes de alta fidelidade alinhados um do lado do outro"
+                    class="zoomable-image">
+            </div>
+        </section>
+
+
+        <section class="wireframe-display-section">
+            <div class="container">
+                <h2>Mobile</h2>
+                <p>Adaptar a jornada de pagamento para o contexto mobile exigiu um foco absoluto na redução de fricção.
+                    Sabemos que digitar dados em telas pequenas é uma barreira de conversão, por isso, desenhei uma
+                    interface com campos otimizados, inputs numéricos automáticos e feedbacks visuais claros a cada
+                    etapa.
+
+                    O objetivo foi criar um fluxo linear onde o usuário nunca se sente perdido. Seja via cartão de
+                    crédito ou carteira digital, a interface guia o usuário com botões grandes e acessíveis (na zona de
+                    alcance do polegar), garantindo que a transação seja concluída com segurança e o mínimo de esforço
+                    cognitivo.
+                </p>
+                <img src="./images/pagamentos/mobile.png"
+                    alt="Imagem mostra os wireframes de alta fidelidade na versão mobile" class="zoomable-image">
+            </div>
+        </section>
+
+
 
 
         <section id="contact">
@@ -403,9 +458,32 @@
 
     <footer class="main-footer">
         <div class="container text-center">
-            <p>@miguelzynich - 10/25</p>
+            <p>@miguelzynich - 12/25</p>
         </div>
     </footer>
+
+
+
+
+    <div id="project-overlay" class="overlay">
+        <button id="btn-fechar-overlay" aria-label="Fechar menu">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+
+        <nav class="overlay-menu">
+            <ul>
+                <li><a href="bolao.html" class="menu-link">Bolão Lotérico</a></li>
+                <li><a href="cores.html" class="menu-link">Cores das Modalidades</a></li>
+                <li><a href="yuca.html" class="menu-link">Yuca</a></li>
+                <li><a href="vortigo.html" class="menu-link">Vortigo</a></li>
+                <li><a href="index.html#sobre-e-experiencia" class="menu-link"> Sobre</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <script src="main.js"></script>
 
