@@ -552,7 +552,11 @@ body:not(.dark-mode) #sobre-e-experiencia {
     padding: 50px;
     text-align: center;
     border: 1px solid var(--border-color);
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center !important; 
 }
+
 
 #contact .section-title {
     font-size: 2.5rem;
@@ -563,8 +567,9 @@ body:not(.dark-mode) #sobre-e-experiencia {
 #contact p {
     font-size: 1.1rem;
     color: var(--secondary-color);
-    max-width: 450px;
+    max-width: 500px;
     margin: 0 auto 30px auto;
+    text-align: center !important;
 }
 
 #contact .button-group {
@@ -995,6 +1000,7 @@ body.dark-mode .dark-mode-button .icon-sun {
 
     #contact {
         padding: var(--spacing-xl) 20px;
+        text-align: center;
     }
 
     #contact .container {
