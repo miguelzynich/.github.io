@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vortigo</title>
+    <title>Vortigo </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
@@ -15,62 +18,59 @@
     <meta property="og:title" content="Vortigo | Portfólio - Miguel Zynich">
     <meta property="og:description" content="UX/UI Designer com 4 anos de experiência e 13 anos como Diretor de Arte.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://miguelzynich.github.io/.github.io/index.html">
-    <meta property="og:image" content="https://miguelzynich.github.io/.github.io/images/social-thumb5.png">
+    <meta property="og:url" content="https://miguelzynich.github.io/vortigo.html">
+    <meta property="og:image" content="https://miguelzynich.github.io/images/social-thumb5.png">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Vortigo | Portfólio - Miguel Zynich">
     <meta name="twitter:description" content="UX/UI Designer com 4 anos de experiência.">
-    <meta name="twitter:image" content="https://miguelzynich.github.io/.github.io/images/social-thumb5.png">
+    <meta name="twitter:image" content="https://miguelzynich.github.io/images/social-thumb5.png">
     <meta name="description" content="Estudo de caso do redesign da plataforma digital Vortigo.">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Gilroy:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Gilroy:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://t.contentsquare.net/uxa/734555fce281e.js"></script>
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="vortigo.css">
 </head>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M2BKP8Y23H"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-M2BKP8Y23H');
-</script>
-
 <body>
 
-<header class="main-header">
-    <div class="container">
-        
-        <div class="logo">
-            <a href="index.html">MZ</a>
-        </div>
+    <header class="main-header">
+        <div class="container">
 
-        <div class="header-actions">
-            
-            <div class="lang-switch-header">
-                <a href="vortigo.html" class="lang-link active">PT</a>
-                <span class="divider">|</span>
-                <a href="en/vortigo.html" class="lang-link">EN</a>
+            <div class="logo">
+                <a href="index.html">MZ</a>
             </div>
 
-            <button id="btn-menu-projetos" aria-label="Abrir menu">
-                <img src="./images/menu.svg" alt="Menu" class="menu-icon-img">
-            </button>
+            <div class="header-actions">
 
+                <div class="lang-switch-header">
+                    <a href="vortigo.html" class="lang-link active">PT</a>
+                    <span class="divider">|</span>
+                    <a href="en/vortigo.html" class="lang-link">EN</a>
+                </div>
+
+                <button id="btn-menu-projetos" aria-label="Abrir menu">
+                    <img src="./images/menu.svg" alt="Menu" class="menu-icon-img">
+                </button>
+
+            </div>
         </div>
-    </div>
-</header>
+    </header>
 
     <main>
-        <section class="banner-section-vortigo"></section>
+        <section class="banner-section-vortigo-otimizado">
+            <picture>
+                <source media="(max-width: 768px)" srcset="images/vortigo/header-mobile.png">
+
+                <img class="banner-img" src="images/vortigo/banner-desktop.webp" alt="Banner do Case Vortigo"
+                    width="1920" height="1080" fetchpriority="high">
+            </picture>
+        </section>
 
         <nav aria-label="Breadcrumb" class="breadcrumb-nav breadcrumb-nav--alt-bg">
             <div class="container">
@@ -86,12 +86,43 @@
             <div class="container">
                 <div class="two-column-layout">
                     <div class="column">
-                        <h2>Sobre a Vortigo</h2>
-                        <p>A empresa atua há mais de 10 anos no mercado de tecnologia, desenvolvendo soluções de software personalizadas para setores como saúde, finanças, educação e serviços.</p>
+                        <h2>O Problema</h2>
+                        <p>A versão anterior da plataforma enfrentava desafios críticos de usabilidade. O contraste
+                            baixo gerava <strong>barreiras de acessibilidade</strong>, e a navegação confusa aumentava o
+                            tempo operacional dos usuários.</p>
+                        <p>Além disso, a identidade visual não refletia mais a maturidade tecnológica de uma empresa com
+                            10 anos de mercado.</p>
                     </div>
                     <div class="column">
-                        <h2>Objetivo </h2>
-                        <p>O principal objetivo deste projeto foi simplificar e tornar a experiência do usuário fluida e acessível.</p>
+                        <h2>Solução</h2>
+                        <p>Como UX/UI Designer, liderei o redesign visual focado em <strong>eficiência e
+                                inclusão</strong>. O objetivo não foi apenas estético, mas funcional: criar uma
+                            interface escalável baseada em Bootstrap, corrigir os déficits de contraste (WCAG) e
+                            otimizar a jornada do usuário para reduzir o tempo de tarefa.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="container">
+                <h2>Alguns números com a nova User Interface</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">+42%</span>
+                        <p class="stat-description">Aumento na Taxa <br> de Conversão</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">-35%</span>
+                        <p class="stat-description">Redução no Tempo de <br> Conclusão de Tarefa</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">97%</span>
+                        <p class="stat-description">Redução de Erros <br> de Acessibilidade</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">+25%</span>
+                        <p class="stat-description">Aumento na <br> Satisfação do Usuário</p>
                     </div>
                 </div>
             </div>
@@ -101,7 +132,9 @@
             <div class="container">
                 <div class="process-content-wrapper">
                     <h2>Processo</h2>
-                    <p>Por ser um projeto de redesign de UI, optei por um processo direto e focado na clareza visual. Iniciei com a criação de protótipos de baixa e alta fidelidade para testar diferentes abordagens de layout. O prazo de entrega foi de três semanas, o que exigiu decisões ágeis e objetivas. Durante o processo, priorizei a acessibilidade, aplicando princípios das diretrizes WCAG e realizando testes de contraste e legibilidade das cores para garantir uma experiência inclusiva.</p>
+                    <p>Por ser um projeto de redesign de UI, optei por um processo direto e focado na clareza visual.
+                        Iniciei com a criação de protótipos de baixa e alta fidelidade para testar diferentes abordagens
+                        de layout. O prazo de entrega foi de três semanas, o que exigiu decisões ágeis e objetivas.</p>
                 </div>
             </div>
         </section>
@@ -109,10 +142,11 @@
         <section class="grid-section">
             <div class="container">
                 <h2>Grids</h2>
-                <p>Nesse projeto, usei o grid do Bootstrap 5 pra montar a estrutura da página de forma mais flexível. Isso ajudou os elementos a se encaixarem bem, deixando tudo mais leve, organizado e fácil de navegar. A ideia era criar um visual limpo e intuitivo, sem complicar a experiência de quem usa.</p>
+                <p>Nesse projeto, usei o grid do Bootstrap 5 pra montar a estrutura da página de forma mais flexível.
+                </p>
                 <div class="gallery-grid">
                     <div class="grid-item">
-                        <img src="images/vortigo/grids.png" alt="imagem mostra uma prévia da imagem do site com doze colunas e com espaçamento entre elas">
+                        <img src="images/vortigo/grids.png" loading="lazy" alt="Estrutura de grids do projeto">
                     </div>
                 </div>
             </div>
@@ -176,40 +210,105 @@
             </div>
         </section>
 
+
+
+
         <section class="fullscreen-image-section">
-            <img src="images/vortigo/mock.png" alt="Descrição da imagem em tela cheia">
+            <img src="images/vortigo/mock.webp" loading="lazy" alt="Mockup do site Vortigo em tela cheia">
         </section>
 
-        <section class="stats-section">
-            <div class="container">
-                <h2>Alguns números com a nova User Interface</h2>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <span class="stat-number">+42%</span>
-                        <p class="stat-description">Aumento na Taxa <br> de Conversão</p>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">-35%</span>
-                        <p class="stat-description">Redução no Tempo de <br> Conclusão de Tarefa</p>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">97%</span>
-                        <p class="stat-description">Redução de Erros <br> de Acessibilidade</p>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">+25%</span>
-                        <p class="stat-description">Aumento na <br> Satisfação do Usuário</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+
 
         <section class="wireframe-section">
             <div class="container">
                 <h2>Wireframe de baixa fidelidade</h2>
                 <div class="wire-display-box">
-                    <img src="./images/vortigo/wire_baixa.png" alt="wireframe de baixa fidelidade agrupado em uma imagem só">
+                    <img src="./images/vortigo/wire_baixa.png" loading="lazy" alt="Wireframe de baixa fidelidade">
                 </div>
+            </div>
+        </section>
+
+        <section class="pages-showcase">
+            <div class="container">
+
+                <div class="section-header">
+                    <h2>Páginas</h2>
+                    <p>Clique nos cards e veja os wireframes em detalhes.</p>
+                </div>
+
+                <div class="pages-grid">
+
+                    <div class="page-card">
+                        <h3>Home</h3>
+                        <a href="images/vortigo/preview/home.png" data-lightbox="vortigo-gallery" data-title="Home">
+                            <img src="images/vortigo/screen1.png" loading="lazy" alt="Tela Vortigo Home">
+                        </a>
+                    </div>
+
+                    <div class="page-card">
+                        <h3>Nós somos a Vortigo</h3>
+                        <a href="images/vortigo/preview/somos_a_vortigo.png" data-lightbox="vortigo-gallery"
+                            data-title="Nós somos a Vortigo">
+                            <img src="images/vortigo/screen2.png" loading="lazy" alt="Tela Nós somos a Vortigo">
+                        </a>
+                    </div>
+
+                    <div class="page-card">
+                        <h3>Soluções</h3>
+                        <a href="images/vortigo/preview/solucao.png" data-lightbox="vortigo-gallery"
+                            data-title="Soluções">
+                            <img src="images/vortigo/screen3.png" loading="lazy" alt="Tela Soluções">
+                        </a>
+                    </div>
+
+                    <div class="page-card">
+                        <h3>Squad as a Service</h3>
+                        <a href="images/vortigo/preview/squad.png" data-lightbox="vortigo-gallery"
+                            data-title="Squad as a Service">
+                            <img src="images/vortigo/screen4.png" loading="lazy" alt="Tela Squad as a Service">
+                        </a>
+                    </div>
+
+                    <div class="page-card">
+                        <h3>Segmentos de Negócio</h3>
+                        <a href="images/vortigo/preview/negocios.png" data-lightbox="vortigo-gallery"
+                            data-title="Segmentos de Negócio">
+                            <img src="images/vortigo/screen5.png" loading="lazy" alt="Tela Segmentos de Negócio">
+                        </a>
+                    </div>
+
+                    <div class="page-card">
+                        <h3>Consultoria</h3>
+                        <a href="images/vortigo/preview/consultoria.png" data-lightbox="vortigo-gallery"
+                            data-title="Consultoria">
+                            <img src="images/vortigo/screen6.png" loading="lazy" alt="Tela Consultoria">
+                        </a>
+                    </div>
+
+                    <div class="page-card">
+                        <h3>Tecnologia Especializada</h3>
+                        <a href="images/vortigo/preview/tecnologia.png" data-lightbox="vortigo-gallery"
+                            data-title="Tecnologia Especializada">
+                            <img src="images/vortigo/screen7.png" loading="lazy" alt="Tela Tecnologia Especializada">
+                        </a>
+                    </div>
+
+                    <div class="page-card">
+                        <h3>Cases</h3>
+                        <a href="images/vortigo/preview/cases.png" data-lightbox="vortigo-gallery" data-title="Cases">
+                            <img src="images/vortigo/screen8.png" loading="lazy" alt="Tela Cases">
+                        </a>
+                    </div>
+
+                    <div class="page-card">
+                        <h3>Blog</h3>
+                        <a href="images/vortigo/preview/blog.png" data-lightbox="vortigo-gallery" data-title="Blog">
+                            <img src="images/vortigo/screen9.png" loading="lazy" alt="Tela Blog">
+                        </a>
+                    </div>
+
+                </div>
+
             </div>
         </section>
 
@@ -217,7 +316,7 @@
             <div class="container">
                 <h2>Wireframe de alta fidelidade</h2>
                 <div class="wire-display-box">
-                    <img src="./images/vortigo/wire_alta.png" alt="wireframe de alta fidelidade agrupado em uma imagem só">
+                    <img src="./images/vortigo/wire_alta.png" loading="lazy" alt="Wireframe de alta fidelidade">
                 </div>
             </div>
         </section>
@@ -228,8 +327,10 @@
                 <p>Se você tem uma ideia, uma vaga ou só quer trocar uma figurinha, me manda uma mensagem.</p>
                 <div class="button-group">
                     <a href="mailto:miguelzynich@gmail.com" class="btn">E-mail</a>
-                    <a href="https://www.linkedin.com/in/miguelzynich/" class="btn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://wa.me/5193072515" class="btn" target="_blank" rel="noopener noreferrer">Whatsapp</a>
+                    <a href="https://www.linkedin.com/in/miguelzynich/" class="btn" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://wa.me/5193072515" class="btn" target="_blank"
+                        rel="noopener noreferrer">Whatsapp</a>
                 </div>
             </div>
         </section>
@@ -253,7 +354,7 @@
 
         <nav class="overlay-menu">
             <ul>
-                <li><a href="pagamentos.html" class="menu-link">Pagamentos</a></li>       
+                <li><a href="pagamentos.html" class="menu-link">Pagamentos</a></li>
                 <li><a href="bolao.html" class="menu-link">Bolão Lotérico</a></li>
                 <li><a href="cores.html" class="menu-link">Cores das Modalidades</a></li>
                 <li><a href="yuca.html" class="menu-link">Yuca</a></li>
@@ -265,7 +366,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js"></script>
     <script src="main.js"></script>
 
+
+    <script>
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'disableScrolling': true,
+            'fitImagesInViewport': true
+        })
+    </script>
+
+    <script>
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'albumLabel': "%1 / %2"
+        })
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M2BKP8Y23H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-M2BKP8Y23H');
+    </script>
+    <script async src="https://t.contentsquare.net/uxa/734555fce281e.js"></script>
+
 </body>
-</html> 
+
+</html>
