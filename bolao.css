@@ -24,65 +24,67 @@
     }
 
     .main-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #0e0e0e;
-    z-index: 1000;
-    padding: 15px 0;
-}
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #0e0e0e;
+        z-index: 1000;
+        padding: 15px 0;
+    }
 
-.main-header .container {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-}
+    .main-header .container {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
 
-.main-header .logo {
-    grid-column: 2; /* Centro */
-    justify-self: center;
-    font-size: 1.5rem;
-    font-weight: 800;
-    text-transform: uppercase;
-}
+    .main-header .logo {
+        grid-column: 2;
+        /* Centro */
+        justify-self: center;
+        font-size: 1.5rem;
+        font-weight: 800;
+        text-transform: uppercase;
+    }
 
-.main-header .logo a {
-    text-decoration: none;
-    color: #fff;
-}
+    .main-header .logo a {
+        text-decoration: none;
+        color: #fff;
+    }
 
-/* Botão Menu (Direita) */
-#btn-menu-projetos {
-    grid-column: 3;
-    justify-self: end;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 5px; /* Área de clique melhorada */
-    display: flex;
-    align-items: center;
-}
+    /* Botão Menu (Direita) */
+    #btn-menu-projetos {
+        grid-column: 3;
+        justify-self: end;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+        /* Área de clique melhorada */
+        display: flex;
+        align-items: center;
+    }
 
-.menu-icon-img {
-    width: 28px;
-    height: auto;
-    display: block;
-    filter: invert(1);
-}
+    .menu-icon-img {
+        width: 28px;
+        height: auto;
+        display: block;
+        filter: invert(1);
+    }
 
-.back-button {
-    grid-column: 1;
-    justify-self: start;
-    color: #fff;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
+    .back-button {
+        grid-column: 1;
+        justify-self: start;
+        color: #fff;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
 
     .banner-bolao {
         width: 100%;
@@ -334,29 +336,55 @@
         }
     }
 
+
     @media (max-width: 768px) {
-        .banner-bolao {
-            height: 50vh;
+
+        .main-header .container {
+            display: flex !important;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
         }
 
-        .two-column-layout {
-            flex-direction: column;
-            gap: 40px;
-            margin-bottom: 40px;
+        .back-button {
+            display: none !important;
         }
 
-        .two-column-img {
-            grid-template-columns: 1fr;
-            gap: 40px;
+        .header-actions {
+            gap: 15px;
         }
 
-        .userflow-section p {
-            max-width: 100%;
+        .lang-switch-header {
+            font-size: 0.85rem;
         }
 
-        .mobile-gallery-grid {
-            grid-template-columns: 1fr;
+        .menu-icon-img {
+            width: 28px;
         }
+    }
+
+    .banner-bolao {
+        height: 50vh;
+    }
+
+    .two-column-layout {
+        flex-direction: column;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    .two-column-img {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .userflow-section p {
+        max-width: 100%;
+    }
+
+    .mobile-gallery-grid {
+        grid-template-columns: 1fr;
+    }
     }
 
 
@@ -364,9 +392,9 @@
 
     @media (max-width: 768px) {
 
-        
+
         main>section {
-            padding: 30px 20px; 
+            padding: 30px 20px;
         }
 
         h2,
@@ -375,18 +403,18 @@
         .userflow-section h2,
         .wireframe-display-section h2,
         .mobile-gallery-section h2 {
-            font-size: 28px; 
+            font-size: 28px;
             text-align: left;
         }
 
         p {
             font-size: 16px;
         }
-        
+
         .problem-section p {
             text-align: center;
         }
-        
+
         .two-column-img .column h2,
         .mobile-gallery-section h2 {
             text-align: left;
@@ -422,51 +450,51 @@
         }
 
 
-    @media (max-width: 480px) {
+        @media (max-width: 480px) {
 
-        .button-group {
-            flex-direction: column;
-            gap: 15px;
-        }
+            .button-group {
+                flex-direction: column;
+                gap: 15px;
+            }
 
-        .button-group .btn {
-            width: 100%;
-            text-align: center;
-        }
-        
-        .mobile-gallery-grid {
-            max-width: 300px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+            .button-group .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .mobile-gallery-grid {
+                max-width: 300px;
+                margin-left: auto;
+                margin-right: auto;
+            }
 
             h2 {
-            font-size: 1.6rem;
-            margin-bottom: 0.2rem;
-        }
+                font-size: 1.6rem;
+                margin-bottom: 0.2rem;
+            }
 
-        p {
-            font-size: 1.2rem;
-        }
+            p {
+                font-size: 1.2rem;
+            }
 
 
-        .two-column-layout {
-            font-size: 1.8rem;
-            margin-bottom: 0,2rem;
+            .two-column-layout {
+                font-size: 1.8rem;
+                margin-bottom: 0, 2rem;
 
-        }
+            }
 
-        .problem-section p{
-            font-size: 1.3rem;
-            text-align: left;
+            .problem-section p {
+                font-size: 1.3rem;
+                text-align: left;
 
-        }
+            }
 
-        .list-section li{
-            font-size: 1.2rem;
-            padding: 1rem;
-            line-height: 1.8rem;
-        }
+            .list-section li {
+                font-size: 1.2rem;
+                padding: 1rem;
+                line-height: 1.8rem;
+            }
 
             .benchmark-section p {
                 font-size: 1.2rem;
@@ -475,4 +503,4 @@
             }
 
         }
-        }
+    }

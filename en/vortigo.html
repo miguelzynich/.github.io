@@ -6,57 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vortigo | Portfolio - Miguel Zynich</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="../images/favicon/site.webmanifest">
+    <link rel="manifest" href="../favicon/site.webmanifest">
 
     <meta name="theme-color" content="#ffffff">
     <meta property="og:title" content="Vortigo | Portfolio - Miguel Zynich">
-    <meta property="og:description" content="UX/UI Designer with 4 years of experience and 13 years as Art Director.">
+    <meta property="og:description" content="UX/UI Designer with 4 years of experience and 13 years as an Art Director.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://miguelzynich.github.io/.github.io/en/vortigo.html">
-    <meta property="og:image" content="../images/social-thumb5.png">
+    <meta property="og:url" content="https://miguelzynich.github.io/en/vortigo.html">
+    <meta property="og:image" content="https://miguelzynich.github.io/images/social-thumb5.png">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Vortigo | Portfolio - Miguel Zynich">
     <meta name="twitter:description" content="UX/UI Designer with 4 years of experience.">
-    <meta name="twitter:image" content="../images/social-thumb5.png">
-    <meta name="description" content="Case study of the Vortigo digital platform redesign.">
+    <meta name="twitter:image" content="https://miguelzynich.github.io/images/social-thumb5.png">
+    <meta name="description" content="Case study of the redesign of the Vortigo digital platform.">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Gilroy:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Gilroy:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://t.contentsquare.net/uxa/734555fce281e.js"></script>
 
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../vortigo.css">
 </head>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M2BKP8Y23H"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-M2BKP8Y23H');
-</script>
-
 <body>
+
     <header class="main-header">
         <div class="container">
-            
+
             <div class="logo">
                 <a href="index.html">MZ</a>
             </div>
 
             <div class="header-actions">
-                
+
                 <div class="lang-switch-header">
-                    <a href="../vortigo.html" class="lang-link">PT</a> <span class="divider">|</span>
-                    <a href="vortigo.html" class="lang-link active">EN</a> </div>
+                    <a href="../vortigo.html" class="lang-link">PT</a>
+                    <span class="divider">|</span>
+                    <a href="#" class="lang-link active">EN</a>
+                </div>
 
                 <button id="btn-menu-projetos" aria-label="Open menu">
                     <img src="../images/menu.svg" alt="Menu" class="menu-icon-img">
@@ -67,7 +63,14 @@
     </header>
 
     <main>
-        <section class="banner-section-vortigo"></section>
+        <section class="banner-section-vortigo-otimizado">
+            <picture>
+                <source media="(max-width: 768px)" srcset="../images/vortigo/header-mobile.png">
+
+                <img class="banner-img" src="../images/vortigo/banner-desktop.webp" alt="Vortigo Case Banner"
+                    width="1920" height="1080" fetchpriority="high">
+            </picture>
+        </section>
 
         <nav aria-label="Breadcrumb" class="breadcrumb-nav breadcrumb-nav--alt-bg">
             <div class="container">
@@ -83,12 +86,41 @@
             <div class="container">
                 <div class="two-column-layout">
                     <div class="column">
-                        <h2>About Vortigo</h2>
-                        <p>The company has been operating for over 10 years in the technology market, developing custom software solutions for sectors such as healthcare, finance, education, and services.</p>
+                        <h2>The Problem</h2>
+                        <p>The previous version of the platform faced critical usability challenges. Low contrast created 
+                           <strong>accessibility barriers</strong>, and confusing navigation increased user operational time.</p>
+                        <p>Furthermore, the visual identity no longer reflected the technological maturity of a company with 
+                           10 years in the market.</p>
                     </div>
                     <div class="column">
-                        <h2>Objective</h2>
-                        <p>The main goal of this project was to simplify and make the user experience fluid and accessible.</p>
+                        <h2>Solution</h2>
+                        <p>As a UX/UI Designer, I led the visual redesign focused on <strong>efficiency and inclusion</strong>. 
+                           The goal wasn't just aesthetic, but functional: creating a scalable interface based on Bootstrap, 
+                           fixing contrast deficits (WCAG), and optimizing the user journey to reduce task time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="container">
+                <h2>Key metrics with the new User Interface</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">+42%</span>
+                        <p class="stat-description">Increase in <br> Conversion Rate</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">-35%</span>
+                        <p class="stat-description">Reduction in <br> Task Completion Time</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">97%</span>
+                        <p class="stat-description">Reduction in <br> Accessibility Errors</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">+25%</span>
+                        <p class="stat-description">Increase in <br> User Satisfaction</p>
                     </div>
                 </div>
             </div>
@@ -98,7 +130,9 @@
             <div class="container">
                 <div class="process-content-wrapper">
                     <h2>Process</h2>
-                    <p>As this was a UI redesign project, I opted for a direct process focused on visual clarity. I started by creating low and high-fidelity prototypes to test different layout approaches. The delivery deadline was three weeks, which required agile and objective decisions. Throughout the process, I prioritized accessibility, applying principles from the WCAG guidelines and conducting color contrast and legibility tests to ensure an inclusive experience.</p>
+                    <p>Since this was a UI redesign project, I chose a direct process focused on visual clarity. 
+                       I started with low and high-fidelity prototypes to test different layout approaches. 
+                       The deadline was three weeks, which required agile and objective decisions.</p>
                 </div>
             </div>
         </section>
@@ -106,10 +140,10 @@
         <section class="grid-section">
             <div class="container">
                 <h2>Grids</h2>
-                <p>In this project, I used the Bootstrap 5 grid to structure the page more flexibly. This helped the elements fit well, making everything lighter, organized, and easy to navigate. The idea was to create a clean and intuitive look without complicating the user experience.</p>
+                <p>In this project, I used the Bootstrap 5 grid to build the page structure more flexibly.</p>
                 <div class="gallery-grid">
                     <div class="grid-item">
-                        <img src="../images/vortigo/grids.png" alt="Image showing a preview of the site grid with twelve columns and spacing between them">
+                        <img src="../images/vortigo/grids.png" loading="lazy" alt="Project Grid Structure">
                     </div>
                 </div>
             </div>
@@ -117,7 +151,7 @@
 
         <section class="typography-section">
             <div class="container">
-                <h2>Fonts</h2>
+                <h2>Typography</h2>
                 <div class="font-cards-grid">
                     <div class="font-card">
                         <h1 class="font-name">Gil Sans MT PRO</h1>
@@ -174,39 +208,99 @@
         </section>
 
         <section class="fullscreen-image-section">
-            <img src="../images/vortigo/mock.png" alt="Fullscreen mockup image description">
-        </section>
-
-        <section class="stats-section">
-            <div class="container">
-                <h2>Some numbers with the new User Interface</h2>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <span class="stat-number">+42%</span>
-                        <p class="stat-description">Increase in <br> Conversion Rate</p>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">-35%</span>
-                        <p class="stat-description">Reduction in <br> Task Completion Time</p>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">97%</span>
-                        <p class="stat-description">Reduction in <br> Accessibility Errors</p>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">+25%</span>
-                        <p class="stat-description">Increase in <br> User Satisfaction</p>
-                    </div>
-                </div>
-            </div>
+            <img src="../images/vortigo/mock.webp" loading="lazy" alt="Vortigo Site Fullscreen Mockup">
         </section>
 
         <section class="wireframe-section">
             <div class="container">
                 <h2>Low-fidelity Wireframe</h2>
                 <div class="wire-display-box">
-                    <img src="../images/vortigo/wire_baixa.png" alt="Low-fidelity wireframes grouped in one image">
+                    <img src="../images/vortigo/wire_baixa.png" loading="lazy" alt="Low-fidelity Wireframe">
                 </div>
+            </div>
+        </section>
+
+        <section class="pages-showcase">
+            <div class="container">
+
+                <div class="section-header">
+                    <h2>Pages</h2>
+                    <p>Click on the cards to view the wireframes in detail.</p>
+                </div>
+
+                <div class="pages-grid">
+
+                    <div class="page-card">
+                        <h3>Home</h3>
+                        <a href="../images/vortigo/preview/home.png" data-lightbox="vortigo-gallery" data-title="Home">
+                            <img src="../images/vortigo/screen1.png" loading="lazy" alt="Vortigo Home Screen">
+                        </a>
+                    </div>
+
+                    <div class="page-card">
+                        <h3>We are Vortigo</h3>
+                        <a href="../images/vortigo/preview/somos_a_vortigo.png" data-lightbox="vortigo-gallery"
+                            data-title="We are Vortigo">
+                            <img src="../images/vortigo/screen2.png" loading="lazy" alt="We are Vortigo Screen">
+                        </a>
+                    </div>
+
+                    <div class="page-card">
+                        <h3>Solutions</h3>
+                        <a href="../images/vortigo/preview/solucao.png" data-lightbox="vortigo-gallery"
+                            data-title="Solutions">
+                            <img src="../images/vortigo/screen3.png" loading="lazy" alt="Solutions Screen">
+                        </a>
+                    </div>
+
+                    <div class="page-card">
+                        <h3>Squad as a Service</h3>
+                        <a href="../images/vortigo/preview/squad.png" data-lightbox="vortigo-gallery"
+                            data-title="Squad as a Service">
+                            <img src="../images/vortigo/screen4.png" loading="lazy" alt="Squad as a Service Screen">
+                        </a>
+                    </div>
+
+                    <div class="page-card">
+                        <h3>Business Segments</h3>
+                        <a href="../images/vortigo/preview/negocios.png" data-lightbox="vortigo-gallery"
+                            data-title="Business Segments">
+                            <img src="../images/vortigo/screen5.png" loading="lazy" alt="Business Segments Screen">
+                        </a>
+                    </div>
+
+                    <div class="page-card">
+                        <h3>Consulting</h3>
+                        <a href="../images/vortigo/preview/consultoria.png" data-lightbox="vortigo-gallery"
+                            data-title="Consulting">
+                            <img src="../images/vortigo/screen6.png" loading="lazy" alt="Consulting Screen">
+                        </a>
+                    </div>
+
+                    <div class="page-card">
+                        <h3>Specialized Technology</h3>
+                        <a href="../images/vortigo/preview/tecnologia.png" data-lightbox="vortigo-gallery"
+                            data-title="Specialized Technology">
+                            <img src="../images/vortigo/screen7.png" loading="lazy" alt="Specialized Technology Screen">
+                        </a>
+                    </div>
+
+                    <div class="page-card">
+                        <h3>Cases</h3>
+                        <a href="../images/vortigo/preview/cases.png" data-lightbox="vortigo-gallery" data-title="Cases">
+                            <img src="../images/vortigo/screen8.png" loading="lazy" alt="Cases Screen">
+                        </a>
+                    </div>
+
+                    <div class="page-card">
+                        <h3>Blog</h3>
+                        <a href="../images/vortigo/preview/blog.png" data-lightbox="vortigo-gallery" data-title="Blog">
+                            <img src="../images/vortigo/screen9.png" loading="lazy" alt="Blog Screen">
+                        </a>
+                    </div>
+
+                </div>
+
             </div>
         </section>
 
@@ -214,19 +308,21 @@
             <div class="container">
                 <h2>High-fidelity Wireframe</h2>
                 <div class="wire-display-box">
-                    <img src="../images/vortigo/wire_alta.png" alt="High-fidelity wireframes grouped in one image">
+                    <img src="../images/vortigo/wire_alta.png" loading="lazy" alt="High-fidelity Wireframe">
                 </div>
             </div>
         </section>
 
         <section id="contact">
             <div class="container">
-                <h2 class="section-title">Talk to Me!</h2>
-                <p>If you have an idea, a job opportunity, or just want to chat, send me a message.</p>
+                <h2 class="section-title">Let's Talk!</h2>
+                <p>If you have an idea, a job opening, or just want to chat, send me a message.</p>
                 <div class="button-group">
                     <a href="mailto:miguelzynich@gmail.com" class="btn">E-mail</a>
-                    <a href="https://www.linkedin.com/in/miguelzynich/" class="btn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://wa.me/5193072515" class="btn" target="_blank" rel="noopener noreferrer">Whatsapp</a>
+                    <a href="https://www.linkedin.com/in/miguelzynich/" class="btn" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://wa.me/5193072515" class="btn" target="_blank"
+                        rel="noopener noreferrer">Whatsapp</a>
                 </div>
             </div>
         </section>
@@ -241,20 +337,20 @@
 
     <div id="project-overlay" class="overlay">
         <button id="btn-fechar-overlay" aria-label="Close menu">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
                 <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
         </button>
 
         <nav class="overlay-menu">
-            
-                <ul>
-                <li><a href="pagamentos.html" class="menu-link">Payments</a></li>       
+            <ul>
+                <li><a href="pagamentos.html" class="menu-link">Payments</a></li>
                 <li><a href="bolao.html" class="menu-link">Lottery Pool</a></li>
                 <li><a href="cores.html" class="menu-link">Color Optimization</a></li>
                 <li><a href="yuca.html" class="menu-link">Yuca</a></li>
-                <li><a href="index.html#sobre-e-experiencia" class="menu-link about-link">About Me</a></li>
+                <li><a href="index.html#sobre-e-experiencia" class="menu-link">About</a></li>
             </ul>
         </nav>
     </div>
@@ -262,7 +358,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js"></script>
     <script src="../main.js"></script>
 
+
+    <script>
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'disableScrolling': true,
+            'fitImagesInViewport': true
+        })
+    </script>
+
+    <script>
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'albumLabel': "%1 / %2"
+        })
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M2BKP8Y23H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-M2BKP8Y23H');
+    </script>
+    <script async src="https://t.contentsquare.net/uxa/734555fce281e.js"></script>
+
 </body>
+
 </html>
