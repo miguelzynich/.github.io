@@ -64,7 +64,8 @@ section+section {
 }
 
 .main-header .logo {
-    grid-column: 2; /* Centro */
+    grid-column: 2;
+    /* Centro */
     justify-self: center;
     font-size: 1.5rem;
     font-weight: 800;
@@ -83,7 +84,8 @@ section+section {
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 5px; /* Área de clique melhorada */
+    padding: 5px;
+    /* Área de clique melhorada */
     display: flex;
     align-items: center;
 }
@@ -528,6 +530,7 @@ section+section {
 }
 
 
+
 .carousel-wrapper .swiper-button-next,
 .carousel-wrapper .swiper-button-prev {
     position: static;
@@ -625,6 +628,185 @@ section+section {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* =========================================
+   1. ESTILO DOS CARDS (NA PÁGINA)
+   ========================================= */
+.pages-showcase {
+    padding: 80px 0;
+    background-color: var(---secondary-color);
+}
+
+.pages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.page-card {
+    background: #F8F8F8;;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.page-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+.page-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+    color: #1a1a1a;
+}
+
+.page-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid ##1B1B1B;
+    cursor: zoom-in;
+    display: block;
+}
+
+@media (max-width: 991px) { .pages-grid { grid-template-columns: 1fr; } }
+
+
+/* =========================================
+   2. ESTILO DA MODAL (VORTIGO STYLE + ZOOM)
+   ========================================= */
+
+/* Fundo Preto Total */
+.modal-overlay {
+    display: none; /* JS muda para flex */
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(18, 18, 18, 0.98) !important;
+    backdrop-filter: blur(5px);
+}
+
+.modal-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header {
+    height: 60px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    background-color: #000; /* Preto absoluto */
+    border-bottom: 1px solid #333;
+    color: #fff;
+}
+
+.modal-title-container { display: flex; align-items: baseline; gap: 15px; }
+#modalTitle { font-size: 1.1rem; font-weight: 700; margin: 0; color: #fff; }
+#modalCounter { font-size: 0.85rem; color: #888; font-family: monospace; }
+
+.modal-close { font-size: 32px; cursor: pointer; color: #888; transition: 0.2s; }
+.modal-close:hover { color: #fff; }
+
+.modal-body {
+    flex: 1;
+    width: 100%;
+    position: relative;
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-image-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+}
+
+.modal-image-wrapper.is-zoomed {
+    display: block; 
+    overflow: auto; 
+    text-align: center;
+    cursor: grab;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    cursor: zoom-in;
+    transition: transform 0.2s ease;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+}
+
+/* ESTADO ZOOM: Imagem tamanho real */
+.modal-content.is-zoomed {
+    max-width: none !important;
+    max-height: none !important;
+    width: auto;
+    height: auto;
+    cursor: zoom-out;
+    margin: 40px auto; 
+}
+
+.modal-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    cursor: pointer;
+    width: 60px;  
+    height: 60px; 
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: #ffffff;
+    font-size: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-nav:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-prev {
+    left: 20px;
+}
+
+.modal-next {
+    right: 20px;
+}
+
+@media (max-width: 768px) {
+    .modal-nav { display: none; } /* Oculta setas no mobile */
+    .modal-header { padding: 0 15px; }
+    #modalTitle { font-size: 0.9rem; }
+}
+
+@media (max-width: 768px) {
+    .modal-nav { display: none; } /* Sem setas no mobile */
+}
+
+
 .figma-section {
     padding: 4rem;
 }
@@ -644,48 +826,6 @@ section+section {
     border-radius: 8px;
 }
 
-.wireframes-section {
-    padding: 5rem 0;
-}
-
-.wireframes-section p {
-    margin-bottom: 2.5rem;
-}
-
-
-.wireframes-section-high {
-    padding: 5rem 0;
-}
-
-.wireframes-section-high p {
-    margin-bottom: 2.5rem;
-}
-
-.wireframe-gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-.wireframe-item {
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: var(--background-color);
-}
-
-.wireframe-item:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-}
-
-.wireframe-item img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
 
 .grid-system-section {
     padding-top: 4rem;
@@ -971,7 +1111,7 @@ section+section {
 
 body.dark-mode {
     --primary-color: #f1f1f1;
-    --seconday-color: #000;
+    --secondary-color: #000;
     --background-color: #121212;
     --text-color-light: #a0a0a0;
     --border-color: #444;
@@ -987,7 +1127,7 @@ body.dark-mode strong {
 }
 
 body.dark-mode p {
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 body.dark-mode .problem-section p {
@@ -1123,6 +1263,25 @@ body.dark-mode .dark-mode-button {
 body.dark-mode .video-section {
     background-color: #000;
 }
+
+body.dark-mode .page-card {
+    background: #333333; /* ou var(--secondary-color) se ela for escura */
+    border: 1px solid #333333; 
+    }
+
+body.dark-mode .page-card h3 {
+    color: #ffffff; 
+}
+
+/* Opcional: Ajustar a borda da imagem se precisar */
+body.dark-mode .page-card img {
+    border-color: #333;
+}
+
+body.dark-mode #contact p {
+    color: var(--text-color-light);
+}
+
 
 
 
@@ -1419,7 +1578,7 @@ body.dark-mode .video-section {
 @media (max-width: 1024px) {
     .banner-section {
         background-image: url('images/yuca/yuca-banner-tablet.png');
-        height: 60vh; 
+        height: 60vh;
     }
 
     .two-column-layout,
@@ -1431,11 +1590,11 @@ body.dark-mode .video-section {
     }
 
     .slide-content {
-        flex-direction: column; 
+        flex-direction: column;
         padding: 40px;
         height: auto;
     }
-    
+
     .slide-content .chart-content {
         height: auto;
         max-height: 300px;
@@ -1446,7 +1605,7 @@ body.dark-mode .video-section {
         gap: 2rem;
         text-align: center;
     }
-    
+
     .tools-grid {
         grid-template-columns: repeat(2, 1fr);
         padding: 30px;
@@ -1459,37 +1618,37 @@ body.dark-mode .video-section {
 }
 
 @media (max-width: 768px) {
-    
-    section, 
+
+    section,
     .problem-section,
     .tools-section,
     .prioritization-grid-section,
     .video-section,
     .figma-section,
-    .wireframes-section, 
+    .wireframes-section,
     .style-guide-section {
-        padding: 40px 0; 
+        padding: 40px 0;
     }
 
     .container-wide,
     .container,
     .video-section,
     .figma-embed-container {
-        padding-left: 30px; 
+        padding-left: 30px;
         padding-right: 20px;
     }
 
     h2 {
-        font-size: 26px; 
+        font-size: 26px;
         line-height: 1.3;
-        text-align: left; 
+        text-align: left;
     }
 
     p {
         font-size: 16px;
         line-height: 1.6;
     }
-    
+
     .problem-section h2,
     .tools-section h2,
     .slide-content h3 {
@@ -1512,7 +1671,7 @@ body.dark-mode .video-section {
     .desk-research-layout,
     .tools-grid,
     .wireframe-gallery,
-    .style-guide-grid, 
+    .style-guide-grid,
     .keyword-list {
         display: grid;
         grid-template-columns: 1fr;
@@ -1522,25 +1681,25 @@ body.dark-mode .video-section {
     }
 
     .tools-grid {
-        padding: 24px; 
+        padding: 24px;
         gap: 20px;
     }
 
     .research-box {
-        padding: 24px; 
+        padding: 24px;
         margin-top: 2rem;
     }
 
     .research-item img,
     .research-item blockquote {
-        max-width: 100%; 
+        max-width: 100%;
     }
 
     .slide-content {
         padding: 30px 20px;
         border-radius: 8px;
     }
-    
+
     .persona-quotes {
         flex-direction: column;
     }
@@ -1550,14 +1709,22 @@ body.dark-mode .video-section {
         justify-content: center;
         padding: 0;
     }
-    
+
     .sg-btn {
-        width: 100%; 
+        width: 100%;
     }
-    
-    .type-scale .h1-style { font-size: 32px; }
-    .type-scale .h2-style { font-size: 28px; }
-    .type-scale .h3-style { font-size: 24px; }
+
+    .type-scale .h1-style {
+        font-size: 32px;
+    }
+
+    .type-scale .h2-style {
+        font-size: 28px;
+    }
+
+    .type-scale .h3-style {
+        font-size: 24px;
+    }
 
     .carousel-wrapper .swiper-button-prev,
     .carousel-wrapper .swiper-button-next,
@@ -1574,23 +1741,29 @@ body.dark-mode .video-section {
         width: 100%;
         height: 250px;
     }
-    
+
     .moodboard-column {
         margin-top: 2rem;
     }
 
-    .video-section, .figma-section {
+    .video-section,
+    .figma-section {
         padding: 40px 0;
     }
-    .video-section .container, .figma-section .container {
+
+    .video-section .container,
+    .figma-section .container {
         padding-left: 20px !important;
         padding-right: 20px !important;
         display: block;
     }
-    .video-section h2, .figma-section h2 {
+
+    .video-section h2,
+    .figma-section h2 {
         text-align: left;
         width: 100%;
     }
+
     .video-container {
         width: 100%;
         max-width: none;
@@ -1600,11 +1773,13 @@ body.dark-mode .video-section {
 
     .figma-embed-container {
         padding: 20px;
-        margin: 0, auto;
+        margin: 0 auto;
         width: 100%;
     }
+
     .figma-embed-container iframe {
-        width: 100%; height: 350px;
+        width: 100%;
+        height: 350px;
     }
 
 

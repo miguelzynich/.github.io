@@ -366,7 +366,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // 3. A Função que faz a mágica
     function toggleMenu() {
         const estaAberto = overlay.classList.contains('active');
         
@@ -379,7 +378,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 4. Adicionando os cliques
     btnMenu.addEventListener('click', (e) => {
         e.preventDefault();
         toggleMenu();
@@ -389,7 +387,6 @@ document.addEventListener('DOMContentLoaded', () => {
         btnFechar.addEventListener('click', toggleMenu);
     }
 
-    // Fecha ao clicar nos links
     links.forEach(link => {
         link.addEventListener('click', toggleMenu);
     });
@@ -425,3 +422,142 @@ function injetarBotaoVoltar() {
         headerContainer.prepend(backButton);
     }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.getElementById('btn-load-more-projects');
+    const grid = document.querySelector('.project-grid');
+    const projectSection = document.getElementById('projects');
+
+    if (btn && grid) {
+        btn.addEventListener('click', function() {
+            const isOpen = grid.classList.toggle('is-open');
+            btn.textContent = isOpen ? '-' : '+';
+
+            if (!isOpen) {
+                const targetPos = projectSection.getBoundingClientRect().top + window.pageYOffset - 80;
+
+                window.scrollTo({
+                    top: targetPos,
+                    behavior: 'smooth'
+                });
+
+            }
+        });
+    }
+});document.addEventListener('DOMContentLoaded', function() {
+    // Referências aos elementos
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("img01");
+    const modalWrapper = document.querySelector(".modal-image-wrapper");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalCounter = document.getElementById("modalCounter");
+    const closeBtn = document.querySelector(".modal-close");
+    const prevBtn = document.querySelector(".modal-prev");
+    const nextBtn = document.querySelector(".modal-next");
+
+    // Coleta as imagens da página
+    const zoomableImages = Array.from(document.querySelectorAll('.zoomable-image'));
+    let currentIndex = 0;
+    let isZoomed = false;
+
+    if (zoomableImages.length === 0) return;
+
+    // --- FUNÇÕES ---
+
+    // Atualiza o conteúdo da modal
+    function updateModal(index) {
+        // Reseta o zoom ao trocar de imagem
+        resetZoom();
+
+        const img = zoomableImages[index];
+        const src = img.getAttribute('data-zoom-src') || img.src;
+        const title = img.alt || "Visualização";
+
+        modalImg.src = src;
+        modalTitle.textContent = title;
+        modalCounter.textContent = `${index + 1} / ${zoomableImages.length}`;
+        currentIndex = index;
+    }
+
+    // Liga/Desliga o Zoom
+    function toggleZoom(e) {
+        if(e) e.stopPropagation();
+        
+        isZoomed = !isZoomed;
+        
+        if (isZoomed) {
+            modalImg.classList.add('is-zoomed');
+            modalWrapper.classList.add('is-zoomed');
+        } else {
+            resetZoom();
+        }
+    }
+
+    // Reseta o Zoom para o padrão
+    function resetZoom() {
+        isZoomed = false;
+        modalImg.classList.remove('is-zoomed');
+        modalWrapper.classList.remove('is-zoomed');
+    }
+
+    // Fecha a Modal
+    function closeModal() {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto"; // Destrava scroll da página
+        setTimeout(() => { modalImg.src = ""; }, 200);
+    }
+
+    // --- EVENTOS ---
+
+    // 1. Clique nas thumbnails (Abre a modal)
+    zoomableImages.forEach((img, index) => {
+        img.addEventListener('click', function() {
+            modal.style.display = "flex";
+            updateModal(index);
+            document.body.style.overflow = "hidden"; // Trava scroll da página
+        });
+    });
+
+    // 2. Clique na imagem grande (Zoom)
+    modalImg.addEventListener('click', toggleZoom);
+
+    // 3. Navegação (Setas)
+    if(nextBtn) nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        let nextIndex = currentIndex + 1;
+        if (nextIndex >= zoomableImages.length) nextIndex = 0;
+        updateModal(nextIndex);
+    });
+
+    if(prevBtn) prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        let prevIndex = currentIndex - 1;
+        if (prevIndex < 0) prevIndex = zoomableImages.length - 1;
+        updateModal(prevIndex);
+    });
+
+    // 4. Fechar (X ou Fundo)
+    if(closeBtn) closeBtn.addEventListener('click', closeModal);
+    
+    window.addEventListener('click', (e) => {
+        // Se clicar fora da imagem e não estiver com zoom
+        if (!isZoomed && (e.target === modal || e.target.classList.contains('modal-body') || e.target.classList.contains('modal-image-wrapper'))) {
+            closeModal();
+        }
+        // Se estiver com zoom, clicar fora apenas reseta o zoom ou fecha (opcional, aqui fecha)
+        else if (isZoomed && e.target !== modalImg) {
+            closeModal();
+        }
+    });
+
+    // 5. Teclado
+    document.addEventListener('keydown', (e) => {
+        if (modal.style.display === "flex") {
+            if (e.key === "Escape") closeModal();
+            if (!isZoomed) {
+                if (e.key === "ArrowRight") nextBtn.click();
+                if (e.key === "ArrowLeft") prevBtn.click();
+            }
+        }
+    });
+});

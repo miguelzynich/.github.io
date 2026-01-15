@@ -1,3 +1,23 @@
+:root {
+    /* LIGHT MODE (Padrão) */
+    --dt-bg-section: #F2F2F2;
+    --dt-bg-card: #FFFFFF;
+    --dt-text-title: #000000;
+    --dt-text-secondary: #555555;
+    --dt-border: #E0E0E0;
+    --dt-code-bg: #F4F4F4;
+}
+
+body.dark-mode {
+    --dt-bg-section: #0c0c0c;
+    --dt-bg-card: #1c1c1c;
+    --dt-text-title: #FFFFFF;
+    --dt-text-secondary: #A0A0A0;
+    --dt-border: #333333;
+    --dt-code-bg: #252525;
+}
+
+
 body {
     font-family: 'Gilroy', sans-serif;
     color: var(--primary-color);
@@ -31,7 +51,8 @@ body {
 }
 
 .main-header .logo {
-    grid-column: 2; /* Centro */
+    grid-column: 2;
+    /* Centro */
     justify-self: center;
     font-size: 1.5rem;
     font-weight: 800;
@@ -43,14 +64,13 @@ body {
     color: #fff;
 }
 
-/* Botão Menu (Direita) */
 #btn-menu-projetos {
     grid-column: 3;
     justify-self: end;
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 5px; /* Área de clique melhorada */
+    padding: 5px;
     display: flex;
     align-items: center;
 }
@@ -62,7 +82,6 @@ body {
     filter: invert(1);
 }
 
-/* Botão Voltar (Esquerda - Injetado via JS) */
 .back-button {
     grid-column: 1;
     justify-self: start;
@@ -72,8 +91,6 @@ body {
     align-items: center;
     text-decoration: none;
 }
-
-
 
 .cores-caixa {
     width: 100%;
@@ -90,9 +107,46 @@ body {
     padding: 60px 20px;
 }
 
-
 .project-content {
     background-color: #FFFFFF;
+}
+
+.project-content {
+    padding: 80px 0;
+    background-color: transparent;
+    color: var(--text-primary);
+}
+
+.project-content .two-column-layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+    margin-bottom: 60px;
+    align-items: flex-start;
+}
+
+.project-content .two-column-layout:last-child {
+    margin-bottom: 0;
+}
+
+.project-content .column {
+    flex: 1;
+    width: 45%;
+}
+
+.project-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--text-color-light);
+    line-height: 1.2;
+}
+
+.project-content p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    opacity: 0.8;
+    margin: 0;
 }
 
 .comparison-section {
@@ -111,7 +165,6 @@ body {
     margin-bottom: 40px;
     color: var(--background-color);
 }
-
 
 .comparison-grid {
     display: flex;
@@ -193,7 +246,6 @@ body {
     object-fit: contain;
     border: none;
     box-shadow: none;
-    /* Garante que a imagem em si não tenha sombra */
 }
 
 .mockup-container--alt {
@@ -216,7 +268,7 @@ body {
     font-size: 56px;
     margin: 0 0 8px 0;
     display: block;
-    text-align: left !important;
+    text-align: center;
     width: 100%;
 }
 
@@ -286,14 +338,11 @@ body {
     max-width: 800px;
 }
 
-
 .comparison-grid.four-columns .comparison-column {
     flex: 1 1 350px;
-
     max-width: 400px;
     min-width: 320px;
 }
-
 
 .two-column-layout {
     display: flex;
@@ -324,220 +373,219 @@ body {
     color: var(--primary-color);
     text-align: left;
 }
-/* =========================================
-   SEÇÃO DE DESIGN TOKENS (EXPANDIDA)
-   ========================================= */
 
 .tokens-section {
     padding: 80px 0;
-    background-color: #121212;
+    background-color: var(--dt-bg-section);
+    transition: background-color 0.3s ease;
 }
 
-.tokens-section .container {
-    max-width: 1100px; /* Aumentei um pouco para caber 2 colunas */
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.tokens-section .section-header {
+.section-header {
+    text-align: left;
+    /* Na imagem o alinhamento parece à esquerda ou centro, ajustável */
+    max-width: 800px;
     margin-bottom: 60px;
 }
 
-.tokens-section h2 {
-    font-family: 'Touche', sans-serif;
-    font-size: 2rem;
-    color: #fff;
-    margin-bottom: 10px;
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--dt-text-title);
 }
 
-.tokens-section p {
-    font-family: 'Gilroy', sans-serif;
-    color: #888;
-    font-size: 1.1rem;
+.section-header p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--dt-text-secondary);
 }
 
-/* Wrapper para criar o grid de 2 colunas no Desktop */
+/* 3. Grid Principal (2 Colunas como na imagem) */
 .modalities-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 60px; /* Espaço entre as colunas de modalidades */
-    row-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 Colunas fixas no desktop */
+    gap: 60px 40px;
+    /* Espaço vertical maior, horizontal médio */
     align-items: start;
 }
 
-/* GRUPO DE MODALIDADE */
+/* 4. Grupos (Título + Lista) */
 .modality-group {
-    margin-bottom: 30px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #2a2a2a;
-    page-break-inside: avoid; /* Evita quebra feia se imprimir */
+    display: flex;
+    flex-direction: column;
 }
 
-/* Título do Grupo */
 .group-title {
-    font-family: 'Gilroy', sans-serif;
-    color: #fff;
-    font-size: 1.2rem;
-    margin-bottom: 20px;
     display: flex;
     align-items: center;
     gap: 12px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: lowercase;
+    /* Mantém tudo minúsculo como na imagem */
+    margin-bottom: 20px;
+    color: var(--dt-text-title);
 }
 
-/* Bolinha decorativa ao lado do título */
-.group-title .dot {
+/* A bolinha ao lado do nome */
+.dot {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    display: block;
+    display: inline-block;
 }
 
-/* --- DEFINIÇÃO DE CORES (PALETA COMPLETA) --- */
-
-/* Mega Sena */
-.dot.megasena, .token-swatch.megasena { background-color: #009B63; box-shadow: 0 0 10px rgba(32, 152, 105, 0.4); }
-.token-swatch.megasena-sec { background-color: #00A867; }
-
-/* Lotofácil */
-.dot.lotofacil, .token-swatch.lotofacil { background-color: #702A82; box-shadow: 0 0 10px rgba(147, 0, 137, 0.4); }
-.token-swatch.lotofacil-sec { background-color: #7F3992; }
-
-/* Quina */
-.dot.quina, .token-swatch.quina { background-color: #005DA4; box-shadow: 0 0 10px rgba(38, 0, 133, 0.4); }
-.token-swatch.quina-sec { background-color: #004E8A; }
-
-/* Lotomania */
-.dot.lotomania, .token-swatch.lotomania { background-color: #E67200; box-shadow: 0 0 10px rgba(247, 105, 6, 0.4); }
-.token-swatch.lotomania-sec { background-color: #F79710; }
-
-/* Timemania */
-.dot.timemania, .token-swatch.timemania { background-color: #FFDA2B; box-shadow: 0 0 10px rgba(255, 212, 40, 0.4); }
-.token-swatch.timemania-sec { background-color: #2D8563; }
-
-/* Dupla Sena */
-.dot.duplasena, .token-swatch.duplasena { background-color: #A63055; box-shadow: 0 0 10px rgba(166, 48, 85, 0.4); }
-.token-swatch.duplasena-sec { background-color: #C63A66; }
-
-/* Super Sete */
-.dot.supersete, .token-swatch.supersete { background-color: #5BA616; box-shadow: 0 0 10px rgba(169, 207, 70, 0.4); }
-.token-swatch.supersete-sec { background-color: #99C02E; }
-
-/* Dia de Sorte */
-.dot.diasorte, .token-swatch.diasorte { background-color: #B09209; box-shadow: 0 0 10px rgba(203, 154, 54, 0.4); }
-.token-swatch.diasorte-sec { background-color: #DBB612; }
-
-/* +Milionária */
-.dot.milionaria, .token-swatch.milionaria { background-color: #332A62; box-shadow: 0 0 10px rgba(46, 48, 94, 0.4); }
-.token-swatch.milionaria-sec { background-color: #2C3682; }
-
-/* Loteca */
-.dot.loteca, .token-swatch.loteca { background-color: #ED1C24; box-shadow: 0 0 10px rgba(236, 0, 0, 0.4); }
-.token-swatch.loteca-sec { background-color: #C61017; }
-
-
-/* LISTA DE TOKENS (LAYOUT) */
+/* 5. Lista de Tokens (Os cards retangulares) */
 .tokens-list {
-    display: grid;
-    grid-template-columns: 1fr; /* Uma linha por token dentro do grupo */
-    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
-/* CARD DO TOKEN */
 .token-card {
     display: flex;
     align-items: center;
-    background: #1a1a1a;
-    border: 1px solid #2a2a2a;
+    gap: 20px;
+    padding: 16px;
+
+    background-color: var(--dt-bg-card);
+    border: 1px solid var(--dt-border);
     border-radius: 8px;
-    padding: 12px;
-    transition: all 0.2s ease;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .token-card:hover {
-    background: #252525;
-    border-color: #444;
-    transform: translateX(5px);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
+/* O quadrado colorido */
 .token-swatch {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     border-radius: 8px;
-    margin-right: 15px;
     flex-shrink: 0;
-    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.token-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
 }
 
 .token-info code {
+    font-family: 'Gilroy';
+    /* Fonte monoespaçada */
+    font-size: 1.0rem;
+    color: var(--dt-text-secondary);
     display: block;
-    font-family: 'Fira Code', monospace; 
-    color: #999;
-    font-size: 0.85rem;
-    margin-bottom: 2px;
 }
 
-/* Destaque da cor no texto do código */
-.modality-group:hover code { color: #fff; }
-
+/* Estilo do valor HEX (#000000) */
 .token-value {
-    font-family: 'Gilroy', sans-serif;
-    color: #fff;
-    font-weight: 700;
     font-size: 1rem;
+    font-weight: 800;
+    /* Extra bold */
+    color: var(--dt-text-title);
+    text-transform: uppercase;
 }
 
-/* RESPONSIVO */
-@media (max-width: 900px) {
-    /* No tablet/mobile, volta para uma coluna só */
-    .modalities-wrapper {
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
-    
-    .modality-group {
-        border-bottom: 1px solid #333;
-        padding-bottom: 40px;
-        margin-bottom: 40px;
-    }
-}
-/* RESPONSIVO */
-@media (max-width: 768px) {
-    .tokens-list {
-        grid-template-columns: 1fr; /* 1 coluna no celular */
-    }
-    
-    .token-card {
-        padding: 12px;
-    }
+/* 6. Cores das Loterias (ESPECÍFICAS PARA TOKENS) */
+/* Isso impede que a cor "vaze" para outras seções como os celulares */
+
+.token-swatch.megasena,
+.dot.megasena {
+    background-color: #009B63;
 }
 
-/* RESPONSIVO (MOBILE) */
-@media (max-width: 768px) {
-    .token-card {
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-    }
-
-    .token-swatch {
-        width: 100%;
-        height: 60px;
-        margin-bottom: 15px;
-        margin-right: 0;
-    }
-
-    .token-meta {
-        margin-top: 15px;
-        width: 100%;
-        text-align: left;
-    }
-    
-    .token-note {
-        display: block; /* Quebra linha no mobile */
-        margin-left: 0;
-        margin-top: 5px;
-    }
+.token-swatch.megasena-sec {
+    background-color: #00AB67;
 }
+
+.token-swatch.lotofacil,
+.dot.lotofacil {
+    background-color: #702A82;
+}
+
+.token-swatch.lotofacil-sec {
+    background-color: #7F2992;
+}
+
+.token-swatch.quina,
+.dot.quina {
+    background-color: #005DA4;
+}
+
+.token-swatch.quina-sec {
+    background-color: #004E8A;
+}
+
+.token-swatch.lotomania,
+.dot.lotomania {
+    background-color: #E67200;
+}
+
+.token-swatch.lotomania-sec {
+    background-color: #F79710;
+}
+
+.token-swatch.timemania,
+.dot.timemania {
+    background-color: #FFDA2B;
+}
+
+.token-swatch.timemania-sec {
+    background-color: #2D8563;
+}
+
+.token-swatch.duplasena,
+.dot.duplasena {
+    background-color: #A63055;
+}
+
+.token-swatch.duplasena-sec {
+    background-color: #C63A66;
+}
+
+.token-swatch.supersete,
+.dot.supersete {
+    background-color: #5BA616;
+}
+
+.token-swatch.supersete-sec {
+    background-color: #99C02E;
+}
+
+.token-swatch.diasorte,
+.dot.diasorte {
+    background-color: #B09209;
+}
+
+.token-swatch.diasorte-sec {
+    background-color: #DBB612;
+}
+
+.token-swatch.milionaria,
+.dot.milionaria {
+    background-color: #332A62;
+}
+
+.token-swatch.milionaria-sec {
+    background-color: #2C3682;
+}
+
+.token-swatch.loteca,
+.dot.loteca {
+    background-color: #ED1C24;
+}
+
+.token-swatch.loteca-sec {
+    background-color: #C61017;
+}
+
 
 @media (max-width: 1024px) {
     .comparison-grid.four-columns .comparison-column {
@@ -548,6 +596,20 @@ body {
     .cores-caixa {
         height: 65vh;
         background-image: url('./images/cores/cores_banner_mobile.png');
+    }
+}
+
+@media (max-width: 900px) {
+
+    .modalities-wrapper {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .modality-group {
+        border-bottom: 1px solid #333;
+        padding-bottom: 40px;
+        margin-bottom: 40px;
     }
 }
 
@@ -585,6 +647,77 @@ body {
 
 @media (max-width: 768px) {
 
+
+    .modalities-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .two-column-layout {
+        flex-direction: column;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+
+    .comparison-column .contrast-card h2 {
+        color: #FFFFFF;
+        font-size: 56px;
+        margin: 0 0 8px 0;
+        display: block !important;
+        text-align: center !important;
+        width: 100%;
+    }
+
+
+    .tokens-list {
+        grid-template-columns: 1fr;
+    }
+
+    .token-card {
+        padding: 12px;
+    }
+
+    .token-card {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .token-swatch {
+        width: 100%;
+        height: 60px;
+        margin-bottom: 15px;
+        margin-right: 0;
+    }
+
+    .token-meta {
+        margin-top: 15px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .token-note {
+        display: block;
+        margin-left: 0;
+        margin-top: 5px;
+    }
+
+    .project-content .two-column-layout {
+        flex-direction: column;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    .project-content .column {
+        width: 100%;
+        flex: none;
+    }
+
     .main-header .container {
         display: flex !important;
         justify-content: space-between;
@@ -609,24 +742,6 @@ body {
     }
 }
 
-
-    .two-column-layout {
-        flex-direction: column;
-        gap: 40px;
-        margin-bottom: 40px;
-    }
-
-
-.comparison-column .contrast-card h2 {
-    color: #FFFFFF;
-    font-size: 56px;
-    margin: 0 0 8px 0;
-    display: block !important;
-    text-align: center !important;
-    width: 100%;
-}
-
-
 @media (min-width: 480px) {
 
     h2 {
@@ -635,7 +750,7 @@ body {
         text-align: left;
     }
 
-    .problem-section p {        
+    .problem-section p {
         font-size: 1.2rem;
         text-align: left;
 

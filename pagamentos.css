@@ -1,264 +1,527 @@
+/* =========================================
+   VARIAVEIS E ROOT
+   ========================================= */
+:root {
+    --bg-primary: #0d0d0d;
+    --bg-secondary: #1a1a1a;
+    --text-main: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.7);
+    --accent-color: #007bff;
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.light-theme {
+    --bg-primary: #f9f9f9;
+    --bg-secondary: #ffffff;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --border-color: #e0e0e0;
+}
+/* =========================================
+   RESET E ESTILOS GERAIS
+   ========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Gilroy', sans-serif;
     font-size: 16px;
     line-height: 1.6;
+    color: var(--primary-color);
+    background-color: var(--bg-light);
 }
 
 h2 {
     font-size: 2.2rem;
     text-align: left;
+    margin-bottom: 24px;
 }
 
 p {
     font-size: 1.1rem;
     text-align: left;
+    margin-bottom: 16px;
 }
 
-main>section {
-    background-color: var(--background-color);
+img {
+    max-width: 100%;
+    display: block;
 }
 
-main>section:nth-of-type(even) {
-    background-color: var(--section-bg);
+/* =========================================
+   LAYOUT E CONTAINERS
+   ========================================= */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
+main > section:nth-of-type(even) {
+    background-color: var(--bg-section);
+}
+
+.two-column-layout {
+    display: grid !important; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 80px; 
+    margin-bottom: 80px;
+    align-items: start; 
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.column h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.column p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: left;
+}
+
+.frictions-section {
+    padding: 100px 0;
+    background-color: #0d0d0d; 
+}
+
+.section-title-center {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+}
+
+.frictions-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.friction-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.friction-item:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-5px);
+    border-color: #FF4B6B; 
+}
+
+.friction-icon {
+    width: 28px;
+    height: 28px;
+    background-color: #FF4B6B; 
+    border-radius: 50%;
+    flex-shrink: 0;
+    position: relative;
+    margin-top: 2px;
+}
+
+.friction-icon::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 3px;
+    background-color: #ffffff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 2px;
+}
+
+.friction-content strong {
+    display: block;
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+}
+
+.friction-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.scenarios-section {
+    padding: 100px 0;
+    background-color: #0d0d0d;
+}
+
+.section-description {
+    max-width: 800px;
+    margin-bottom: 60px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.scenario-subtitle {
+    font-size: 1.6rem;
+    margin-top: 80px; 
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+}
+
+.scenarios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.scenario-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: all 0.3s ease;
+}
+
+.scenario-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.scenario-label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.gateway-indicator {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 8px;
+}
+
+.gateway-indicator img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.mp-style .gateway-indicator { background-color: #FFE600; }
+.rp-style .gateway-indicator { background-color: #042C4F; }
+.multi-style .gateway-indicator { 
+    background: linear-gradient(135deg, #3dabda, #3279c0); 
+}
+
+.error-state {
+    border-color: rgba(255, 75, 107, 0.3);
+}
+
+.error-state .scenario-label {
+    color: #FF4B6B; 
+}
+
+.wireframe-display-section {
+    width: 100%;
+    padding: 20px 0;
+    background-color: var(--bg-primary);
+}
+
+.zoomable-image {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.image-showcase {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.02); 
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.zoomable-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.zoomable-image:hover {
+    transform: scale(1.01);
+}
+
+
+/* =========================================
+   COMPONENTES ESPECÍFICOS
+   ========================================= */
+
+/* --- Banner Pagamentos --- */
 .banner-pag {
     width: 100%;
     height: 56vh;
-    padding: 0;
     background-image: url('./images/pagamentos/banner_pagamentos.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.two-column-layout {
-    display: flex;
-    gap: 60px;
-    margin-bottom: 60px;
-}
-
-.two-column-layout:last-child {
-    margin-bottom: 0;
-}
-
-.two-column-layout .column {
-    flex: 1;
-}
-
-.two-column-layout .column p {
-    font-size: 1.15rem;
-    line-height: 1.8;
-    color: var(--primary-color);
-}
-
-.two-column-img {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.two-column-img .column h2 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.two-column-img .column img {
+.wireframe-display-section {
     width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
+    padding: 80px 0;
+    min-height: 500px;
+    overflow: visible;
+    background-color: var(--bg-white);
 }
 
-.problem-section p {
-    font-size: 1.5rem;
-    font-weight: bold;
-    font-style: bold;
-    text-align: center;
-    color: var(--primary-color);
-}
-
-
-/* --- GRID DE CENÁRIOS (CARDS) --- */
-
-.scenarios-grid {
-    display: grid;
-
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 20px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.scenario-card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 20px;
+.wireframe-display-section .container {
     display: flex;
-    align-items: center;
-    gap: 15px;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    flex-direction: column;
+    gap: 32px;
 }
 
+.benchmark-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px;
+    margin-top: 32px;
+}
+
+.benchmark-item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.benchmark-item h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.benchmark-item img {
+    aspect-ratio: 16 / 9; 
+    object-fit: cover;
+    object-position: top left;
+    border-radius: 12px;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.benchmark-item img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
 
 .scenarios-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
     list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
 .scenario-card {
-    background-color: #ffffff;
-    border: 1px solid #E5E5E5;
+    background-color: var(--text-main);
+    border: 1px solid var(--border-color);
     border-radius: 16px;
     padding: 16px 24px;
     display: flex;
     align-items: center;
     gap: 20px;
-    transition: all 0.3s ease;
+    transition: var(--transition-smooth);
     min-height: 80px;
 }
 
 .scenario-card:hover {
     border-color: var(--accent-color);
+    background: var(--text-main);
     transform: translateY(-3px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
+.scenario-card span {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.3;
+}
 
 .gateway-indicator {
     width: 48px;
     height: 48px;
     border-radius: 50%;
     flex-shrink: 0;
-    overflow: hidden;
-    background-color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 8px;
 }
 
+.mp-style .gateway-indicator { background-color: #FFE600; }
+.rp-style .gateway-indicator { background-color: #042C4F; }
+.multi-style .gateway-indicator { background: linear-gradient(135deg, #3dabda, #3279c0); }
+.scenario-card.multi-style .gateway-indicator img { filter: brightness(0) invert(1); width: 28px; }
+
+.problem-section p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: left;
+    color: var(--primary-color);
+}
+
+.wireframe-display-section {
+    width: 100%;
+    padding: 100px 0;
+    background-color: var(--text-main);
+    color: var(--text-main);
+}
+
+.display-description p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--bg-primary);
+}
+
+.gateway-indicator {
+    width: 48px !important; 
+    height: 48px !important;
+    border-radius: 50%;
+    flex-shrink: 0;     
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;        
+    background-color: #fff;  
+}
+
 .gateway-indicator img {
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    display: block;
-    /* Remove espaços fantasmas */
-}
-
-.mp-style .gateway-indicator {
-    background-color: #FFE600;
-}
-
-.rp-style .gateway-indicator {
-    background-color: #042C4F;
-}
-
-.multi-style .gateway-indicator {
-    background: linear-gradient(135deg, #3dabda, #3279c0);
-}
-
-.scenario-card span {
-    font-family: 'Gilroy', sans-serif;
-    font-size: 1rem;
-    color: #333333;
-    line-height: 1.3;
-    font-weight: 500;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;  
 }
 
 
-.scenario-card.multi-style .gateway-indicator img {
-    filter: brightness(0) invert(1);
-    width: 28px;
+
+.zoomable-image {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
 }
+
+.main-footer {
+    background-color: #f5f5f5;
+    padding-top: 40px;
+}
+
+/* =========================================
+   MODOS (DARK MODE)
+   ========================================= */
 
 body.dark-mode .scenario-card {
     background-color: #1E1E1E;
     border-color: #333;
 }
 
-body.dark-mode .scenario-card span {
-    color: #f1f1f1;
+body.dark-mode .scenario-card span { 
+    color: #f1f1f1; 
+}
+body.dark-mode .friction-content h3 { 
+    color: #222222; 
 }
 
+body.dark-mode .friction-content p { 
+    color: #222222; 
+}
+
+body.dark-mode .wireframe-display-section {
+    background-color: var(--bg-primary);
+}
+
+body.dark-mode .wireframe-display-section.section-alt {
+    background-color: var(--bg-secondary);
+}
+
+
 /* =========================================
-   RESPONSIVO - PAGAMENTOS
+   RESPONSIVIDADE (MEDIA QUERIES)
    ========================================= */
 
-/* --- TABLET E LAPTOPS MENORES (Até 991px) --- */
 @media (max-width: 1024px) {
-
-    /* Quebra o layout de 2 colunas para 1 coluna */
     .two-column-layout {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         gap: 40px;
     }
-
-   .banner-pag {
+    .banner-pag {
         background-image: url('images/pagamentos/banner_tablet.png');
-        height: 80vh;
-        background-size: fill;
+        height: 50vh;
     }
-    .two-column-layout .column h2,
-    .two-column-layout .column p {
-        text-align: left;
+}
+
+
+@media (max-width: 992px) {
+    .frictions-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .wireframe-display-section {
+        padding: 60px 0;
+    }
+    .image-showcase {
+        padding: 15px;
+    }
+
+
+    .scenario-subtitle { margin-top: 50px; }
+    .scenarios-grid { grid-template-columns: 1fr; }
+
+      .two-column-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .benchmark-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px;
     }
 }
 
 @media (max-width: 480px) {
+    section { padding: 40px 0; }
+    
+    h2 { font-size: 1.8rem; line-height: 1.3; }
+    p { font-size: 1rem !important; }
 
-    section {
-        padding: 40px 0;
-    }
-
-    .container {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    h2 {
-        font-size: 2rem;
-        line-height: 1.2;
-        margin-bottom: 1rem;
-        text-align: left;
-    }
-
-    p {
-        font-size: 1.1rem !important;
-        line-height: 1.5;
-        margin-bottom: 1rem;
-    }
-
-    .banner-pag {
-        background-image: url('images/pagamentos/banner_tablet.png');
-        height: 50vh;
-        background-size: fill;
-    }
-
-    .project-content img,
-    .mockup-container img {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
-    }
-
-    .comparison-grid,
-    .mobile-screens-grid {
-        grid-template-columns: 1fr;
-        /* Força 1 coluna só */
-        gap: 30px;
-    }
+    .banner-pag { height: 40vh; }
 }
+

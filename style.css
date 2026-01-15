@@ -9,7 +9,6 @@
     font-display: swap;
 }
 
-/* ... (todo o resto do seu style.css que você me enviou) ... */
 @font-face {
     font-family: 'Touche';
     src: url('fonts/ToucheW03-Bold.woff2') format('woff2');
@@ -65,6 +64,16 @@
     --spacing-xxl: 4rem;
     --text-color-light: var(--secondary-color);
     --card-bg: #ffffff;
+}
+
+
+body.light-theme {
+    --bg-primary: #f9f9f9;
+    --bg-secondary: #ffffff;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --border-color: #e0e0e0;
+    --bg-card: #ffffff;
 }
 
 * {
@@ -144,7 +153,6 @@ p {
     filter: blur(0);
 }
 
-/* Delays opcionais */
 .delay-100 {
     transition-delay: 100ms;
 }
@@ -165,24 +173,20 @@ header {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Garante Logo na esq, Menu na dir */
-    box-sizing: border-box; /* Garante que padding não estoure a tela */
-    /* Adicione aqui padding vertical se o Yuca tiver */
-    padding-top: 20px; 
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding-top: 20px;
     padding-bottom: 20px;
 }
 
-/* 2. Regra do Logo (Margem ajustada) */
 header .logo {
-    margin-left: 24px; /* A margem que funcionou no Yuca */
+    margin-left: 24px;
     display: inline-block;
 }
 
-/* 3. Regra do Botão Voltar (Padrão Desktop: Visível) */
 header .botao-voltar {
-    display: flex; /* ou inline-block */
-    /* Garante alinhamento vertical se tiver ícone e texto */
-    align-items: center; 
+    display: flex;
+    align-items: center;
 }
 
 .main-header {
@@ -219,16 +223,13 @@ header .botao-voltar {
     grid-column: 1;
 }
 
-
 .lang-switch-header {
     grid-column: 3;
     justify-self: end;
 
     display: flex;
     gap: 15px;
-    /* 15px é melhor para clique que 8px */
     align-items: center;
-
     font-family: 'Gilroy', sans-serif;
     font-weight: 700;
     font-size: 0.9rem;
@@ -258,33 +259,24 @@ header .botao-voltar {
 
 .header-actions {
     grid-column: 3;
-    /* Fica na terceira coluna do Grid principal */
     justify-self: end;
-    /* Empurra tudo para o canto direito */
     display: flex;
-    /* Coloca um ao lado do outro */
     align-items: center;
-    /* Alinha verticalmente no centro */
     gap: 20px;
-    /* Espaço entre o "EN" e o ícone do Menu */
 }
-
 
 .lang-switch-header .lang-link {
     text-decoration: none;
     color: #888;
-    /* Cinza discreto */
     transition: color 0.3s;
 }
 
 .lang-switch-header .lang-link.active {
     color: #fff;
-    /* Branco destacado */
 }
 
 .lang-switch-header .lang-link:hover {
     color: #00FFFB;
-    /* Cyan no hover */
 }
 
 .divider {
@@ -353,7 +345,7 @@ html {
 
 .main-footer {
     padding: 2rem 0;
-    color: var(--secondary-color);
+    background-color: var(--section-bg);
     font-size: 0.9rem;
     text-align: center;
 }
@@ -490,14 +482,6 @@ html {
     padding: 80px 20px;
 }
 
-body.dark-mode #sobre-e-experiencia {
-    background-color: #121212;
-}
-
-body:not(.dark-mode) #sobre-e-experiencia {
-    background-color: var(--background-color);
-}
-
 .two-column-layout {
     display: flex;
     gap: 80px;
@@ -559,7 +543,7 @@ body:not(.dark-mode) #sobre-e-experiencia {
 
 #contact {
     padding: var(--spacing-xxl) 20px;
-    background-color: #f5f5f5;
+    background-color: #FFFFFF;
 }
 
 #contact .container {
@@ -569,7 +553,7 @@ body:not(.dark-mode) #sobre-e-experiencia {
     border: 1px solid var(--border-color);
     display: flex !important;
     flex-direction: column !important;
-    text-align: center !important; 
+    text-align: center !important;
 }
 
 
@@ -676,6 +660,234 @@ body:not(.dark-mode) #sobre-e-experiencia {
 }
 
 
+.load-more-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid var(--text-main);
+    color: var(--text-main);
+    margin: 50px 0;
+    clear: both;
+}
+
+#btn-load-more-projects {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 5px solid #000;
+    color: #000;
+    height: 48px;
+    width: 48px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#btn-load-more-projects:hover {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+.project-grid .project-card:nth-child(n+5) {
+    display: none;
+    opacity: 0;
+    transition:
+        grid-template-rows 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.4s ease,
+        transform 0.5s ease;
+}
+
+.project-grid.is-open .project-card:nth-child(n+5) {
+    display: block;
+    animation: slideUpFade 0.5s ease forwards;
+}
+
+.project-grid.is-open .project-card:nth-child(n+5) {
+    max-height: 1200px;
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: 30px;
+    pointer-events: auto;
+}
+
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.certifications-section {
+    padding: 80px 0;
+    background-color: var(--section-bg); 
+    transition: background-color 0.3s ease;
+}
+
+.certifications-section .section-title {
+    color: var(--cert-title);
+    margin-bottom: 40px;
+}
+
+.courses-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.course-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+    background: var(--card-bg);       
+    border: 1px solid var(--card-border); 
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.course-row:hover {
+    border-color: var(--card-hover-border);
+    background: var(--card-hover-bg);      
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px var(--card-shadow);
+    z-index: 10;
+}
+
+.course-name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.school-name {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-top: 4px;
+}
+
+.course-date {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+#btn-load-more-certs {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 5px solid #000;
+    color: #000;
+    height: 48px;
+    width: 48px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+#btn-load-more-certs:hover {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+.courses-table .course-row:nth-child(n+5) {
+    display: none;
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+.courses-table.is-open .course-row:nth-child(n+5) {
+    display: flex;
+    animation: fadeInReveal 0.5s ease forwards;
+}
+
+@keyframes fadeInReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.course-meta {
+    display: flex;
+    flex-direction: column !important;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 6px;
+    min-width: 90px;
+}
+
+.course-hours {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #000; 
+    background: #fff; 
+    border: 1px solid #ddd;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 2px;
+}
+
+.school-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid #eee; 
+}
+
+.cert-preview-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    width: 360px;
+    background: #fff;
+    padding: 8px;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 100;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cert-preview-popup img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+.course-row:hover .cert-preview-popup {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(30%, -80%) scale(1);
+}
+
 
 /* =========================================
    4. OVERLAY MENU (GAVETA)
@@ -743,41 +955,8 @@ body:not(.dark-mode) #sobre-e-experiencia {
 
 .menu-link:hover {
     color: #a8a7a7;
-    /* Cyan */
     transform: translateY(-5px);
-    /* Leve subida */
 }
-
-
-body.dark-mode .project-card {
-    background-color: var(--card-bg);
-}
-
-body.dark-mode .project-card:hover {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
-}
-
-body.dark-mode .project-title-mini {
-    color: var(--primary-color);
-}
-
-body.dark-mode .project-desc-mini {
-    color: var(--text-color-light);
-}
-
-body.dark-mode .project-tags-mini li {
-    background-color: var(--bullet-bg-dark);
-    color: var(--primary-color);
-}
-
-@media (max-width: 768px) {
-    .project-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-}
-
-/* FIM DA SEÇÃO CORRETA DOS CARDS DE PROJETO */
 
 
 /* =============================================== */
@@ -808,12 +987,12 @@ body.dark-mode .projects-section {
 }
 
 body.dark-mode #contact .container {
-    background-color: var(--section-bg);
+    background-color:#1a1a1a;
     border: 1px solid var(--border-color);
 }
 
 body.dark-mode #contact {
-    background-color: #1a1a1a;
+    background-color: #121212
 }
 
 body:not(.dark-mode) #contact .container {
@@ -847,6 +1026,57 @@ body.dark-mode .breadcrumb-nav.breadcrumb-nav--alt-bg {
 body.dark-mode .recommended-projects {
     background-color: var(--section-bg);
     border-top: 1px solid var(--border-color);
+}
+
+body.dark-mode #btn-load-more-projects {
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+body.dark-mode #btn-load-more-projects:hover {
+    background: #ffffff;
+    border-color: #ffffff;
+}
+
+
+body.dark-mode #btn-load-more-certs {
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+body.dark-mode #btn-load-more-certs :hover {
+    background: #ffffff;
+    border-color: #ffffff;
+}
+
+
+body.dark-mode .project-card {
+    background-color: var(--card-bg);
+}
+
+body.dark-mode .project-card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .project-title-mini {
+    color: var(--primary-color);
+}
+
+body.dark-mode .project-desc-mini {
+    color: var(--text-color-light);
+}
+
+body.dark-mode .project-tags-mini li {
+    background-color: var(--bullet-bg-dark);
+    color: var(--primary-color);
+}
+
+body.dark-mode #sobre-e-experiencia {
+    background-color: #121212;
+}
+
+body:not(.dark-mode) #sobre-e-experiencia {
+    background-color: var(--background-color);
 }
 
 body.dark-mode strong {
@@ -899,8 +1129,54 @@ body.dark-mode .dark-mode-button .icon-moon {
     opacity: 0;
 }
 
+body.dark-mode .main-footer {
+    padding: 2rem 0;
+    background-color: #1a1a1a;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
 body.dark-mode .dark-mode-button .icon-sun {
     transform: translateY(0) rotate(0deg);
     opacity: 1;
 }
 
+
+@media (max-width: 768px) {
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .courses-table {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .course-row {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .two-column-layout {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .about-column, 
+    .experience-column {
+        width: 100%;
+        flex: none;  
+    }
+    
+    #sobre-e-experiencia .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .button-group .btn {
+        width: 75%;            
+        text-align: center;
+    }
+}
