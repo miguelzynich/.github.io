@@ -26,8 +26,6 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://miguelzynich.github.io/.github.io/images/social-thumb4.png">
 
-
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Gilroy:wght@400;700&display=swap"
@@ -37,7 +35,6 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="pagamentos.css">
-    <link rel="stylesheet" href="bolao.css">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-M2BKP8Y23H"></script>
     <script>
@@ -196,6 +193,52 @@
                         </div>
                     </li>
                 </ul>
+            </div>
+        </section>
+
+        <section class="project-content business-context">
+            <div class="container">
+                <h2>A Lógica Invisível (Back-end & UX)</h2>
+                <p style="margin-bottom: 40px;">
+                    Um checkout robusto não é feito apenas de telas felizes. Meu papel principal foi mapear e desenhar
+                    a resposta do sistema para as falhas de comunicação entre a Caixa e os Gateways (Mercado
+                    Pago/RecargaPay).
+                </p>
+
+                <div class="two-column-layout">
+                    <div class="column">
+                        <h3>⏳ Gestão de Latência (Wait Time)</h3>
+                        <p>APIs bancárias oscilam. Desenhei estados intermediários de <em>"Processando Pagamento"</em>
+                            que educam o usuário sobre a espera, evitando o duplo clique (cobrança duplicada) e
+                            reduzindo
+                            a ansiedade durante o <em>handshake</em> de segurança.</p>
+                    </div>
+                    <div class="column">
+                        <h3>⚠️ Tratamento de Erros Granulares</h3>
+                        <p>Substituímos o genérico "Erro no Pagamento" por feedbacks específicos baseados no código de
+                            retorno da API:
+                            saldo insuficiente, bloqueio de segurança ou falha no gateway. Isso permite que o usuário
+                            saiba
+                            exatamente como corrigir o problema sem abandonar o carrinho.</p>
+                    </div>
+                </div>
+
+                <div class="two-column-layout" style="margin-top: 40px;">
+                    <div class="column">
+                        <h3>🔄 Conciliação de Status</h3>
+                        <p>O maior desafio de negócio: o que acontece quando o dinheiro sai da conta do usuário mas a
+                            lotérica não recebe a confirmação?
+                            Projetei fluxos de "re-tentativa" e comprovantes provisórios para garantir a segurança
+                            jurídica da transação.</p>
+                    </div>
+                    <div class="column">
+                        <h3>📱 Tokenização & Segurança</h3>
+                        <p>Para o fluxo de cartões salvos, a interface foi desenhada considerando as regras de
+                            tokenização.
+                            O desafio foi mascarar dados sensíveis (PCI Compliance) sem dificultar o reconhecimento do
+                            cartão pelo usuário na hora da escolha.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -408,9 +451,6 @@
             </div>
         </section>
 
-
-
-
         <section id="contact">
             <div class="container">
                 <h2 class="section-title">Fale Comigo!</h2>
@@ -425,10 +465,6 @@
             </div>
         </section>
 
-
-
-
-
     </main>
 
     <footer class="main-footer">
@@ -437,8 +473,22 @@
         </div>
     </footer>
 
-
-
+    <div id="imageModal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div class="modal-title-container">
+                    <h3 id="modalTitle">Visualização</h3>
+                    <span id="modalCounter"></span>
+                </div>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image-wrapper">
+                    <img class="modal-content" id="img01" alt="Zoom Content">
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div id="project-overlay" class="overlay">
         <button id="btn-fechar-overlay" aria-label="Fechar menu">

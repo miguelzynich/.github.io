@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bolão Lotérico</title>
+    <title>Bolão Lotérico | Portfólio</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
@@ -23,10 +23,7 @@
     <meta name="twitter:title" content="Bolão | Portfólio - Miguel Zynich">
     <meta name="twitter:description"
         content="UX/UI Designer com 4 anos de experiência e 13 anos como Diretor de Arte, focado em soluções acessíveis e de alto impacto visual.">
-    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://miguelzynich.github.io/.github.io/images/social-thumb4.png">
-
-
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,339 +45,386 @@
     <script src="https://t.contentsquare.net/uxa/734555fce281e.js"></script>
 </head>
 
-<header class="main-header">
-    <div class="container">
+<body>
 
-        <div class="logo">
-            <a href="index.html">MZ</a>
-        </div>
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="back-button" aria-label="Voltar para a página inicial">
+                <i class="fas fa-arrow-left"></i>
+            </a>
 
-        <div class="header-actions">
-
-            <div class="lang-switch-header">
-                <a href="bolao.html" class="lang-link active">PT</a>
-                <span class="divider">|</span>
-                <a href="en/bolao.html" class="lang-link">EN</a>
+            <div class="logo">
+                <a href="index.html">MZ</a>
             </div>
 
-            <button id="btn-menu-projetos" aria-label="Abrir menu">
-                <img src="./images/menu.svg" alt="Menu" class="menu-icon-img">
-            </button>
+            <div class="header-actions">
+                <div class="lang-switch-header">
+                    <a href="bolao.html" class="lang-link active">PT</a>
+                    <span class="divider">|</span>
+                    <a href="en/bolao.html" class="lang-link">EN</a>
+                </div>
 
+                <button id="btn-menu-projetos" aria-label="Abrir menu">
+                    <img src="./images/menu.svg" alt="Menu" class="menu-icon-img">
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="banner-bolao"></section>
+
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav breadcrumb-nav--alt-bg">
+            <div class="container">
+                <ol class="breadcrumb-list">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="index.html#projects">Projetos</a></li>
+                    <li class="breadcrumb-item" aria-current="page">Bolão Lotérico</li>
+                </ol>
+            </div>
+        </nav>
+
+        <section class="project-content">
+            <div class="container">
+                <div class="two-column-layout">
+                    <div class="column">
+                        <h2>Início</h2>
+                        <p>Iniciamos com um onboarding detalhado junto aos Product Owners (POs). Esta fase foi crucial
+                            para absorver a visão do produto, entender os objetivos de negócio por trás da integração
+                            físico-digital dos bolões, definir o escopo inicial e alinhar as expectativas sobre os
+                            desafios e oportunidades do projeto.</p>
+                    </div>
+                    <div class="column">
+                        <h2>Projeto</h2>
+                        <p>Nossa pesquisa mostrou uma forma de deixar a compra de bolões mais prática: conectar a
+                            facilidade da internet com as muitas lotéricas que já existem. Com a nova solução, o
+                            apostador usa sua localização para ver os bolões à venda nas lotéricas da sua vizinhança,
+                            tornando a compra mais rápida e acessível</p>
+                    </div>
+                </div>
+                <div class="two-column-layout">
+                    <div class="column">
+                        <h2>Contexto</h2>
+                        <p>Realizamos uma análise aprofundada de benchmark, investigando soluções similares no mercado
+                            nacional e internacional. Utilizamos imagens e fluxos de interfaces concorrentes para
+                            identificar padrões, boas práticas, pontos fortes e oportunidades de diferenciação, focando
+                            em como outras plataformas lidavam com a conexão entre online e offline.</p>
+                    </div>
+                    <div class="column">
+                        <h2>Teste de usabilidade</h2>
+                        <p>Realizamos testes de usabilidade com usuários representativos do público-alvo, utilizando o
+                            protótipo interativo para coletar feedback sobre a clareza, facilidade de uso e satisfação
+                            geral com a solução proposta. Apresentamos os protótipos e os resultados dos testes aos POs
+                            e stakeholders para refinamento e aprovação.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="problem-section">
+            <div class="container">
+                <h2>Problema</h2>
+                <p>No modelo anterior, qualquer bolão gerado pela Lotérica que não fosse vendido representava um
+                    prejuízo financeiro direto para a própria casa lotérica.</p>
+            </div>
+        </section>
+
+        <section class="project-content business-context">
+            <div class="container">
+                <h2>A Complexidade do Negócio (Bastidores)</h2>
+                <p style="margin-bottom: 40px;">
+                    Para além da interface, este projeto exigiu imersão profunda em regras estatais e limitações
+                    técnicas.
+                    O desafio foi traduzir burocracia em usabilidade sem ferir o compliance da instituição.
+                </p>
+
+                <div class="two-column-layout">
+                    <div class="column">
+                        <h3>🔒 Compliance e Regulação</h3>
+                        <p>Ao contrário de e-commerces comuns, o Bolão Lotérico opera sob <strong>legislação federal
+                                estrita</strong>.
+                            Cada interação do usuário precisou ser validada juridicamente para garantir que a
+                            "digitalização"
+                            não violasse as normas de exclusividade das casas lotéricas físicas.</p>
+                    </div>
+                    <div class="column">
+                        <h3>⚙️ Integração com Legado</h3>
+                        <p>O maior nó técnico foi desenhar uma experiência que conversasse com os <strong>Terminais
+                                Financeiros Lotéricos (TFL)</strong>.
+                            Tivemos que mapear fluxos de erro específicos para quando o sistema legado (offline) não
+                            respondesse
+                            ao app em tempo real, evitando quebras de transação.</p>
+                    </div>
+                </div>
+
+                <div class="two-column-layout" style="margin-top: 40px;">
+                    <div class="column">
+                        <h3>📍 Travas de Geolocalização</h3>
+                        <p>Implementamos regras de negócio baseadas em raio de atuação. O sistema impede a canibalização
+                            de vendas entre lotéricas vizinhas, exigindo lógica complexa de exibição de ofertas baseada
+                            na latitude/longitude do usuário versus o CNPJ da unidade.</p>
+                    </div>
+                    <div class="column">
+                        <h3>📊 Viabilidade Financeira</h3>
+                        <p>Desenhei o painel de controle para os lotéricos considerando a <strong>gestão de
+                                risco</strong>.
+                            A interface precisava deixar claro quais cotas estavam "em aberto" para evitar prejuízo
+                            operacional
+                            para o franqueado caso o bolão não fosse 100% vendido até o sorteio.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="list-section">
+            <div class="container">
+                <h2>O que rolou no projeto.</h2>
+                <ul class="processo-lista">
+                    <li>
+                        <strong>Alinhamento Inicial e Imersão:</strong> Onboarding com os Product Owners (POs) para
+                        definir
+                        escopo, objetivos de negócio e os desafios da integração físico-digital para o Bolão Lotérico.
+                    </li>
+                    <li>
+                        <strong>Benchmark e Análise de Concorrência:</strong> Investigação de soluções de loterias
+                        online
+                        nacionais/internacionais e plataformas com funcionalidades de geolocalização para identificar
+                        boas
+                        práticas, fluxos de usuário e oportunidades de inovação.
+                    </li>
+                    <li>
+                        <strong>Análise da Plataforma Atual:</strong> Mapeamento do fluxo existente no site Loterias
+                        Online
+                        Caixa para
+                        identificar pontos de atrito e áreas de melhoria na busca e compra de bolões.
+                    </li>
+                    <li>
+                        <strong>Mapeamento de Jornada (User Flows):</strong> Definição dos fluxos principais para a nova
+                        funcionalidade,
+                        incluindo o <strong> "caminho feliz" </strong>de encontrar e comprar um bolão próximo, além de
+                        cenários alternativos.
+                    </li>
+                    <li>
+                        <strong>Ideação e Esboços:</strong> Geração de conceitos e soluções focadas na busca por
+                        proximidade, clareza das
+                        informações e simplificação do processo de compra.
+                    </li>
+                    <li>
+                        <strong>Prototipação Interativa:</strong> Criação de wireframes (baixa fidelidade) para
+                        estruturar a
+                        informação e
+                        protótipos navegáveis (alta fidelidade) no Figma para visualizar, testar e validar a experiência
+                        proposta.
+                    </li>
+                    <li>
+                        <strong>Validação com Usuários:</strong> Realização de testes de usabilidade com o protótipo
+                        para coletar feedback direto dos usuários e iterar sobre o design.
+                    </li>
+                    <li>
+                        <strong>Handoff para Desenvolvimento:</strong> Preparação e entrega de especificações visuais,
+                        fluxos documentados,
+                        componentes de UI e assets para a equipe de implementação, garantindo a fidelidade ao design
+                        proposto.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="benchmark-section">
+            <div class="container">
+                <h2>Benchmark</h2>
+                <p>Realizamos uma análise de benchmark comparando a funcionalidade atual do Bolão Caixa com quatro
+                    plataformas de referência, incluindo outras loterias online e serviços que utilizam geolocalização
+                    para conectar usuários a pontos físicos. O objetivo foi identificar as melhores práticas e
+                    oportunidades de inovação em pontos-chave da jornada do usuário...</p>
+
+                <div class="two-column-img">
+                    <div class="column">
+                        <h3>Amazon</h3>
+                        <img src="./images/bolao/bench1.png" alt="Imagem da página inicial da Amazon"
+                            class="zoomable-image">
+                    </div>
+                    <div class="column">
+                        <h3>Mega Loterias</h3>
+                        <img src="./images/bolao/bench2.png" alt="Imagem da página inicial do Mega Loterias"
+                            class="zoomable-image">
+                    </div>
+                    <div class="column">
+                        <h3>TuLotero</h3>
+                        <img src="./images/bolao/bench3.png"
+                            alt="Imagem da página inicial do site internacional TuLotero" class="zoomable-image">
+                    </div>
+                    <div class="column">
+                        <h3>Sorte Online</h3>
+                        <img src="./images/bolao/bench4.png" alt="Imagem da página inicial da Sorte Online"
+                            class="zoomable-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="userflow-section">
+            <div class="container">
+                <h2>UserFlow</h2>
+                <p>Utilizamos User Flows para mapear visualmente os passos que o usuário percorreria para
+                    encontrar e comprar um bolão próximo. Isso nos permitiu visualizar toda a jornada,
+                    identificar os pontos de decisão chave e garantir que o fluxo fosse o mais claro e intuitivo
+                    possível.</p>
+                <img src="./images/bolao/user-flow.png " alt="User flow do bolão" class="zoomable-image">
+            </div>
+        </section>
+
+        <section class="wireframe-display-section">
+            <div class="container">
+                <h2>Wireframe de baixa fidelidade</h2>
+                <p>Esta primeira versão do wireframe de baixa fidelidade foca exclusivamente na estrutura da informação
+                    e no fluxo principal do usuário. O objetivo aqui foi estabelecer a arquitetura e a navegação
+                    essenciais, livre das distrações do design visual, garantindo uma base sólida para a experiência.
+                </p>
+                <img src="./images/bolao/wire-baixa.png"
+                    alt="Imagem mostra os wireframes de baixa fidelidade alinhados um do lado do outro"
+                    class="zoomable-image">
+            </div>
+        </section>
+
+        <section class="wireframe-display-section">
+            <div class="container">
+                <h2>Wireframe de Alta fidelidade</h2>
+                <p>Avançando da estrutura validada nos wireframes de baixa fidelidade, a versão de alta fidelidade
+                    incorpora a camada visual completa do produto. Nesta fase, aplicamos a identidade visual definida
+                    (cores, tipografia, componentes) para criar uma representação fiel da interface final...</p>
+                <p><strong>Importante:</strong> As telas apresentadas são um exemplo representativo. O projeto completo
+                    abrangeu os
+                    fluxos de todas as modalidades de loterias, incluindo variações para eventos sazonais como a
+                    mega-sena da virada, garantindo consistência em toda a plataforma.
+                </p>
+                <img src="./images/bolao/wire-alta.png"
+                    alt="Imagem mostra os wireframes de alta fidelidade alinhados um do lado do outro"
+                    class="zoomable-image">
+            </div>
+        </section>
+
+        <section class="wireframe-display-section">
+            <div class="container">
+                <h2>Mobile</h2>
+                <p>Considerando que a maioria dos usuários acessa a plataforma via celular, a experiência mobile foi uma
+                    prioridade estratégica. Todos os fluxos de alta fidelidade foram adaptados para dispositivos móveis,
+                    focando em uma navegação intuitiva, componentes de toque claros e legibilidade total, garantindo que
+                    o usuário pudesse completar uma aposta de forma rápida e acessível em qualquer tela.</p>
+                <img src="./images/bolao/mobile.png" alt="Imagem mostra os wireframes da versão mobile"
+                    class="zoomable-image">
+            </div>
+        </section>
+
+        <section class="mobile-gallery-section">
+            <div class="container ">
+                <h2>Algumas telas mobile</h2>
+                <div class="mobile-gallery-grid">
+                    <div class="gallery-unit">
+                        <p class="gallery-label">Tela Inicial</p>
+                        <div class="gallery-item">
+                            <img src="./images/bolao/tela_1.png" alt="Tela do aplicativo +milionária"
+                                class="zoomable-image">
+                        </div>
+                    </div>
+                    <div class="gallery-unit">
+                        <p class="gallery-label">Seleção de Bolão</p>
+                        <div class="gallery-item">
+                            <img src="./images/bolao/tela_2.png" alt="Mockup da tela de seleção de bolão"
+                                class="zoomable-image">
+                        </div>
+                    </div>
+                    <div class="gallery-unit">
+                        <p class="gallery-label">Detalhe do Jogo</p>
+                        <div class="gallery-item">
+                            <img src="./images/bolao/tela_3.png" alt="Mockup da tela de detalhe do jogo"
+                                class="zoomable-image">
+                        </div>
+                    </div>
+                    <div class="gallery-unit">
+                        <p class="gallery-label">Filtros</p>
+                        <div class="gallery-item">
+                            <img src="./images/bolao/tela_4.png" alt="Mockup da tela de filtros de aposta"
+                                class="zoomable-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wireframe-display-section">
+            <div class="container">
+                <h2>Teste de Usabilidade</h2>
+                <p>Nenhuma solução de UX está completa sem validação. Para garantir que a nova jornada de compra era
+                    intuitiva, conduzimos testes de usabilidade que simularam todo o fluxo. Os insights coletados foram
+                    cruciais para refinar detalhes da interface e confirmar que a conexão entre o app e a lotérica
+                    física estava clara para o usuário.
+                </p>
+                <img src="./images/bolao/teste-usabilidade.png"
+                    alt="Imagem mostra os wireframes de alta fidelidade alinhados um do lado do outro"
+                    class="zoomable-image">
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title ">Fale Comigo!</h2>
+                <p>Se você tem uma ideia, uma vaga ou só quer trocar uma figurinha, me manda uma mensagem.</p>
+                <div class="button-group">
+                    <a href="mailto:miguelzynich@gmail.com" class="btn">E-mail</a>
+                    <a href="https://www.linkedin.com/in/miguelzynich/" class="btn" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://wa.me/5193072515" class="btn" target="_blank"
+                        rel="noopener noreferrer">Whatsapp</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container text-center">
+            <p>@miguelzynich - 01/26</p>
+        </div>
+    </footer>
+
+    <div id="imageModal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div class="modal-title-container">
+                    <h3 id="modalTitle">Visualização</h3>
+                    <span id="modalCounter"></span>
+                </div>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image-wrapper">
+                    <img class="modal-content" id="img01" alt="Zoom Content">
+                </div>
+            </div>
         </div>
     </div>
-</header>
-<main>
-    <section class="banner-bolao"></section>
 
-    <nav aria-label="Breadcrumb" class="breadcrumb-nav breadcrumb-nav--alt-bg">
-        <div class="container">
-            <ol class="breadcrumb-list">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item"><a href="index.html#projects">Projetos</a></li>
-                <li class="breadcrumb-item" aria-current="page">Bolão Lotérico</li>
-            </ol>
-        </div>
-    </nav>
+    <div id="project-overlay" class="overlay">
+        <button id="btn-fechar-overlay" aria-label="Fechar menu">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
 
-
-
-
-    <section class="project-content">
-        <div class="container">
-            <div class="two-column-layout">
-                <div class="column">
-                    <h2>Início</h2>
-                    <p>Iniciamos com um onboarding detalhado junto aos Product Owners (POs). Esta fase foi crucial
-                        para absorver a visão do produto, entender os objetivos de negócio por trás da integração
-                        físico-digital dos bolões, definir o escopo inicial e alinhar as expectativas sobre os
-                        desafios e oportunidades do projeto.</p>
-                </div>
-                <div class="column">
-                    <h2>Projeto</h2>
-                    <p>Nossa pesquisa mostrou uma forma de deixar a compra de bolões mais prática: conectar a
-                        facilidade da internet com as muitas lotéricas que já existem. Com a nova solução, o
-                        apostador usa sua localização para ver os bolões à venda nas lotéricas da sua vizinhança,
-                        tornando a compra mais rápida e acessível</p>
-                </div>
-            </div>
-            <div class="two-column-layout">
-                <div class="column">
-                    <h2>Contexto</h2>
-                    <p>Realizamos uma análise aprofundada de benchmark, investigando soluções similares no mercado
-                        nacional e internacional. Utilizamos imagens e fluxos de interfaces concorrentes para
-                        identificar padrões, boas práticas, pontos fortes e oportunidades de diferenciação, focando
-                        em como outras plataformas lidavam com a conexão entre online e offline.</p>
-                </div>
-                <div class="column">
-                    <h2>Teste de usabilidade</h2>
-                    <p>Realizamos testes de usabilidade com usuários representativos do público-alvo, utilizando o
-                        protótipo interativo para coletar feedback sobre a clareza, facilidade de uso e satisfação
-                        geral com a solução proposta. Apresentamos os protótipos e os resultados dos testes aos POs
-                        e
-                        stakeholders para refinamento e aprovação.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="problem-section">
-        <div class="container">
-            <h2>Problema</h2>
-            <p>No modelo anterior, qualquer bolão gerado pela Lotérica que não fosse vendido representava um
-                prejuízo financeiro direto para a própria casa lotérica.</p>
-        </div>
-    </section>
-
-    <section class="list-section ">
-        <div class="container">
-            <h2>O que rolou no projeto.</h2>
-
-            <ul class="processo-lista">
-                <li>
-                    <strong>Alinhamento Inicial e Imersão:</strong> Onboarding com os Product Owners (POs) para
-                    definir
-                    escopo, objetivos de negócio e os desafios da integração físico-digital para o Bolão Lotérico.
-                </li>
-                <li>
-                    <strong>Benchmark e Análise de Concorrência:</strong> Investigação de soluções de loterias
-                    online
-                    nacionais/internacionais e plataformas com funcionalidades de geolocalização para identificar
-                    boas
-                    práticas, fluxos de usuário e oportunidades de inovação.
-                </li>
-                <li>
-                    <strong>Análise da Plataforma Atual:</strong> Mapeamento do fluxo existente no site Loterias
-                    Online
-                    Caixa para
-                    identificar pontos de atrito e áreas de melhoria na busca e compra de bolões.
-                </li>
-                <li>
-                    <strong>Mapeamento de Jornada (User Flows):</strong> Definição dos fluxos principais para a nova
-                    funcionalidade,
-                    incluindo o <strong> "caminho feliz" </strong>de encontrar e comprar um bolão próximo, além de
-                    cenários alternativos.
-                </li>
-                <li>
-                    <strong>Ideação e Esboços:</strong> Geração de conceitos e soluções focadas na busca por
-                    proximidade, clareza das
-                    informações e simplificação do processo de compra.
-                </li>
-                <li>
-                    <strong>Prototipação Interativa:</strong> Criação de wireframes (baixa fidelidade) para
-                    estruturar a
-                    informação e
-                    protótipos navegáveis (alta fidelidade) no Figma para visualizar, testar e validar a experiência
-                    proposta.
-                </li>
-                <li>
-                    <strong>Validação com Usuários:</strong> Realização de testes de usabilidade com o protótipo
-                    para coletar feedback direto dos usuários e iterar sobre o design.
-                </li>
-                <li>
-                    <strong>Handoff para Desenvolvimento:</strong> Preparação e entrega de especificações visuais,
-                    fluxos documentados,
-                    componentes de UI e assets para a equipe de implementação, garantindo a fidelidade ao design
-                    proposto.
-                </li>
+        <nav class="overlay-menu">
+            <ul>
+                <li><a href="pagamentos.html" class="menu-link">Pagamentos</a></li>
+                <li><a href="cores.html" class="menu-link">Cores das Modalidade</a></li>
+                <li><a href="yuca.html" class="menu-link">Yuca</a></li>
+                <li><a href="vortigo.html" class="menu-link">Vortigo</a></li>
+                <li><a href="index.html#sobre-e-experiencia" class="menu-link"> Sobre</a></li>
             </ul>
-        </div>
-    </section>
-
-    <section class="benchmark-section">
-        <div class="container">
-            <h2>Benchmark</h2>
-            <p>Realizamos uma análise de benchmark comparando a funcionalidade atual do Bolão Caixa com quatro
-                plataformas de referência, incluindo outras loterias online e serviços que utilizam geolocalização
-                para conectar usuários a pontos físicos. O objetivo foi identificar as melhores práticas e
-                oportunidades de inovação em pontos-chave da jornada do usuário...</p>
-
-            <div class="two-column-img">
-                <div class="column">
-                    <h3>Amazon</h3>
-                    <img src="./images/bolao/bench1.png" alt="Imagem da página inicial da Amazon">
-                </div>
-                <div class="column">
-                    <h3>Mega Loterias</h3>
-                    <img src="./images/bolao/bench2.png" alt="Imagem da página inicial do Mega Loterias">
-                </div>
-                <div class="column">
-                    <h3>TuLotero</h3>
-                    <img src="./images/bolao/bench3.png" alt="Imagem da página inicial do site internacional TuLotero">
-                </div>
-                <div class="column">
-                    <h3>Sorte Online</h3>
-                    <img src="./images/bolao/bench4.png" alt="Imagem da página inicial da Sorte Online">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="userflow-section">
-        <div class="container">
-            <h2>UserFlow</h2>
-            <p>Utilizamos User Flows para mapear visualmente os passos que o usuário percorreria para
-                encontrar e comprar um bolão próximo. Isso nos permitiu visualizar toda a jornada,
-                identificar os pontos de decisão chave e garantir que o fluxo fosse o mais claro e intuitivo
-                possível.</p>
-            <img src="./images/bolao/user-flow.png " alt="User flow do bolão" class="zoomable-image"
-                alt="Imagem com o caminho do site de página em página, em um mapa visual">
-        </div>
-    </section>
-
-    <section class="wireframe-display-section">
-        <div class="container">
-            <h2>Wireframe de baixa fidelidade</h2>
-            <p>Esta primeira versão do wireframe de baixa fidelidade foca exclusivamente na estrutura da informação
-                e no fluxo principal do usuário. O objetivo aqui foi estabelecer a arquitetura e a navegação
-                essenciais, livre das distrações do design visual, garantindo uma base sólida para a experiência.
-            </p>
-            <img src="./images/bolao/wire-baixa.png"
-                alt="Imagem mostra os wireframes de baixa fidelidade alinhados um do lado do outro"
-                class="zoomable-image">
-        </div>
-    </section>
-
-    <section class="wireframe-display-section">
-        <div class="container">
-            <h2>Wireframe de Alta fidelidade</h2>
-            <p>Avançando da estrutura validada nos wireframes de baixa fidelidade, a versão de alta fidelidade
-                incorpora a camada visual completa do produto. Nesta fase, aplicamos a identidade visual definida
-                (cores, tipografia, componentes) para criar uma representação fiel da interface final...</p>
-            <p><strong>Importante:</strong> As telas apresentadas são um exemplo representativo. O projeto completo
-                abrangeu os
-                fluxos de todas as modalidades de loterias, incluindo variações para eventos sazonais como a
-                mega-sena da virada, garantindo consistência em toda a plataforma.
-            </p>
-            <img src="./images/bolao/wire-alta.png"
-                alt="Imagem mostra os wireframes de alta fidelidade alinhados um do lado do outro"
-                class="zoomable-image">
-        </div>
-    </section>
-
-    <section class="wireframe-display-section">
-        <div class="container">
-            <h2>Mobile</h2>
-            <p>Considerando que a maioria dos usuários acessa a plataforma via celular, a experiência mobile foi uma
-                prioridade estratégica. Todos os fluxos de alta fidelidade foram adaptados para dispositivos móveis,
-                focando em uma navegação intuitiva, componentes de toque claros e legibilidade total, garantindo que
-                o usuário pudesse completar uma aposta de forma rápida e acessível em qualquer tela.</p>
-            <img src="./images/bolao/mobile.png" alt="Imagem mostra os wireframes da versão mobile"
-                class="zoomable-image">
-        </div>
-    </section>
-
-
-
-    <section class="mobile-gallery-section">
-        <div class="container ">
-            <h2>Algumas telas mobile</h2>
-
-            <div class="mobile-gallery-grid">
-
-                <div class="gallery-unit">
-                    <p class="gallery-label">Tela Inicial</p>
-                    <div class="gallery-item">
-                        <img src="./images/bolao/tela_1.png" alt="Tela do aplicativo +milionária">
-                    </div>
-                </div>
-
-                <div class="gallery-unit">
-                    <p class="gallery-label">Seleção de Bolão</p>
-                    <div class="gallery-item">
-                        <img src="./images/bolao/tela_2.png" alt="Mockup da tela de seleção de bolão">
-                    </div>
-                </div>
-
-                <div class="gallery-unit">
-                    <p class="gallery-label">Detalhe do Jogo</p>
-                    <div class="gallery-item">
-                        <img src="./images/bolao/tela_3.png" alt="Mockup da tela de detalhe do jogo">
-                    </div>
-                </div>
-
-                <div class="gallery-unit">
-                    <p class="gallery-label">Filtros</p>
-                    <div class="gallery-item">
-                        <img src="./images/bolao/tela_4.png" alt="Mockup da tela de filtros de aposta">
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="wireframe-display-section">
-        <div class="container">
-            <h2>Teste de Usabilidade</h2>
-            <p>Nenhuma solução de UX está completa sem validação. Para garantir que a nova jornada de compra era
-                intuitiva, conduzimos testes de usabilidade que simularam todo o fluxo. Os insights coletados foram
-                cruciais para refinar detalhes da interface e confirmar que a conexão entre o app e a lotérica
-                física estava clara para o usuário.
-            </p>
-            <img src="./images/bolao/teste-usabilidade.png"
-                alt="Imagem mostra os wireframes de alta fidelidade alinhados um do lado do outro"
-                class="zoomable-image">
-        </div>
-    </section>
-
-
-
-
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title ">Fale Comigo!</h2>
-            <p>Se você tem uma ideia, uma vaga ou só quer trocar uma figurinha, me manda uma mensagem.</p>
-            <div class="button-group">
-                <a href="mailto:miguelzynich@gmail.com" class="btn">E-mail</a>
-                <a href="https://www.linkedin.com/in/miguelzynich/" class="btn" target="_blank"
-                    rel="noopener noreferrer">LinkedIn</a>
-                <a href="https://wa.me/5193072515" class="btn" target="_blank" rel="noopener noreferrer">Whatsapp</a>
-            </div>
-        </div>
-    </section>
-</main>
-
-<footer class="main-footer">
-    <div class="container text-center">
-        <p>@miguelzynich - 01/26</p>
+        </nav>
     </div>
-</footer>
 
-
-<div id="imageModal" class="modal-overlay">
-    <span class="modal-close">&times;</span>
-    <div class="modal-inner-wrapper">
-        <img class="modal-content" alt="a imagem contém um fluxo de telas no programa de design Figma" id="modalImage">
-    </div>
-</div>
-
-
-
-<div id="project-overlay" class="overlay">
-    <button id="btn-fechar-overlay" aria-label="Fechar menu">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-    </button>
-
-    <nav class="overlay-menu">
-        <ul>
-            <li><a href="pagamentos.html" class="menu-link">Pagamentos</a></li>
-            <li><a href="cores.html" class="menu-link">Cores das Modalidade</a></li>
-            <li><a href="yuca.html" class="menu-link">Yuca</a></li>
-            <li><a href="vortigo.html" class="menu-link">Vortigo</a></li>
-            <li><a href="index.html#sobre-e-experiencia" class="menu-link"> Sobre</a></li>
-        </ul>
-    </nav>
-</div>
-
-
-
-<script src="main.js"></script>
+    <script src="main.js"></script>
 
 </body>
 

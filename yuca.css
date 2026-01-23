@@ -1118,6 +1118,16 @@ body.dark-mode {
     --light-gray-bg: #1E1E1E;
 }
 
+body.dark-mode .breadcrumb-item,
+body.dark-mode .breadcrumb-item a {
+    color: #ffffff !important;
+}
+
+/* Ajusta a cor do separador (a barra /) se houver */
+body.dark-mode .breadcrumb-item::before {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
 body.dark-mode .main-header {
     background-color: #1E1E1E;
 }

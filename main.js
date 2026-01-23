@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-
+    
+    // --- Lógica de Tema e Layout Geral (Mantida) ---
     const body = document.body;
     let darkModeToggle;
 
@@ -13,46 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', 'light');
     };
 
-function injetarBotaoVoltar() {
-    const headerContainer = document.querySelector('.main-header .container');
-
-    const path = window.location.pathname;
-    if (path.endsWith('/') || path.endsWith('index.html')) {
-        return;
-    }
-
-    if (headerContainer) {
-        const backButton = document.createElement('a');
-        backButton.href = 'index.html'; // Fallback padrão
-        backButton.className = 'back-button';
-        backButton.setAttribute('aria-label', 'Voltar para a página inicial');
-
-        backButton.addEventListener('click', (e) => {
-            if (document.referrer && document.referrer.includes(window.location.hostname)) {
-                e.preventDefault(); 
-                history.back();     
-            }
-        });
-
-        const icon = document.createElement('i');
-        icon.className = 'fas fa-arrow-left';
-        backButton.appendChild(icon);
-
-        headerContainer.prepend(backButton);
-    }
-}
-
-// Não esqueça de chamar a função quando a página carregar
-document.addEventListener('DOMContentLoaded', injetarBotaoVoltar);
-    // --- Função para Injetar o Botão de Dark Mode ---
     function injetarBotaoDarkMode() {
         if (document.getElementById('darkModeToggle')) return;
-
         const button = document.createElement('button');
         button.id = 'darkModeToggle';
         button.className = 'dark-mode-button';
         button.setAttribute('aria-label', 'Alternar Tema');
-
         const iconSun = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         iconSun.classList.add('icon-sun');
         iconSun.setAttribute('viewBox', '0 0 24 24');
@@ -62,7 +29,6 @@ document.addEventListener('DOMContentLoaded', injetarBotaoVoltar);
         iconSun.setAttribute('stroke-linecap', 'round');
         iconSun.setAttribute('stroke-linejoin', 'round');
         iconSun.innerHTML = `<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>`;
-
         const iconMoon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         iconMoon.classList.add('icon-moon');
         iconMoon.setAttribute('viewBox', '0 0 24 24');
@@ -72,19 +38,93 @@ document.addEventListener('DOMContentLoaded', injetarBotaoVoltar);
         iconMoon.setAttribute('stroke-linecap', 'round');
         iconMoon.setAttribute('stroke-linejoin', 'round');
         iconMoon.innerHTML = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>`;
-
         button.appendChild(iconSun);
         button.appendChild(iconMoon);
-
         document.body.appendChild(button);
-
         darkModeToggle = button;
-
         darkModeToggle.addEventListener('click', () => {
-            if (body.classList.contains('dark-mode')) {
-                disableDarkMode(); // <-- Agora vai achar
-            } else {
-                enableDarkMode(); // <-- Agora vai achar
+            if (body.classList.contains('dark-mode')) { disableDarkMode(); } else { enableDarkMode(); }
+        });
+    }
+    injetarBotaoDarkMode();
+
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) { enableDarkMode(); } else { disableDarkMode(); }
+
+    function injetarBotaoVoltar() {
+        const headerContainer = document.querySelector('.main-header .container');
+        const path = window.location.pathname;
+        const isEnglish = path.includes('/en/');
+        if (path.endsWith('/') || path.endsWith('index.html')) return;
+        if (headerContainer && !document.querySelector('.back-button')) {
+            const backButton = document.createElement('a');
+            backButton.href = 'index.html';
+            backButton.className = 'back-button';
+            const labelText = isEnglish ? 'Back to Home' : 'Voltar para a página inicial';
+            backButton.setAttribute('aria-label', labelText);
+            const icon = document.createElement('i');
+            icon.className = 'fas fa-arrow-left'; 
+            backButton.appendChild(icon);
+            backButton.addEventListener('click', (e) => {
+                if (document.referrer && document.referrer.includes(window.location.hostname)) {
+                    e.preventDefault();
+                    history.back();
+                }
+            });
+            headerContainer.prepend(backButton);
+        }
+    }
+    injetarBotaoVoltar();
+
+    const btnMenu = document.getElementById('btn-menu-projetos');
+    const btnFechar = document.getElementById('btn-fechar-overlay');
+    const overlay = document.getElementById('project-overlay');
+    const links = document.querySelectorAll('.menu-link');
+    function toggleMenu() {
+        if (!overlay) return;
+        const estaAberto = overlay.classList.contains('active');
+        if (estaAberto) { overlay.classList.remove('active'); document.body.style.overflow = ''; } else { overlay.classList.add('active'); document.body.style.overflow = 'hidden'; }
+    }
+    if (btnMenu) btnMenu.addEventListener('click', (e) => { e.preventDefault(); toggleMenu(); });
+    if (btnFechar) btnFechar.addEventListener('click', toggleMenu);
+    links.forEach(link => link.addEventListener('click', toggleMenu));
+
+    const observerOptions = { root: null, rootMargin: '0px 0px -100px 0px', threshold: 0.1 };
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('scroll-visible');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    document.querySelectorAll('.scroll-hidden').forEach((el) => observer.observe(el));
+
+    const btnExpand = document.getElementById('btn-load-more-projects');
+    const gridProjects = document.querySelector('.project-grid');
+    const projectSection = document.getElementById('projects');
+    if (btnExpand && gridProjects) {
+        btnExpand.addEventListener('click', function () {
+            const isOpen = gridProjects.classList.toggle('is-open');
+            btnExpand.textContent = isOpen ? '-' : '+';
+            if (!isOpen && projectSection) {
+                const targetPos = projectSection.getBoundingClientRect().top + window.pageYOffset - 80;
+                window.scrollTo({ top: targetPos, behavior: 'smooth' });
+            }
+        });
+    }
+
+    const btnCerts = document.getElementById('btn-load-more-certs');
+    const listCerts = document.querySelector('.courses-table');
+    const certSection = document.getElementById('certifications');
+    if (btnCerts && listCerts) {
+        btnCerts.addEventListener('click', function () {
+            const isOpen = listCerts.classList.toggle('is-open');
+            btnCerts.textContent = isOpen ? '-' : '+';
+            if (!isOpen && certSection) {
+                const targetPos = certSection.getBoundingClientRect().top + window.pageYOffset - 80;
+                window.scrollTo({ top: targetPos, behavior: 'smooth' });
             }
         });
     }
@@ -92,360 +132,16 @@ document.addEventListener('DOMContentLoaded', injetarBotaoVoltar);
     const openCvBtn = document.getElementById('openCvModalBtn');
     const closeCvBtn = document.getElementById('closeCvModalBtn');
     const cvOverlay = document.getElementById('cvModalOverlay');
-
-    if (openCvBtn && cvOverlay) {
-        openCvBtn.addEventListener('click', (event) => {
-            event.preventDefault();
-            cvOverlay.classList.add('visible');
-        });
-    }
-    if (closeCvBtn && cvOverlay) {
-        closeCvBtn.addEventListener('click', () => {
-            cvOverlay.classList.remove('visible');
-        });
-    }
-
+    if (openCvBtn && cvOverlay) { openCvBtn.addEventListener('click', (e) => { e.preventDefault(); cvOverlay.classList.add('visible'); }); }
+    if (closeCvBtn && cvOverlay) { closeCvBtn.addEventListener('click', () => { cvOverlay.classList.remove('visible'); }); }
     if (cvOverlay) {
-        cvOverlay.addEventListener('click', (event) => {
-            if (event.target === cvOverlay) {
-                cvOverlay.classList.remove('visible');
-            }
-        });
-
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && cvOverlay.classList.contains('visible')) {
-                cvOverlay.classList.remove('visible');
-            }
-        });
+        cvOverlay.addEventListener('click', (e) => { if (e.target === cvOverlay) cvOverlay.classList.remove('visible'); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') cvOverlay.classList.remove('visible'); });
     }
 
-    // --- FUNÇÃO: INJETAR PROJETOS RECOMENDADOS ---
-    async function injetarProjetosRecomendados() {
-        const currentPage = window.location.pathname;
-        const footer = document.querySelector('#contact');
-
-        if ((currentPage.endsWith('/') || currentPage.endsWith('index.html')) || !footer) {
-            return;
-        }
-
-        try {
-            const response = await fetch('index.html');
-            if (!response.ok) return;
-            const htmlText = await response.text();
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(htmlText, 'text/html');
-            const projectCards = doc.querySelectorAll('#projects .project-card');
-
-            let projects = [];
-            projectCards.forEach(card => {
-                const link = card;
-                const img = card.querySelector('img');
-
-                if (link && img) {
-                    const projectPath = link.getAttribute('href');
-                    if (projectPath && !currentPage.endsWith(projectPath)) {
-                        projects.push({
-                            href: projectPath,
-                            imgSrc: img.getAttribute('src'),
-                            alt: img.getAttribute('alt')
-                        });
-                    }
-                }
-            });
-
-            if (projects.length > 0) {
-                projects.sort(() => 0.5 - Math.random());
-                const projectsToShow = projects.slice(0, 2);
-                const section = document.createElement('section');
-                section.className = 'recommended-projects';
-
-                let projectsHTML = '<div class="container">';
-                projectsHTML += '<h2 class="section-title">Outros Projetos</h2>';
-                projectsHTML += '<div class="project-grid">';
-
-                projectsToShow.forEach(project => {
-                    projectsHTML += `
-                        <a href="${project.href}" class="project-card" aria-label="Ver projeto">
-                            <div class="project-image-wrapper">
-                                <img src="${project.imgSrc}" alt="${project.alt}">
-                            </div>
-                        </a>
-                    `;
-                });
-
-                projectsHTML += '</div></div>';
-                section.innerHTML = projectsHTML;
-                footer.before(section);
-            }
-        } catch (error) {
-            console.error('Erro ao carregar projetos recomendados:', error);
-        }
-    }
-
-    var modal = document.getElementById("imageModal");
-
-    if (modal) {
-        var modalImg = document.getElementById("modalImage");
-        var images = document.querySelectorAll(".zoomable-image");
-        var span = document.getElementsByClassName("modal-close")[0];
-
-        var currentScale = 1;
-        var currentX = 0;
-        var currentY = 0;
-        var isDragging = false;
-        var startX, startY;
-        var baseImgWidth, baseImgHeight;
-
-        function applyTransform() {
-            modalImg.style.transform = `translate(-50%, -50%) translate(${currentX}px, ${currentY}px) scale(${currentScale})`;
-        }
-
-        function clampPan() {
-            const viewportWidth = modal.clientWidth;
-            const viewportHeight = modal.clientHeight;
-            const zoomedWidth = baseImgWidth * currentScale;
-            const zoomedHeight = baseImgHeight * currentScale;
-
-            const boundaryX = Math.max(0, (zoomedWidth - viewportWidth) / 2);
-            const boundaryY = Math.max(0, (zoomedHeight - viewportHeight) / 2);
-
-            currentX = Math.max(-boundaryX, Math.min(boundaryX, currentX));
-            currentY = Math.max(-boundaryY, Math.min(boundaryY, currentY));
-        }
-
-        images.forEach(function (img) {
-            img.onclick = function () {
-                modal.style.display = "block";
-                modalImg.src = this.src;
-
-                modalImg.onload = () => {
-                    baseImgWidth = modalImg.offsetWidth;
-                    baseImgHeight = modalImg.offsetHeight;
-                    currentScale = 1;
-                    currentX = 0;
-                    currentY = 0;
-                    applyTransform();
-                    modalImg.addEventListener('wheel', handleZoom);
-                    modalImg.addEventListener('mousedown', handleMouseDown);
-                    modalImg.addEventListener('mouseup', handleMouseUp);
-                    modalImg.addEventListener('mousemove', handleMouseMove);
-                    modalImg.addEventListener('mouseleave', handleMouseUp);
-                }
-            }
-        });
-
-        function closeModal() {
-            modal.style.display = "none";
-            modalImg.removeEventListener('wheel', handleZoom);
-            modalImg.removeEventListener('mousedown', handleMouseDown);
-            modalImg.removeEventListener('mouseup', handleMouseUp);
-            modalImg.removeEventListener('mousemove', handleMouseMove);
-            modalImg.removeEventListener('mouseleave', handleMouseUp);
-            modalImg.onload = null;
-        }
-
-        span.onclick = closeModal;
-        modal.onclick = function (event) {
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && modal.style.display === 'block') {
-                closeModal();
-            }
-        });
-
-        function handleZoom(event) {
-            event.preventDefault();
-            const scaleFactor = 1.1;
-
-            if (event.deltaY < 0) { 
-                currentScale *= scaleFactor;
-            } else {
-                currentScale /= scaleFactor;
-            }
-            currentScale = Math.max(1, Math.min(currentScale, 5));
-
-            if (currentScale === 1) {
-                currentX = 0;
-                currentY = 0;
-            }
-
-            clampPan();
-            applyTransform();
-        }
-
-        function handleMouseDown(event) {
-            if (currentScale === 1) return; 
-
-            isDragging = true;
-            modalImg.classList.add('dragging');
-            startX = event.clientX - currentX;
-            startY = event.clientY - currentY;
-            event.preventDefault();
-        }
-
-        function handleMouseUp() {
-            isDragging = false;
-            modalImg.classList.remove('dragging');
-        }
-
-        function handleMouseMove(event) {
-            if (!isDragging) return;
-            event.preventDefault();
-            currentX = event.clientX - startX;
-            currentY = event.clientY - startY;
-
-            clampPan();
-            applyTransform();
-        }
-    } 
-
-
-
-    injetarBotaoVoltar();
-    injetarBotaoDarkMode();
-    injetarProjetosRecomendados();
-
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-        enableDarkMode();
-    } else {
-        disableDarkMode();
-    }
-
-})
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    // Configuração do Observador
-    const observerOptions = {
-        root: null,     
-        rootMargin: '0px 0px -250px 0px',    
-        threshold: 0.1   
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('scroll-visible');
-
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    // Seleciona tudo que tem a classe .scroll-hidden e manda vigiar
-    const hiddenElements = document.querySelectorAll('.scroll-hidden');
-    hiddenElements.forEach((el) => observer.observe(el));
-})     
-
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    console.log("Main.js carregado com sucesso!");
-
-    // 1. Pegando os elementos pelo ID
-    const btnMenu = document.getElementById('btn-menu-projetos');
-    const btnFechar = document.getElementById('btn-fechar-overlay');
-    const overlay = document.getElementById('project-overlay');
-    const links = document.querySelectorAll('.menu-link');
-
-    // 2. Verificação de Segurança (Debug)
-    if (!btnMenu) {
-        console.error("ERRO CRÍTICO: Não achei o botão de abrir! Verifique se o ID 'btn-menu-projetos' está no <button> do Header.");
-        return; // Para o código aqui se não achar o botão
-    }
-    
-    if (!overlay) {
-        console.error("ERRO: Não achei a div do overlay.");
-        return;
-    }
-
-    function toggleMenu() {
-        const estaAberto = overlay.classList.contains('active');
-        
-        if (estaAberto) {
-            overlay.classList.remove('active');
-            document.body.style.overflow = ''; // Destrava o scroll
-        } else {
-            overlay.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Trava o scroll
-        }
-    }
-
-    btnMenu.addEventListener('click', (e) => {
-        e.preventDefault();
-        toggleMenu();
-    });
-
-    if (btnFechar) {
-        btnFechar.addEventListener('click', toggleMenu);
-    }
-
-    links.forEach(link => {
-        link.addEventListener('click', toggleMenu);
-    });
-});
-
-function injetarBotaoVoltar() {
-    const headerContainer = document.querySelector('.main-header .container');
-    const path = window.location.pathname;
-    
-    const isEnglish = path.includes('/en/');
-
-    if (path.endsWith('/') || path.endsWith('index.html')) return;
-
-    if (headerContainer) {
-        const backButton = document.createElement('a');
-        
-        backButton.href = 'index.html'; 
-        
-        backButton.className = 'back-button';
-        
-        const labelText = isEnglish ? 'Back to Home' : 'Voltar para a página inicial';
-        backButton.setAttribute('aria-label', labelText);
-
-        backButton.innerHTML = '<i class="fas fa-arrow-left"></i>'; 
-
-        backButton.addEventListener('click', (e) => {
-            if (document.referrer && document.referrer.includes(window.location.hostname)) {
-                e.preventDefault();
-                history.back();
-            }
-        });
-
-        headerContainer.prepend(backButton);
-    }
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    const btn = document.getElementById('btn-load-more-projects');
-    const grid = document.querySelector('.project-grid');
-    const projectSection = document.getElementById('projects');
-
-    if (btn && grid) {
-        btn.addEventListener('click', function() {
-            const isOpen = grid.classList.toggle('is-open');
-            btn.textContent = isOpen ? '-' : '+';
-
-            if (!isOpen) {
-                const targetPos = projectSection.getBoundingClientRect().top + window.pageYOffset - 80;
-
-                window.scrollTo({
-                    top: targetPos,
-                    behavior: 'smooth'
-                });
-
-            }
-        });
-    }
-});document.addEventListener('DOMContentLoaded', function() {
-    // Referências aos elementos
+    // =======================================================
+    //  MODAL DE ZOOM COM ARRASTO CENTRALIZADO (Vibe Coding Fix)
+    // =======================================================
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("img01");
     const modalWrapper = document.querySelector(".modal-image-wrapper");
@@ -454,110 +150,239 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeBtn = document.querySelector(".modal-close");
     const prevBtn = document.querySelector(".modal-prev");
     const nextBtn = document.querySelector(".modal-next");
+    const btnZoomIn = document.getElementById("btnZoomIn");
+    const btnZoomOut = document.getElementById("btnZoomOut");
 
-    // Coleta as imagens da página
     const zoomableImages = Array.from(document.querySelectorAll('.zoomable-image'));
     let currentIndex = 0;
     let isZoomed = false;
-
-    if (zoomableImages.length === 0) return;
-
-    // --- FUNÇÕES ---
-
-    // Atualiza o conteúdo da modal
-    function updateModal(index) {
-        // Reseta o zoom ao trocar de imagem
-        resetZoom();
-
-        const img = zoomableImages[index];
-        const src = img.getAttribute('data-zoom-src') || img.src;
-        const title = img.alt || "Visualização";
-
-        modalImg.src = src;
-        modalTitle.textContent = title;
-        modalCounter.textContent = `${index + 1} / ${zoomableImages.length}`;
-        currentIndex = index;
-    }
-
-    // Liga/Desliga o Zoom
-    function toggleZoom(e) {
-        if(e) e.stopPropagation();
-        
-        isZoomed = !isZoomed;
-        
-        if (isZoomed) {
-            modalImg.classList.add('is-zoomed');
-            modalWrapper.classList.add('is-zoomed');
-        } else {
-            resetZoom();
-        }
-    }
-
-    // Reseta o Zoom para o padrão
-    function resetZoom() {
-        isZoomed = false;
-        modalImg.classList.remove('is-zoomed');
-        modalWrapper.classList.remove('is-zoomed');
-    }
-
-    // Fecha a Modal
-    function closeModal() {
-        modal.style.display = "none";
-        document.body.style.overflow = "auto"; // Destrava scroll da página
-        setTimeout(() => { modalImg.src = ""; }, 200);
-    }
-
-    // --- EVENTOS ---
-
-    // 1. Clique nas thumbnails (Abre a modal)
-    zoomableImages.forEach((img, index) => {
-        img.addEventListener('click', function() {
-            modal.style.display = "flex";
-            updateModal(index);
-            document.body.style.overflow = "hidden"; // Trava scroll da página
-        });
-    });
-
-    // 2. Clique na imagem grande (Zoom)
-    modalImg.addEventListener('click', toggleZoom);
-
-    // 3. Navegação (Setas)
-    if(nextBtn) nextBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        let nextIndex = currentIndex + 1;
-        if (nextIndex >= zoomableImages.length) nextIndex = 0;
-        updateModal(nextIndex);
-    });
-
-    if(prevBtn) prevBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        let prevIndex = currentIndex - 1;
-        if (prevIndex < 0) prevIndex = zoomableImages.length - 1;
-        updateModal(prevIndex);
-    });
-
-    // 4. Fechar (X ou Fundo)
-    if(closeBtn) closeBtn.addEventListener('click', closeModal);
     
-    window.addEventListener('click', (e) => {
-        // Se clicar fora da imagem e não estiver com zoom
-        if (!isZoomed && (e.target === modal || e.target.classList.contains('modal-body') || e.target.classList.contains('modal-image-wrapper'))) {
-            closeModal();
-        }
-        // Se estiver com zoom, clicar fora apenas reseta o zoom ou fecha (opcional, aqui fecha)
-        else if (isZoomed && e.target !== modalImg) {
-            closeModal();
-        }
-    });
+    // Variáveis de Movimento
+    let isDragging = false;
+    let startX = 0, startY = 0;
+    let translateX = 0, translateY = 0;
+    let scale = 1;
+    const ZOOM_STEP = 0.5;
+    const MAX_ZOOM = 5;
+    const MIN_ZOOM = 1;
 
-    // 5. Teclado
-    document.addEventListener('keydown', (e) => {
-        if (modal.style.display === "flex") {
-            if (e.key === "Escape") closeModal();
-            if (!isZoomed) {
-                if (e.key === "ArrowRight") nextBtn.click();
-                if (e.key === "ArrowLeft") prevBtn.click();
-            }
+    if (zoomableImages.length > 0) {
+
+        function updateModal(index) {
+            resetZoom();
+            const img = zoomableImages[index];
+            const src = img.getAttribute('data-zoom-src') || img.src;
+            const title = img.alt || "Visualização";
+
+            modalImg.src = src;
+            if(modalTitle) modalTitle.textContent = title;
+            if(modalCounter) modalCounter.textContent = `${index + 1} / ${zoomableImages.length}`;
+            currentIndex = index;
         }
-    });
+
+        function applyZoom(newScale) {
+            scale = newScale;
+            if (scale < MIN_ZOOM) scale = MIN_ZOOM;
+            if (scale > MAX_ZOOM) scale = MAX_ZOOM;
+
+            if (scale > 1) {
+                isZoomed = true;
+                modalImg.classList.add('is-zoomed');
+            } else {
+                resetZoom();
+                return;
+            }
+            // Sempre que aplica zoom, verifica os limites
+            clampCoordinates(); 
+            updateTransform();
+        }
+
+        function resetZoom() {
+            isZoomed = false;
+            scale = 1;
+            // Reseta para o centro absoluto
+            translateX = 0;
+            translateY = 0;
+            isDragging = false;
+            modalImg.classList.remove('is-zoomed');
+            modalImg.classList.remove('is-dragging');
+            modalImg.style.transform = ''; 
+        }
+
+        function clampCoordinates() {
+            // Se não tiver wrapper, não faz nada
+            if (!modalWrapper) return;
+
+            const containerRect = modalWrapper.getBoundingClientRect();
+            
+            // Tamanho atual da imagem com zoom
+            const scaledWidth = modalImg.offsetWidth * scale;
+            const scaledHeight = modalImg.offsetHeight * scale;
+
+            // Calcula o limite máximo que se pode mover para cada lado
+            // Se a imagem for menor que a tela, o limite é 0 (trava no centro)
+            let xLimit = (scaledWidth - containerRect.width) / 2;
+            let yLimit = (scaledHeight - containerRect.height) / 2;
+
+            if (xLimit < 0) xLimit = 0;
+            if (yLimit < 0) yLimit = 0;
+
+            // Aplica os limites
+            if (translateX > xLimit) translateX = xLimit;
+            if (translateX < -xLimit) translateX = -xLimit;
+            
+            if (translateY > yLimit) translateY = yLimit;
+            if (translateY < -yLimit) translateY = -yLimit;
+        }
+
+        function updateTransform() {
+            modalImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+        }
+
+        function closeModal() {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+            setTimeout(() => { modalImg.src = ""; resetZoom(); }, 200);
+        }
+
+        // --- Event Listeners ---
+
+        zoomableImages.forEach((img, index) => {
+            img.addEventListener('click', function () {
+                modal.style.display = "flex";
+                updateModal(index);
+                document.body.style.overflow = "hidden"; 
+            });
+        });
+
+        // Clique na imagem (Toggle Zoom)
+        modalImg.addEventListener('click', (e) => {
+            if(!isDragging && translateX === 0 && translateY === 0) {
+                // Se está clicando sem arrastar, faz toggle
+                if (isZoomed) resetZoom();
+                else applyZoom(1.8);
+            }
+        });
+
+        // Scroll Mouse
+        modalImg.addEventListener('wheel', (e) => {
+            if (!isZoomed && e.deltaY > 0) return;
+            e.preventDefault();
+            const direction = e.deltaY < 0 ? 1 : -1;
+            applyZoom(scale + (direction * 0.2)); 
+        });
+
+        // Botões de Zoom
+        if (btnZoomIn) {
+            btnZoomIn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                applyZoom(scale + ZOOM_STEP);
+            });
+        }
+
+        if (btnZoomOut) {
+            btnZoomOut.addEventListener('click', (e) => {
+                e.stopPropagation();
+                applyZoom(scale - ZOOM_STEP);
+            });
+        }
+
+        // --- ARRASTAR (DRAG) ---
+        modalImg.addEventListener('mousedown', (e) => {
+            if (!isZoomed) return;
+            isDragging = true;
+            // Calcula a posição inicial do mouse relativa à translação atual
+            startX = e.clientX - translateX;
+            startY = e.clientY - translateY;
+            modalImg.classList.add('is-dragging'); // Ativa cursor 'grabbing'
+            e.preventDefault();
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            
+            // Nova posição tentativa
+            translateX = e.clientX - startX;
+            translateY = e.clientY - startY;
+            
+            clampCoordinates(); // Aplica restrições de borda
+            updateTransform();  // Move visualmente
+        });
+
+        window.addEventListener('mouseup', () => {
+            if (isDragging) {
+                isDragging = false;
+                modalImg.classList.remove('is-dragging'); // Volta transição suave
+            }
+        });
+
+        // Navegação (Setas)
+        if (nextBtn) nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            let nextIndex = currentIndex + 1;
+            if (nextIndex >= zoomableImages.length) nextIndex = 0;
+            updateModal(nextIndex);
+        });
+
+        if (prevBtn) prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            let prevIndex = currentIndex - 1;
+            if (prevIndex < 0) prevIndex = zoomableImages.length - 1;
+            updateModal(prevIndex);
+        });
+
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal || e.target.classList.contains('modal-body')) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (modal.style.display === "flex") {
+                if (e.key === "Escape") closeModal();
+                if (!isZoomed) {
+                    if (e.key === "ArrowRight") if(nextBtn) nextBtn.click();
+                    if (e.key === "ArrowLeft") if(prevBtn) prevBtn.click();
+                }
+            }
+        });
+    }
+
+    // Injeção de Projetos (Mantida)
+    async function injetarProjetosRecomendados() {
+        const currentPage = window.location.pathname;
+        const targetElement = document.querySelector('#contact') || document.querySelector('footer') || document.querySelector('.main-footer');
+
+        if (!targetElement) return;
+        if (currentPage.endsWith('/') || currentPage.endsWith('index.html')) return;
+
+        const allProjects = [
+            { href: "pagamentos.html", imgSrc: "images/thumbs/pagamentos.webp", alt: "Projeto Pagamentos" },
+            { href: "bolao.html", imgSrc: "images/thumbs/bolao_caixa.webp", alt: "Projeto Bolão" },
+            { href: "yuca.html", imgSrc: "images/thumbs/yuca.webp", alt: "Projeto Yuca" },
+            { href: "vortigo.html", imgSrc: "images/thumbs/vortigo.webp", alt: "Projeto Vortigo" },
+            { href: "cores.html", imgSrc: "images/thumbs/cores_caixa.webp", alt: "Estudo de Cores" }
+        ];
+
+        const projectsToShow = allProjects
+            .filter(project => !currentPage.includes(project.href))
+            .sort(() => 0.5 - Math.random())
+            .slice(0, 2);
+
+        if (projectsToShow.length > 0) {
+            const section = document.createElement('section');
+            section.className = 'recommended-projects';
+            let projectsHTML = '<div class="container"><h2 class="section-title">Outros Projetos</h2><div class="project-grid">';
+            projectsToShow.forEach(project => {
+                projectsHTML += `<a href="${project.href}" class="project-card" aria-label="Ver projeto"><div class="project-image-wrapper"><img src="${project.imgSrc}" alt="${project.alt}" loading="lazy"></div></a>`;
+            });
+            projectsHTML += '</div></div>';
+            section.innerHTML = projectsHTML;
+            targetElement.parentNode.insertBefore(section, targetElement);
+        }
+    }
+    injetarProjetosRecomendados();
 });

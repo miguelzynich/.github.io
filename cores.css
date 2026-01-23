@@ -586,6 +586,19 @@ body {
     background-color: #C61017;
 }
 
+.business-impact > .container > h2 {
+    font-size: 3rem;
+    margin-bottom: 64px;
+    max-width: 800px; 
+}
+
+.business-impact .column h2 {
+    font-size: 1.5rem;
+    margin-bottom: 16px; 
+    line-height: 1.3;
+    font-weight: 700;
+}
+
 
 @media (max-width: 1024px) {
     .comparison-grid.four-columns .comparison-column {
