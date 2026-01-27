@@ -152,7 +152,7 @@ main>section:nth-of-type(even) {
     width: 100%;
     height: 56vh;
     padding: 0;
-    background-image: url('./images/bolao/bolao-tablet.png');
+    background-image: url('./images/bolao/bolao-section.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

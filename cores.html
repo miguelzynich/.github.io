@@ -100,34 +100,38 @@
 
                 <div class="two-column-layout">
                     <div class="column">
-                        <h2>Objetivo</h2>
-                        <p>Focamos este estudo na otimização do uso de cores para atender aos critérios da WCAG,
-                            aprimorando a acessibilidade. Uma análise de tarefas revelou a falta de consistência e
-                            padronização visual em diversas telas, tanto na interface do aplicativo quanto na versão
-                            para desktop.</p>
+                        <h2>O Desafio</h2>
+                        <p>O projeto das Loterias Caixa enfrentava problemas de <strong>inconsistência visual</strong> e
+                            riscos de <strong>processos legais</strong> devido à falta de acessibilidade. Uma análise
+                            heurística revelou que diversos elementos de UI não passavam nos critérios básicos da WCAG
+                            2.1 (AA), comprometendo a experiência de milhões de usuários com baixa visão.</p>
                     </div>
                     <div class="column">
-                        <h2>O que foi usado?</h2>
-                        <p>Realizamos um mapeamento para entender a origem das inconsistências na prática. O diagnóstico
-                            revelou que, embora algumas modalidades tivessem passado por testes, as cores não foram
-                            devidamente ajustadas para a interface digital. Além disso, o mapeamento confirmou que não
-                            existia uma diretriz padronizada para a aplicação de cores, o que era a causa raiz dos
-                            problemas.</p>
+                        <h2>A Causa Raiz</h2>
+                        <p>O diagnóstico técnico apontou que o problema não era apenas estético, mas estrutural:
+                            <strong>ausência de Design Tokens</strong>. Cores eram aplicadas via Hexadecimal direto no
+                            código ("hard-coded"), gerando débitos técnicos, dificultando a manutenção em escala e
+                            criando variações indesejadas da marca.
+                        </p>
+                    </div>
+
+                    <div class="two-column-layout">
                     </div>
                 </div>
 
                 <div class="two-column-layout">
                     <div class="column">
-                        <h2>Na prática?</h2>
-                        <p>Antes do lançamento, algumas modalidades passaram por testes, mas não foram devidamente
-                            ajustadas, o que resultou em inconsistências. Identificou-se também que não existia uma
-                            diretriz padronizada para a aplicação de cores no design digital.</p>
+                        <h2>A Solução Sistêmica?</h2>
+                        <p>Não apenas "ajustamos as cores". Criamos uma <strong>arquitetura semântica</strong>. Em vez
+                            de usar nomes como "Azul Escuro", passamos a usar tokens funcionais como
+                            <code>$brand-quina-primary</code>. Isso garante que a correção visual se propague por todo o
+                            sistema automaticamente, garantindo a integridade do Design System.
                     </div>
                     <div class="column">
-                        <h2>Futuro?</h2>
-                        <p>Nosso foco foi em mudanças sutis, mas capazes de gerar impacto significativo. Para promover
-                            uma transformação cultural no projeto, foi criado um manual de cores abrangente, garantindo
-                            a padronização e a conformidade digital a partir de agora.</p>
+                        <h2>Resultado Imediato</h2>
+                        <p>Aprovação de 100% nos validadores de contraste (WCAG AA e AAA) para textos críticos. Além
+                            disso, a criação do manual de referência para desenvolvedores reduziu drasticamente o tempo
+                            de implementação de novas telas e o retrabalho em QA.</p>
                     </div>
                 </div>
 
@@ -136,7 +140,8 @@
 
         <section class="comparison-section">
             <div class="container">
-                <h3>Estudo de Contraste</h3>
+                <h3>Estudo de Contraste & Validação
+                </h3>
 
                 <div class="comparison-grid">
 
@@ -920,52 +925,59 @@
             </div>
         </section>
 
-     <section class="project-content business-impact">
-    <div class="container">
-        <h1>Impacto no Negócio</h1>
-        
-        <div class="two-column-layout">
-            <div class="column">
-                <h2>Mitigação de Risco Legal</h2>
-                <p>
-                    Ao adequar os produtos digitais às normas da WCAG (Web Content Accessibility Guidelines), 
-                    reduzimos drasticamente a exposição da Caixa a processos judiciais baseados na 
-                    Lei Brasileira de Inclusão (LBI), garantindo conformidade regulatória para uma empresa pública.
-                </p>
-            </div>
-            
-            <div class="column">
-                <h2>Eficiência Operacional (Design Ops)</h2>
-                <p>
-                    A criação dos <em>Design Tokens</em> e da documentação semântica eliminou o "chute" no desenvolvimento. 
-                    Isso reduz o tempo de QA (Controle de Qualidade) e refatoração, permitindo que os desenvolvedores 
-                    implementem novas telas até <strong>30% mais rápido</strong> sem dúvidas sobre qual hexadecimal usar.
-                </p>
-            </div>
-        </div>
+        <section class="project-content business-impact">
+            <div class="container">
+                <h1>Impacto no Negócio</h1>
 
-        <div class="two-column-layout">
-            <div class="column">
-                <h2>Ampliação de Mercado</h2>
-                <p>
-                    No Brasil, cerca de 18,6 milhões de pessoas possuem algum tipo de deficiência visual (IBGE). 
-                    Melhorar o contraste não é apenas inclusão, é permitir que uma fatia significativa da população 
-                    consiga realizar apostas de forma autônoma, impactando diretamente a receita dos canais digitais.
-                </p>
-            </div>
-            
-            <div class="column">
-                <h2>Consistência de Marca</h2>
-                <p>
-                    A padronização visual fortalece a confiança na marca. Um ecossistema digital coeso transmite 
-                    segurança, fator crítico para produtos financeiros e de apostas, reduzindo a fricção cognitiva 
-                    e aumentando a taxa de conversão em novos jogos.
-                </p>
-            </div>
-        </div>
+                <div class="two-column-layout">
+                    <div class="column">
+                        <h2>Mitigação de Risco Legal</h2>
+                        <p>
+                            Ao adequar os produtos digitais às normas da WCAG (Web Content Accessibility Guidelines),
+                            reduzimos drasticamente a exposição da Caixa a processos judiciais baseados na
+                            Lei Brasileira de Inclusão (LBI), garantindo conformidade regulatória para uma empresa
+                            pública.
+                        </p>
+                    </div>
 
-    </div>
-</section>
+                    <div class="column">
+                        <h2>Eficiência Operacional (Design Ops)</h2>
+                        <p>
+                            A criação dos <em>Design Tokens</em> e da documentação semântica eliminou o "chute" no
+                            desenvolvimento.
+                            Isso reduz o tempo de QA (Controle de Qualidade) e refatoração, permitindo que os
+                            desenvolvedores
+                            implementem novas telas até <strong>30% mais rápido</strong> sem dúvidas sobre qual
+                            hexadecimal usar.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="two-column-layout">
+                    <div class="column">
+                        <h2>Ampliação de Mercado</h2>
+                        <p>
+                            No Brasil, cerca de 18,6 milhões de pessoas possuem algum tipo de deficiência visual (IBGE).
+                            Melhorar o contraste não é apenas inclusão, é permitir que uma fatia significativa da
+                            população
+                            consiga realizar apostas de forma autônoma, impactando diretamente a receita dos canais
+                            digitais.
+                        </p>
+                    </div>
+
+                    <div class="column">
+                        <h2>Consistência de Marca</h2>
+                        <p>
+                            A padronização visual fortalece a confiança na marca. Um ecossistema digital coeso transmite
+                            segurança, fator crítico para produtos financeiros e de apostas, reduzindo a fricção
+                            cognitiva
+                            e aumentando a taxa de conversão em novos jogos.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
 
         <section id="contact">
             <div class="container">
