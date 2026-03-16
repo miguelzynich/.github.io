@@ -426,6 +426,11 @@ section.banner-section-vortigo-otimizado {
     text-align: left;
 }
 
+
+body.dark-mode .contact-status-text{
+    color: var(--border-color);
+}
+
 .wire-display-box img {
     max-width: 100%;
     height: auto;
@@ -531,6 +536,7 @@ section.banner-section-vortigo-otimizado {
     color: var(--primary-color);
     margin: 0;
 }
+
 
 #lightboxOverlay {
     position: fixed;

@@ -35,6 +35,8 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="header.css">
+
 
 </head>
 
@@ -72,21 +74,51 @@
     </header>
 
     <main>
-        <section id="hero" class="hero-section">
-            <div class="container text-center">
-                <img src="images/foto.webp" alt="Foto de perfil de Miguel Zynich" width="150" height="150"
-                    class="profile-picture scroll-hidden">
-                <h1 class="scroll-hidden delay-100">Miguel Zynich</h1>
-                <p class="subtitle scroll-hidden delay-100">
-                    <strong>UX/UI Designer com 4 anos de experiência,</strong><br>
-                    pós-graduado em User Experience Design pela PUCRS
-                </p>
-                <div class="button-group scroll-hidden delay-100">
-                    <a href="https://www.linkedin.com/in/miguelzynich/" target="_blank" rel="noopener noreferrer"
-                        class="btn">LinkedIn</a>
-                    <a href="https://wa.me/5193072515" target="_blank" rel="noopener noreferrer"
-                        class="btn">Whatsapp</a>
+        <section class="hero">
+            <div class="container hero-container">
+
+                <div class="hero-label">
+                    <span class="status-dot"></span>
+                    <span class="hero-label-text">Disponível para novos projetos</span>
+                    <span class="hero-label-sep"></span>
+                    <span class="hero-label-sub">Viamão - RS</span>
                 </div>
+
+                <h1 class="hero-headline">
+                    <span class="hl-line"><span class="hl-inner l1">Miguel Zynich</span></span>
+                    <span class="hl-line"><span class="hl-inner l2">UX/UI Designer</span></span>
+                </h1>
+
+                <div class="hero-body-row">
+                    <p class="hero-body-text">
+                        <strong>Especializado em experiências financeiras complexas.</strong><br>
+                        Transformo fluxos críticos em interfaces simples — com foco em acessibilidade, sistemas de
+                        design e
+                        produto. 14 anos de background em design visual e 4 anos em UX.
+                    </p>
+                    <div class="hero-body-actions">
+                        <a href="#projetos" class="btn-hero-p">Ver Projetos</a>
+                        <a href="#sobre" class="btn-hero-s">Sobre mim</a>
+                    </div>
+                </div>
+
+                <div class="hero-meta-strip">
+                    <div class="meta-block">
+                        <span class="meta-block-label">Especialização</span>
+                        <span class="meta-block-value">Fintech · Acessibilidade · Design System</span>
+                    </div>
+                    <div class="meta-block">
+                        <span class="meta-block-label">Experiência</span>
+                        <span class="meta-block-value">
+                            <span class="n">14</span> anos em design
+                        </span>
+                    </div>
+                    <div class="meta-block">
+                        <span class="meta-block-label">Formação</span>
+                        <span class="meta-block-value">Pós-graduação em User Experience Design · PUCRS</span>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -195,77 +227,77 @@
         <section id="sobre-e-experiencia">
             <div class="container">
                 <div class="two-column-layout">
-                    <div class="about-column  scroll-hidden delay-100">
+                    <div class="about-column scroll-hidden delay-100">
                         <h2 class="section-title">Sobre</h2>
-                        <p>
-                            <strong>UX/UI Designer com 4 anos de experiência</strong> em produtos digitais e 13 anos
-                            como Diretor de
-                            Arte. Sou especialista em unir design funcional, centrado no usuário e acessível com uma
-                            estética visual de alto impacto.<strong> Pós-graduando em User Experience Design and Beyond
-                                (PUCRS).</strong>
-                            Engajado com a comunidade de design, em 2022 também atuei como voluntário no projeto
-                            Kurumin, uma
-                            iniciativa da <strong>Vagas UX.</strong>
-                            Na Qintess, otimizei a User Experience dos sistemas de Loterias da Caixa, liderando
-                            processos de
-                            pesquisa, prototipação e garantindo a inclusão através da acessibilidade.
-
-                        </p> <a href="./doc/UX_UI_Miguel_Zynich.pdf#zoom=25" id="openCvModalBtn" class="btn cv-btn">Ver
+                        <p>Designer com <strong>background incomum</strong>: 13 anos de Direção de Arte antes de
+                            migrar para UX/UI. Isso significa que chego em qualquer projeto sabendo tanto resolver um
+                            fluxo quanto fazer ele parecer certo visualmente.</p>
+                        <p>Nos últimos 4 anos trabalhei em <strong>produtos digitais de grande escala</strong> —
+                            conduzindo <strong>pesquisa com usuários, prototipagem e entrega de UI</strong>. Tenho
+                            curiosidade por front-end e consigo ler e entender código, o que facilita a colaboração
+                            com times de desenvolvimento e reduz ruído na entrega.</p>
+                        <p>Busco constantemente aprender e me aperfeiçoar — seja em UX, acessibilidade ou
+                            tecnologia. Atualmente <strong>pós-graduando em UX Design na PUCRS.</strong></p>
+                        <a href="./doc/UX_UI_Miguel_Zynich.pdf#zoom=25" id="openCvModalBtn" class="btn cv-btn">Ver
                             Currículo Completo</a>
                     </div>
-                    <div class="experience-column  scroll-hidden delay-100">
+                    <div class="experience-column scroll-hidden delay-100">
                         <h2 class="section-title">Experiência</h2>
                         <div class="experience-list">
                             <div class="experience-item">
-                                <span class="date">2022 - 2025</span>
+                                <span class="date">Mar 2022 – Abr 2025</span>
                                 <span class="role">UX/UI Designer</span>
                                 <span class="company">Qintess</span>
                             </div>
                             <div class="experience-item">
-                                <span class="date">2021 - 2022</span>
+                                <span class="date">Jul 2021 – Mar 2022</span>
                                 <span class="role">UX/UI Designer</span>
                                 <span class="company">Agência JKR</span>
                             </div>
                             <div class="experience-item">
-                                <span class="date">2022 - 2022</span>
-                                <span class="role">UX Designer</span>
-                                <span class="company">Projeto Kurumin - Voluntário</span>
-                            </div>
-                            <div class="experience-item">
-                                <span class="date">2020 - 2021</span>
+                                <span class="date">Ago 2020 – Jan 2021</span>
                                 <span class="role">Diretor de Arte</span>
-                                <span class="company">Prefeitura de Viamão</span>
+                                <span class="company">Pref. de Viamão</span>
                             </div>
                             <div class="experience-item">
-                                <span class="date">2019 - 2019</span>
+                                <span class="date">Fev 2019 – Jun 2019</span>
                                 <span class="role">UI Designer</span>
                                 <span class="company">Reweb</span>
                             </div>
                             <div class="experience-item">
-                                <span class="date">2015 - 2017</span>
+                                <span class="date">Fev 2015 – Fev 2017</span>
                                 <span class="role">Assistente de Design</span>
                                 <span class="company">PUCRS</span>
                             </div>
-
                             <div class="experience-item">
-                                <span class="date">2014 - 2014</span>
+                                <span class="date">Abr 2014 – Out 2014</span>
                                 <span class="role">Assistente de Design</span>
                                 <span class="company">FADERS</span>
                             </div>
                         </div>
+
+                        <h3 class="section-subtitle">Voluntariado</h3>
+                        <div class="experience-list">
+                            <div class="experience-item">
+                                <span class="date">Jan 2022 – Mai 2022</span>
+                                <span class="role">UX/UI Designer</span>
+                                <span class="company">Kurumin · VagasUX</span>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </section>
 
-
         <section id="certifications" class="certifications-section">
             <div class="container">
                 <h2 class="section-title">Cursos e Certificações</h2>
 
-                <div class="courses-table">
+                <div class="courses-table" id="certGrid">
 
-                    <div class="course-row">
+                    <div class="course-row"
+                        onclick="openCertModal('images/certificados/Detach25.png', 'Detach! 25 — Niterói')">
                         <div class="course-main">
                             <div class="school-logo">
                                 <img src="images/logos/detach_logo.png" alt="Logo Detach">
@@ -279,12 +311,44 @@
                             <span class="course-hours">18h</span>
                             <span class="course-date">Nov 2025</span>
                         </div>
-                        <div class="cert-preview-popup">
-                            <img src="images/certificados/Detach25.png" alt="Certificado Detach">
+                    </div>
+
+                    <div class="course-row"
+                        onclick="openCertModal('images/certificados/ebac_front.png', 'Engenheiro Front-end')">
+                        <div class="course-main">
+                            <div class="school-logo">
+                                <img src="images/logos/ebac_logo.png" alt="Logo EBAC" loading="lazy">
+                            </div>
+                            <div class="course-details">
+                                <h3 class="course-name">Engenheiro Front-end</h3>
+                                <span class="school-name">EBAC - Escola Britânica de Artes Criativas e Tecnologia</span>
+                            </div>
+                        </div>
+                        <div class="course-meta">
+                            <span class="course-hours">84h</span>
+                            <span class="course-date">Jan 2024</span>
                         </div>
                     </div>
 
-                    <div class="course-row">
+                    <div class="course-row"
+                        onclick="openCertModal('images/certificados/profissao_ux.png', 'Profissão UX/UI Designer')">
+                        <div class="course-main">
+                            <div class="school-logo">
+                                <img src="images/logos/ebac_logo.png" alt="Logo EBAC" loading="lazy">
+                            </div>
+                            <div class="course-details">
+                                <h3 class="course-name">Profissão UX/UI Designer</h3>
+                                <span class="school-name">EBAC - Escola Britânica de Artes Criativas e Tecnologia</span>
+                            </div>
+                        </div>
+                        <div class="course-meta">
+                            <span class="course-hours">40h</span>
+                            <span class="course-date">Mar 2023</span>
+                        </div>
+                    </div>
+
+                    <div class="course-row"
+                        onclick="openCertModal('images/certificados/design_centrado.png', 'Design Centrado no Usuário')">
                         <div class="course-main">
                             <div class="school-logo">
                                 <img src="images/logos/pucrs_logo.png" alt="Logo PUCRS" loading="lazy">
@@ -298,31 +362,11 @@
                             <span class="course-hours">10h</span>
                             <span class="course-date">Fev 2024</span>
                         </div>
-                        <div class="cert-preview-popup">
-                            <img src="images/certificados/design_centrado.png" alt="Certificado PUCRS">
-                        </div>
                     </div>
 
-                    <div class="course-row">
-                        <div class="course-main">
-                            <div class="school-logo">
-                                <img src="images/logos/ebac_logo.png" alt="Logo EBAC" loading="lazy">
-                            </div>
-                            <div class="course-details">
-                                <h3 class="course-name">Engenheiro Front-end</h3>
-                                <span class="school-name">EBAC - Escola Britânica</span>
-                            </div>
-                        </div>
-                        <div class="course-meta">
-                            <span class="course-hours">84h</span>
-                            <span class="course-date">Jan 2024</span>
-                        </div>
-                        <div class="cert-preview-popup">
-                            <img src="images/certificados/ebac_front.png" alt="Certificado EBAC">
-                        </div>
-                    </div>
-
-                    <div class="course-row">
+                    <!-- Ocultos atrás do botão + -->
+                    <div class="course-row hidden-cert"
+                        onclick="openCertModal('images/certificados/ux_pra_todos.png', 'UX Design para todos')">
                         <div class="course-main">
                             <div class="school-logo">
                                 <img src="images/logos/how_logo.png" alt="Logo How" loading="lazy">
@@ -336,15 +380,13 @@
                             <span class="course-hours">12h</span>
                             <span class="course-date">Nov 2023</span>
                         </div>
-                        <div class="cert-preview-popup">
-                            <img src="images/certificados/ux_pra_todos.png" alt="Certificado How">
-                        </div>
                     </div>
 
-                    <div class="course-row">
+                    <div class="course-row hidden-cert"
+                        onclick="openCertModal('images/certificados/acessibilidade.png', 'Bootcamp de Acessibilidade')">
                         <div class="course-main">
                             <div class="school-logo">
-                                <img src="images/logos/how_logo.png" alt="Logo Escola">
+                                <img src="images/logos/how_logo.png" alt="Logo How" loading="lazy">
                             </div>
                             <div class="course-details">
                                 <h3 class="course-name">Bootcamp de Acessibilidade</h3>
@@ -353,93 +395,66 @@
                         </div>
                         <div class="course-meta">
                             <span class="course-hours">5h</span>
-                            <span class="course-date">Nov 20</span>
-                        </div>
-                        <div class="cert-preview-popup">
-                            <img src="images/certificados/acessibilidade.png" alt="Certificado Novo">
+                            <span class="course-date">Nov 2023</span>
                         </div>
                     </div>
 
-                    <div class="course-row">
+                    <div class="course-row hidden-cert"
+                        onclick="openCertModal('images/certificados/Figma.png', 'Figma')">
                         <div class="course-main">
                             <div class="school-logo">
-                                <img src="images/logos/ebac_logo.png" alt="Logo Escola">
+                                <img src="images/logos/ebac_logo.png" alt="Logo EBAC" loading="lazy">
                             </div>
                             <div class="course-details">
                                 <h3 class="course-name">Figma</h3>
-                                <span class="school-name">EBAC</span>
+                                <span class="school-name">EBAC - Escola Britânica de Artes Criativas e Tecnologia</span>
                             </div>
                         </div>
                         <div class="course-meta">
                             <span class="course-hours">10h</span>
                             <span class="course-date">Jun 2023</span>
                         </div>
-                        <div class="cert-preview-popup">
-                            <img src="images/certificados/Figma.png" alt="Certificado Novo">
-                        </div>
                     </div>
 
-                    <div class="course-row">
+                    <div class="course-row hidden-cert"
+                        onclick="openCertModal('images/certificados/Illustrator.png', 'Adobe Illustrator')">
                         <div class="course-main">
                             <div class="school-logo">
-                                <img src="images/logos/ebac_logo.png" alt="Logo Escola">
+                                <img src="images/logos/ebac_logo.png" alt="Logo EBAC" loading="lazy">
                             </div>
                             <div class="course-details">
                                 <h3 class="course-name">Adobe Illustrator</h3>
-                                <span class="school-name">EBAC</span>
+                                <span class="school-name">EBAC - Escola Britânica de Artes Criativas e Tecnologia</span>
                             </div>
                         </div>
                         <div class="course-meta">
                             <span class="course-hours">15h</span>
                             <span class="course-date">Mai 2023</span>
                         </div>
-                        <div class="cert-preview-popup">
-                            <img src="images/certificados/Illustrator.png" alt="Certificado Novo">
-                        </div>
                     </div>
 
-                    <div class="course-row">
+                    <div class="course-row hidden-cert"
+                        onclick="openCertModal('images/certificados/photoshop.png', 'Photoshop do Zero ao PRO')">
                         <div class="course-main">
                             <div class="school-logo">
-                                <img src="images/logos/ebac_logo.png" alt="Logo Escola">
-                            </div>
-                            <div class="course-details">
-                                <h3 class="course-name">Profissão UX/UI Designer</h3>
-                                <span class="school-name">EBAC</span>
-                            </div>
-                        </div>
-                        <div class="course-meta">
-                            <span class="course-hours">40h</span>
-                            <span class="course-date">Mar 2023</span>
-                        </div>
-                        <div class="cert-preview-popup">
-                            <img src="images/certificados/profissao_ux.png" alt="Certificado Novo">
-                        </div>
-                    </div>
-
-
-                    <div class="course-row">
-                        <div class="course-main">
-                            <div class="school-logo">
-                                <img src="images/logos/ebac_logo.png" alt="Logo EBAC">
+                                <img src="images/logos/ebac_logo.png" alt="Logo EBAC" loading="lazy">
                             </div>
                             <div class="course-details">
                                 <h3 class="course-name">Photoshop do Zero ao PRO</h3>
-                                <span class="school-name">EBAC</span>
+                                <span class="school-name">EBAC - Escola Britânica de Artes Criativas e Tecnologia</span>
                             </div>
                         </div>
                         <div class="course-meta">
-                            <span class="course-hours">20h</span> <span class="course-date">Ago 2022</span>
-                        </div>
-                        <div class="cert-preview-popup">
-                            <img src="images/certificados/photoshop.png " alt="Certificado Photoshop">
+                            <span class="course-hours">20h</span>
+                            <span class="course-date">Ago 2022</span>
                         </div>
                     </div>
 
-                    <div class="course-row">
+                    <div class="course-row hidden-cert"
+                        onclick="openCertModal('images/certificados/desev.png', 'Desenv. de Carreira em UX')">
                         <div class="course-main">
                             <div class="school-logo">
-                                <img src="images/logos/alura.png" alt="Logo Alura">
+                                <img src="images/logos/alura.png" alt="Logo Alura" loading="lazy">
                             </div>
                             <div class="course-details">
                                 <h3 class="course-name">Desenv. de Carreira em UX</h3>
@@ -447,53 +462,16 @@
                             </div>
                         </div>
                         <div class="course-meta">
-                            <span class="course-hours">48h</span> <span class="course-date">Jul 2022</span>
-                        </div>
-                        <div class="cert-preview-popup">
-                            <img src="images/certificados/desev.png" alt="Certificado Alura">
+                            <span class="course-hours">48h</span>
+                            <span class="course-date">Jul 2022</span>
                         </div>
                     </div>
 
-                    <div class="course-row">
+                    <div class="course-row hidden-cert"
+                        onclick="openCertModal('images/certificados/aldeia_cc.png', 'UX Design (Bootcamp)')">
                         <div class="course-main">
                             <div class="school-logo">
-                                <img src="images/logos/deploy.png" alt="Logo Deeploy">
-                            </div>
-                            <div class="course-details">
-                                <h3 class="course-name">Expectativa vs Realidade UX/UI</h3>
-                                <span class="school-name">Deeploy</span>
-                            </div>
-                        </div>
-                        <div class="course-meta">
-                            <span class="course-hours">4h</span> <span class="course-date">Fev 2022</span>
-                        </div>
-                        <div class="cert-preview-popup">
-                            <img src="images/certificados/exp.png" alt="Certificado Deeploy">
-                        </div>
-                    </div>
-
-                    <div class="course-row">
-                        <div class="course-main">
-                            <div class="school-logo">
-                                <img src="images/logos/ebac_logo.png" alt="Logo EBAC">
-                            </div>
-                            <div class="course-details">
-                                <h3 class="course-name">Plano de Carreira</h3>
-                                <span class="school-name">EBAC</span>
-                            </div>
-                        </div>
-                        <div class="course-meta">
-                            <span class="course-hours">5h</span> <span class="course-date">Fev 2022</span>
-                        </div>
-                        <div class="cert-preview-popup">
-                            <img src="images/certificados/plano.png" alt="Certificado EBAC">
-                        </div>
-                    </div>
-
-                    <div class="course-row">
-                        <div class="course-main">
-                            <div class="school-logo">
-                                <img src="images/logos/aldeia.png" alt="Logo Aldeia">
+                                <img src="images/logos/aldeia.png" alt="Logo Aldeia" loading="lazy">
                             </div>
                             <div class="course-details">
                                 <h3 class="course-name">UX Design (Bootcamp)</h3>
@@ -501,60 +479,59 @@
                             </div>
                         </div>
                         <div class="course-meta">
-                            <span class="course-hours">22h</span> <span class="course-date">Nov 2020</span>
-                        </div>
-                        <div class="cert-preview-popup">
-                            <img src="images/certificados/aldeia_cc.png" alt="Certificado Aldeia">
+                            <span class="course-hours">22h</span>
+                            <span class="course-date">Nov 2020</span>
                         </div>
                     </div>
 
-                    <div class="course-row">
-                        <div class="course-main">
-                            <div class="school-logo">
-                                <img src="images/logos/tim_brasil.png" alt="Logo TIM">
-                            </div>
-                            <div class="course-details">
-                                <h3 class="course-name">UX e UI Design</h3>
-                                <span class="school-name">TIM Brasil</span>
-                            </div>
-                        </div>
-                        <div class="course-meta">
-                            <span class="course-hours">20h</span> <span class="course-date">Out 2020</span>
-                        </div>
-                        <div class="cert-preview-popup">
-                            <img src="images/certificados/tim_tec.png" alt="Certificado TIM">
-                        </div>
-                    </div>
                 </div>
+
                 <div class="load-more-container">
                     <button id="btn-load-more-certs" aria-label="Carregar mais certificações">+</button>
                 </div>
             </div>
         </section>
 
+
+
         <section id="contact">
             <div class="container">
-                <h2 class="section-title">Fale Comigo!</h2>
-                <p>Se você tem uma ideia, uma vaga ou só quer trocar uma figurinha, me manda uma mensagem.</p>
-                <div class="button-group">
-                    <a href="mailto:miguelzynich@gmail.com" class="btn">E-mail</a>
-                    <a href="https://www.linkedin.com/in/miguelzynich/" class="btn" target="_blank"
-                        rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://wa.me/5193072515" class="btn" target="_blank"
-                        rel="noopener noreferrer">Whatsapp</a>
+                <div class="contact-card">
+                    <div class="contact-status">
+                        <span class="contact-status-dot"></span>
+                        <span class="contact-status-text">Disponível para novos projetos</span>
+                    </div>
+                    <h2 class="section-title">Vamos trabalhar juntos?</h2>
+                    <p>Se você tem uma ideia, uma vaga ou só quer trocar uma figurinha, me manda uma mensagem.</p>
+                    <div class="button-group">
+                        <a href="mailto:miguelzynich@gmail.com" class="btn">E-mail</a>
+                        <a href="https://www.linkedin.com/in/miguelzynich/" class="btn" target="_blank"
+                            rel="noopener noreferrer">LinkedIn</a>
+                        <a href="https://wa.me/5193072515" class="btn" target="_blank"
+                            rel="noopener noreferrer">WhatsApp</a>
+                    </div>
                 </div>
             </div>
         </section>
+
     </main>
 
     <footer class="main-footer">
         <div class="container text-center">
-            <p>@miguelzynich - 01/26 </p>
+            <p>@miguelzynich - 03/26 </p>
         </div>
     </footer>
 
+    <div class="cert-modal-overlay" id="certModalOverlay" onclick="closeCertModal(event)">
+        <div class="cert-modal-box">
+            <button class="cert-modal-close" onclick="closeCertModalDirect()">✕</button>
+            <img src="" alt="Certificado" id="certModalImg">
+        </div>
+    </div>
+
     <script src="main.js"></script>
     <script async src="https://t.contentsquare.net/uxa/734555fce281e.js"></script>
+
 </body>
 
 </html>

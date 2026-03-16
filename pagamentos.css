@@ -144,17 +144,6 @@ main > section:nth-of-type(even) {
    ELEMENTOS GERAIS
    ========================================= */
 
-h2 {
-    font-size: 2.2rem;
-    text-align: left;
-    margin-bottom: 24px;
-}
-
-p {
-    font-size: 1.1rem;
-    text-align: left;
-    margin-bottom: 16px;
-}
 
 img {
     max-width: 100%;
@@ -193,6 +182,39 @@ img {
     color:var(--dt-text-secondary);
     text-align: left;
 }
+
+.breadcrumb-nav {
+    background-color: var(--bg-section);
+    padding: 12px 20px;
+}
+
+body.dark-mode .breadcrumb-nav,
+body.dark-mode .breadcrumb-nav.breadcrumb-nav--alt-bg {
+    background-color: var(--bg-section) !important;
+}
+
+body.dark-mode .breadcrumb-item,
+body.dark-mode .breadcrumb-item a {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body.dark-mode .breadcrumb-item[aria-current="page"] {
+    color: #ffffff !important;
+}
+
+body.dark-mode .breadcrumb-item::before {
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+body:not(.dark-mode) .breadcrumb-nav {
+    background-color: var(--bg-section);
+}
+
+body:not(.dark-mode) .breadcrumb-item,
+body:not(.dark-mode) .breadcrumb-item a {
+    color: var(--text-main);
+}
+
 
 /* =========================================
    SEÇÕES ESPECÍFICAS
@@ -444,11 +466,6 @@ img {
     font-weight: bold;
     text-align: left;
     color: var(--primary-color);
-}
-
-.main-footer {
-    background-color: #f5f5f5;
-    padding-top: 40px;
 }
 
 .recommended-projects {

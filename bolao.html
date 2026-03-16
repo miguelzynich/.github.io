@@ -84,7 +84,87 @@
             </div>
         </nav>
 
-        <section class="project-content">
+
+        <section class="project-overview">
+            <div class="container">
+
+                <div class="project-meta-tags">
+                    <span class="project-meta-tag">Qintess • Caixa Econômica Federal</span>
+                    <span class="project-meta-tag">2023 – 2024</span>
+                    <span class="project-meta-tag">UX/UI Designer</span>
+                    <span class="project-meta-tag">Web + Mobile</span>
+                </div>
+
+                <div class="project-info-grid">
+
+                    <div class="project-info-block">
+                        <span class="project-info-label">Time</span>
+                        <div class="project-info-content">
+                            <p>Design manager (Caixa)</p>
+                            <p>UX/UI Designer Sênior</p>
+                            <p>UX/UI Designer Pleno (eu)</p>
+                        </div>
+                    </div>
+
+                    <!-- MY ROLE -->
+                    <div class="project-info-block">
+                        <span class="project-info-label">Meu Papel</span>
+                        <div class="project-info-content">
+                            <ul>
+                                <li>Pesquisa Qualitativa</li>
+                                <li>Ideação</li>
+                                <li>Design de Interface</li>
+                                <li>Teste de Usabilidade</li>
+                                <li>Handoff para Devs</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- DURATION -->
+                    <div class="project-info-block">
+                        <span class="project-info-label">Duração</span>
+                        <div class="project-info-content">
+                            <p>6 meses</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- CHALLENGE & RESULT CARDS -->
+                <div class="project-highlights">
+
+                    <!-- DESAFIO -->
+                    <div class="highlight-card challenge">
+                        <div class="highlight-card-header">
+                            <span class="highlight-icon">🎯</span>
+                            <h3 class="highlight-card-title">O Desafio</h3>
+                        </div>
+                        <p class="highlight-card-content">
+                            Digitalizar a venda de bolões físicos sem ferir o compliance das Lotéricas,
+                            integrando sistemas legados offline e resolvendo simultaneamente o prejuízo do
+                            franqueado com cotas encalhadas e a falta de conveniência digital do apostador.
+                        </p>
+                    </div>
+
+                    <!-- RESULTADO -->
+                    <div class="highlight-card result">
+                        <div class="highlight-card-header">
+                            <span class="highlight-icon">✅</span>
+                            <h3 class="highlight-card-title">O Resultado</h3>
+                        </div>
+                        <p class="highlight-card-content">
+                            Marketplace hiperfocal lançado em produção no aplicativo oficial das Loterias
+                            da Caixa — conectando apostadores ao inventário físico das lotéricas via
+                            geolocalização em um único fluxo validado com usuários reais.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="project-content list-section">
             <div class="container">
                 <div class="two-column-layout">
                     <div class="column">
@@ -96,10 +176,10 @@
                     </div>
                     <div class="column">
                         <h2>Projeto</h2>
-                        <p>Nossa pesquisa mostrou uma forma de deixar a compra de bolões mais prática: conectar a
-                            facilidade da internet com as muitas lotéricas que já existem. Com a nova solução, o
-                            apostador usa sua localização para ver os bolões à venda nas lotéricas da sua vizinhança,
-                            tornando a compra mais rápida e acessível</p>
+                        <p>Criamos um marketplace hiperlocal. Em vez de uma vitrine genérica, o sistema utiliza as
+                            coordenadas do usuário para realizar um "match" instantâneo com o inventário físico das
+                            Lotéricas no seu raio de vizinhança. Isso digitaliza a compra, zera o encalhe de cotas das
+                            agências e resolve o problema de logística do apostador em um único fluxo.</p>
                     </div>
                 </div>
                 <div class="two-column-layout">
@@ -121,21 +201,34 @@
             </div>
         </section>
 
-        <section class="problem-section">
+        <section class="problem-section dual-problem">
             <div class="container">
-                <h2>Problema</h2>
-                <p>No modelo anterior, qualquer bolão gerado pela Lotérica que não fosse vendido representava um
-                    prejuízo financeiro direto para a própria casa lotérica.</p>
+                <h2 class="problem-title">O Problema de um Mercado Analógico</h2>
+
+                <div class="two-column-layout">
+                    <div class="column problem-card">
+                        <h3 class="problem-card-title">Para o Agente Lotérico (B2B)</h3>
+                        <p>O modelo dependia 100% do tráfego físico. Qualquer bolão impresso pela Lotérica que não fosse
+                            vendido no balcão até a hora do sorteio representava um <strong>prejuízo financeiro
+                                direto</strong> para o franqueado.</p>
+                    </div>
+
+                    <div class="column problem-card">
+                        <h3 class="problem-card-title">Para o Apostador (B2C)</h3>
+                        <p>Falta de transparência e conveniência. O usuário precisava ir fisicamente à agência, pegar
+                            filas e contar com a sorte de encontrar a cota desejada disponível no papel, sem nenhuma
+                            previsibilidade digital.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="project-content business-context">
             <div class="container">
                 <h2>A Complexidade do Negócio (Bastidores)</h2>
-                <p style="margin-bottom: 40px;">
+                <p>
                     Para além da interface, este projeto exigiu imersão profunda em regras estatais e limitações
-                    técnicas.
-                    O desafio foi traduzir burocracia em usabilidade sem ferir o compliance da instituição.
+                    técnicas. O desafio foi traduzir burocracia em usabilidade sem ferir o compliance da instituição.
                 </p>
 
                 <div class="two-column-layout">
@@ -152,12 +245,11 @@
                         <p>O maior nó técnico foi desenhar uma experiência que conversasse com os <strong>Terminais
                                 Financeiros Lotéricos (TFL)</strong>.
                             Tivemos que mapear fluxos de erro específicos para quando o sistema legado (offline) não
-                            respondesse
-                            ao app em tempo real, evitando quebras de transação.</p>
+                            respondesse ao app em tempo real, evitando quebras de transação.</p>
                     </div>
                 </div>
 
-                <div class="two-column-layout" style="margin-top: 40px;">
+                <div class="two-column-layout">
                     <div class="column">
                         <h3>📍 Travas de Geolocalização</h3>
                         <p>Implementamos regras de negócio baseadas em raio de atuação. O sistema impede a canibalização
@@ -169,8 +261,7 @@
                         <p>Desenhei o painel de controle para os lotéricos considerando a <strong>gestão de
                                 risco</strong>.
                             A interface precisava deixar claro quais cotas estavam "em aberto" para evitar prejuízo
-                            operacional
-                            para o franqueado caso o bolão não fosse 100% vendido até o sorteio.</p>
+                            operacional para o franqueado caso o bolão não fosse 100% vendido até o sorteio.</p>
                     </div>
                 </div>
             </div>
@@ -241,23 +332,20 @@
                 <div class="two-column-img">
                     <div class="column">
                         <h3>Amazon</h3>
-                        <img src="./images/bolao/bench1.png" alt="Imagem da página inicial da Amazon"
-                            class="zoomable-image">
+                        <img src="./images/bolao/bench1.png" alt="Imagem da página inicial da Amazon">
                     </div>
                     <div class="column">
                         <h3>Mega Loterias</h3>
-                        <img src="./images/bolao/bench2.png" alt="Imagem da página inicial do Mega Loterias"
-                            class="zoomable-image">
+                        <img src="./images/bolao/bench2.png" alt="Imagem da página inicial do Mega Loterias">
                     </div>
                     <div class="column">
                         <h3>TuLotero</h3>
                         <img src="./images/bolao/bench3.png"
-                            alt="Imagem da página inicial do site internacional TuLotero" class="zoomable-image">
+                            alt="Imagem da página inicial do site internacional TuLotero">
                     </div>
                     <div class="column">
                         <h3>Sorte Online</h3>
-                        <img src="./images/bolao/bench4.png" alt="Imagem da página inicial da Sorte Online"
-                            class="zoomable-image">
+                        <img src="./images/bolao/bench4.png" alt="Imagem da página inicial da Sorte Online">
                     </div>
                 </div>
             </div>
@@ -270,139 +358,514 @@
                     encontrar e comprar um bolão próximo. Isso nos permitiu visualizar toda a jornada,
                     identificar os pontos de decisão chave e garantir que o fluxo fosse o mais claro e intuitivo
                     possível.</p>
-                <img src="./images/bolao/user-flow.png " alt="User flow do bolão" class="zoomable-image">
+                <img src="./images/bolao/user-flow.png" alt="User flow do bolão" >
             </div>
         </section>
 
-        <section class="wireframe-display-section">
-            <div class="container">
-                <h2>Wireframe de baixa fidelidade</h2>
-                <p>Esta primeira versão do wireframe de baixa fidelidade foca exclusivamente na estrutura da informação
-                    e no fluxo principal do usuário. O objetivo aqui foi estabelecer a arquitetura e a navegação
-                    essenciais, livre das distrações do design visual, garantindo uma base sólida para a experiência.
-                </p>
-                <img src="./images/bolao/wire-baixa.png"
-                    alt="Imagem mostra os wireframes de baixa fidelidade alinhados um do lado do outro"
-                    class="zoomable-image">
-            </div>
-        </section>
+        <section class="showcase-section">
+            <div class="container showcase-container">
 
-        <section class="wireframe-display-section">
-            <div class="container">
-                <h2>Wireframe de Alta fidelidade</h2>
-                <p>Avançando da estrutura validada nos wireframes de baixa fidelidade, a versão de alta fidelidade
-                    incorpora a camada visual completa do produto. Nesta fase, aplicamos a identidade visual definida
-                    (cores, tipografia, componentes) para criar uma representação fiel da interface final...</p>
-                <p><strong>Importante:</strong> As telas apresentadas são um exemplo representativo. O projeto completo
-                    abrangeu os
-                    fluxos de todas as modalidades de loterias, incluindo variações para eventos sazonais como a
-                    mega-sena da virada, garantindo consistência em toda a plataforma.
-                </p>
-                <img src="./images/bolao/wire-alta.png"
-                    alt="Imagem mostra os wireframes de alta fidelidade alinhados um do lado do outro"
-                    class="zoomable-image">
-            </div>
-        </section>
+                <div class="showcase-text">
+                    <h1 class="showcase-title">Wireframe de baixa fidelidade</h1>
+                    <p class="showcase-description">
+                        A baixa fidelidade não foi rascunho — foi uma ferramenta de decisão. Nesta fase, definimos
+                        três escolhas estruturais que moldaram o produto final: posicionar a geolocalização como
+                        elemento central da home (e não como filtro secundário); separar o fluxo de compra do fluxo
+                        de resgate em jornadas independentes desde o início; e ocultar as modalidades menos populares
+                        atrás de filtro para reduzir a carga cognitiva da tela principal.
+                    </p>
+                </div>
 
-        <section class="wireframe-display-section">
-            <div class="container">
-                <h2>Mobile</h2>
-                <p>Considerando que a maioria dos usuários acessa a plataforma via celular, a experiência mobile foi uma
-                    prioridade estratégica. Todos os fluxos de alta fidelidade foram adaptados para dispositivos móveis,
-                    focando em uma navegação intuitiva, componentes de toque claros e legibilidade total, garantindo que
-                    o usuário pudesse completar uma aposta de forma rápida e acessível em qualquer tela.</p>
-                <img src="./images/bolao/mobile.png" alt="Imagem mostra os wireframes da versão mobile"
-                    class="zoomable-image">
-            </div>
-        </section>
+                <div class="showcase-gallery">
 
-        <section class="mobile-gallery-section">
-            <div class="container ">
-                <h2>Algumas telas mobile</h2>
-                <div class="mobile-gallery-grid">
-                    <div class="gallery-unit">
-                        <p class="gallery-label">Tela Inicial</p>
-                        <div class="gallery-item">
-                            <img src="./images/bolao/tela_1.png" alt="Tela do aplicativo +milionária"
-                                class="zoomable-image">
+                    <div class="showcase-item">
+                        <div class="showcase-image-wrapper">
+                            <img src="images/bolao/wire-baixa/wire_1.png" alt="Wireframe da Home do projeto">
                         </div>
+                        <p class="showcase-caption">Tela Home do Bolão Desktop</p>
+                        <p class="showcase-caption-detail">Mapa como hero element — decisão de priorizar a dimensão
+                            física do produto (a lotérica próxima) antes da lista digital de bolões disponíveis.</p>
                     </div>
-                    <div class="gallery-unit">
-                        <p class="gallery-label">Seleção de Bolão</p>
-                        <div class="gallery-item">
-                            <img src="./images/bolao/tela_2.png" alt="Mockup da tela de seleção de bolão"
-                                class="zoomable-image">
+
+                    <div class="showcase-item">
+                        <div class="showcase-image-wrapper">
+                            <img src="images/bolao/wire-baixa/wire_2.png" alt="Wireframe estrutural - Tela 2">
                         </div>
+                        <p class="showcase-caption">Estrutura de Modalidades</p>
+                        <p class="showcase-caption-detail">Separação visual entre bolões disponíveis e encerrados
+                            definida aqui — reduz a frustração de clicar em algo indisponível antes de ver o conteúdo.
+                        </p>
                     </div>
-                    <div class="gallery-unit">
-                        <p class="gallery-label">Detalhe do Jogo</p>
-                        <div class="gallery-item">
-                            <img src="./images/bolao/tela_3.png" alt="Mockup da tela de detalhe do jogo"
-                                class="zoomable-image">
+
+                    <div class="showcase-item">
+                        <div class="showcase-image-wrapper">
+                            <img src="images/bolao/wire-baixa/wire_3.png" alt="Wireframe estrutural - Tela 3">
                         </div>
+                        <p class="showcase-caption">Fluxo de Seleção e Checkout</p>
+                        <p class="showcase-caption-detail">Primeira validação do funil de compra: definição de quantas
+                            etapas o usuário percorre do card do bolão até a confirmação do pagamento.</p>
                     </div>
-                    <div class="gallery-unit">
-                        <p class="gallery-label">Filtros</p>
-                        <div class="gallery-item">
-                            <img src="./images/bolao/tela_4.png" alt="Mockup da tela de filtros de aposta"
-                                class="zoomable-image">
+
+                    <div class="showcase-item">
+                        <div class="showcase-image-wrapper">
+                            <img src="images/bolao/wire-baixa/wire_4.png" alt="Wireframe estrutural - Tela 4">
+                        </div>
+                        <p class="showcase-caption">Pix e Revisão do Pedido</p>
+                        <p class="showcase-caption-detail">Tela de revisão projetada para que o usuário confirme
+                            lotérica, cota e valor em uma única tela — evitando abandono por insegurança na etapa final.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="usability-test-section">
+            <div class="container showcase-container">
+
+                <div class="showcase-text">
+                    <h2 class="showcase-title">Wireframe de Alta Fidelidade</h2>
+                    <p class="showcase-description">
+                        Avançando da estrutura validada nos wireframes de baixa fidelidade, a versão de alta fidelidade
+                        incorpora a camada visual completa do produto. Nesta fase, aplicamos a identidade visual
+                        definida
+                        (cores, tipografia, componentes) para criar uma representação fiel da interface final.
+                    </p>
+                    <p class="showcase-description">
+                        <strong>Importante:</strong> As telas apresentadas são um exemplo representativo. O projeto
+                        completo abrangeu os fluxos de todas as modalidades de loterias, incluindo variações para
+                        eventos
+                        sazonais como a mega-sena da virada, garantindo consistência em toda a plataforma.
+                    </p>
+                </div>
+
+                <div class="showcase-gallery">
+                    <div class="showcase-item">
+                        <div class="showcase-image-wrapper">
+                            <img src="./images/bolao/alta_resumo.png" alt="Tela Inicial em alta fidelidade">
+                        </div>
+                        <p class="showcase-caption">Home em alta fidelidade</p>
+                    </div>
+                    <div class="showcase-item">
+                        <div class="showcase-image-wrapper">
+                            <img src="./images/bolao/alta_telas.png" alt="Modal com a visualização do Bolão">
+                        </div>
+                        <p class="showcase-caption">Modal com detalhes do Bolão</p>
+                    </div>
+                    <div class="showcase-item">
+                        <div class="showcase-image-wrapper">
+                            <img src="./images/bolao/alta_handoff.png" alt="Tela de pagamento em alta fidelidade">
+                        </div>
+                        <p class="showcase-caption">Tela de pagamento</p>
+                    </div>
+                    <div class="showcase-item">
+                        <div class="showcase-image-wrapper">
+                            <img src="./images/bolao/alta_detalhe.png" alt="Detalhe da tela de pagamento">
+                        </div>
+                        <p class="showcase-caption">Detalhe de pagamento</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="mobile-experience-section">
+            <div class="container">
+
+                <div class="layout-texto-video" style="margin-bottom: 80px;">
+                    <div class="col-texto">
+                        <h2>A Experiência Mobile</h2>
+                        <p>
+                            Com a estrutura de wireframes validada, aplicamos a camada visual final.
+                            O foco foi transmitir confiança e clareza. Usamos a paleta institucional
+                            da Caixa, mas com uma abordagem moderna de UI para destacar as ações principais.
+                        </p>
+                        <p>
+                            <strong>Dê o play no vídeo ao lado</strong> para conferir o fluxo completo,
+                            desde a seleção do bolão na home até a confirmação do pagamento no mobile.
+                        </p>
+                    </div>
+
+                    <div class="col-video">
+                        <div class="video-portfolio-wrapper">
+                            <video class="portfolio-video" controls poster="./images/bolao/video/preview_mobile.png"
+                                preload="none">
+                                <source src="./images/bolao/video/fluxo1_mobile.mp4" type="video/mp4">
+                                Seu navegador não suporta vídeos.
+                            </video>
                         </div>
                     </div>
                 </div>
+
+                <div class="mobile-gallery-wrapper">
+                    <div class="mobile-gallery-grid">
+
+                        <div class="gallery-unit">
+                            <p class="gallery-label">Tela Inicial</p>
+                            <div class="gallery-item">
+                                <img src="./images/bolao/tela_1.png" alt="Tela do aplicativo +milionária">
+                            </div>
+                        </div>
+
+                        <div class="gallery-unit">
+                            <p class="gallery-label">Seleção de Bolão</p>
+                            <div class="gallery-item">
+                                <img src="./images/bolao/tela_2.png" alt="Mockup da tela de seleção de bolão">
+                            </div>
+                        </div>
+
+                        <div class="gallery-unit">
+                            <p class="gallery-label">Detalhe do Jogo</p>
+                            <div class="gallery-item">
+                                <img src="./images/bolao/tela_3.png" alt="Mockup da tela de detalhe do jogo">
+                            </div>
+                        </div>
+
+                        <div class="gallery-unit">
+                            <p class="gallery-label">Filtros</p>
+                            <div class="gallery-item">
+                                <img src="./images/bolao/tela_4.png" alt="Mockup da tela de filtros de aposta">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <section class="wireframe-display-section">
+        <section class="usability-test-section">
             <div class="container">
-                <h2>Teste de Usabilidade</h2>
-                <p>Nenhuma solução de UX está completa sem validação. Para garantir que a nova jornada de compra era
-                    intuitiva, conduzimos testes de usabilidade que simularam todo o fluxo. Os insights coletados foram
-                    cruciais para refinar detalhes da interface e confirmar que a conexão entre o app e a lotérica
-                    física estava clara para o usuário.
+                <h2>Estrutura e Validação com Usuários</h2>
+                <p class="section-intro">
+                    Para garantir que a integração do bolão físico para o digital seria fluida, dividimos o teste de
+                    usabilidade em quatro missões principais, focadas em mapear atritos de navegação e carga cognitiva.
                 </p>
-                <img src="./images/bolao/teste-usabilidade.png"
-                    alt="Imagem mostra os wireframes de alta fidelidade alinhados um do lado do outro"
-                    class="zoomable-image">
+
+                <div class="test-methodology-tags">
+                    <span class="method-tag">👥 5 Usuários (Apostadores mistos)</span>
+                    <span class="method-tag">💻 Teste Moderado Remoto</span>
+                    <span class="method-tag">🛠️ Figma + MS Teams</span>
+                </div>
+
+                <div class="task-cards-grid">
+                    <div class="task-card">
+                        <div class="task-card-content">
+                            <div class="task-header">
+                                <span class="task-number">Tarefa 01</span>
+                                <h3>Descoberta e Distinção</h3>
+                            </div>
+                            <div class="task-body">
+                                <p><strong>O Cenário:</strong> Você deseja realizar uma aposta bolão de Lotofácil com
+                                    prêmio de 1.5 milhões.</p>
+                                <p><strong>A Missão:</strong> No card da Lotofácil, selecionar a opção de "aposta bolão"
+                                    e realizar o login.</p>
+                            </div>
+                        </div>
+                        <div class="task-card-image">
+                            <img src="./images/bolao/tela_01.png" alt="Tela de instrução da missão 1">
+                        </div>
+                    </div>
+
+                    <div class="task-card">
+                        <div class="task-card-content">
+                            <div class="task-header">
+                                <span class="task-number">Tarefa 02</span>
+                                <h3>Configuração de Cotas</h3>
+                            </div>
+                            <div class="task-body">
+                                <p><strong>O Cenário:</strong> Chegou a hora de adicionar a quantidade de cotas e ir
+                                    para o carrinho de compras.</p>
+                                <p><strong>A Missão:</strong> Entrar em "detalhes" do jogo, adicionar 2 cotas ao bolão e
+                                    seguir para o pagamento.</p>
+                            </div>
+                        </div>
+                        <div class="task-card-image">
+                            <img src="./images/bolao/tela_02.png" alt="Tela de instrução da missão 2">
+                        </div>
+                    </div>
+
+                    <div class="task-card">
+                        <div class="task-card-content">
+                            <div class="task-header">
+                                <span class="task-number">Tarefa 03</span>
+                                <h3>Seleção via Lista</h3>
+                            </div>
+                            <div class="task-body">
+                                <p><strong>O Cenário:</strong> Você também consegue fazer seu bolão através da lista de
+                                    cotas disponíveis.</p>
+                                <p><strong>A Missão:</strong> Escolher o jogo QUINA na lista de bolões disponíveis e
+                                    adicionar 1 cota ao carrinho.</p>
+                            </div>
+                        </div>
+                        <div class="task-card-image">
+                            <img src="./images/bolao/tela_03.png" alt="Tela de instrução da missão 3">
+                        </div>
+                    </div>
+
+                    <div class="task-card">
+                        <div class="task-card-content">
+                            <div class="task-header">
+                                <span class="task-number">Tarefa 04</span>
+                                <h3>Checkout e Pagamento</h3>
+                            </div>
+                            <div class="task-body">
+                                <p><strong>O Cenário:</strong> A última etapa é o pagamento. Para concluir, você
+                                    utilizará um cartão de crédito via Mercado Pago.</p>
+                                <p><strong>A Missão:</strong> Adicionar seus dados de comprador e finalizar a compra com
+                                    o cartão.</p>
+                            </div>
+                        </div>
+                        <div class="task-card-image">
+                            <img src="./images/bolao/tela_04.png" alt="Tela de instrução da missão 4">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task-cards-grid">
+                    <div class="metrics-card-full">
+                        <div class="metrics-header">
+                            <span class="metrics-tag">Heurísticas & UX</span>
+                            <h3>Métricas Avaliadas</h3>
+                        </div>
+                        <ul class="metrics-list-grid">
+                            <li>
+                                <strong>Eficiência:</strong>
+                                <span>Velocidade de navegação e transição fluida entre as etapas do funil.</span>
+                            </li>
+                            <li>
+                                <strong>Carga Cognitiva:</strong>
+                                <span>Foco em reconhecimento visual em vez de memorização (Heurísticas de
+                                    Nielsen).</span>
+                            </li>
+                            <li>
+                                <strong>Fricção:</strong>
+                                <span>Mapeamento de hesitações ou dúvidas na transição entre os campos e telas de
+                                    pagamento.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="test-results-wrapper">
+                    <h3 class="results-title">Principais Descobertas e Plano de Ação</h3>
+
+                    <div class="insights-grid">
+
+                        <div class="insight-card">
+                            <div class="insight-header">
+                                <h4>01. O Paradoxo do Texto</h4>
+                                <div class="insight-badges">
+                                    <span class="warning-badge">⚠️ 3/5 c/ ajuda</span>
+                                    <span class="time-badge">⏱️ 1m36s</span>
+                                </div>
+                            </div>
+                            <div class="insight-body">
+                                <p class="insight-problem"><strong>O Atrito:</strong> A maioria dos usuários ficou
+                                    perdida com a grande quantidade de texto no menu inicial. Foi a tarefa com maior
+                                    tempo e taxa de desistência/ajuda.</p>
+                                <blockquote class="user-quote">"Achei que tem muito texto. Tinha que ser uma linha só o
+                                    conteúdo."</blockquote>
+                                <div class="insight-action">
+                                    <strong>✅ Ação:</strong> Diminuir a carga cognitiva retirando o texto de "passo a
+                                    passo" dos botões, focando em navegação interativa.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="insight-card">
+                            <div class="insight-header">
+                                <h4>02. Ícones Desconhecidos</h4>
+                                <div class="insight-badges">
+                                    <span class="success-badge">✅ 5/5 Sucesso</span>
+                                    <span class="time-badge">⏱️ 1m09s</span>
+                                </div>
+                            </div>
+                            <div class="insight-body">
+                                <p class="insight-problem"><strong>O Atrito:</strong> Navegação fluida e 100% de
+                                    sucesso, porém surgiu uma dúvida pontual sobre a iconografia ("trevos") no card.</p>
+                                <blockquote class="user-quote">"O que são os trevos?"</blockquote>
+                                <div class="insight-action">
+                                    <strong>✅ Ação:</strong> Adicionar um Tooltip informativo próximo aos trevos para
+                                    educar o usuário sobre a funcionalidade de "Teimosinha/Surpresinha".
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="insight-card">
+                            <div class="insight-header">
+                                <h4>03. A "Parede" Visual</h4>
+                                <div class="insight-badges">
+                                    <span class="danger-badge">🚨 5/5 c/ ajuda</span>
+                                    <span class="time-badge">⏱️ 1m23s</span>
+                                </div>
+                            </div>
+                            <div class="insight-body">
+                                <p class="insight-problem"><strong>O Atrito:</strong> Nenhum usuário conseguiu concluir
+                                    sem ajuda. A lista de bolões abaixo do card principal parecia um rodapé estático, e
+                                    não percebiam que a tela tinha scroll.</p>
+                                <blockquote class="user-quote">"Eu não tô vendo nenhum botão de lista aqui. A primeira
+                                    linha pareceu um rodapé."</blockquote>
+                                <div class="insight-action">
+                                    <strong>✅ Ação:</strong> Adicionar um ícone ou texto (affordance) indicando
+                                    claramente que há mais conteúdo ao rolar a tela.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="insight-card">
+                            <div class="insight-header">
+                                <h4>04. Alinhamento de Preços</h4>
+                                <div class="insight-badges">
+                                    <span class="success-badge">✅ 4/5 Sucesso</span>
+                                    <span class="time-badge">⏱️ 0m45s</span>
+                                </div>
+                            </div>
+                            <div class="insight-body">
+                                <p class="insight-problem"><strong>O Atrito:</strong> Etapa mais rápida do teste. A
+                                    única ressalva foi a arquitetura da informação dos valores (jogos à direita vs.
+                                    carrinho à esquerda).</p>
+                                <blockquote class="user-quote">"Normalmente nos carrinhos de compra os valores são
+                                    mostrados na mesma coluna."</blockquote>
+                                <div class="insight-action">
+                                    <strong>✅ Ação:</strong> Padronizar o alinhamento dos valores na mesma coluna,
+                                    seguindo a Lei de Jakob (padrões mentais de e-commerce).
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+        </section>
+
+
+        <section class="project-content">
+            <div class="container">
+
+                <div class="showcase-text results-showcase-text">
+                    <h2 class="showcase-title">Resultados &amp; Iterações</h2>
+                    <p class="showcase-description">
+                        Os testes de usabilidade não foram o fim do processo — foram o ponto de virada. Os atritos
+                        mapeados nas quatro tarefas geraram um plano de iteração direto, que foi priorizado,
+                        implementado e validado antes do lançamento oficial da nova versão do aplicativo.
+                    </p>
+                </div>
+
+                <div class="insights-grid results-insights-grid">
+
+                    <div class="insight-card">
+                        <h4 class="result-card-title">🔁 Da pesquisa à produção</h4>
+                        <p class="insight-problem">
+                            Todas as quatro ações de melhoria identificadas nos testes foram implementadas na iteração
+                            final do protótipo. O redesign da navegação inicial, os tooltips de iconografia, a
+                            affordance de scroll e o realinhamento de valores foram incorporados ao handoff para
+                            desenvolvimento — e a nova versão entrou em produção.
+                        </p>
+                    </div>
+
+                    <div class="insight-card">
+                        <h4 class="result-card-title">📲 Lançamento em produção</h4>
+                        <p class="insight-problem">
+                            O projeto foi entregue em produção e integrado ao aplicativo oficial das Loterias da Caixa,
+                            utilizado por milhões de brasileiros. A jornada completa — do onboarding com os POs até a
+                            entrega em produção — demonstra que as decisões de UX foram respaldadas por dados e aceitas
+                            pelos stakeholders.
+                        </p>
+                        <p class="confidential-note">
+                            As métricas de negócio são de propriedade da Caixa Econômica Federal e não podem ser
+                            divulgadas publicamente.
+                        </p>
+                    </div>
+
+                    <div class="insight-card">
+                        <h4 class="result-card-title">📉 Redução de carga cognitiva</h4>
+                        <p class="insight-problem">
+                            A Tarefa 01 — a de maior atrito, com 1m36s de tempo médio e 3 dos 5 usuários precisando de
+                            ajuda — foi diretamente endereçada pela simplificação do menu inicial. A remoção do "passo a
+                            passo" textual dos botões priorizou a navegação interativa, alinhando a interface ao
+                            princípio de reconhecimento sobre memorização.
+                        </p>
+                    </div>
+
+                    <div class="insight-card">
+                        <h4 class="result-card-title">✅ Validação do método</h4>
+                        <p class="insight-problem">
+                            A Tarefa 04 — checkout e pagamento — foi a mais rápida do teste (0m45s, 4/5 de sucesso),
+                            confirmando que a integração com o gateway de pagamento, desenhada com foco em padrões
+                            mentais de e-commerce (Lei de Jakob), já estava adequada antes mesmo das iterações finais.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="metrics-card-full">
+                    <div class="metrics-header">
+                        <span class="metrics-tag">Visão Geral</span>
+                        <h3>Linha do Tempo do Projeto</h3>
+                    </div>
+                    <ul class="metrics-list-grid">
+                        <li>
+                            <strong>Kick-off &amp; Imersão</strong>
+                            <span>Alinhamento com POs, definição de escopo e objetivos de negócio.</span>
+                        </li>
+                        <li>
+                            <strong>Benchmark &amp; Descoberta</strong>
+                            <span>Análise de concorrentes nacionais e internacionais com foco em geolocalização e
+                                loterias.</span>
+                        </li>
+                        <li>
+                            <strong>Arquitetura &amp; Wireframes</strong>
+                            <span>User flows, baixa e alta fidelidade, cobrindo cenários de erro e compliance.</span>
+                        </li>
+                        <li>
+                            <strong>Teste de Usabilidade</strong>
+                            <span>5 usuários, 4 tarefas, identificação de 4 atritos críticos.</span>
+                        </li>
+                        <li>
+                            <strong>Iteração &amp; Correções</strong>
+                            <span>Todas as ações de melhoria implementadas no protótipo final.</span>
+                        </li>
+                        <li>
+                            <strong>Handoff &amp; Produção</strong>
+                            <span>Entrega para desenvolvimento e lançamento da nova versão do aplicativo.</span>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         </section>
+
 
         <section id="contact">
             <div class="container">
-                <h2 class="section-title ">Fale Comigo!</h2>
-                <p>Se você tem uma ideia, uma vaga ou só quer trocar uma figurinha, me manda uma mensagem.</p>
-                <div class="button-group">
-                    <a href="mailto:miguelzynich@gmail.com" class="btn">E-mail</a>
-                    <a href="https://www.linkedin.com/in/miguelzynich/" class="btn" target="_blank"
-                        rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://wa.me/5193072515" class="btn" target="_blank"
-                        rel="noopener noreferrer">Whatsapp</a>
+                <div class="contact-card">
+                    <div class="contact-status">
+                        <span class="contact-status-dot"></span>
+                        <span class="contact-status-text">Disponível para novos projetos</span>
+                    </div>
+                    <h2 class="section-title">Vamos trabalhar juntos?</h2>
+                    <p>Se você tem uma ideia, uma vaga ou só quer trocar uma figurinha, me manda uma mensagem.</p>
+                    <div class="button-group">
+                        <a href="mailto:miguelzynich@gmail.com" class="btn">E-mail</a>
+                        <a href="https://www.linkedin.com/in/miguelzynich/" class="btn" target="_blank"
+                            rel="noopener noreferrer">LinkedIn</a>
+                        <a href="https://wa.me/5193072515" class="btn" target="_blank"
+                            rel="noopener noreferrer">WhatsApp</a>
+                    </div>
                 </div>
             </div>
         </section>
+
+
+
     </main>
 
     <footer class="main-footer">
         <div class="container text-center">
-            <p>@miguelzynich - 01/26</p>
+            <p>@miguelzynich - 03/26</p>
         </div>
     </footer>
-
-    <div id="imageModal" class="modal-overlay">
-        <div class="modal-container">
-            <div class="modal-header">
-                <div class="modal-title-container">
-                    <h3 id="modalTitle">Visualização</h3>
-                    <span id="modalCounter"></span>
-                </div>
-                <span class="modal-close">&times;</span>
-            </div>
-            <div class="modal-body">
-                <div class="modal-image-wrapper">
-                    <img class="modal-content" id="img01" alt="Zoom Content">
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div id="project-overlay" class="overlay">
         <button id="btn-fechar-overlay" aria-label="Fechar menu">
@@ -416,7 +879,7 @@
         <nav class="overlay-menu">
             <ul>
                 <li><a href="pagamentos.html" class="menu-link">Pagamentos</a></li>
-                <li><a href="cores.html" class="menu-link">Cores das Modalidade</a></li>
+                <li><a href="cores.html" class="menu-link">Cores das Modalidades</a></li>
                 <li><a href="yuca.html" class="menu-link">Yuca</a></li>
                 <li><a href="vortigo.html" class="menu-link">Vortigo</a></li>
                 <li><a href="index.html#sobre-e-experiencia" class="menu-link"> Sobre</a></li>
@@ -427,5 +890,4 @@
     <script src="main.js"></script>
 
 </body>
-
 </html>

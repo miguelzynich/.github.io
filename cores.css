@@ -36,7 +36,6 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: #0e0e0e;
     z-index: 1000;
     padding: 15px 0;
 }
@@ -112,7 +111,7 @@ body {
 }
 
 .project-content {
-    padding: 80px 0;
+    padding: 60px 0;
     background-color: transparent;
     color: var(--text-primary);
 }
@@ -155,6 +154,25 @@ body {
 
 .bg-white {
     background-color: #FFFFFF !important;
+}
+
+
+.contrast-summary {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--dt-text-title);
+    background-color: var(--bg-secondary);
+    border-left: 3px solid var(--text-heading);
+    padding: 30px 48px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 0;
+    line-height: 1.8;
+    background-color: var(--dt-bg-section);
+    border-radius: 24px;
+}
+
+.contrast-summary strong {
+    color: var(--text-heading);
 }
 
 .project-content h3,
@@ -327,7 +345,6 @@ body {
 }
 
 .container {
-    max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
     text-align: left;
@@ -382,8 +399,6 @@ body {
 
 .section-header {
     text-align: left;
-    /* Na imagem o alinhamento parece à esquerda ou centro, ajustável */
-    max-width: 800px;
     margin-bottom: 60px;
 }
 
@@ -660,6 +675,28 @@ body {
 
 @media (max-width: 768px) {
 
+    h2 {
+        font-size: 2rem; /* Aumentado de 1.75rem para 2rem */
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 24px;
+        text-align: left;
+    }
+
+    p {
+        font-size: 1.15rem; /* Aumentado de 1rem para dar muito mais leitura */
+        line-height: 1.6;
+        text-align: left;
+    }
+
+    .task-body p, 
+    .insight-problem,
+    .user-quote,
+    .insight-action,
+    .metrics-list-grid li span {
+        font-size: 1.1rem !important; /* Força o texto dos cards a acompanhar o crescimento */
+        line-height: 1.6;
+    }
 
     .modalities-wrapper {
         grid-template-columns: 1fr;
