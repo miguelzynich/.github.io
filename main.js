@@ -399,11 +399,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- PROJETOS RECOMENDADOS ---
     const allProjects = [
-        { href: "pagamentos.html", imgSrc: "images/thumbs/pagamentos.webp", alt: "Projeto Pagamentos" },
-        { href: "bolao.html", imgSrc: "images/thumbs/bolao_caixa.webp", alt: "Projeto Bolão Lotérico" },
-        { href: "yuca.html", imgSrc: "images/thumbs/yuca.webp", alt: "Projeto Yuca" },
+        { href: "pagamentos.html", imgSrc: "images/thumbs/pagamentos.png", alt: "Projeto Pagamentos" },
+        { href: "bolao.html", imgSrc: "images/thumbs/bolao_caixa.png", alt: "Projeto Bolão Lotérico" },
+        { href: "yuca.html", imgSrc: "images/thumbs/yuca.png", alt: "Projeto Yuca" },
         { href: "vortigo.html", imgSrc: "images/thumbs/vortigo.webp", alt: "Projeto Vortigo" },
-        { href: "cores.html", imgSrc: "images/thumbs/cores_caixa.webp", alt: "Estudo de Cores das Modalidades" }
+        { href: "cores.html", imgSrc: "images/thumbs/cores_caixa.png", alt: "Estudo de Cores das Modalidades" }
     ];
 
     async function injetarProjetosRecomendados() {

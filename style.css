@@ -174,9 +174,17 @@ p {
     filter: blur(0);
 }
 
-.delay-100 { transition-delay: 100ms; }
-.delay-200 { transition-delay: 200ms; }
-.delay-300 { transition-delay: 300ms; }
+.delay-100 {
+    transition-delay: 100ms;
+}
+
+.delay-200 {
+    transition-delay: 200ms;
+}
+
+.delay-300 {
+    transition-delay: 300ms;
+}
 
 /* =============================================== */
 /* --- HEADER --- */
@@ -294,7 +302,9 @@ header .botao-voltar {
 }
 
 @keyframes revelarSuave {
-    to { stroke-dashoffset: 0; }
+    to {
+        stroke-dashoffset: 0;
+    }
 }
 
 .mz-base {
@@ -358,6 +368,7 @@ body.dark-mode .main-footer {
 body.dark-mode .main-footer p {
     color: var(--text-heading) !important;
 }
+
 /* =============================================== */
 /* --- BOTÕES GLOBAIS --- */
 /* =============================================== */
@@ -685,8 +696,15 @@ body.dark-mode .main-footer p {
 }
 
 @keyframes slideUpFade {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* =============================================== */
@@ -775,8 +793,15 @@ body.dark-mode .main-footer p {
 }
 
 @keyframes fadeInReveal {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .course-row {
@@ -794,7 +819,7 @@ body.dark-mode .main-footer p {
 
 .course-row:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     z-index: 10;
 }
 
@@ -949,8 +974,15 @@ body.dark-mode .main-footer p {
 }
 
 @keyframes modalEntrada {
-    from { opacity: 0; transform: scale(0.92) translateY(12px); }
-    to { opacity: 1; transform: scale(1) translateY(0); }
+    from {
+        opacity: 0;
+        transform: scale(0.92) translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
 }
 
 #contact {
@@ -982,6 +1014,7 @@ body.dark-mode .main-footer p {
 body.dark-mode #contact p {
     color: var(--text-muted) !important;
 }
+
 /* =============================================== */
 /* --- PROJECT OVERVIEW / CASE HEADER --- */
 /* =============================================== */
@@ -1110,10 +1143,21 @@ body.dark-mode #contact p {
     opacity: 0.92;
 }
 
-.highlight-card.challenge .highlight-icon { color: #ef4444; }
-.highlight-card.result .highlight-icon { color: #10b981; }
-.highlight-card.insight .highlight-icon { color: #3b82f6; }
-.highlight-card.impact .highlight-icon { color: var(--accent-gold); }
+.highlight-card.challenge .highlight-icon {
+    color: #ef4444;
+}
+
+.highlight-card.result .highlight-icon {
+    color: #10b981;
+}
+
+.highlight-card.insight .highlight-icon {
+    color: #3b82f6;
+}
+
+.highlight-card.impact .highlight-icon {
+    color: var(--accent-gold);
+}
 
 /* =============================================== */
 /* --- OVERLAY MENU --- */
@@ -1471,16 +1515,27 @@ body.dark-mode .course-hours {
 }
 
 
-
 /* =============================================== */
 /* --- RESPONSIVO --- */
 /* =============================================== */
 @media (max-width: 1024px) {
-    .project-info-grid { gap: 40px; }
-    .highlight-card { padding: 28px; }
+    .project-info-grid {
+        gap: 40px;
+    }
+
+    .highlight-card {
+        padding: 28px;
+    }
 }
 
 @media (max-width: 768px) {
+
+    main .container {
+        padding: 0 20px;
+        max-width: 90%;
+
+    }
+
     .project-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -1492,7 +1547,8 @@ body.dark-mode .course-hours {
     }
 
     .two-column-layout {
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        /* era flex-direction: column — trocado para grid */
         gap: 40px;
     }
 
@@ -1517,9 +1573,19 @@ body.dark-mode .course-hours {
         gap: 24px;
     }
 
-    .project-overview { padding: 60px 0 40px; }
-    .project-meta-tags { gap: 8px; margin-bottom: 40px; }
-    .project-meta-tag { font-size: 0.75rem; padding: 6px 14px; }
+    .project-overview {
+        padding: 60px 0 40px;
+    }
+
+    .project-meta-tags {
+        gap: 8px;
+        margin-bottom: 40px;
+    }
+
+    .project-meta-tag {
+        font-size: 0.75rem;
+        padding: 6px 14px;
+    }
 
     .project-info-grid {
         grid-template-columns: 1fr;
@@ -1542,9 +1608,20 @@ body.dark-mode .course-hours {
         gap: 24px;
     }
 
-    .highlight-card { padding: 24px; }
-    .highlight-card-title { font-size: 1.5rem; }
-    .highlight-card-content { font-size: 1.2rem; }
+    .highlight-card {
+        padding: 24px;
+    }
+
+    .highlight-card-title {
+        font-size: 1.15rem;
+    }
+
+    /* era 1.5rem — alinhado com bolao.css */
+    .highlight-card-content {
+        font-size: 0.9rem;
+    }
+
+    /* era 1.2rem — alinhado com bolao.css */
 
     .experience-item {
         grid-template-columns: 1fr;
@@ -1557,6 +1634,11 @@ body.dark-mode .course-hours {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .highlight-card { transition: none; }
-    .highlight-card:hover { transform: none; }
+    .highlight-card {
+        transition: none;
+    }
+
+    .highlight-card:hover {
+        transform: none;
+    }
 }

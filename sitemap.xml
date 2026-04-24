@@ -1,0 +1,86 @@
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<!--  Página Principal (PT)  -->
+<url>
+<loc>https://miguelzynich.online/</loc>
+<lastmod>2024-01-01</lastmod>
+<changefreq>monthly</changefreq>
+<priority>1.0</priority>
+</url>
+<!--  Página Principal (EN)  -->
+<url>
+<loc>https://miguelzynich.online/en/</loc>
+<lastmod>2024-01-01</lastmod>
+<changefreq>monthly</changefreq>
+<priority>1.0</priority>
+</url>
+<!--  Projetos em Português  -->
+<url>
+<loc>https://miguelzynich.online/pagamentos.html</loc>
+<lastmod>2024-01-01</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://miguelzynich.online/bolao.html</loc>
+<lastmod>2024-01-01</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://miguelzynich.online/cores.html</loc>
+<lastmod>2024-01-01</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://miguelzynich.online/yuca.html</loc>
+<lastmod>2024-01-01</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://miguelzynich.online/vortigo.html</loc>
+<lastmod>2024-01-01</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<!--  Páginas em Inglês  -->
+<url>
+<loc>https://miguelzynich.online/en/checkout-design.html</loc>
+<lastmod>2024-01-01</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://miguelzynich.online/en/lottery-redesign.html</loc>
+<lastmod>2024-01-01</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://miguelzynich.online/en/color-optimization.html</loc>
+<lastmod>2024-01-01</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://miguelzynich.online/en/yuca-coliving.html</loc>
+<lastmod>2024-01-01</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://miguelzynich.online/en/vortigo-redesign.html</loc>
+<lastmod>2024-01-01</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<!--  PDF do Currículo  -->
+<url>
+<loc>https://miguelzynich.online/doc/UX_UI_Miguel_Zynich.pdf</loc>
+<lastmod>2024-01-01</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+</urlset>

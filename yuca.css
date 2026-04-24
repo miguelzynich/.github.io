@@ -1586,7 +1586,7 @@ body.dark-mode #contact p {
 @media (max-width: 1024px) {
     .banner-section {
         background-image: url('images/yuca/yuca-banner-tablet.png');
-        height: 60vh;
+        height: 70vh;
     }
 
     .two-column-layout,

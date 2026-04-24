@@ -1,0 +1,9 @@
+# Robots.txt para miguelzynich.online
+# Permite acesso total dos buscadores
+
+User-agent: *
+Allow: /
+Disallow: 
+
+# Apontar para o sitemap
+Sitemap: https://miguelzynich.online/sitemap.xml

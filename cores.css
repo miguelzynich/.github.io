@@ -28,6 +28,61 @@ body {
 }
 
 
+/* ==========================================================================
+   CORREÇÃO DE CORES (OVERVIEW E CONTATO)
+   ========================================================================== */
+
+/* 1. Força a seção Overview a ser SEMPRE a cor secundária (Cinza/Grafite) */
+.project-overview {
+    background-color: var(--dt-bg-section) !important;
+    color: var(--dt-text-title);
+}
+
+/* 2. Força os textos do Overview a aparecerem no Light Mode (Correção do seu print) */
+.project-overview .project-info-label,
+.project-overview .project-info-content,
+.project-overview .project-info-content p,
+.project-overview .project-info-content li,
+.project-overview .highlight-card-title,
+.project-overview .highlight-card-content {
+    color: var(--text-main) !important;
+}
+
+/* 3. Inverte as cores da seção de Contato para destacar da seção anterior */
+#contact {
+    background-color: var(--bg-secondary) !important;
+}
+
+.contact-card {
+    background-color: var(--bg-primary) !important;
+    color: var(--dt-text-title);
+}
+
+/* 4. Garante o mesmo contraste do Contato no Dark Mode */
+body.dark-mode #contact {
+    background-color: var(--bg-section) !important;
+}
+body.dark-mode .contact-card {
+    background-color: var(--bg-primary) !important;
+    border-color: var(--dt-border);
+}
+
+.breadcrumb-nav{
+    background-color: var(--dt-bg-section);
+}
+
+.project-meta-tag{
+    background-color: var(--dt-bg-card);
+}
+
+.highlight-card{
+    background-color: var(--dt-bg-card);
+}
+
+.recommended-projects{
+    background-color: var(--dt-bg-section);
+}
+
 /* =========================================
    3. HEADER FIXO
    ========================================= */
@@ -62,6 +117,13 @@ body {
     text-decoration: none;
     color: #fff;
 }
+
+.main-footer{
+    color: var(--dt-text-title);
+    background-color: var(--dt-bg-section);
+}
+
+
 
 #btn-menu-projetos {
     grid-column: 3;
@@ -346,7 +408,7 @@ body {
 
 .container {
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 20px;
     text-align: left;
 }
 
@@ -668,7 +730,7 @@ body {
     }
 
     .cores-caixa {
-        height: 55vh;
+        height: 56vh;
         background-image: url('./images/cores/cores_banner_mobile.png');
     }
 }
