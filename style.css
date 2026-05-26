@@ -406,7 +406,7 @@ body.dark-mode .main-footer p {
 .cv-btn {
     display: block;
     width: fit-content;
-    margin-left: auto;
+    margin-left: 0;
     margin-right: auto;
     margin-top: var(--spacing-xl);
 }
@@ -625,7 +625,7 @@ body.dark-mode .main-footer p {
 
 .project-desc-mini {
     font-family: 'Gilroy', sans-serif;
-    font-size: 0.95rem;
+    font-size: 1.0rem;
     color: var(--text-color-light);
     margin: 0 0 1rem 0;
     line-height: 1.4;
@@ -645,7 +645,7 @@ body.dark-mode .main-footer p {
 
 .project-tags-mini li {
     font-family: 'Gilroy', sans-serif;
-    font-size: 0.8rem;
+    font-size: 1.0rem;
     font-weight: bold;
     background-color: var(--border-color);
     color: var(--text-color-light);
@@ -1385,11 +1385,6 @@ body.dark-mode .projects-section {
 
 body.dark-mode #contact {
     background-color: #121212;
-}
-
-body.dark-mode #contact .container {
-    background-color: #1a1a1a;
-    border: 1px solid var(--border-color);
 }
 
 body:not(.dark-mode) #contact .container {
