@@ -804,32 +804,6 @@ main>section:nth-of-type(odd) {
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ==========================================================================
-   PROJETOS RECOMENDADOS 
-   ========================================================================== */
-
-.recommended-projects {
-    padding: 80px 0;
-    border-top: 1px solid var(--border-color);
-}
-
-.recommended-projects .section-title {
-    margin-bottom: 40px;
-    text-align: left;
-}
-
-.recommended-projects .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 24px;
-    /* Espaçamento ideal para 3 colunas não ficarem espremidas */
-    margin-top: 0;
-}
-
-.recommended-projects .image-wrapper {
-    padding: 0;
-    aspect-ratio: 16 / 10;
-}
 
 
 /* ==========================================================================
@@ -941,17 +915,15 @@ body.dark-mode .danger-badge {
         gap: 24px;
     }
 
-    .project-card .image-wrapper {
-        padding: 30px 30px 0 30px;
-    }
+
 }
 
 @media (max-width: 1024px) {
     .banner-bolao {
-        height: 66vh;
-        background-image: url('./images/bolao/bolao-tablet.png');
-
-        background-position: center;
+        height: 68vh;
+        background-image: url('./images/bolao/bolao-section.png');
+        position-area: center;
+        background-position: 50%;
     }
 
     h2 {

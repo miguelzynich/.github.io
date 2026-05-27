@@ -1643,10 +1643,6 @@ body.dark-mode .experience-item {
     border-bottom-color: var(--border-color);
 }
 
-body.dark-mode .breadcrumb-nav {
-    background-color: #121212;
-}
-
 body.dark-mode .breadcrumb-nav.breadcrumb-nav--alt-bg {
     background-color: var(--section-bg);
 }
