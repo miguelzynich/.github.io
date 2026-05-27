@@ -131,7 +131,6 @@
 
 .hero-body-actions {
     display: flex;
-    align-items: center;
     justify-content: flex-end;
     gap: 16px;
 }
@@ -266,7 +265,7 @@
     .hero-body-actions {
         justify-content: flex-start;
         flex-direction: column;
-        width: 100%;
+        width: 85%;
     }
 
     .btn-hero-p, .btn-hero-s {
